@@ -60,6 +60,11 @@
 
             <!-- BEGIN PAGE BODY -->
             <div class="page-body">
+
+
+                @include('form')
+
+
                 <div class="container-xl">
 
 
@@ -224,7 +229,7 @@
                 </div>
             </div>
         </div>
-        <!-- END PAGE BODY -->
+
 
         @include('mocks.footer')
 
