@@ -16,8 +16,20 @@ import ApexCharts from 'apexcharts'
 import jsVectorMap from 'jsvectormap'
 import 'jsvectormap/dist/maps/world'
 
+
+import * as echarts from 'echarts';
+
+
+
 window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Tabulator = Tabulator;
 window.ApexCharts = ApexCharts;
 window.jsVectorMap = jsVectorMap;
+
+
+console.group('%cbootstrap.js :: 31 =============================', 'color: #932818; font-size: 1rem');
+console.log(echarts);
+console.groupEnd();
+
+window.echarts = echarts;
