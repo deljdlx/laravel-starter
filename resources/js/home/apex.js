@@ -976,3 +976,31 @@ document.addEventListener("DOMContentLoaded", function () {
       },],
     }).render();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.ApexCharts &&
+    new ApexCharts(document.getElementById("sparkline-bounce-rate-2"), {
+      chart: {
+        type: "line",
+        fontFamily: "inherit",
+        height: 24,
+        animations: {
+          enabled: false,
+        },
+        sparkline: {
+          enabled: true,
+        },
+      },
+      tooltip: {
+        enabled: false,
+      },
+      stroke: {
+        width: 2,
+        lineCap: "round",
+      },
+      series: [{
+        color: "var(--tblr-primary)",
+        data: [13, 11, 19, 22, 12, 7, 14, 3, 21],
+      },],
+    }).render();
+});
