@@ -9,6 +9,27 @@ The original `form.blade.php` file was a monolithic 2085-line file containing al
 - Reused across different views
 - Converted into Laravel components in the future
 
+## Component Optimization
+
+### TextInput Component
+
+Many of the basic text/password inputs in these partials have been refactored to use the new `TextInput` Laravel component for improved code reusability and maintainability.
+
+**Before:**
+```blade
+<div class="mb-3">
+  <label class="form-label">Email</label>
+  <input type="email" class="form-control" name="email" placeholder="Email" />
+</div>
+```
+
+**After:**
+```blade
+<x-text-input label="Email" name="email" type="email" placeholder="Email" />
+```
+
+See [TEXTINPUT_COMPONENT.md](/TEXTINPUT_COMPONENT.md) for full documentation.
+
 ## Structure
 
 The form has been divided into 17 logical partials:
@@ -18,11 +39,11 @@ The form has been divided into 17 logical partials:
 #### basic-inputs.blade.php
 Contains fundamental input types:
 - Static text display
-- Text input
-- Password input
-- Disabled input
-- Readonly input
-- Required input
+- Text input (using TextInput component)
+- Password input (using TextInput component)
+- Disabled input (using TextInput component)
+- Readonly input (using TextInput component)
+- Required input (using TextInput component)
 - Textarea
 
 #### select-inputs.blade.php
