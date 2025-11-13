@@ -11,3 +11,7 @@ use App\Http\Livewire\Counter;
 Route::get('/compteur', function () {
     return view('livewire.counter-page');
 });
+
+Route::get('/form', function () {
+    return view('form');
+});
