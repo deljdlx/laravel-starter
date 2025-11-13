@@ -378,7 +378,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                     <input name="form-imagecheck" type="checkbox" value="1" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
                       <img
-                        src="./static/photos/beautiful-blonde-woman-relaxing-with-a-can-of-coke-on-a-tree-stump-by-the-beach.jpg"
+                        src="https://picsum.photos/200/300"
                         alt="Beautiful blonde woman relaxing with a can of coke on a tree stump by the beach"
                         class="form-imagecheck-image" />
                     </span>
@@ -388,7 +388,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck" type="checkbox" value="2" class="form-imagecheck-input" checked />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/brainstorming-session-with-creative-designers.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Brainstorming session with creative designers" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -397,7 +397,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck" type="checkbox" value="3" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/finances-us-dollars-and-bitcoins-currency-money.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Finances - US Dollars and Bitcoins - Currency - Money" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -406,7 +406,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck" type="checkbox" value="4" class="form-imagecheck-input" checked />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/group-of-people-brainstorming-and-taking-notes-2.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Group of people brainstorming and taking notes" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -415,7 +415,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck" type="checkbox" value="5" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/blue-sofa-with-pillows-in-a-designer-living-room-interior.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Blue sofa with pillows in a designer living room interior" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -424,7 +424,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck" type="checkbox" value="6" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/home-office-desk-with-macbook-iphone-calendar-watch-and-organizer.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Home office desk with Macbook, iPhone, calendar, watch & organizer"
                         class="form-imagecheck-image" />
                     </span>
@@ -439,7 +439,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck-radio" type="radio" value="1" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/group-of-people-sightseeing-in-the-city.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Group of people sightseeing in the city" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -448,7 +448,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck-radio" type="radio" value="2" class="form-imagecheck-input" checked />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/color-palette-guide-sample-colors-catalog-.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Color Palette Guide. Sample Colors Catalog." class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -457,7 +457,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck-radio" type="radio" value="3" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/stylish-workplace-with-computer-at-home.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Stylish workplace with computer at home" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -466,7 +466,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck-radio" type="radio" value="4" class="form-imagecheck-input" checked />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/pink-desk-in-the-home-office.jpg" alt="Pink desk in the home office"
+                      <img src="https://picsum.photos/200/300" alt="Pink desk in the home office"
                         class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -475,7 +475,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck-radio" type="radio" value="5" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/young-woman-sitting-on-the-sofa-and-working-on-her-laptop.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Young woman sitting on the sofa and working on her laptop" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -484,7 +484,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                   <label class="form-imagecheck mb-2">
                     <input name="form-imagecheck-radio" type="radio" value="6" class="form-imagecheck-input" />
                     <span class="form-imagecheck-figure">
-                      <img src="./static/photos/coffee-on-a-table-with-other-items.jpg"
+                      <img src="https://picsum.photos/200/300"
                         alt="Coffee on a table with other items" class="form-imagecheck-image" />
                     </span>
                   </label>
@@ -877,7 +877,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/000m.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Paweł Kuna</div>
@@ -894,7 +894,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/052f.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Jeffie Lewzey</div>
@@ -910,7 +910,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/002m.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Mallory Hulme</div>
@@ -926,7 +926,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/003m.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Dunn Slane</div>
@@ -942,7 +942,7 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/000f.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Emmy Levet</div>
@@ -1643,55 +1643,55 @@ Oh! Come and see the violence inherent in the system! Help, help, I'm being repr
             <div class="mb-3">
               <label class="form-label">Select with avatars</label>
               <select class="form-select" id="select-people" value="">
-                <option value="1" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/000m.jpg)&#34;&gt;
+                <option value="1" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Paweł Kuna
                 </option>
-                <option value="2" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/052f.jpg)&#34;&gt;
+                <option value="2" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Jeffie Lewzey
                 </option>
-                <option value="3" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/002m.jpg)&#34;&gt;
+                <option value="3" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Mallory Hulme
                 </option>
-                <option value="4" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/003m.jpg)&#34;&gt;
+                <option value="4" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Dunn Slane
                 </option>
-                <option value="5" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/000f.jpg)&#34;&gt;
+                <option value="5" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Emmy Levet
                 </option>
-                <option value="6" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/001f.jpg)&#34;&gt;
+                <option value="6" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Maryjo Lebarree
                 </option>
-                <option value="7" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/004m.jpg)&#34;&gt;
+                <option value="7" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Egan Poetz
                 </option>
-                <option value="8" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/002f.jpg)&#34;&gt;
+                <option value="8" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Kellie Skingley
                 </option>
-                <option value="9" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/003f.jpg)&#34;&gt;
+                <option value="9" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Christabel Charlwood
                 </option>
-                <option value="10" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/063m.jpg)&#34;&gt;
+                <option value="10" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Haskel Shelper
                 </option>
-                <option value="11" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/006m.jpg)&#34;&gt;
+                <option value="11" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Lorry Mion
                 </option>
-                <option value="12" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/004f.jpg)&#34;&gt;
+                <option value="12" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Leesa Beaty
                 </option>
-                <option value="13" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/007m.jpg)&#34;&gt;
+                <option value="13" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Perren Keemar
                 </option>
@@ -1700,19 +1700,19 @@ SA
 &lt;/span&gt;">
                   Sunny Airey
                 </option>
-                <option value="15" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/009m.jpg)&#34;&gt;
+                <option value="15" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Geoffry Flaunders
                 </option>
-                <option value="16" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/010m.jpg)&#34;&gt;
+                <option value="16" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Thatcher Keel
                 </option>
-                <option value="17" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/005f.jpg)&#34;&gt;
+                <option value="17" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Dyann Escala
                 </option>
-                <option value="18" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/006f.jpg)&#34;&gt;
+                <option value="18" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Avivah Mugleston
                 </option>
@@ -1721,7 +1721,7 @@ AA
 &lt;/span&gt;">
                   Arlie Armstead
                 </option>
-                <option value="20" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(./static/avatars/008f.jpg)&#34;&gt;
+                <option value="20" data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
 &lt;/span&gt;">
                   Tessie Curzon
                 </option>
@@ -1970,7 +1970,7 @@ AA
           <div class="mb-3">
             <div class="row">
               <div class="col-auto">
-                <span class="avatar avatar-md" style="background-image: url(./static/avatars/002m.jpg)">
+                <span class="avatar avatar-md" style="background-image: url(https://picsum.photos/100/100)">
                 </span>
               </div>
               <div class="col">
