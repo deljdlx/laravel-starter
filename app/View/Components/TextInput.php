@@ -9,14 +9,23 @@ use Illuminate\View\Component;
 class TextInput extends Component
 {
     public string $label;
+
     public string $name;
+
     public string $type;
+
     public ?string $placeholder;
+
     public ?string $value;
+
     public bool $required;
+
     public bool $disabled;
+
     public bool $readonly;
+
     public ?string $description;
+
     public ?string $id;
 
     /**
