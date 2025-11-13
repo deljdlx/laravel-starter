@@ -177,7 +177,7 @@
           <div class="mb-3">
             <div class="row">
               <div class="col-auto">
-                <span class="avatar avatar-md" style="background-image: url(./static/avatars/002m.jpg)">
+                <span class="avatar avatar-md" style="background-image: url(https://picsum.photos/100/100)">
                 </span>
               </div>
               <div class="col">

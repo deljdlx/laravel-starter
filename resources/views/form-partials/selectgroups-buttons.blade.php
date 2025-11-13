@@ -190,7 +190,7 @@
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/000m.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Paweł Kuna</div>
@@ -207,7 +207,7 @@
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/052f.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Jeffie Lewzey</div>
@@ -223,7 +223,7 @@
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/002m.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Mallory Hulme</div>
@@ -239,7 +239,7 @@
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/003m.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Dunn Slane</div>
@@ -255,7 +255,7 @@
                       <span class="form-selectgroup-check"></span>
                     </div>
                     <div class="form-selectgroup-label-content d-flex align-items-center">
-                      <span class="avatar avatar-2 me-3" style="background-image: url(./static/avatars/000f.jpg)">
+                      <span class="avatar avatar-2 me-3" style="background-image: url(https://picsum.photos/100/100)">
                       </span>
                       <div>
                         <div class="font-weight-medium">Emmy Levet</div>
