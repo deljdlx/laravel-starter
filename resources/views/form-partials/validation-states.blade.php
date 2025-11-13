@@ -1,0 +1,11 @@
+<div class="mb-3">
+  <label class="form-label">Validation States </label>
+  <input type="text" class="form-control is-valid mb-2" placeholder="Valid State.." />
+  <input type="text" class="form-control is-invalid" placeholder="Invalid State.." />
+  <div class="invalid-feedback">Invalid feedback</div>
+</div>
+<div class="mb-3">
+  <label class="form-label">Validation States (lite)</label>
+  <input type="text" class="form-control is-valid is-valid-lite mb-2" placeholder="Valid State.." />
+  <input type="text" class="form-control is-invalid is-invalid-lite" placeholder="Invalid State.." />
+</div>
