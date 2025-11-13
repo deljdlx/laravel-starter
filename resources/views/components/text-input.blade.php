@@ -11,7 +11,7 @@
         name="{{ $name }}" 
         id="{{ $id }}"
         @if($placeholder !== null) placeholder="{{ $placeholder }}" @endif
-        @if($value) value="{{ $value }}" @endif
+        value="{{ old($name, $value) }}"
         @if($required) required @endif
         @if($disabled) disabled @endif
         @if($readonly) readonly @endif
