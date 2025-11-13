@@ -10,7 +10,7 @@
         class="form-control" 
         name="{{ $name }}" 
         id="{{ $id }}"
-        @if($placeholder) placeholder="{{ $placeholder }}" @endif
+        @if($placeholder !== null) placeholder="{{ $placeholder }}" @endif
         @if($value) value="{{ $value }}" @endif
         @if($required) required @endif
         @if($disabled) disabled @endif
