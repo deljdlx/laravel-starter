@@ -192,14 +192,8 @@
             <label class="form-label">Bio</label>
             <textarea class="form-control" rows="5">Big belly rude boy, million dollar hustler. Unemployed.</textarea>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Email-Address</label>
-            <input class="form-control" placeholder="your-email@domain.com" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" value="password" />
-          </div>
+          <x-text-input label="Email-Address" name="email-address" placeholder="your-email@domain.com" type="email" />
+          <x-text-input label="Password" name="password" type="password" value="password" />
         </div>
         <div class="card-footer text-end">
           <a href="#" class="btn btn-primary btn-2"> Save </a>
@@ -216,46 +210,25 @@
           <h3 class="card-title">Edit Profile</h3>
           <div class="row row-cards">
             <div class="col-md-5">
-              <div class="mb-3">
-                <label class="form-label">Company</label>
-                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc." />
-              </div>
+              <x-text-input label="Company" name="company" placeholder="Company" value="Creative Code Inc." :disabled="true" />
             </div>
             <div class="col-sm-6 col-md-3">
-              <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" class="form-control" placeholder="Username" value="michael23" />
-              </div>
+              <x-text-input label="Username" name="username" placeholder="Username" value="michael23" />
             </div>
             <div class="col-sm-6 col-md-4">
-              <div class="mb-3">
-                <label class="form-label">Email address</label>
-                <input type="email" class="form-control" placeholder="Email" />
-              </div>
+              <x-text-input label="Email address" name="email" type="email" placeholder="Email" />
             </div>
             <div class="col-sm-6 col-md-6">
-              <div class="mb-3">
-                <label class="form-label">First Name</label>
-                <input type="text" class="form-control" placeholder="Company" value="Chet" />
-              </div>
+              <x-text-input label="First Name" name="first-name" placeholder="Company" value="Chet" />
             </div>
             <div class="col-sm-6 col-md-6">
-              <div class="mb-3">
-                <label class="form-label">Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name" value="Faker" />
-              </div>
+              <x-text-input label="Last Name" name="last-name" placeholder="Last Name" value="Faker" />
             </div>
             <div class="col-md-12">
-              <div class="mb-3">
-                <label class="form-label">Address</label>
-                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia" />
-              </div>
+              <x-text-input label="Address" name="address" placeholder="Home Address" value="Melbourne, Australia" />
             </div>
             <div class="col-sm-6 col-md-4">
-              <div class="mb-3">
-                <label class="form-label">City</label>
-                <input type="text" class="form-control" placeholder="City" value="Melbourne" />
-              </div>
+              <x-text-input label="City" name="city" placeholder="City" value="Melbourne" />
             </div>
             <div class="col-sm-6 col-md-3">
               <div class="mb-3">
