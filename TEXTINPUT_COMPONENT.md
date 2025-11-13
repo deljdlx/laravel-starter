@@ -17,8 +17,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### Simple Text Input
 ```blade
 <x-text-input 
-    label="Email" 
     name="email" 
+    label="Email" 
     type="email" 
     placeholder="Enter your email" 
 />
@@ -27,8 +27,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### Password Input
 ```blade
 <x-text-input 
-    label="Password" 
     name="password" 
+    label="Password" 
     type="password" 
     placeholder="Enter password" 
 />
@@ -37,8 +37,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### Required Field
 ```blade
 <x-text-input 
-    label="Username" 
     name="username" 
+    label="Username" 
     :required="true" 
 />
 ```
@@ -46,8 +46,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### With Default Value
 ```blade
 <x-text-input 
-    label="Company" 
     name="company" 
+    label="Company" 
     value="Acme Inc." 
 />
 ```
@@ -55,8 +55,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### Disabled Field
 ```blade
 <x-text-input 
-    label="ID" 
     name="id" 
+    label="ID" 
     value="12345" 
     :disabled="true" 
 />
@@ -65,8 +65,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### Readonly Field
 ```blade
 <x-text-input 
-    label="Created Date" 
     name="created_at" 
+    label="Created Date" 
     value="2025-01-01" 
     :readonly="true" 
 />
@@ -75,9 +75,17 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 ### With Label Description
 ```blade
 <x-text-input 
-    label="Bio" 
     name="bio" 
+    label="Bio" 
     description="120/200" 
+/>
+```
+
+### Without Label (Label-less Input)
+```blade
+<x-text-input 
+    name="search" 
+    placeholder="Search..." 
 />
 ```
 
@@ -85,8 +93,8 @@ The `TextInput` component is a reusable Laravel Blade component designed to simp
 
 | Parameter | Type | Default | Required | Description |
 |-----------|------|---------|----------|-------------|
-| `label` | string | - | Yes | The label text displayed above the input |
 | `name` | string | - | Yes | The input's name attribute |
+| `label` | string | null | No | The label text displayed above the input (optional) |
 | `type` | string | 'text' | No | Input type (text, password, email, url, tel, number) |
 | `placeholder` | string | null | No | Placeholder text for the input |
 | `value` | string | null | No | Default value for the input |
@@ -102,8 +110,8 @@ The component supports any additional HTML attributes through Laravel's `$attrib
 
 ```blade
 <x-text-input 
-    label="Email" 
     name="email" 
+    label="Email" 
     class="custom-class"
     data-custom="value"
 />
@@ -121,7 +129,7 @@ The component supports any additional HTML attributes through Laravel's `$attrib
 
 ### After (Using Component)
 ```blade
-<x-text-input label="Email address" name="email" type="email" placeholder="Email" />
+<x-text-input name="email" label="Email address" type="email" placeholder="Email" />
 ```
 
 ## Benefits

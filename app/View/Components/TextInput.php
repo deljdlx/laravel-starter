@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 class TextInput extends Component
 {
-    public string $label;
+    public ?string $label;
 
     public string $name;
 
@@ -32,8 +32,8 @@ class TextInput extends Component
      * Create a new component instance.
      */
     public function __construct(
-        string $label,
         string $name,
+        ?string $label = null,
         string $type = 'text',
         ?string $placeholder = null,
         ?string $value = null,
