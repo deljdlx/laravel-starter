@@ -81,7 +81,4 @@ Route::prefix('v1')->name('v1.')->group(function () {
             return $request->user();
         })->name('me');
     });
-
 });
-
-
