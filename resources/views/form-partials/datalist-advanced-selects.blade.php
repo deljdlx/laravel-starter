@@ -22,22 +22,27 @@
               <div class="form-range mb-2 text-green" id="range-color">
               </div>
             </div>
+
+
+            <x-text-input
+              type="date"
+              name="date_picker"
+              label="Date picker"
+            />
+
+            <x-text-input
+              type="color"
+              name="color_picker"
+              label="Color picker"
+              value="#ff0000"
+            />
+
+
             <div class="mb-3">
               <label class="form-label">Datepicker</label>
-              <input class="form-control mb-2" placeholder="Select a date" id="datepicker-default" value="2020-06-20" />
+              <input type="date" class="form-control mb-2" placeholder="Select a date" id="datepicker-default"/>
               <div class="input-icon mb-2">
-                <input class="form-control" placeholder="Select a date" id="datepicker-icon" value="2020-06-20" />
-                <span class="input-icon-addon"><!-- Download SVG icon from http://tabler.io/icons/icon/calendar -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-1">
-                    <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
-                    <path d="M16 3v4" />
-                    <path d="M8 3v4" />
-                    <path d="M4 11h16" />
-                    <path d="M11 15h1" />
-                    <path d="M12 15v3" />
-                  </svg></span>
+                <input type="datetime-local" class="form-control" placeholder="Select a date" id="datepicker-icon" value="2020-06-20 12:00" />
               </div>
               <div class="input-icon">
                 <span class="input-icon-addon"><!-- Download SVG icon from http://tabler.io/icons/icon/calendar -->
@@ -54,10 +59,6 @@
                 <input class="form-control" placeholder="Select a date" id="datepicker-icon-prepend"
                   value="2020-06-20" />
               </div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Inline datepicker</label>
-              <div class="datepicker-inline" id="datepicker-inline"></div>
             </div>
             <div class="mb-3">
               <label class="form-label">Progress</label>
@@ -103,7 +104,7 @@
             </div>
             <div class="mb-3">
               <label class="form-label">Tags input</label>
-              <select class="form-select" placeholder="Select tags" id="select-tags" value="" multiple>
+              <select class="tags form-select" placeholder="Select tags" id="select-tags" value="" multiple>
                 <option value="HTML">HTML</option>
                 <option value="JavaScript">JavaScript</option>
                 <option value="CSS">CSS</option>

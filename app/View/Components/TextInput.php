@@ -45,7 +45,7 @@ class TextInput extends Component
     ) {
         $this->label = $label;
         $this->name = $name;
-        $this->type = in_array($type, ['text', 'password', 'email', 'url', 'tel', 'number']) ? $type : 'text';
+        $this->type = in_array($type, ['color', 'date', 'text', 'password', 'email', 'url', 'tel', 'number']) ? $type : 'text';
         $this->placeholder = $placeholder;
         $this->value = $value;
         $this->required = $required;

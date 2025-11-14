@@ -1,11 +1,18 @@
 import axios from 'axios';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import '@tabler/core/dist/js/tabler.min.js';
 import "@tabler/core/dist/css/tabler.min.css";
 import "@tabler/core/dist/css/tabler-vendors.min.css";
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
+import TomSelect from 'tom-select';
+import 'tom-select/dist/css/tom-select.css';
+import 'tom-select/dist/css/tom-select.bootstrap5.css';
 
 import 'tabulator-tables/dist/css/tabulator_bootstrap5.min.css';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
@@ -27,9 +34,5 @@ window.Tabulator = Tabulator;
 window.ApexCharts = ApexCharts;
 window.jsVectorMap = jsVectorMap;
 
-
-console.group('%cbootstrap.js :: 31 =============================', 'color: #932818; font-size: 1rem');
-console.log(echarts);
-console.groupEnd();
-
+window.TomSelect = TomSelect;
 window.echarts = echarts;
