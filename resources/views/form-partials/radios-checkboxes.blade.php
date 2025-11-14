@@ -1,92 +1,41 @@
 <div class="mb-3">
   <div class="form-label">Radios</div>
   <div>
-    <label class="form-check">
-      <input class="form-check-input" type="radio" name="radios" checked />
-      <span class="form-check-label">Option 1</span>
-    </label>
-    <label class="form-check">
-      <input class="form-check-input" type="radio" name="radios" />
-      <span class="form-check-label">Option 2</span>
-    </label>
-    <label class="form-check">
-      <input class="form-check-input" type="radio" disabled />
-      <span class="form-check-label">Option 3</span>
-    </label>
-    <label class="form-check">
-      <input class="form-check-input" type="radio" checked disabled />
-      <span class="form-check-label">Option 4</span>
-    </label>
+    <x-radio-input name="radios" value="1" label="Option 1" :checked="true" />
+    <x-radio-input name="radios" value="2" label="Option 2" />
+    <x-radio-input name="radios" value="3" label="Option 3" :disabled="true" />
+    <x-radio-input name="radios" value="4" label="Option 4" :checked="true" :disabled="true" />
   </div>
 </div>
 <div class="mb-3">
   <div class="form-label">Inline Radios</div>
   <div>
-    <label class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="radios-inline" checked />
-      <span class="form-check-label">Option 1</span>
-    </label>
-    <label class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="radios-inline" />
-      <span class="form-check-label">Option 2</span>
-    </label>
-    <label class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="radios-inline" disabled />
-      <span class="form-check-label">Option 3</span>
-    </label>
+    <x-radio-input name="radios-inline" value="1" label="Option 1" :checked="true" :inline="true" />
+    <x-radio-input name="radios-inline" value="2" label="Option 2" :inline="true" />
+    <x-radio-input name="radios-inline" value="3" label="Option 3" :disabled="true" :inline="true" />
   </div>
 </div>
 <div class="mb-3">
   <div class="form-label">Checkboxes</div>
   <div>
-    <label class="form-check">
-      <input class="form-check-input" type="checkbox" />
-      <span class="form-check-label">Checkbox input</span>
-    </label>
-    <label class="form-check">
-      <input class="form-check-input" type="checkbox" disabled />
-      <span class="form-check-label">Disabled checkbox input</span>
-    </label>
-    <label class="form-check">
-      <input class="form-check-input" type="checkbox" checked />
-      <span class="form-check-label">Checked checkbox input</span>
-    </label>
+    <x-checkbox-input name="checkbox1" label="Checkbox input" />
+    <x-checkbox-input name="checkbox2" label="Disabled checkbox input" :disabled="true" />
+    <x-checkbox-input name="checkbox3" label="Checked checkbox input" :checked="true" />
   </div>
 </div>
 <div class="mb-3">
   <div class="form-label">Inline Checkboxes</div>
   <div>
-    <label class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" />
-      <span class="form-check-label">Option 1</span>
-    </label>
-    <label class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" disabled />
-      <span class="form-check-label">Option 2</span>
-    </label>
-    <label class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" checked />
-      <span class="form-check-label">Option 3</span>
-    </label>
+    <x-checkbox-input name="inline-checkbox1" label="Option 1" :inline="true" />
+    <x-checkbox-input name="inline-checkbox2" label="Option 2" :disabled="true" :inline="true" />
+    <x-checkbox-input name="inline-checkbox3" label="Option 3" :checked="true" :inline="true" />
   </div>
 </div>
 <div class="mb-3">
   <label class="form-label">Checkboxes with description</label>
-  <label class="form-check">
-    <input class="form-check-input" type="checkbox" />
-    <span class="form-check-label"> Default checkbox </span>
-    <span class="form-check-description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-  </label>
-  <label class="form-check">
-    <input class="form-check-input" type="checkbox" />
-    <span class="form-check-label"> Longer checkbox item that wraps on to two separate lines </span>
-    <span class="form-check-description"> Ab alias aut, consequuntur cumque esse eveniet incidunt laborum
-      minus molestiae. </span>
-  </label>
-  <label class="form-check">
-    <input class="form-check-input" type="checkbox" />
-    <span class="form-check-label"> Default checkbox without description </span>
-  </label>
+  <x-checkbox-input name="desc-checkbox1" label="Default checkbox" description="Lorem ipsum dolor sit amet, consectetur adipisicing elit." />
+  <x-checkbox-input name="desc-checkbox2" label="Longer checkbox item that wraps on to two separate lines" description="Ab alias aut, consequuntur cumque esse eveniet incidunt laborum minus molestiae." />
+  <x-checkbox-input name="desc-checkbox3" label="Default checkbox without description" />
 </div>
 <div class="mb-3">
   <div class="form-label">Toggle switches</div>
