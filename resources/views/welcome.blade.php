@@ -238,6 +238,7 @@
     @include('mocks.modals')
     @include('mocks.settings')
     @vite('resources/js/app.js')
+    @vite('resources/js/home.js')
 
 </body>
 
