@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->name('v1.')->group(function () {
     Route::get('/about', function () {
-        return response()->json(['
-            app' => 'Laravel Starter API',
+        return response()->json([
+            'app' => 'Laravel Starter API',
             'version' => '1.0.0',
             'description' => 'API de démarrage Laravel avec authentification Sanctum',
         ]);
