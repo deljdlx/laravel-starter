@@ -12,7 +12,7 @@ class TextInputComponentTest extends TestCase
     public function test_text_input_component_renders(): void
     {
         $view = $this->blade(
-            '<x-text-input label="Email" name="email" type="email" placeholder="Enter email" />'
+            '<x-text-input name="email" label="Email" type="email" placeholder="Enter email" />'
         );
 
         $view->assertSee('Email');
@@ -27,7 +27,7 @@ class TextInputComponentTest extends TestCase
     public function test_text_input_component_with_required(): void
     {
         $view = $this->blade(
-            '<x-text-input label="Password" name="password" type="password" :required="true" />'
+            '<x-text-input name="password" label="Password" type="password" :required="true" />'
         );
 
         $view->assertSee('Password');
@@ -41,7 +41,7 @@ class TextInputComponentTest extends TestCase
     public function test_text_input_component_with_disabled(): void
     {
         $view = $this->blade(
-            '<x-text-input label="Username" name="username" value="john" :disabled="true" />'
+            '<x-text-input name="username" label="Username" value="john" :disabled="true" />'
         );
 
         $view->assertSee('Username');
@@ -55,7 +55,7 @@ class TextInputComponentTest extends TestCase
     public function test_text_input_component_with_readonly(): void
     {
         $view = $this->blade(
-            '<x-text-input label="ID" name="id" value="123" :readonly="true" />'
+            '<x-text-input name="id" label="ID" value="123" :readonly="true" />'
         );
 
         $view->assertSee('ID');
@@ -68,11 +68,26 @@ class TextInputComponentTest extends TestCase
     public function test_text_input_component_with_description(): void
     {
         $view = $this->blade(
-            '<x-text-input label="Count" name="count" description="10/100" />'
+            '<x-text-input name="count" label="Count" description="10/100" />'
         );
 
         $view->assertSee('Count');
         $view->assertSee('10/100');
         $view->assertSee('class="form-label-description"', false);
+    }
+
+    /**
+     * Test that the TextInput component renders without label
+     */
+    public function test_text_input_component_without_label(): void
+    {
+        $view = $this->blade(
+            '<x-text-input name="search" placeholder="Search..." />'
+        );
+
+        $view->assertDontSee('<label', false);
+        $view->assertSee('name="search"', false);
+        $view->assertSee('placeholder="Search..."', false);
+        $view->assertSee('type="text"', false);
     }
 }

@@ -1,10 +1,12 @@
 <div class="mb-3" {{ $attributes }}>
-    <label class="form-label{{ $required ? ' required' : '' }}" for="{{ $id }}">
-        {{ $label }}
-        @if($description)
-            <span class="form-label-description">{{ $description }}</span>
-        @endif
-    </label>
+    @if($label !== null)
+        <label class="form-label{{ $required ? ' required' : '' }}" for="{{ $id }}">
+            {{ $label }}
+            @if($description)
+                <span class="form-label-description">{{ $description }}</span>
+            @endif
+        </label>
+    @endif
     <input 
         type="{{ $type }}" 
         class="form-control" 
