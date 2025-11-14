@@ -1,5 +1,14 @@
-<div class="mb-3" {{ $attributes }}>
-    @if($label !== null)
+@php
+if($floating) {
+    // merge class
+    $attributes = $attributes->merge([
+        'class' => 'form-floating'
+    ]);
+}
+@endphp
+
+<div {{ $attributes }}>
+    @if($label !== null && !$floating)
         <label class="form-label{{ $required ? ' required' : '' }}" for="{{ $id }}">
             {{ $label }}
             @if($description)
@@ -26,4 +35,9 @@
             </option>
         @endforeach
     </select>
+    @if($label !== null && $floating)
+        <label for="{{ $id }}">
+            {{ $label }}
+        </label>
+    @endif
 </div>

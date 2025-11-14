@@ -28,6 +28,8 @@ class SelectInput extends Component
 
     public ?string $id;
 
+    public bool $floating = false;
+
     /**
      * Create a new component instance.
      */
@@ -41,7 +43,8 @@ class SelectInput extends Component
         bool $disabled = false,
         bool $multiple = false,
         ?string $description = null,
-        ?string $id = null
+        ?string $id = null,
+        bool $floating = false,
     ) {
         $this->name = $name;
         $this->options = $options;
@@ -53,6 +56,8 @@ class SelectInput extends Component
         $this->multiple = $multiple;
         $this->description = $description;
         $this->id = $id ?? $name;
+
+        $this->floating = $floating;
     }
 
     /**
@@ -61,7 +66,7 @@ class SelectInput extends Component
     public function isSelected(string $value): bool
     {
         $oldValue = old($this->name);
-        
+
         if ($oldValue !== null) {
             if (is_array($oldValue)) {
                 return in_array($value, $oldValue);
