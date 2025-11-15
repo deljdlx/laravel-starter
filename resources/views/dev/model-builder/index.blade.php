@@ -7,6 +7,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Model Builder - Developer Tools</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- CodeMirror for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
 </head>
 <body>
     <div class="page">
@@ -135,7 +141,7 @@
 
                     <!-- Confirmation Modal -->
                     <div class="modal modal-blur fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Confirm Model Generation</h5>
@@ -143,10 +149,14 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <h3 class="text-muted h5">The following files will be generated:</h3>
+                                        <h3 class="text-muted h5">Preview of files to be generated:</h3>
                                     </div>
-                                    <div id="confirmation-operations"></div>
-                                    <div class="alert alert-info mt-3">
+                                    
+                                    <!-- Tabs for file preview -->
+                                    <ul class="nav nav-tabs mb-3" id="preview-tabs" role="tablist"></ul>
+                                    <div class="tab-content" id="preview-content" style="max-height: 500px; overflow-y: auto;"></div>
+                                    
+                                    <div class="alert alert-info mt-3 mb-0">
                                         <strong>Note:</strong> Make sure to review the generated files and run migrations if needed.
                                     </div>
                                 </div>
@@ -185,12 +195,12 @@
             'binary'
         ];
 
-        // Relation types
+        // Relation types with labels
         const relationTypes = [
-            'belongsTo',
-            'hasOne',
-            'hasMany',
-            'belongsToMany'
+            { value: 'belongsTo', label: 'Belongs To (One-to-One/Many)' },
+            { value: 'hasOne', label: 'Has One' },
+            { value: 'hasMany', label: 'Has Many (One-to-Many)' },
+            { value: 'belongsToMany', label: 'Belongs To Many (Many-to-Many)' }
         ];
 
         // Foreign key actions
@@ -236,9 +246,10 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3 mb-2">
-                            <label class="form-label">Column Name</label>
+                            <label class="form-label">Column Name <span class="text-muted small" id="column-name-hint-${rowId}">(optional for many-to-many)</span></label>
                             <input type="text" class="form-control form-control-sm" 
                                    name="attributes[${attributeCounter}][name]" 
+                                   id="column-name-${rowId}"
                                    placeholder="e.g., title"
                                    pattern="[a-z_][a-z0-9_]*"
                                    required>
@@ -299,8 +310,8 @@
                         </div>
                         <div class="col-md-3 mb-2">
                             <label class="form-label">Relation Type</label>
-                            <select class="form-select form-select-sm" name="attributes[${attributeCounter}][relation_type]">
-                                ${relationTypes.map(type => `<option value="${type}">${type}</option>`).join('')}
+                            <select class="form-select form-select-sm" name="attributes[${attributeCounter}][relation_type]" onchange="handleRelationTypeChange(this, '${rowId}')">
+                                ${relationTypes.map(type => `<option value="${type.value}">${type.label}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-3 mb-2">
@@ -329,6 +340,29 @@
             const row = document.getElementById(rowId);
             if (row) {
                 row.remove();
+            }
+        }
+
+        /**
+         * Handle relation type change - make column name optional for many-to-many
+         */
+        function handleRelationTypeChange(selectElement, rowId) {
+            const relationType = selectElement.value;
+            const columnNameInput = document.getElementById(`column-name-${rowId}`);
+            const columnNameHint = document.getElementById(`column-name-hint-${rowId}`);
+            
+            if (relationType === 'belongsToMany') {
+                columnNameInput.required = false;
+                columnNameInput.placeholder = 'Leave empty for auto-generated pivot table';
+                if (columnNameHint) {
+                    columnNameHint.style.display = 'inline';
+                }
+            } else {
+                columnNameInput.required = true;
+                columnNameInput.placeholder = 'e.g., title';
+                if (columnNameHint) {
+                    columnNameHint.style.display = 'none';
+                }
             }
         }
 
@@ -413,40 +447,47 @@
 
                 const preview = await response.json();
                 
-                // Build confirmation content
-                let html = '<div class="list-group list-group-flush">';
+                // Build tabs
+                const tabsContainer = document.getElementById('preview-tabs');
+                const contentContainer = document.getElementById('preview-content');
+                
+                let tabsHtml = '';
+                let contentHtml = '';
+                
                 preview.operations.forEach((op, index) => {
                     const icon = op.type === 'model' ? '📄' : op.type === 'migration' ? '🗄️' : op.type === 'pivot_migration' ? '🔗' : '🏭';
-                    html += `
-                        <div class="list-group-item">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <span class="avatar">${icon}</span>
-                                </div>
-                                <div class="col">
-                                    <div class="text-truncate">
-                                        <strong>${escapeHtml(op.description)}</strong>
-                                    </div>
-                                    <div class="text-muted text-truncate">
-                                        <code>${escapeHtml(op.path)}</code>
-                                    </div>
-                                    ${op.traits ? `<div class="text-muted small">Traits: ${op.traits.join(', ')}</div>` : ''}
-                                    ${op.note ? `<div class="text-info small">${escapeHtml(op.note)}</div>` : ''}
-                                </div>
+                    const tabId = `tab-${index}`;
+                    const active = index === 0 ? 'active' : '';
+                    
+                    // Tab header
+                    tabsHtml += `
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link ${active}" id="${tabId}-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#${tabId}" type="button" role="tab"
+                                    onclick="activateTab('${tabId}')">
+                                ${icon} ${escapeHtml(op.description)}
+                            </button>
+                        </li>
+                    `;
+                    
+                    // Tab content
+                    contentHtml += `
+                        <div class="tab-pane fade ${active ? 'show active' : ''}" id="${tabId}" role="tabpanel">
+                            <div class="mb-2">
+                                <small class="text-muted">${escapeHtml(op.path)}</small>
+                                ${op.note ? `<div class="text-info small">${escapeHtml(op.note)}</div>` : ''}
                             </div>
+                            <textarea id="editor-${index}" class="form-control"></textarea>
                         </div>
                     `;
                 });
-                html += '</div>';
                 
-                if (preview.summary.has_pivot_tables) {
-                    html += '<div class="alert alert-warning mt-3 mb-0"><strong>Note:</strong> Pivot tables will be created for many-to-many relationships.</div>';
-                }
-                
-                document.getElementById('confirmation-operations').innerHTML = html;
+                tabsContainer.innerHTML = tabsHtml;
+                contentContainer.innerHTML = contentHtml;
                 
                 // Store data for later use
                 window.pendingGenerationData = data;
+                window.previewOperations = preview.operations;
                 
                 // Show modal using data attribute
                 const modalElement = document.getElementById('confirmation-modal');
@@ -460,10 +501,45 @@
                 backdrop.id = 'modal-backdrop';
                 document.body.appendChild(backdrop);
                 
+                // Initialize CodeMirror editors after modal is shown
+                setTimeout(() => {
+                    window.codeEditors = [];
+                    preview.operations.forEach((op, index) => {
+                        const editor = CodeMirror.fromTextArea(document.getElementById(`editor-${index}`), {
+                            mode: 'application/x-httpd-php',
+                            theme: 'monokai',
+                            lineNumbers: true,
+                            readOnly: true,
+                            lineWrapping: true,
+                            viewportMargin: Infinity
+                        });
+                        editor.setValue(op.source || '// No source available');
+                        editor.setSize('100%', '400px');
+                        window.codeEditors.push(editor);
+                    });
+                    
+                    // Refresh the first editor to ensure proper display
+                    if (window.codeEditors.length > 0) {
+                        window.codeEditors[0].refresh();
+                    }
+                }, 100);
+                
             } catch (error) {
                 console.error('Error fetching preview:', error);
                 alert('Failed to load preview. Please try again.');
             }
+        }
+
+        /**
+         * Activate tab and refresh CodeMirror
+         */
+        function activateTab(tabId) {
+            const index = parseInt(tabId.split('-')[1]);
+            setTimeout(() => {
+                if (window.codeEditors && window.codeEditors[index]) {
+                    window.codeEditors[index].refresh();
+                }
+            }, 50);
         }
 
         /**
@@ -478,6 +554,14 @@
             const backdrop = document.getElementById('modal-backdrop');
             if (backdrop) {
                 backdrop.remove();
+            }
+            
+            // Clean up CodeMirror editors
+            if (window.codeEditors) {
+                window.codeEditors.forEach(editor => {
+                    editor.toTextArea();
+                });
+                window.codeEditors = [];
             }
         }
         
