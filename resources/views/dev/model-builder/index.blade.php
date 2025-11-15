@@ -557,7 +557,7 @@
                     `;
                     
                     // Reset form
-                    e.target.reset();
+                    document.getElementById('model-builder-form').reset();
                     document.getElementById('attributes-container').innerHTML = '';
                     addAttributeRow();
                 } else {
