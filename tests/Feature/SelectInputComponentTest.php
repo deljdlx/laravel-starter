@@ -32,7 +32,7 @@ class SelectInputComponentTest extends TestCase
     public function test_select_input_component_with_selected(): void
     {
         $view = $this->blade(
-            '<x-select-input name="size" label="Size" :options="[\'s\' => \'Small\', \'m\' => \'Medium\', \'l\' => \'Large\']" selected="m" />'
+            '<x-select-input name="size" label="Size" :options="[\'s\' => \'Small\', \'m\' => \'Medium\', \'l\' => \'Large\']" value="m" />'
         );
 
         $view->assertSee('Size');
@@ -112,7 +112,7 @@ class SelectInputComponentTest extends TestCase
     public function test_select_input_component_with_multiple_selected(): void
     {
         $view = $this->blade(
-            '<x-select-input name="skills" label="Skills" :options="[\'html\' => \'HTML\', \'css\' => \'CSS\', \'js\' => \'JS\']" :selected="[\'html\', \'js\']" :multiple="true" />'
+            '<x-select-input name="skills" label="Skills" :options="[\'html\' => \'HTML\', \'css\' => \'CSS\', \'js\' => \'JS\']" :value="[\'html\', \'js\']" :multiple="true" />'
         );
 
         $view->assertSee('Skills');
@@ -189,7 +189,7 @@ class SelectInputComponentTest extends TestCase
     public function test_select_input_component_placeholder_not_selected_when_value_selected(): void
     {
         $view = $this->blade(
-            '<x-select-input name="category" :options="[\'a\' => \'Category A\', \'b\' => \'Category B\']" placeholder="Choose category" selected="a" />'
+            '<x-select-input name="category" :options="[\'a\' => \'Category A\', \'b\' => \'Category B\']" placeholder="Choose category" value="a" />'
         );
 
         $view->assertSee('Choose category');
