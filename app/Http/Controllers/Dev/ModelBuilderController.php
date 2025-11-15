@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\Dev;
 
 use App\Http\Controllers\Controller;
+use App\Services\ModelGeneratorService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class ModelBuilderController extends Controller
 {
+    public function __construct(
+        private ModelGeneratorService $generator
+    ) {
+    }
     /**
      * Show the model builder page.
      */
@@ -56,7 +61,7 @@ class ModelBuilderController extends Controller
         $operations = [];
 
         // Generate model source code preview
-        $modelSource = $this->generateModelSource($modelName, $attributes, $timestamps, $softDeletes, $hasStatuses);
+        $modelSource = $this->generator->generateModelSource($modelName, $attributes, $timestamps, $softDeletes, $hasStatuses);
         $operations[] = [
             'type' => 'model',
             'description' => "Model: {$modelName}",
@@ -68,7 +73,7 @@ class ModelBuilderController extends Controller
         // Migration generation
         if ($generateMigration) {
             $tableName = Str::snake(Str::plural($modelName));
-            $migrationSource = $this->generateMigrationSource($modelName, $attributes, $timestamps, $softDeletes);
+            $migrationSource = $this->generator->generateMigrationSource($modelName, $attributes, $timestamps, $softDeletes);
             $operations[] = [
                 'type' => 'migration',
                 'description' => "Migration: create_{$tableName}_table",
@@ -88,7 +93,7 @@ class ModelBuilderController extends Controller
                     sort($tables);
                     $pivotTableName = implode('_', $tables);
 
-                    $pivotSource = $this->generatePivotMigrationSource($modelName, $foreignModel, $pivotTableName);
+                    $pivotSource = $this->generator->generatePivotMigrationSource($modelName, $foreignModel, $pivotTableName);
                     $operations[] = [
                         'type' => 'pivot_migration',
                         'description' => "Pivot: {$pivotTableName}",
@@ -102,7 +107,7 @@ class ModelBuilderController extends Controller
 
         // Factory generation
         if ($generateFactory) {
-            $factorySource = $this->generateFactorySource($modelName, $attributes);
+            $factorySource = $this->generator->generateFactorySource($modelName, $attributes);
             $operations[] = [
                 'type' => 'factory',
                 'description' => "Factory: {$modelName}Factory",
@@ -137,242 +142,6 @@ class ModelBuilderController extends Controller
         }
 
         return $traits;
-    }
-
-    /**
-     * Generate model source code for preview (without writing to file).
-     */
-    private function generateModelSource(string $modelName, array $attributes, bool $timestamps, bool $softDeletes, bool $hasStatuses): string
-    {
-        $fillable = [];
-        $casts = [];
-        $relations = [];
-
-        foreach ($attributes as $attribute) {
-            if (! empty($attribute['name'])) {
-                $fillable[] = $attribute['name'];
-            }
-
-            // Add casts for specific types
-            if (! empty($attribute['name']) && in_array($attribute['type'], ['boolean', 'integer', 'float', 'decimal', 'date', 'datetime', 'timestamp', 'json'])) {
-                $castType = $attribute['type'];
-                if ($castType === 'timestamp') {
-                    $castType = 'datetime';
-                }
-                $casts[$attribute['name']] = $castType;
-            }
-
-            // Generate relationships
-            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && ! empty($attribute['foreign_model'])) {
-                $relations[] = $this->generateRelationMethod($attribute);
-            }
-        }
-
-        $fillableStr = ! empty($fillable) ? "'".implode("',\n        '", $fillable)."'" : '';
-        $castsStr = $this->formatCastsArray($casts);
-        $relationsStr = implode("\n\n", $relations);
-
-        $uses = ['use Illuminate\Database\Eloquent\Model'];
-        $uses[] = 'use Illuminate\Database\Eloquent\Concerns\HasUlids';
-        if (! empty($relations)) {
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsTo';
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasOne';
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasMany';
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsToMany';
-        }
-        if ($softDeletes) {
-            $uses[] = 'use Illuminate\Database\Eloquent\SoftDeletes';
-        }
-        if ($hasStatuses) {
-            $uses[] = 'use Spatie\ModelStatus\HasStatuses';
-        }
-
-        $usesStr = implode(";\n", $uses).';';
-        $traits = ['HasUlids'];
-        if ($softDeletes) {
-            $traits[] = 'SoftDeletes';
-        }
-        if ($hasStatuses) {
-            $traits[] = 'HasStatuses';
-        }
-        $traitsStr = 'use '.implode(', ', $traits).';';
-        $timestampsStr = ! $timestamps ? "\n    public \$timestamps = false;" : '';
-
-        return <<<PHP
-<?php
-
-namespace App\Models;
-
-{$usesStr}
-
-class {$modelName} extends Model
-{
-    {$traitsStr}{$timestampsStr}
-
-    protected \$fillable = [
-        {$fillableStr},
-    ];
-
-{$castsStr}
-{$relationsStr}
-}
-PHP;
-    }
-
-    /**
-     * Generate migration source code for preview (without writing to file).
-     */
-    private function generateMigrationSource(string $modelName, array $attributes, bool $timestamps, bool $softDeletes): string
-    {
-        $tableName = Str::snake(Str::plural($modelName));
-
-        $columns = [];
-        foreach ($attributes as $attribute) {
-            if (! empty($attribute['name'])) {
-                $column = $this->generateColumnDefinition($attribute);
-                $columns[] = $column;
-            }
-        }
-
-        $columnsStr = implode("\n", $columns);
-        $timestampsStr = $timestamps ? "\n            \$table->timestamps();" : '';
-        $softDeletesStr = $softDeletes ? "\n            \$table->softDeletes();" : '';
-
-        return <<<PHP
-<?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('{$tableName}', function (Blueprint \$table) {
-            \$table->ulid('id')->primary();
-{$columnsStr}{$timestampsStr}{$softDeletesStr}
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('{$tableName}');
-    }
-};
-PHP;
-    }
-
-    /**
-     * Generate factory source code for preview (without writing to file).
-     */
-    private function generateFactorySource(string $modelName, array $attributes): string
-    {
-        $factoryName = $modelName.'Factory';
-        $definitions = [];
-
-        foreach ($attributes as $attribute) {
-            if (empty($attribute['name'])) {
-                continue;
-            }
-
-            $name = $attribute['name'];
-            $type = $attribute['type'];
-
-            $faker = match ($type) {
-                'string' => 'fake()->sentence(3)',
-                'text' => 'fake()->paragraph()',
-                'integer' => 'fake()->numberBetween(1, 1000)',
-                'bigInteger' => 'fake()->numberBetween(1, 1000000)',
-                'float', 'decimal' => 'fake()->randomFloat(2, 0, 1000)',
-                'boolean' => 'fake()->boolean()',
-                'date' => 'fake()->date()',
-                'datetime', 'timestamp' => 'fake()->dateTime()',
-                'json' => "json_encode(['key' => fake()->word()])",
-                default => 'fake()->word()',
-            };
-
-            $definitions[] = "            '{$name}' => {$faker}";
-        }
-
-        $definitionsStr = implode(",\n", $definitions);
-
-        return <<<PHP
-<?php
-
-namespace Database\Factories;
-
-use App\Models\\{$modelName};
-use Illuminate\Database\Eloquent\Factories\Factory;
-
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\\{$modelName}>
- */
-class {$factoryName} extends Factory
-{
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-{$definitionsStr},
-        ];
-    }
-}
-PHP;
-    }
-
-    /**
-     * Generate pivot migration source code for preview (without writing to file).
-     */
-    private function generatePivotMigrationSource(string $modelName, string $foreignModel, string $pivotTableName): string
-    {
-        $modelColumn = Str::snake($modelName).'_id';
-        $foreignColumn = Str::snake($foreignModel).'_id';
-        $modelTable = Str::snake(Str::plural($modelName));
-        $foreignTable = Str::snake(Str::plural($foreignModel));
-
-        return <<<PHP
-<?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('{$pivotTableName}', function (Blueprint \$table) {
-            \$table->foreignUlid('{$modelColumn}')->constrained('{$modelTable}')->onDelete('cascade');
-            \$table->foreignUlid('{$foreignColumn}')->constrained('{$foreignTable}')->onDelete('cascade');
-            \$table->timestamps();
-            
-            \$table->primary(['{$modelColumn}', '{$foreignColumn}']);
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('{$pivotTableName}');
-    }
-};
-PHP;
     }
 
     /**
@@ -451,128 +220,13 @@ PHP;
      */
     private function generateModel(string $modelName, array $attributes, bool $timestamps, bool $softDeletes, bool $hasStatuses = false): string
     {
-        $fillable = [];
-        $casts = [];
-        $relations = [];
-
-        foreach ($attributes as $attribute) {
-            $fillable[] = $attribute['name'];
-
-            // Add casts for specific types
-            if (in_array($attribute['type'], ['boolean', 'integer', 'float', 'decimal', 'date', 'datetime', 'timestamp', 'json'])) {
-                $castType = $attribute['type'];
-                if ($castType === 'timestamp') {
-                    $castType = 'datetime';
-                }
-                $casts[$attribute['name']] = $castType;
-            }
-
-            // Generate relationships
-            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && ! empty($attribute['foreign_model'])) {
-                $relations[] = $this->generateRelationMethod($attribute);
-            }
-        }
-
-        $fillableStr = implode("',\n        '", $fillable);
-        $castsStr = $this->formatCastsArray($casts);
-        $relationsStr = implode("\n\n", $relations);
-
-        $uses = ['use Illuminate\Database\Eloquent\Model'];
-        $uses[] = 'use Illuminate\Database\Eloquent\Concerns\HasUlids';
-        if (! empty($relations)) {
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsTo';
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasOne';
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasMany';
-            $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsToMany';
-        }
-        if ($softDeletes) {
-            $uses[] = 'use Illuminate\Database\Eloquent\SoftDeletes';
-        }
-        if ($hasStatuses) {
-            $uses[] = 'use Spatie\ModelStatus\HasStatuses';
-        }
-
-        $usesStr = implode(";\n", $uses).';';
-        $traits = ['HasUlids'];
-        if ($softDeletes) {
-            $traits[] = 'SoftDeletes';
-        }
-        if ($hasStatuses) {
-            $traits[] = 'HasStatuses';
-        }
-        $traitsStr = 'use '.implode(', ', $traits).';';
-        $timestampsStr = ! $timestamps ? "\n    public \$timestamps = false;" : '';
-
-        $content = <<<PHP
-<?php
-
-namespace App\Models;
-
-{$usesStr}
-
-class {$modelName} extends Model
-{
-    {$traitsStr}{$timestampsStr}
-
-    protected \$fillable = [
-        '{$fillableStr}',
-    ];
-
-{$castsStr}
-{$relationsStr}
-}
-PHP;
-
+        $modelSource = $this->generator->generateModelSource($modelName, $attributes, $timestamps, $softDeletes, $hasStatuses);
+        
         $modelPath = app_path("Models/{$modelName}.php");
-
-        if (File::exists($modelPath)) {
-            throw new \Exception("Model {$modelName} already exists");
-        }
-
-        File::put($modelPath, $content);
+        File::ensureDirectoryExists(dirname($modelPath));
+        File::put($modelPath, $modelSource);
 
         return $modelPath;
-    }
-
-    /**
-     * Generate a relationship method.
-     */
-    private function generateRelationMethod(array $attribute): string
-    {
-        $relationType = $attribute['relation_type'] ?? 'belongsTo';
-        $foreignModel = $attribute['foreign_model'];
-        $methodName = Str::camel($foreignModel);
-
-        // Adjust method name for different relation types
-        if ($relationType === 'hasMany' || $relationType === 'belongsToMany') {
-            $methodName = Str::plural($methodName);
-        }
-
-        $relationClass = ucfirst($relationType);
-
-        return <<<PHP
-    public function {$methodName}(): {$relationClass}
-    {
-        return \$this->{$relationType}({$foreignModel}::class);
-    }
-PHP;
-    }
-
-    /**
-     * Format the casts array.
-     */
-    private function formatCastsArray(array $casts): string
-    {
-        if (empty($casts)) {
-            return '';
-        }
-
-        $lines = [];
-        foreach ($casts as $key => $value) {
-            $lines[] = "        '{$key}' => '{$value}'";
-        }
-
-        return "    protected \$casts = [\n".implode(",\n", $lines).",\n    ];";
     }
 
     /**
@@ -580,138 +234,17 @@ PHP;
      */
     private function generateMigration(string $modelName, array $attributes, bool $timestamps, bool $softDeletes): string
     {
+        $migrationSource = $this->generator->generateMigrationSource($modelName, $attributes, $timestamps, $softDeletes);
+        
         $tableName = Str::snake(Str::plural($modelName));
-        $className = 'Create'.Str::plural($modelName).'Table';
-
-        $columns = [];
-        $foreignKeys = [];
-
-        foreach ($attributes as $attribute) {
-            $column = $this->generateColumnDefinition($attribute);
-            $columns[] = $column;
-
-            // Handle foreign keys
-            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && ! empty($attribute['foreign_model'])) {
-                $foreignKeys[] = $this->generateForeignKeyDefinition($attribute, $tableName);
-            }
-        }
-
-        $columnsStr = implode("\n", $columns);
-        $timestampsStr = $timestamps ? "\n            \$table->timestamps();" : '';
-        $softDeletesStr = $softDeletes ? "\n            \$table->softDeletes();" : '';
-        $foreignKeysStr = ! empty($foreignKeys) ? "\n\n".implode("\n", $foreignKeys) : '';
-
-        $content = <<<PHP
-<?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('{$tableName}', function (Blueprint \$table) {
-            \$table->ulid('id')->primary();
-{$columnsStr}{$timestampsStr}{$softDeletesStr}
-        });{$foreignKeysStr}
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('{$tableName}');
-    }
-};
-PHP;
-
         $timestamp = date('Y_m_d_His');
-        $fileName = "{$timestamp}_create_{$tableName}_table.php";
-        $migrationPath = database_path("migrations/{$fileName}");
+        $migrationName = "{$timestamp}_create_{$tableName}_table.php";
+        $migrationPath = database_path("migrations/{$migrationName}");
 
-        File::put($migrationPath, $content);
+        File::ensureDirectoryExists(dirname($migrationPath));
+        File::put($migrationPath, $migrationSource);
 
         return $migrationPath;
-    }
-
-    /**
-     * Generate column definition for migration.
-     */
-    private function generateColumnDefinition(array $attribute): string
-    {
-        $name = $attribute['name'];
-        $type = $attribute['type'];
-        $nullable = $attribute['nullable'] ?? false;
-        $indexType = $attribute['index_type'] ?? 'none';
-        $isForeignKey = $attribute['is_foreign_key'] ?? false;
-
-        // Use foreignUlid for foreign keys instead of bigInteger
-        if ($isForeignKey && $type === 'bigInteger') {
-            $typeMethod = "foreignUlid('{$name}')";
-        } else {
-            // Map types to Laravel Blueprint methods
-            $typeMethod = match ($type) {
-                'string' => "string('{$name}')",
-                'text' => "text('{$name}')",
-                'integer' => "integer('{$name}')",
-                'bigInteger' => "bigInteger('{$name}')",
-                'float' => "float('{$name}')",
-                'decimal' => "decimal('{$name}', 8, 2)",
-                'boolean' => "boolean('{$name}')",
-                'date' => "date('{$name}')",
-                'datetime' => "dateTime('{$name}')",
-                'timestamp' => "timestamp('{$name}')",
-                'json' => "json('{$name}')",
-                'binary' => "binary('{$name}')",
-                default => "string('{$name}')",
-            };
-        }
-
-        $definition = "            \$table->{$typeMethod}";
-
-        if ($nullable) {
-            $definition .= '->nullable()';
-        }
-
-        if ($indexType === 'index') {
-            $definition .= '->index()';
-        } elseif ($indexType === 'unique') {
-            $definition .= '->unique()';
-        }
-
-        $definition .= ';';
-
-        return $definition;
-    }
-
-    /**
-     * Generate foreign key constraint definition.
-     */
-    private function generateForeignKeyDefinition(array $attribute, string $tableName): string
-    {
-        $columnName = $attribute['name'];
-        $foreignModel = $attribute['foreign_model'];
-        $foreignTable = Str::snake(Str::plural($foreignModel));
-        $onDelete = $attribute['on_delete'] ?? 'cascade';
-        $onUpdate = $attribute['on_update'] ?? 'cascade';
-
-        // Convert "set null" to "setNull" for Laravel
-        $onDeleteMethod = str_replace(' ', '', ucwords($onDelete));
-        $onDeleteMethod = lcfirst($onDeleteMethod);
-        $onUpdateMethod = str_replace(' ', '', ucwords($onUpdate));
-        $onUpdateMethod = lcfirst($onUpdateMethod);
-
-        return <<<PHP
-        Schema::table('{$tableName}', function (Blueprint \$table) {
-            \$table->foreign('{$columnName}')->references('id')->on('{$foreignTable}')->onDelete('{$onDeleteMethod}')->onUpdate('{$onUpdateMethod}');
-        });
-PHP;
     }
 
     /**
@@ -719,65 +252,13 @@ PHP;
      */
     private function generateFactory(string $modelName, array $attributes): string
     {
+        $factorySource = $this->generator->generateFactorySource($modelName, $attributes);
+        
         $factoryName = $modelName.'Factory';
-        $definitions = [];
-
-        foreach ($attributes as $attribute) {
-            $name = $attribute['name'];
-            $type = $attribute['type'];
-
-            $faker = match ($type) {
-                'string' => 'fake()->sentence(3)',
-                'text' => 'fake()->paragraph()',
-                'integer' => 'fake()->numberBetween(1, 1000)',
-                'bigInteger' => 'fake()->numberBetween(1, 1000000)',
-                'float', 'decimal' => 'fake()->randomFloat(2, 0, 1000)',
-                'boolean' => 'fake()->boolean()',
-                'date' => 'fake()->date()',
-                'datetime', 'timestamp' => 'fake()->dateTime()',
-                'json' => "json_encode(['key' => fake()->word()])",
-                default => 'fake()->word()',
-            };
-
-            $definitions[] = "            '{$name}' => {$faker}";
-        }
-
-        $definitionsStr = implode(",\n", $definitions);
-
-        $content = <<<PHP
-<?php
-
-namespace Database\Factories;
-
-use App\Models\\{$modelName};
-use Illuminate\Database\Eloquent\Factories\Factory;
-
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\\{$modelName}>
- */
-class {$factoryName} extends Factory
-{
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-{$definitionsStr},
-        ];
-    }
-}
-PHP;
-
         $factoryPath = database_path("factories/{$factoryName}.php");
 
-        if (File::exists($factoryPath)) {
-            throw new \Exception("Factory {$factoryName} already exists");
-        }
-
-        File::put($factoryPath, $content);
+        File::ensureDirectoryExists(dirname($factoryPath));
+        File::put($factoryPath, $factorySource);
 
         return $factoryPath;
     }
@@ -816,52 +297,15 @@ PHP;
      */
     private function generatePivotMigration(string $modelName, string $foreignModel, string $pivotTableName): string
     {
-        $modelColumn = Str::snake($modelName).'_id';
-        $foreignColumn = Str::snake($foreignModel).'_id';
-        $modelTable = Str::snake(Str::plural($modelName));
-        $foreignTable = Str::snake(Str::plural($foreignModel));
-
-        $className = 'Create'.Str::studly($pivotTableName).'Table';
-
-        $content = <<<PHP
-<?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('{$pivotTableName}', function (Blueprint \$table) {
-            \$table->foreignUlid('{$modelColumn}')->constrained('{$modelTable}')->onDelete('cascade');
-            \$table->foreignUlid('{$foreignColumn}')->constrained('{$foreignTable}')->onDelete('cascade');
-            \$table->timestamps();
-            
-            \$table->primary(['{$modelColumn}', '{$foreignColumn}']);
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('{$pivotTableName}');
-    }
-};
-PHP;
-
+        $pivotSource = $this->generator->generatePivotMigrationSource($modelName, $foreignModel, $pivotTableName);
+        
         $timestamp = date('Y_m_d_His');
         usleep(10000); // Small delay to ensure unique timestamps
         $fileName = "{$timestamp}_create_{$pivotTableName}_table.php";
         $migrationPath = database_path("migrations/{$fileName}");
 
-        File::put($migrationPath, $content);
+        File::ensureDirectoryExists(dirname($migrationPath));
+        File::put($migrationPath, $pivotSource);
 
         return $migrationPath;
     }

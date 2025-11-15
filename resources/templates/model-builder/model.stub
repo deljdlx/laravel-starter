@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+{{ uses }}
+
+class {{ modelName }} extends Model
+{
+    {{ traits }}{{ timestampsProperty }}
+
+    protected $fillable = [
+        {{ fillable }},
+    ];
+
+{{ casts }}
+{{ relations }}
+}
