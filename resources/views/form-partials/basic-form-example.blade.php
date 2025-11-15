@@ -1,7 +1,4 @@
-<form class="card">
-  <div class="card-header">
-    <h3 class="card-title">Basic form</h3>
-  </div>
+<div>
   <div class="card-body">
     <div class="mb-3">
       <label class="form-label required">Email address</label>
@@ -65,4 +62,4 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
-</form>
+</div>

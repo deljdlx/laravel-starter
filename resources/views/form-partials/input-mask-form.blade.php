@@ -1,8 +1,4 @@
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">Input mask</h3>
-  </div>
-  <div class="card-body">
+<div>
     <div class="mb-3">
       <label class="form-label">Date</label>
       <input type="text" name="input-mask" class="form-control" data-mask="00/00/0000" data-mask-visible="true"
@@ -44,5 +40,4 @@
       <input type="text" name="input-mask" class="form-control" data-mask="099.099.099.099"
         data-mask-visible="true" placeholder="000.000.000.000" autocomplete="off" />
     </div>
-  </div>
 </div>

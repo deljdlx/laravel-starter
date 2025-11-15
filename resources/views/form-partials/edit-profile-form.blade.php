@@ -1,6 +1,5 @@
 <form class="card">
   <div class="card-body">
-    <h3 class="card-title">Edit Profile</h3>
     <div class="row row-cards">
       <div class="col-md-5">
         <x-text-input label="Company" name="company" placeholder="Company" value="Creative Code Inc." :disabled="true" />

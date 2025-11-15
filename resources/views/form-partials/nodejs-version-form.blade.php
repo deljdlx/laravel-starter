@@ -1,5 +1,4 @@
-<div class="card">
-  <div class="card-body">
+<div>
     <h3 class="card-title">Node.js Version</h3>
     <p class="card-subtitle">
       The version of Node.js that is used in the Build Step and for Serverless
@@ -10,7 +9,4 @@
       <option>14.x</option>
       <option>12.x</option>
     </select>
-  </div>
-  <div class="card-footer">Learn more about <a href="#">Node.js Version</a>
-  </div>
 </div>
