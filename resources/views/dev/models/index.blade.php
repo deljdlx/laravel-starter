@@ -69,12 +69,12 @@
     </div>
 
     <!-- Model Details Modal -->
-    <div class="modal modal-blur fade" id="model-details-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="model-details-modal" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modal-title">Model Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modal-body">
                     <div class="text-center">
@@ -85,6 +85,7 @@
             </div>
         </div>
     </div>
+    <div class="modal-backdrop" id="modal-backdrop" style="display: none;"></div>
 
     <script>
         // API endpoints
@@ -174,10 +175,35 @@
         }
 
         /**
+         * Open the modal
+         */
+        function openModal() {
+            const modal = document.getElementById('model-details-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+            modal.style.display = 'block';
+            backdrop.style.display = 'block';
+            modal.classList.add('show');
+            backdrop.classList.add('show');
+            document.body.classList.add('modal-open');
+        }
+
+        /**
+         * Close the modal
+         */
+        function closeModal() {
+            const modal = document.getElementById('model-details-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+            modal.style.display = 'none';
+            backdrop.style.display = 'none';
+            modal.classList.remove('show');
+            backdrop.classList.remove('show');
+            document.body.classList.remove('modal-open');
+        }
+
+        /**
          * Load and show details for a specific model
          */
         async function showModelDetails(modelName) {
-            const modal = new bootstrap.Modal(document.getElementById('model-details-modal'));
             const modalTitle = document.getElementById('modal-title');
             const modalBody = document.getElementById('modal-body');
 
@@ -189,7 +215,7 @@
                 </div>
             `;
 
-            modal.show();
+            openModal();
 
             try {
                 const response = await fetch(`${API_BASE}/${encodeURIComponent(modelName)}`);

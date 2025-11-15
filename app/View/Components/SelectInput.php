@@ -71,6 +71,7 @@ class SelectInput extends Component
             if (is_array($oldValue)) {
                 return in_array($value, $oldValue);
             }
+
             return (string) $oldValue === (string) $value;
         }
 
@@ -78,6 +79,7 @@ class SelectInput extends Component
             if (is_array($this->value)) {
                 return in_array($value, $this->value);
             }
+
             return (string) $this->value === (string) $value;
         }
 

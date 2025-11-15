@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Dev;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use ReflectionClass;
@@ -42,14 +41,14 @@ class ModelInspectorController extends Controller
     /**
      * Get detailed information about a specific model.
      *
-     * @param string $modelName Short class name (e.g., "User")
+     * @param  string  $modelName  Short class name (e.g., "User")
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($modelName)
     {
         $modelClass = $this->findModelClass($modelName);
 
-        if (!$modelClass) {
+        if (! $modelClass) {
             return response()->json([
                 'error' => "Model '{$modelName}' not found",
             ], 404);
@@ -69,32 +68,30 @@ class ModelInspectorController extends Controller
             return response()->json($data);
         } catch (\Exception $e) {
             return response()->json([
-                'error' => 'Failed to inspect model: ' . $e->getMessage(),
+                'error' => 'Failed to inspect model: '.$e->getMessage(),
             ], 500);
         }
     }
 
     /**
      * Discover all Eloquent models in the app/Models directory.
-     *
-     * @return array
      */
     private function discoverModels(): array
     {
         $modelsPath = app_path('Models');
         $models = [];
 
-        if (!File::isDirectory($modelsPath)) {
+        if (! File::isDirectory($modelsPath)) {
             return $models;
         }
 
         $files = File::allFiles($modelsPath);
 
         foreach ($files as $file) {
-            $className = 'App\\Models\\' . str_replace(
+            $className = 'App\\Models\\'.str_replace(
                 ['/', '.php'],
                 ['\\', ''],
-                Str::after($file->getPathname(), $modelsPath . DIRECTORY_SEPARATOR)
+                Str::after($file->getPathname(), $modelsPath.DIRECTORY_SEPARATOR)
             );
 
             if (class_exists($className) && is_subclass_of($className, Model::class)) {
@@ -107,9 +104,6 @@ class ModelInspectorController extends Controller
 
     /**
      * Find a model class by its short name.
-     *
-     * @param string $shortName
-     * @return string|null
      */
     private function findModelClass(string $shortName): ?string
     {
@@ -126,9 +120,6 @@ class ModelInspectorController extends Controller
 
     /**
      * Get basic information about a model.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @return array
      */
     private function getModelBasicInfo(Model $model): array
     {
@@ -144,9 +135,6 @@ class ModelInspectorController extends Controller
 
     /**
      * Get model attributes information.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @return array
      */
     private function getModelAttributes(Model $model): array
     {
@@ -160,9 +148,6 @@ class ModelInspectorController extends Controller
 
     /**
      * Get model casts with their types.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @return array
      */
     private function getModelCasts(Model $model): array
     {
@@ -181,9 +166,6 @@ class ModelInspectorController extends Controller
 
     /**
      * Get model relationships.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @return array
      */
     private function getModelRelationships(Model $model): array
     {
@@ -221,9 +203,6 @@ class ModelInspectorController extends Controller
 
     /**
      * Get database table schema.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @return array
      */
     private function getTableSchema(Model $model): array
     {
@@ -248,7 +227,7 @@ class ModelInspectorController extends Controller
             // Get indexes
             $indexes = $schema->getIndexes($table);
             $indexInfo = [];
-            
+
             foreach ($indexes as $index) {
                 $indexInfo[] = [
                     'name' => $index['name'],
@@ -265,7 +244,7 @@ class ModelInspectorController extends Controller
             return [
                 'columns' => [],
                 'indexes' => [],
-                'error' => 'Failed to retrieve schema: ' . $e->getMessage(),
+                'error' => 'Failed to retrieve schema: '.$e->getMessage(),
             ];
         }
     }
