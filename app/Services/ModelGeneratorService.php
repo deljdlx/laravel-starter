@@ -67,6 +67,7 @@ class ModelGeneratorService
 
         $uses = ['use Illuminate\Database\Eloquent\Model'];
         $uses[] = 'use Illuminate\Database\Eloquent\Concerns\HasUlids';
+        $uses[] = 'use Illuminate\Database\Eloquent\Factories\HasFactory';
         if (! empty($relations)) {
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsTo';
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasOne';
@@ -81,7 +82,7 @@ class ModelGeneratorService
         }
 
         $usesStr = implode(";\n", $uses).';';
-        $traits = ['HasUlids'];
+        $traits = ['HasFactory', 'HasUlids'];
         if ($softDeletes) {
             $traits[] = 'SoftDeletes';
         }
