@@ -32,7 +32,7 @@ See [TEXTINPUT_COMPONENT.md](/TEXTINPUT_COMPONENT.md) for full documentation.
 
 ## Structure
 
-The form has been divided into 17 logical partials:
+The form has been divided into 23 logical partials (17 original + 6 new from additional-forms decomposition):
 
 ### Column 1 - Basic Form Elements
 
@@ -152,13 +152,59 @@ Contains advanced input types:
 ### Additional Forms
 
 #### additional-forms.blade.php
-Contains complete form examples:
-- Project ID form
-- Node.js Version form
-- Basic form (email/password/select/checkboxes)
-- Input mask form
-- My Profile form
-- Edit Profile form
+This file now serves as a layout orchestrator for complete form examples, using @include directives to compose the following standalone form partials:
+
+#### project-id-form.blade.php
+Complete card with read-only Project ID input:
+- Card header with title and subtitle
+- Input with icon addon (file icon SVG)
+- Card footer with learn more link and save button
+
+#### nodejs-version-form.blade.php
+Node.js version selection card:
+- Card with title and explanatory subtitle
+- Select dropdown for version selection (14.x, 12.x)
+- Card footer with learn more link
+
+#### basic-form-example.blade.php
+Complete basic form demonstration:
+- Email input (required) with form hint
+- Password input (required) with validation hint
+- Select input with optgroups
+- Checkbox group with 3 options (one disabled)
+- Submit button
+
+#### input-mask-form.blade.php
+Input mask examples for formatted data entry:
+- Date mask (00/00/0000)
+- Hour mask (00:00:00)
+- Date & Hour combined mask
+- ZIP Code mask (00000-000)
+- Money mask with reverse input
+- Telephone mask (0000-0000)
+- Telephone with Code Area mask
+- IP Address mask
+
+#### my-profile-form.blade.php
+User profile form with avatar:
+- Avatar image display
+- Email address input (both raw and TextInput component)
+- Bio textarea
+- Password input (using TextInput component)
+- Save button in card footer
+
+#### edit-profile-form.blade.php
+Extended profile editing form:
+- Company input (disabled, using TextInput component)
+- Username input (using TextInput component)
+- Email address input (using TextInput component)
+- First and Last Name inputs (using TextInput component)
+- Address input (using TextInput component)
+- City input (using TextInput component)
+- Postal Code input (raw HTML)
+- Country select dropdown
+- About Me textarea
+- Update Profile button
 
 ## Usage
 
