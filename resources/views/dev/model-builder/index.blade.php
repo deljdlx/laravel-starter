@@ -209,6 +209,20 @@
         });
 
         /**
+         * Escape HTML to prevent XSS
+         */
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        /**
          * Add a new attribute row
          */
         function addAttributeRow() {
@@ -434,15 +448,47 @@
                 // Store data for later use
                 window.pendingGenerationData = data;
                 
-                // Show modal
-                const modal = new bootstrap.Modal(document.getElementById('confirmation-modal'));
-                modal.show();
+                // Show modal using data attribute
+                const modalElement = document.getElementById('confirmation-modal');
+                modalElement.classList.add('show');
+                modalElement.style.display = 'block';
+                document.body.classList.add('modal-open');
+                
+                // Add backdrop
+                const backdrop = document.createElement('div');
+                backdrop.className = 'modal-backdrop fade show';
+                backdrop.id = 'modal-backdrop';
+                document.body.appendChild(backdrop);
                 
             } catch (error) {
                 console.error('Error fetching preview:', error);
                 alert('Failed to load preview. Please try again.');
             }
         }
+
+        /**
+         * Close modal
+         */
+        function closeModal() {
+            const modalElement = document.getElementById('confirmation-modal');
+            modalElement.classList.remove('show');
+            modalElement.style.display = 'none';
+            document.body.classList.remove('modal-open');
+            
+            const backdrop = document.getElementById('modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+        }
+        
+        // Add close handlers for the modal
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('confirmation-modal');
+            const closeButtons = modal.querySelectorAll('[data-bs-dismiss="modal"]');
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', closeModal);
+            });
+        });
 
         /**
          * Handle confirmed generation
@@ -452,8 +498,7 @@
             if (!data) return;
             
             // Close modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('confirmation-modal'));
-            modal.hide();
+            closeModal();
             
             const submitBtn = document.getElementById('submit-btn');
             const resultDiv = document.getElementById('result-messages');
