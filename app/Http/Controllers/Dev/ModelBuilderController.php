@@ -15,7 +15,7 @@ class ModelBuilderController extends Controller
     public function show()
     {
         $models = $this->getAvailableModels();
-        
+
         return view('dev.model-builder.index', [
             'models' => $models,
         ]);
@@ -106,7 +106,7 @@ class ModelBuilderController extends Controller
             }
 
             // Generate relationships
-            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && !empty($attribute['foreign_model'])) {
+            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && ! empty($attribute['foreign_model'])) {
                 $relations[] = $this->generateRelationMethod($attribute);
             }
         }
@@ -116,7 +116,7 @@ class ModelBuilderController extends Controller
         $relationsStr = implode("\n\n", $relations);
 
         $uses = ['use Illuminate\Database\Eloquent\Model'];
-        if (!empty($relations)) {
+        if (! empty($relations)) {
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsTo';
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasOne';
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasMany';
@@ -126,9 +126,9 @@ class ModelBuilderController extends Controller
             $uses[] = 'use Illuminate\Database\Eloquent\SoftDeletes';
         }
 
-        $usesStr = implode(";\n", $uses) . ';';
+        $usesStr = implode(";\n", $uses).';';
         $traitsStr = $softDeletes ? 'use SoftDeletes;' : '';
-        $timestampsStr = !$timestamps ? "\n    public \$timestamps = false;" : '';
+        $timestampsStr = ! $timestamps ? "\n    public \$timestamps = false;" : '';
 
         $content = <<<PHP
 <?php
@@ -151,7 +151,7 @@ class {$modelName} extends Model
 PHP;
 
         $modelPath = app_path("Models/{$modelName}.php");
-        
+
         if (File::exists($modelPath)) {
             throw new \Exception("Model {$modelName} already exists");
         }
@@ -176,7 +176,7 @@ PHP;
         }
 
         $relationClass = ucfirst($relationType);
-        
+
         return <<<PHP
     public function {$methodName}(): {$relationClass}
     {
@@ -199,7 +199,7 @@ PHP;
             $lines[] = "        '{$key}' => '{$value}'";
         }
 
-        return "    protected \$casts = [\n" . implode(",\n", $lines) . ",\n    ];";
+        return "    protected \$casts = [\n".implode(",\n", $lines).",\n    ];";
     }
 
     /**
@@ -208,8 +208,8 @@ PHP;
     private function generateMigration(string $modelName, array $attributes, bool $timestamps, bool $softDeletes): string
     {
         $tableName = Str::snake(Str::plural($modelName));
-        $className = 'Create' . Str::plural($modelName) . 'Table';
-        
+        $className = 'Create'.Str::plural($modelName).'Table';
+
         $columns = [];
         $foreignKeys = [];
 
@@ -218,15 +218,15 @@ PHP;
             $columns[] = $column;
 
             // Handle foreign keys
-            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && !empty($attribute['foreign_model'])) {
-                $foreignKeys[] = $this->generateForeignKeyDefinition($attribute);
+            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && ! empty($attribute['foreign_model'])) {
+                $foreignKeys[] = $this->generateForeignKeyDefinition($attribute, $tableName);
             }
         }
 
         $columnsStr = implode("\n", $columns);
         $timestampsStr = $timestamps ? "\n            \$table->timestamps();" : '';
         $softDeletesStr = $softDeletes ? "\n            \$table->softDeletes();" : '';
-        $foreignKeysStr = !empty($foreignKeys) ? "\n\n" . implode("\n", $foreignKeys) : '';
+        $foreignKeysStr = ! empty($foreignKeys) ? "\n\n".implode("\n", $foreignKeys) : '';
 
         $content = <<<PHP
 <?php
@@ -314,7 +314,7 @@ PHP;
     /**
      * Generate foreign key constraint definition.
      */
-    private function generateForeignKeyDefinition(array $attribute): string
+    private function generateForeignKeyDefinition(array $attribute, string $tableName): string
     {
         $columnName = $attribute['name'];
         $foreignModel = $attribute['foreign_model'];
@@ -329,19 +329,10 @@ PHP;
         $onUpdateMethod = lcfirst($onUpdateMethod);
 
         return <<<PHP
-        Schema::table('{$this->getTableNameForMigration($attribute)}', function (Blueprint \$table) {
+        Schema::table('{$tableName}', function (Blueprint \$table) {
             \$table->foreign('{$columnName}')->references('id')->on('{$foreignTable}')->onDelete('{$onDeleteMethod}')->onUpdate('{$onUpdateMethod}');
         });
 PHP;
-    }
-
-    /**
-     * Get table name from context (hacky but works for this use case).
-     */
-    private function getTableNameForMigration(array $attribute): string
-    {
-        // This would be set during migration generation
-        return $this->currentTableName ?? 'table';
     }
 
     /**
@@ -349,7 +340,7 @@ PHP;
      */
     private function generateFactory(string $modelName, array $attributes): string
     {
-        $factoryName = $modelName . 'Factory';
+        $factoryName = $modelName.'Factory';
         $definitions = [];
 
         foreach ($attributes as $attribute) {
@@ -357,16 +348,16 @@ PHP;
             $type = $attribute['type'];
 
             $faker = match ($type) {
-                'string' => "fake()->sentence(3)",
-                'text' => "fake()->paragraph()",
-                'integer' => "fake()->numberBetween(1, 1000)",
-                'bigInteger' => "fake()->numberBetween(1, 1000000)",
-                'float', 'decimal' => "fake()->randomFloat(2, 0, 1000)",
-                'boolean' => "fake()->boolean()",
-                'date' => "fake()->date()",
-                'datetime', 'timestamp' => "fake()->dateTime()",
+                'string' => 'fake()->sentence(3)',
+                'text' => 'fake()->paragraph()',
+                'integer' => 'fake()->numberBetween(1, 1000)',
+                'bigInteger' => 'fake()->numberBetween(1, 1000000)',
+                'float', 'decimal' => 'fake()->randomFloat(2, 0, 1000)',
+                'boolean' => 'fake()->boolean()',
+                'date' => 'fake()->date()',
+                'datetime', 'timestamp' => 'fake()->dateTime()',
                 'json' => "json_encode(['key' => fake()->word()])",
-                default => "fake()->word()",
+                default => 'fake()->word()',
             };
 
             $definitions[] = "            '{$name}' => {$faker}";
@@ -420,7 +411,7 @@ PHP;
         $modelsPath = app_path('Models');
         $models = [];
 
-        if (!File::isDirectory($modelsPath)) {
+        if (! File::isDirectory($modelsPath)) {
             return $models;
         }
 
@@ -430,7 +421,7 @@ PHP;
             $className = str_replace(
                 ['/', '.php'],
                 ['\\', ''],
-                Str::after($file->getPathname(), $modelsPath . DIRECTORY_SEPARATOR)
+                Str::after($file->getPathname(), $modelsPath.DIRECTORY_SEPARATOR)
             );
 
             $models[] = $className;
