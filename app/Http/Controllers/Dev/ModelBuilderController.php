@@ -116,6 +116,7 @@ class ModelBuilderController extends Controller
         $relationsStr = implode("\n\n", $relations);
 
         $uses = ['use Illuminate\Database\Eloquent\Model'];
+        $uses[] = 'use Illuminate\Database\Eloquent\Concerns\HasUlids';
         if (! empty($relations)) {
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsTo';
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasOne';
@@ -127,7 +128,11 @@ class ModelBuilderController extends Controller
         }
 
         $usesStr = implode(";\n", $uses).';';
-        $traitsStr = $softDeletes ? 'use SoftDeletes;' : '';
+        $traits = ['HasUlids'];
+        if ($softDeletes) {
+            $traits[] = 'SoftDeletes';
+        }
+        $traitsStr = 'use '.implode(', ', $traits).';';
         $timestampsStr = ! $timestamps ? "\n    public \$timestamps = false;" : '';
 
         $content = <<<PHP
@@ -243,7 +248,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('{$tableName}', function (Blueprint \$table) {
-            \$table->id();
+            \$table->ulid('id')->primary();
 {$columnsStr}{$timestampsStr}{$softDeletesStr}
         });{$foreignKeysStr}
     }
@@ -276,23 +281,29 @@ PHP;
         $type = $attribute['type'];
         $nullable = $attribute['nullable'] ?? false;
         $indexType = $attribute['index_type'] ?? 'none';
+        $isForeignKey = $attribute['is_foreign_key'] ?? false;
 
-        // Map types to Laravel Blueprint methods
-        $typeMethod = match ($type) {
-            'string' => "string('{$name}')",
-            'text' => "text('{$name}')",
-            'integer' => "integer('{$name}')",
-            'bigInteger' => "bigInteger('{$name}')",
-            'float' => "float('{$name}')",
-            'decimal' => "decimal('{$name}', 8, 2)",
-            'boolean' => "boolean('{$name}')",
-            'date' => "date('{$name}')",
-            'datetime' => "dateTime('{$name}')",
-            'timestamp' => "timestamp('{$name}')",
-            'json' => "json('{$name}')",
-            'binary' => "binary('{$name}')",
-            default => "string('{$name}')",
-        };
+        // Use foreignUlid for foreign keys instead of bigInteger
+        if ($isForeignKey && $type === 'bigInteger') {
+            $typeMethod = "foreignUlid('{$name}')";
+        } else {
+            // Map types to Laravel Blueprint methods
+            $typeMethod = match ($type) {
+                'string' => "string('{$name}')",
+                'text' => "text('{$name}')",
+                'integer' => "integer('{$name}')",
+                'bigInteger' => "bigInteger('{$name}')",
+                'float' => "float('{$name}')",
+                'decimal' => "decimal('{$name}', 8, 2)",
+                'boolean' => "boolean('{$name}')",
+                'date' => "date('{$name}')",
+                'datetime' => "dateTime('{$name}')",
+                'timestamp' => "timestamp('{$name}')",
+                'json' => "json('{$name}')",
+                'binary' => "binary('{$name}')",
+                default => "string('{$name}')",
+            };
+        }
 
         $definition = "            \$table->{$typeMethod}";
 
