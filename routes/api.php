@@ -1,8 +1,8 @@
 <?php
-use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Route;
 
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->name('v1.')->group(function () {
     Route::get('/about', function () {
@@ -22,8 +22,7 @@ Route::prefix('v1')->name('v1.')->group(function () {
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required|string',
             ]);
-        }
-        catch (\Illuminate\Validation\ValidationException $e) {
+        } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json(['message' => 'Données de validation invalides', 'errors' => $e->errors()], 422);
         }
 
@@ -42,7 +41,6 @@ Route::prefix('v1')->name('v1.')->group(function () {
         ], 201);
     });
 
-
     Route::post('/login', function (Request $request) {
 
         try {
@@ -53,7 +51,6 @@ Route::prefix('v1')->name('v1.')->group(function () {
         } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json(['message' => 'Données de connexion invalides', 'errors' => $e->errors()], 422);
         }
-
 
         $user = User::where('email', $request->email)->first();
 
@@ -74,11 +71,11 @@ Route::prefix('v1')->name('v1.')->group(function () {
     // ===================================================================================
 
     Route::prefix('protected')
-    ->name('protected.')
-    ->middleware(['auth:sanctum'])
-    ->group(function () {
-        Route::get('/me', function (Request $request) {
-            return $request->user();
-        })->name('me');
-    });
+        ->name('protected.')
+        ->middleware(['auth:sanctum'])
+        ->group(function () {
+            Route::get('/me', function (Request $request) {
+                return $request->user();
+            })->name('me');
+        });
 });
