@@ -70,6 +70,15 @@
                                             </label>
                                         </div>
 
+                                        <div class="mb-3">
+                                            <label class="form-label">Model Status</label>
+                                            <label class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" name="has_statuses">
+                                                <span class="form-check-label">Enable Spatie HasStatuses trait</span>
+                                            </label>
+                                            <small class="form-hint">Allows tracking model statuses</small>
+                                        </div>
+
                                         <hr>
 
                                         <div class="mb-3">
@@ -123,6 +132,34 @@
 
                     <!-- Result messages -->
                     <div id="result-messages" class="mt-3"></div>
+
+                    <!-- Confirmation Modal -->
+                    <div class="modal modal-blur fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Confirm Model Generation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <h3 class="text-muted h5">The following files will be generated:</h3>
+                                    </div>
+                                    <div id="confirmation-operations"></div>
+                                    <div class="alert alert-info mt-3">
+                                        <strong>Note:</strong> Make sure to review the generated files and run migrations if needed.
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" id="confirm-generation">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                        Confirm & Generate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -292,27 +329,28 @@
         }
 
         /**
-         * Handle form submission
+         * Handle form submission - show confirmation first
          */
         document.getElementById('model-builder-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            // Get form data
             const formData = new FormData(e.target);
-            const submitBtn = document.getElementById('submit-btn');
-            const resultDiv = document.getElementById('result-messages');
+            const data = collectFormData(formData);
             
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating...';
-            
-            // Clear previous messages
-            resultDiv.innerHTML = '';
+            // Show confirmation modal with preview
+            await showConfirmationModal(data);
+        });
 
-            // Convert form data to JSON
+        /**
+         * Collect form data into structured object
+         */
+        function collectFormData(formData) {
             const data = {
                 model_name: formData.get('model_name'),
                 timestamps: formData.get('timestamps') === 'on',
                 soft_deletes: formData.get('soft_deletes') === 'on',
+                has_statuses: formData.get('has_statuses') === 'on',
                 generate_migration: formData.get('generate_migration') === 'on',
                 generate_factory: formData.get('generate_factory') === 'on',
                 attributes: []
@@ -320,7 +358,7 @@
 
             // Collect attributes
             const attributeElements = document.querySelectorAll('.attribute-row');
-            attributeElements.forEach((element, index) => {
+            attributeElements.forEach((element) => {
                 const inputs = element.querySelectorAll('input, select');
                 const attr = {};
                 
@@ -340,6 +378,93 @@
                 }
             });
 
+            return data;
+        }
+
+        /**
+         * Show confirmation modal with preview
+         */
+        async function showConfirmationModal(data) {
+            try {
+                // Fetch preview from server
+                const response = await fetch('{{ route('dev.model-builder.preview') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const preview = await response.json();
+                
+                // Build confirmation content
+                let html = '<div class="list-group list-group-flush">';
+                preview.operations.forEach((op, index) => {
+                    const icon = op.type === 'model' ? '📄' : op.type === 'migration' ? '🗄️' : op.type === 'pivot_migration' ? '🔗' : '🏭';
+                    html += `
+                        <div class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="avatar">${icon}</span>
+                                </div>
+                                <div class="col">
+                                    <div class="text-truncate">
+                                        <strong>${escapeHtml(op.description)}</strong>
+                                    </div>
+                                    <div class="text-muted text-truncate">
+                                        <code>${escapeHtml(op.path)}</code>
+                                    </div>
+                                    ${op.traits ? `<div class="text-muted small">Traits: ${op.traits.join(', ')}</div>` : ''}
+                                    ${op.note ? `<div class="text-info small">${escapeHtml(op.note)}</div>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                
+                if (preview.summary.has_pivot_tables) {
+                    html += '<div class="alert alert-warning mt-3 mb-0"><strong>Note:</strong> Pivot tables will be created for many-to-many relationships.</div>';
+                }
+                
+                document.getElementById('confirmation-operations').innerHTML = html;
+                
+                // Store data for later use
+                window.pendingGenerationData = data;
+                
+                // Show modal
+                const modal = new bootstrap.Modal(document.getElementById('confirmation-modal'));
+                modal.show();
+                
+            } catch (error) {
+                console.error('Error fetching preview:', error);
+                alert('Failed to load preview. Please try again.');
+            }
+        }
+
+        /**
+         * Handle confirmed generation
+         */
+        document.getElementById('confirm-generation').addEventListener('click', async () => {
+            const data = window.pendingGenerationData;
+            if (!data) return;
+            
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('confirmation-modal'));
+            modal.hide();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const resultDiv = document.getElementById('result-messages');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating...';
+            
+            // Clear previous messages
+            resultDiv.innerHTML = '';
+
             try {
                 const response = await fetch('{{ route('dev.model-builder.store') }}', {
                     method: 'POST',
@@ -354,6 +479,17 @@
                 const result = await response.json();
 
                 if (result.success) {
+                    let filesHtml = '';
+                    for (const [type, value] of Object.entries(result.files)) {
+                        if (Array.isArray(value)) {
+                            value.forEach(path => {
+                                filesHtml += `<li><strong>${type}:</strong> <code>${escapeHtml(path)}</code></li>`;
+                            });
+                        } else {
+                            filesHtml += `<li><strong>${type}:</strong> <code>${escapeHtml(value)}</code></li>`;
+                        }
+                    }
+                    
                     resultDiv.innerHTML = `
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <div class="d-flex">
@@ -362,11 +498,11 @@
                                 </div>
                                 <div>
                                     <h4 class="alert-title">Success!</h4>
-                                    <div class="text-secondary">${result.message}</div>
+                                    <div class="text-secondary">${escapeHtml(result.message)}</div>
                                     <div class="mt-2">
                                         <strong>Generated files:</strong>
                                         <ul class="mb-0">
-                                            ${Object.entries(result.files).map(([type, path]) => `<li><strong>${type}:</strong> <code>${path}</code></li>`).join('')}
+                                            ${filesHtml}
                                         </ul>
                                     </div>
                                 </div>

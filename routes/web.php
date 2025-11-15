@@ -29,5 +29,6 @@ Route::prefix('dev')->group(function () {
     
     // Model Builder
     Route::get('/model-builder', [ModelBuilderController::class, 'show'])->name('dev.model-builder.index');
+    Route::post('/model-builder/preview', [ModelBuilderController::class, 'preview'])->name('dev.model-builder.preview');
     Route::post('/model-builder', [ModelBuilderController::class, 'store'])->name('dev.model-builder.store');
 });
