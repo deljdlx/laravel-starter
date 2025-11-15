@@ -19,6 +19,7 @@ class TaskFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
+            'user_id' => \App\Models\User::factory(),
         ];
     }
 }
