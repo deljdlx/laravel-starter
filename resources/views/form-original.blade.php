@@ -38,21 +38,17 @@
               <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Content..">
 Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
             </div>
-            <div class="mb-3">
-              <div class="form-label">Select</div>
-              <select class="form-select">
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <div class="form-label">Select multiple</div>
-              <select class="form-select" multiple>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+            <x-select-input 
+                name="select_example" 
+                label="Select" 
+                :options="['1' => 'One', '2' => 'Two', '3' => 'Three']" 
+            />
+            <x-select-input 
+                name="select_multiple" 
+                label="Select multiple" 
+                :options="['1' => 'One', '2' => 'Two', '3' => 'Three']" 
+                :multiple="true" 
+            />
             </div>
             <div class="mb-3">
               <div class="form-label">Select multiple states</div>

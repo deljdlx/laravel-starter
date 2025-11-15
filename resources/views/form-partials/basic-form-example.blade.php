@@ -18,29 +18,22 @@
         </small>
       </div>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Select</label>
-      <div>
-        <select class="form-select">
-          <option>Option 1</option>
-          <optgroup label="Optgroup 1">
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </optgroup>
-          <option>Option 2</option>
-          <optgroup label="Optgroup 2">
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </optgroup>
-          <optgroup label="Optgroup 3">
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </optgroup>
-          <option>Option 3</option>
-          <option>Option 4</option>
-        </select>
-      </div>
-    </div>
+    <x-select-input 
+        name="select_example" 
+        label="Select" 
+        :options="[
+            'option1' => 'Option 1',
+            'option1-1' => 'Optgroup 1 - Option 1',
+            'option1-2' => 'Optgroup 1 - Option 2',
+            'option2' => 'Option 2',
+            'option2-1' => 'Optgroup 2 - Option 1',
+            'option2-2' => 'Optgroup 2 - Option 2',
+            'option3-1' => 'Optgroup 3 - Option 1',
+            'option3-2' => 'Optgroup 3 - Option 2',
+            'option3' => 'Option 3',
+            'option4' => 'Option 4'
+        ]" 
+    />
     <div class="mb-3">
       <label class="form-label">Checkboxes</label>
       <div>

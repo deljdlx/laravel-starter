@@ -58,14 +58,12 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label class="form-label">Visibility</label>
-                            <select class="form-select">
-                                <option value="1" selected>Private</option>
-                                <option value="2">Public</option>
-                                <option value="3">Hidden</option>
-                            </select>
-                        </div>
+                        <x-select-input 
+                            name="visibility" 
+                            label="Visibility" 
+                            :options="['1' => 'Private', '2' => 'Public', '3' => 'Hidden']" 
+                            value="1" 
+                        />
                     </div>
                 </div>
             </div>

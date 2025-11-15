@@ -29,12 +29,12 @@
         </div>
       </div>
       <div class="col-md-5">
-        <div class="mb-3">
-          <label class="form-label">Country</label>
-          <select class="form-control form-select">
-            <option value="">Germany</option>
-          </select>
-        </div>
+        <x-select-input 
+            name="country" 
+            label="Country" 
+            :options="['de' => 'Germany']" 
+            value="de" 
+        />
       </div>
       <div class="col-md-12">
         <div class="mb-3 mb-0">

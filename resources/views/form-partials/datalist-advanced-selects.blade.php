@@ -95,204 +95,133 @@
         </div>
     </div>
     <div class="mb-3">
-        <label class="form-label">Tags input</label>
-        <select class="tags form-select" placeholder="Select tags" id="select-tags" value="" multiple>
-            <option value="HTML">HTML</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="CSS">CSS</option>
-            <option value="jQuery">jQuery</option>
-            <option value="Bootstrap">Bootstrap</option>
-            <option value="Ruby">Ruby</option>
-            <option value="Python">Python</option>
-        </select>
+        <x-select-input 
+            name="tags" 
+            label="Tags input" 
+            id="select-tags" 
+            :options="[
+                'HTML' => 'HTML',
+                'JavaScript' => 'JavaScript',
+                'CSS' => 'CSS',
+                'jQuery' => 'jQuery',
+                'Bootstrap' => 'Bootstrap',
+                'Ruby' => 'Ruby',
+                'Python' => 'Python'
+            ]" 
+            :multiple="true" 
+            class="tags" 
+        />
     </div>
     <div class="mb-3">
-        <label class="form-label">Advanced select</label>
-        <select class="form-select" id="select-users" value="">
-            <option value="1">Chuck Tesla</option>
-            <option value="2">Elon Musk</option>
-            <option value="3">Paweł Kuna</option>
-            <option value="4">Nikola Tesla</option>
-        </select>
+        <x-select-input 
+            name="users" 
+            label="Advanced select" 
+            id="select-users" 
+            :options="[
+                '1' => 'Chuck Tesla',
+                '2' => 'Elon Musk',
+                '3' => 'Paweł Kuna',
+                '4' => 'Nikola Tesla'
+            ]" 
+        />
     </div>
     <div class="mb-3">
-        <label class="form-label">Advanced select with
-            optgroup</label>
-        <select class="form-select" id="select-optgroups" value="">
-            <optgroup label="Tags">
-                <option value="HTML">HTML</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="CSS">CSS</option>
-                <option value="jQuery">jQuery</option>
-                <option value="Bootstrap">Bootstrap</option>
-                <option value="Ruby">Ruby</option>
-                <option value="Python">Python</option>
-            </optgroup>
-            <optgroup label="People">
-                <option value="Chuck Tesla">Chuck Tesla</option>
-                <option value="Elon Musk">Elon Musk</option>
-                <option value="Paweł Kuna">Paweł Kuna</option>
-                <option value="Nikola Tesla">Nikola Tesla</option>
-            </optgroup>
-        </select>
+        <x-select-input 
+            name="optgroups" 
+            label="Advanced select with optgroup" 
+            id="select-optgroups" 
+            :options="[
+                'HTML' => 'HTML',
+                'JavaScript' => 'JavaScript',
+                'CSS' => 'CSS',
+                'jQuery' => 'jQuery',
+                'Bootstrap' => 'Bootstrap',
+                'Ruby' => 'Ruby',
+                'Python' => 'Python',
+                'Chuck Tesla' => 'Chuck Tesla',
+                'Elon Musk' => 'Elon Musk',
+                'Paweł Kuna' => 'Paweł Kuna',
+                'Nikola Tesla' => 'Nikola Tesla'
+            ]" 
+        />
     </div>
     <div class="mb-3">
-        <label class="form-label">Select with avatars</label>
-        <select class="form-select" id="select-people" value="">
-            <option value="1"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Paweł Kuna
-            </option>
-            <option value="2"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Jeffie Lewzey
-            </option>
-            <option value="3"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Mallory Hulme
-            </option>
-            <option value="4"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Dunn Slane
-            </option>
-            <option value="5"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Emmy Levet
-            </option>
-            <option value="6"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Maryjo Lebarree
-            </option>
-            <option value="7"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Egan Poetz
-            </option>
-            <option value="8"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Kellie Skingley
-            </option>
-            <option value="9"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Christabel Charlwood
-            </option>
-            <option value="10"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Haskel Shelper
-            </option>
-            <option value="11"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Lorry Mion
-            </option>
-            <option value="12"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Leesa Beaty
-            </option>
-            <option value="13"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Perren Keemar
-            </option>
-            <option value="14"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34;&gt;
-SA
-&lt;/span&gt;">
-                Sunny Airey
-            </option>
-            <option value="15"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Geoffry Flaunders
-            </option>
-            <option value="16"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Thatcher Keel
-            </option>
-            <option value="17"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Dyann Escala
-            </option>
-            <option value="18"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Avivah Mugleston
-            </option>
-            <option value="19"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34;&gt;
-AA
-&lt;/span&gt;">
-                Arlie Armstead
-            </option>
-            <option value="20"
-                data-custom-properties="&lt;span class=&#34;avatar avatar-xs&#34; style=&#34;background-image: url(https://picsum.photos/100/100)&#34;&gt;
-&lt;/span&gt;">
-                Tessie Curzon
-            </option>
-        </select>
+        <x-select-input 
+            name="people" 
+            label="Select with avatars" 
+            id="select-people" 
+            :options="[
+                '1' => 'Paweł Kuna',
+                '2' => 'Jeffie Lewzey',
+                '3' => 'Mallory Hulme',
+                '4' => 'Dunn Slane',
+                '5' => 'Emmy Levet',
+                '6' => 'Maryjo Lebarree',
+                '7' => 'Egan Poetz',
+                '8' => 'Kellie Skingley',
+                '9' => 'Christabel Charlwood',
+                '10' => 'Haskel Shelper',
+                '11' => 'Lorry Mion',
+                '12' => 'Leesa Beaty',
+                '13' => 'Perren Keemar',
+                '14' => 'Sunny Airey',
+                '15' => 'Geoffry Flaunders',
+                '16' => 'Thatcher Keel',
+                '17' => 'Dyann Escala',
+                '18' => 'Avivah Mugleston',
+                '19' => 'Arlie Armstead',
+                '20' => 'Tessie Curzon'
+            ]" 
+        />
     </div>
     <div class="mb-3">
-        <label class="form-label">Select with flags</label>
-        <select class="form-select" id="select-countries" value="">
-            <option value="pl"
-                data-custom-properties="&lt;span class=&#34;flag flag-xs flag-country-pl&#34;&gt;&lt;/span&gt;">
-                Poland
-            </option>
-            <option value="de"
-                data-custom-properties="&lt;span class=&#34;flag flag-xs flag-country-de&#34;&gt;&lt;/span&gt;">
-                Germany
-            </option>
-            <option value="cz"
-                data-custom-properties="&lt;span class=&#34;flag flag-xs flag-country-cz&#34;&gt;&lt;/span&gt;">
-                Czech Republic
-            </option>
-            <option value="br"
-                data-custom-properties="&lt;span class=&#34;flag flag-xs flag-country-br&#34;&gt;&lt;/span&gt;">
-                Brazil
-            </option>
-        </select>
+        <x-select-input 
+            name="countries" 
+            label="Select with flags" 
+            id="select-countries" 
+            :options="[
+                'pl' => 'Poland',
+                'de' => 'Germany',
+                'cz' => 'Czech Republic',
+                'br' => 'Brazil'
+            ]" 
+        />
     </div>
     <div class="mb-3">
-        <label class="form-label">Select with labels</label>
-        <select class="form-select" id="select-labels" value="">
-            <option value="copy"
-                data-custom-properties="&lt;span class=&#34;badge bg-primary-lt&#34;&gt;cmd + C&lt;/span&gt;">
-                Copy</option>
-            <option value="paste"
-                data-custom-properties="&lt;span class=&#34;badge bg-primary-lt&#34;&gt;cmd + V&lt;/span&gt;">
-                Paste
-            </option>
-            <option value="cut"
-                data-custom-properties="&lt;span class=&#34;badge bg-primary-lt&#34;&gt;cmd + X&lt;/span&gt;">
-                Cut</option>
-        </select>
+        <x-select-input 
+            name="labels" 
+            label="Select with labels" 
+            id="select-labels" 
+            :options="[
+                'copy' => 'Copy',
+                'paste' => 'Paste',
+                'cut' => 'Cut'
+            ]" 
+        />
     </div>
     <div class="mb-3">
-        <label class="form-label">Advanced select with validation
-            state</label>
-        <select class="form-select mb-3 is-valid" id="select-countries-valid" value="">
-            <option value="pl">Poland</option>
-            <option value="de">Germany</option>
-            <option value="cz">Czech Republic</option>
-            <option value="br">Brazil</option>
-        </select>
-        <select class="form-select is-invalid" id="select-countries-invalid" value="">
-            <option value="pl">Poland</option>
-            <option value="de">Germany</option>
-            <option value="cz">Czech Republic</option>
-            <option value="br">Brazil</option>
-        </select>
+        <label class="form-label">Advanced select with validation state</label>
+        <x-select-input 
+            name="countries_valid" 
+            id="select-countries-valid" 
+            :options="[
+                'pl' => 'Poland',
+                'de' => 'Germany',
+                'cz' => 'Czech Republic',
+                'br' => 'Brazil'
+            ]" 
+            class="mb-3 is-valid" 
+        />
+        <x-select-input 
+            name="countries_invalid" 
+            id="select-countries-invalid" 
+            :options="[
+                'pl' => 'Poland',
+                'de' => 'Germany',
+                'cz' => 'Czech Republic',
+                'br' => 'Brazil'
+            ]" 
+            class="is-invalid" 
+        />
     </div>
 </div>
