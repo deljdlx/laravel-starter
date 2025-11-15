@@ -26,13 +26,13 @@
         <x-card title="Color inputs" class="m-2">
             @include('form-partials.color-inputs')
         </x-card>
-
     </x-col>
 
     <x-col class="col-xl-5">
         <x-card title="Form control variants" class="m-2">
             @include('form-partials.form-control-variants')
         </x-card>
+
         <x-card title="Floating labels" class="m-2">
             @include('form-partials.floating-inputs')
         </x-card>
@@ -44,10 +44,6 @@
         <x-card title="Separated inputs" class="m-2">
             @include('form-partials.separated-inputs')
         </x-card>
-
-    </x-col>
-    <x-col class="col-xl-3">
-
     </x-col>
 </x-row>
 
@@ -61,41 +57,32 @@
     </x-col>
 
     <x-col class="col-xl-6">
-
-
         <x-card title="Validation states" class="m-2">
             @include('form-partials.validation-states')
-        </x-card>
-
-        <x-card title="Fieldsets" class="m-2">
-            @include('form-partials.form-fieldset')
         </x-card>
     </x-col>
 </x-row>
 
 
-{{-- 
-<div class="row row-deck row-cards mb-4">
-    <div class="col col-xl-6">
-        <x-card title="Select groups & buttons">
+<x-row>
+    <x-col class="col-xl-6">
+        <x-card title="Select groups & buttons" class="m-2">
             @include('form-partials.selectgroups-buttons')
         </x-card>
-    </div>
+    </x-col>
 
-    <div class="col col-xl-6">
-        <div class="row">
-            <x-card title="Radios & checkboxes" class="mb-4 col">
-                @include('form-partials.radios-checkboxes')
-            </x-card>
+    <x-col class="col-xl-6">
+        <x-card title="Radios & checkboxes" class="m-2">
+            @include('form-partials.radios-checkboxes')
+        </x-card>
 
-            <x-card title="File date masks" class="col">
-                @include('form-partials.file-date-masks')
-            </x-card>
-        </div>
-    </div>
-</div>
+        <x-card title="File date masks" class="m-2">
+            @include('form-partials.file-date-masks')
+        </x-card>
+    </x-col>
+</x-row>
 
- --}}
+
 
 
 

@@ -16,6 +16,7 @@ if($floating) {
             @endif
         </label>
     @endif
+
     <select 
         class="form-select" 
         name="{{ $name }}{{ $multiple ? '[]' : '' }}" 
@@ -25,7 +26,7 @@ if($floating) {
         @if($multiple) multiple @endif
     >
         @if($placeholder !== null && !$multiple)
-            <option value="" disabled {{ !$isSelected('') && $selected === null && old($name) === null ? 'selected' : '' }} hidden>
+            <option value="" disabled {{ !$isSelected('') && $value === null && old($name) === null ? 'selected' : '' }} hidden>
                 {{ $placeholder }}
             </option>
         @endif

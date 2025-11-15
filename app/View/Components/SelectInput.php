@@ -14,7 +14,7 @@ class SelectInput extends Component
 
     public array $options;
 
-    public string|array|null $selected;
+    public string|array|null $value;
 
     public ?string $placeholder;
 
@@ -36,7 +36,7 @@ class SelectInput extends Component
     public function __construct(
         string $name,
         array $options = [],
-        string|array|null $selected = null,
+        string|array|null $value = null,
         ?string $label = null,
         ?string $placeholder = null,
         bool $required = false,
@@ -48,7 +48,7 @@ class SelectInput extends Component
     ) {
         $this->name = $name;
         $this->options = $options;
-        $this->selected = $selected;
+        $this->value = $value;
         $this->label = $label;
         $this->placeholder = $placeholder;
         $this->required = $required;
@@ -74,11 +74,11 @@ class SelectInput extends Component
             return (string) $oldValue === (string) $value;
         }
 
-        if ($this->selected !== null) {
-            if (is_array($this->selected)) {
-                return in_array($value, $this->selected);
+        if ($this->value !== null) {
+            if (is_array($this->value)) {
+                return in_array($value, $this->value);
             }
-            return (string) $this->selected === (string) $value;
+            return (string) $this->value === (string) $value;
         }
 
         return false;
