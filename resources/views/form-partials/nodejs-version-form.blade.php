@@ -5,8 +5,8 @@
       Functions. A new Deployment is required for your changes to take
       effect.
     </p>
-    <select class="form-select">
-      <option>14.x</option>
-      <option>12.x</option>
-    </select>
+    <x-select-input 
+        name="nodejs_version" 
+        :options="['14.x' => '14.x', '12.x' => '12.x']" 
+    />
 </div>
