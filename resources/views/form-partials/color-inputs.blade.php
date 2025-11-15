@@ -1,4 +1,4 @@
-<div class="mb-3">
+<div>
   <label class="form-label">Color Input Check</label>
   <div class="row g-2">
     <div class="col-auto">

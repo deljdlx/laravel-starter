@@ -62,7 +62,10 @@
             <div class="page-body">
 
 
-                @include('form')
+
+                <div class="container-xl">
+                    @include('form')
+                </div>
 
 
                 <div class="container-xl">

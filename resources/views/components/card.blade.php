@@ -3,9 +3,8 @@
 
 @endphp
 
-<div class="card" {{ $attributes->merge([
-    'class' => '',
-    'style' => '',
+<div {{ $attributes->merge([
+    'class' => 'card',
 ]) }}>
 
     @if(isset($title) && $title !== '')
