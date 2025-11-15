@@ -504,23 +504,56 @@
                 // Initialize CodeMirror editors after modal is shown
                 setTimeout(() => {
                     window.codeEditors = [];
-                    preview.operations.forEach((op, index) => {
-                        const editor = CodeMirror.fromTextArea(document.getElementById(`editor-${index}`), {
-                            mode: 'application/x-httpd-php',
-                            theme: 'monokai',
-                            lineNumbers: true,
-                            readOnly: true,
-                            lineWrapping: true,
-                            viewportMargin: Infinity
-                        });
-                        editor.setValue(op.source || '// No source available');
-                        editor.setSize('100%', '400px');
-                        window.codeEditors.push(editor);
-                    });
                     
-                    // Refresh the first editor to ensure proper display
-                    if (window.codeEditors.length > 0) {
-                        window.codeEditors[0].refresh();
+                    // Check if CodeMirror is available
+                    if (typeof CodeMirror !== 'undefined') {
+                        preview.operations.forEach((op, index) => {
+                            const textArea = document.getElementById(`editor-${index}`);
+                            if (textArea) {
+                                try {
+                                    const editor = CodeMirror.fromTextArea(textArea, {
+                                        mode: 'application/x-httpd-php',
+                                        theme: 'monokai',
+                                        lineNumbers: true,
+                                        readOnly: true,
+                                        lineWrapping: true,
+                                        viewportMargin: Infinity
+                                    });
+                                    editor.setValue(op.source || '// No source available');
+                                    editor.setSize('100%', '400px');
+                                    window.codeEditors.push(editor);
+                                } catch (error) {
+                                    console.error('Error initializing CodeMirror:', error);
+                                    // Fallback: show source in textarea
+                                    textArea.value = op.source || '// No source available';
+                                    textArea.rows = 20;
+                                    textArea.style.fontFamily = 'monospace';
+                                    textArea.style.fontSize = '12px';
+                                }
+                            }
+                        });
+                        
+                        // Refresh the first editor to ensure proper display
+                        if (window.codeEditors.length > 0) {
+                            window.codeEditors[0].refresh();
+                        }
+                    } else {
+                        // Fallback when CodeMirror is not available
+                        console.warn('CodeMirror not loaded, using plain textareas');
+                        preview.operations.forEach((op, index) => {
+                            const textArea = document.getElementById(`editor-${index}`);
+                            if (textArea) {
+                                textArea.value = op.source || '// No source available';
+                                textArea.rows = 20;
+                                textArea.readOnly = true;
+                                textArea.style.fontFamily = 'monospace';
+                                textArea.style.fontSize = '12px';
+                                textArea.style.backgroundColor = '#272822';
+                                textArea.style.color = '#f8f8f2';
+                                textArea.style.padding = '10px';
+                                textArea.style.border = '1px solid #3e3d32';
+                            }
+                        });
                     }
                 }, 100);
                 
@@ -557,9 +590,15 @@
             }
             
             // Clean up CodeMirror editors
-            if (window.codeEditors) {
+            if (window.codeEditors && window.codeEditors.length > 0) {
                 window.codeEditors.forEach(editor => {
-                    editor.toTextArea();
+                    if (editor && typeof editor.toTextArea === 'function') {
+                        try {
+                            editor.toTextArea();
+                        } catch (error) {
+                            console.error('Error cleaning up CodeMirror editor:', error);
+                        }
+                    }
                 });
                 window.codeEditors = [];
             }
