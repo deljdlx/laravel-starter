@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dev\ModelInspectorController;
+use App\Http\Controllers\Dev\ModelBuilderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,4 +26,8 @@ Route::prefix('dev')->group(function () {
     // Model Inspector API
     Route::get('/api/models', [ModelInspectorController::class, 'index'])->name('dev.api.models.index');
     Route::get('/api/models/{model}', [ModelInspectorController::class, 'show'])->name('dev.api.models.show');
+    
+    // Model Builder
+    Route::get('/model-builder', [ModelBuilderController::class, 'show'])->name('dev.model-builder.index');
+    Route::post('/model-builder', [ModelBuilderController::class, 'store'])->name('dev.model-builder.store');
 });
