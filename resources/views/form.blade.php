@@ -64,7 +64,7 @@
 </x-row>
 
 
-<x-row>
+<x-row class="gx-0">
     <x-col class="col-xl-6">
         <x-card title="Select groups & buttons" class="m-2">
             @include('form-partials.selectgroups-buttons')
@@ -86,9 +86,9 @@
 
 
 
-<x-row>
+<x-row class="gx-0">
     <x-col class="col-xl-12">
-        <x-card title="Datalist & advanced selects" class="col m-1">
+        <x-card title="Datalist & advanced selects" class="m-2">
             @include('form-partials.datalist-advanced-selects')
         </x-card>
     </x-col>

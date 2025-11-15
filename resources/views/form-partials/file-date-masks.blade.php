@@ -1,7 +1,7 @@
 <div>
     <div class="form-label">Custom File Input</div>
-        <input type="file" class="form-control" />
-    </div>
+    <input type="file" class="form-control" />
+
     <div class="mb-3">
         <label class="form-label">Date of birth</label>
         <div class="row g-2">
@@ -32,13 +32,13 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Text mask</label>
-        <input type="text" name="input-mask" class="form-control" data-mask="00/00/0000"
-            data-mask-visible="true" placeholder="00/00/0000" autocomplete="off" />
+        <input type="text" name="input-mask" class="form-control" data-mask="00/00/0000" data-mask-visible="true"
+            placeholder="00/00/0000" autocomplete="off" />
     </div>
     <div class="mb-3">
         <label class="form-label">Telephone mask</label>
-        <input type="text" name="input-mask" class="form-control" data-mask="(00) 0000-0000"
-            data-mask-visible="true" placeholder="(00) 0000-0000" autocomplete="off" />
+        <input type="text" name="input-mask" class="form-control" data-mask="(00) 0000-0000" data-mask-visible="true"
+            placeholder="(00) 0000-0000" autocomplete="off" />
     </div>
     <div class="mb-3">
         <label class="form-label">Autosize textarea</label>
