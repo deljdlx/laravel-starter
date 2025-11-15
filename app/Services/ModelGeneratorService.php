@@ -212,9 +212,20 @@ class ModelGeneratorService
         $column = "            ";
 
         if ($isForeignKey && ($attribute['relation_type'] ?? '') !== 'belongsToMany') {
+            // Generate foreign key column with constraints
+            $foreignModel = $attribute['foreign_model'] ?? '';
+            $foreignTable = $foreignModel ? Str::snake(Str::plural($foreignModel)) : '';
+            $onDelete = $attribute['on_delete'] ?? 'cascade';
+            $onUpdate = $attribute['on_update'] ?? 'cascade';
+            
             $column .= "\$table->foreignUlid('{$name}')";
             if ($nullable) {
                 $column .= '->nullable()';
+            }
+            if ($foreignTable) {
+                $column .= "->constrained('{$foreignTable}')";
+                $column .= "->onDelete('{$onDelete}')";
+                $column .= "->onUpdate('{$onUpdate}')";
             }
             $column .= ';';
         } else {
