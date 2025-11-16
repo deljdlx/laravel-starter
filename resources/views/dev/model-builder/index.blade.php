@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Model Builder - Developer Tools</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/model-builder.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/model-builder.js', 'resources/js/model-builder-app.js'])
 </head>
 <body>
     <div class="page">
