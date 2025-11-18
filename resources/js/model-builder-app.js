@@ -21,7 +21,7 @@ class ModelBuilderConfig {
     ];
 
     static FOREIGN_KEY_ACTIONS = [
-        'cascade', 'restrict', 'set null', 'no action'
+        'no action', 'cascade', 'restrict', 'set null',
     ];
 }
 
@@ -85,11 +85,11 @@ class AttributeRow {
     getTemplate() {
         return `
             <div class="card-body">
-                <div class="row">
+                <div class="row align-items-start">
                     <div class="col-md-3 mb-2">
-                        <label class="form-label">Column Name <span class="text-muted small" id="column-name-hint-${this.rowId}">(optional for many-to-many)</span></label>
+                        <label class="form-label">Column Name <span class="text-muted small" id="column-name-hint-${this.rowId}"></span></label>
                         <input type="text" class="form-control form-control-sm" 
-                               name="attributes[${this.counter}][name]" 
+                               name="attributes[${this.counter}][name]"
                                id="column-name-${this.rowId}"
                                placeholder="e.g., title"
                                pattern="[a-z_][a-z0-9_]*"
@@ -158,13 +158,13 @@ class AttributeRow {
                     <div class="col-md-3 mb-2">
                         <label class="form-label">ON DELETE</label>
                         <select class="form-select form-select-sm" name="attributes[${this.counter}][on_delete]">
-                            ${ModelBuilderConfig.FOREIGN_KEY_ACTIONS.map(action => `<option value="${action}" ${action === 'cascade' ? 'selected' : ''}>${action}</option>`).join('')}
+                            ${ModelBuilderConfig.FOREIGN_KEY_ACTIONS.map(action => `<option value="${action}" ${action === 'no action' ? 'selected' : ''}>${action}</option>`).join('')}
                         </select>
                     </div>
                     <div class="col-md-3 mb-2">
                         <label class="form-label">ON UPDATE</label>
                         <select class="form-select form-select-sm" name="attributes[${this.counter}][on_update]">
-                            ${ModelBuilderConfig.FOREIGN_KEY_ACTIONS.map(action => `<option value="${action}" ${action === 'cascade' ? 'selected' : ''}>${action}</option>`).join('')}
+                            ${ModelBuilderConfig.FOREIGN_KEY_ACTIONS.map(action => `<option value="${action}" ${action === 'no action' ? 'selected' : ''}>${action}</option>`).join('')}
                         </select>
                     </div>
                 </div>
