@@ -559,9 +559,11 @@ class SchemaMermaidGenerator
             $fromTable = strtoupper($fk['referenced_table']);
             $toTable = strtoupper($fk['table']);
             
-            // One-to-many relationship (parent has many children)
+            // One-to-many relationship with cardinality notation
             // ||--o{ means: one (parent) to zero or more (children)
-            $relationships .= "    {$fromTable} ||--o{ {$toTable} : \"has many\"\n";
+            // (1,1) on parent side: one instance exists
+            // (0,n) on child side: zero or more instances can reference the parent
+            $relationships .= "    {$fromTable} ||--o{ {$toTable} : \"(1,1)-(0,n)\"\n";
         }
         
         return $relationships;

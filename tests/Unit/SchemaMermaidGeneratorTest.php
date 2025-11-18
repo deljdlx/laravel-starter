@@ -119,8 +119,8 @@ class SchemaMermaidGeneratorTest extends TestCase
         // Should include relationship syntax
         $this->assertStringContainsString('||--o{', $mermaid);
         
-        // Should include "has many" relationship
-        $this->assertStringContainsString('has many', $mermaid);
+        // Should include cardinality notation
+        $this->assertStringContainsString('(1,1)-(0,n)', $mermaid);
     }
 
     /**
