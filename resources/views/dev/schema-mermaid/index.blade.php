@@ -49,26 +49,37 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">ER Diagram</h3>
+                                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="diagram-tab" data-bs-toggle="tab" href="#diagram" role="tab" aria-controls="diagram" aria-selected="true">
+                                                Diagram
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="code-tab" data-bs-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="false">
+                                                Mermaid Code
+                                            </a>
+                                        </li>
+                                    </ul>
                                     <div class="ms-auto">
                                         <button class="btn btn-sm btn-primary" onclick="copyToClipboard()">
                                             Copy Mermaid Code
                                         </button>
-                                        <button class="btn btn-sm btn-secondary" onclick="toggleCode()">
-                                            Toggle Code
-                                        </button>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <!-- Mermaid Diagram -->
-                                    <div id="diagram-container" class="text-center">
-                                        <pre class="mermaid">{{ $mermaidCode }}</pre>
-                                    </div>
-                                    
-                                    <!-- Code Display (hidden by default) -->
-                                    <div id="code-container" class="mt-4" style="display: none;">
-                                        <h4 class="mb-3">Mermaid Code</h4>
-                                        <pre class="border rounded p-3" style="background-color: #f8f9fa;"><code id="mermaid-code">{{ $mermaidCode }}</code></pre>
+                                    <div class="tab-content">
+                                        <!-- Diagram Tab -->
+                                        <div class="tab-pane fade show active" id="diagram" role="tabpanel" aria-labelledby="diagram-tab">
+                                            <div class="text-center">
+                                                <pre class="mermaid">{{ $mermaidCode }}</pre>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Code Tab -->
+                                        <div class="tab-pane fade" id="code" role="tabpanel" aria-labelledby="code-tab">
+                                            <pre class="border rounded p-3" style="background-color: #f8f9fa;"><code id="mermaid-code">{{ $mermaidCode }}</code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -108,18 +119,6 @@
 
     <script>
         /**
-         * Toggle code display
-         */
-        function toggleCode() {
-            const codeContainer = document.getElementById('code-container');
-            if (codeContainer.style.display === 'none') {
-                codeContainer.style.display = 'block';
-            } else {
-                codeContainer.style.display = 'none';
-            }
-        }
-
-        /**
          * Copy Mermaid code to clipboard
          */
         function copyToClipboard() {
@@ -155,7 +154,6 @@
                 alert('Mermaid code copied to clipboard!');
             } catch (err) {
                 alert('Failed to copy to clipboard. Please copy manually.');
-                toggleCode(); // Show the code so user can copy manually
             }
             
             document.body.removeChild(textarea);
