@@ -44,7 +44,7 @@ class RadioInput extends Component
         $this->disabled = $disabled;
         $this->inline = $inline;
         $this->description = $description;
-        $this->id = $id ?? ($name . '_' . $value);
+        $this->id = $id ?? ($name.'_'.$value);
     }
 
     /**

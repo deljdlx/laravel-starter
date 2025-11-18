@@ -57,6 +57,6 @@
         'WV' => 'West Virginia',
         'WI' => 'Wisconsin',
         'WY' => 'Wyoming',
-    ]" :selected="['AZ', 'SC', 'WY']"
+    ]" :value="['AZ', 'SC', 'WY']"
         :multiple="true" />
 </div>
