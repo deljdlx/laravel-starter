@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dev\ModelInspectorController;
 use App\Http\Controllers\Dev\ModelBuilderController;
+use App\Http\Controllers\Dev\SchemaMermaidController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,4 +32,7 @@ Route::prefix('dev')->group(function () {
     Route::get('/model-builder', [ModelBuilderController::class, 'show'])->name('dev.model-builder.index');
     Route::post('/model-builder/preview', [ModelBuilderController::class, 'preview'])->name('dev.model-builder.preview');
     Route::post('/model-builder', [ModelBuilderController::class, 'store'])->name('dev.model-builder.store');
+    
+    // Schema Mermaid Diagram
+    Route::get('/schema-mermaid', [SchemaMermaidController::class, 'show'])->name('dev.schema-mermaid.index');
 });
