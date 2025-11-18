@@ -24,6 +24,7 @@
         "codemirror": "^5.65.20",
         "echarts": "^6.0.0",
         "jsvectormap": "^1.7.0",
+        "mermaid": "^11.12.1",
         "sortablejs": "^1.15.2",
         "tabulator": "^0.2.40",
         "tabulator-tables": "^6.3.1",
