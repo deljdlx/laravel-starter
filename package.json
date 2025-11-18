@@ -21,6 +21,7 @@
         "@tabler/core": "^1.4.0",
         "@tabler/icons": "^3.35.0",
         "apexcharts": "^5.3.5",
+        "codemirror": "^5.65.20",
         "echarts": "^6.0.0",
         "jsvectormap": "^1.7.0",
         "sortablejs": "^1.15.2",
