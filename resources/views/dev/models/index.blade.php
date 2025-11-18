@@ -22,6 +22,11 @@
                                 Browse and inspect Eloquent models and database schema
                             </div>
                         </div>
+                        <div class="col">
+                            <a href="/dev/model-builder" class="btn btn-secondary">
+                                Builder
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
