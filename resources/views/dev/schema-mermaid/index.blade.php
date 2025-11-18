@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Database Schema - Mermaid Diagram</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ 
-            startOnLoad: true,
-            theme: 'default',
-            securityLevel: 'loose',
-        });
-    </script>
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js',
+    ])
 </head>
 <body>
     <div class="page">

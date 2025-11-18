@@ -14,6 +14,23 @@ This Laravel starter project provides a solid foundation for building modern web
 - **Modern Stack** - Includes Vite for asset bundling
 - **Testing Setup** - PHPUnit configured and ready to use
 
+```mermaid
+
+   erDiagram
+       USERS {
+           int id PK
+           varchar email
+       }
+       POSTS {
+           int id PK
+           int user_id FK
+           text body
+       }
+       USERS ||--o{ POSTS : "has many"
+
+```
+
+
 ## Requirements
 
 - PHP >= 8.1
