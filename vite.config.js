@@ -11,7 +11,8 @@ export default defineConfig({
         'resources/js/app.js',
         'resources/js/home.js',
         'resources/js/model-builder.js',
-        'resources/js/model-builder-app.js'
+        'resources/js/model-builder-app.js',
+        'resources/js/retejs-demo.js'
       ],
       refresh: true,
     }),

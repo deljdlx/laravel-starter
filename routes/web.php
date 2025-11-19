@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dev\ModelInspectorController;
 use App\Http\Controllers\Dev\ModelBuilderController;
 use App\Http\Controllers\Dev\SchemaMermaidController;
+use App\Http\Controllers\ReteJsDemoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +17,8 @@ Route::get('/compteur', function () {
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::get('/retejs-demo', [ReteJsDemoController::class, 'index'])->name('retejs.demo');
 
 // Developer Tools Routes
 Route::prefix('dev')->group(function () {
