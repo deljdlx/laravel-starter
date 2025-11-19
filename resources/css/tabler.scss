@@ -8,11 +8,10 @@
  * 3. Finally, we import Tabler vendors (additional components)
  */
 
-// Import custom variable overrides BEFORE Tabler
-@import './tabler-variables.scss';
-
 // Import Tabler core styles
 @import '@tabler/core/scss/tabler.scss';
 
 // Import Tabler vendors (additional components)
 @import '@tabler/core/scss/tabler-vendors.scss';
+
+@import './tabler-variables.scss';
