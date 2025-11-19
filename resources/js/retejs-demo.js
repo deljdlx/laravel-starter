@@ -15,7 +15,7 @@ class NumberNode extends ClassicPreset.Node {
     constructor(initial = 0, change) {
         super('Number');
         
-        const control = new ClassicPreset.InputControl('number', { 
+        const control = new ClassicPreset.InputControl('number', {
             initial,
             change
         });
@@ -32,23 +32,32 @@ class NumberNode extends ClassicPreset.Node {
 class AddNode extends ClassicPreset.Node {
     constructor() {
         super('Add');
-        
+
         this.addInput('a', new ClassicPreset.Input(socket, 'A'));
         this.addInput('b', new ClassicPreset.Input(socket, 'B'));
+        this.addInput('c', new ClassicPreset.Input(socket, 'C'));
         this.addOutput('value', new ClassicPreset.Output(socket, 'Result'));
         this.inputA = 0;
         this.inputB = 0;
+        this.inputC = 0;
     }
-    
+
     getValue() {
-        return this.inputA + this.inputB;
+        return this.inputA + this.inputB + this.inputC;
     }
-    
+
     setInput(key, value) {
-        if (key === 'a') {
-            this.inputA = value;
-        } else if (key === 'b') {
-            this.inputB = value;
+
+        switch (key) {
+            case 'a':
+                this.inputA = value;
+                break;
+            case 'b':
+                this.inputB = value;
+                break;
+            case 'c':
+                this.inputC = value;
+                break;
         }
     }
 }
@@ -57,13 +66,13 @@ class AddNode extends ClassicPreset.Node {
 class DisplayNode extends ClassicPreset.Node {
     constructor() {
         super('Display');
-        
+
         this.addInput('value', new ClassicPreset.Input(socket, 'Value'));
         const control = new ClassicPreset.InputControl('text', { initial: '0', readonly: true });
         this.addControl('display', control);
         this.currentValue = 0;
     }
-    
+
     setValue(value) {
         this.currentValue = value;
         if (this.controls.display) {
@@ -77,22 +86,22 @@ class DisplayNode extends ClassicPreset.Node {
 function processDataflow(editor, area) {
     const connections = editor.getConnections();
     const nodes = editor.getNodes();
-    
+
     // Create a map of node outputs
     const nodeOutputs = new Map();
-    
+
     // First, get all number node values
     nodes.forEach(node => {
         if (node instanceof NumberNode) {
             nodeOutputs.set(node.id, { value: node.getValue() });
         }
     });
-    
+
     // Process connections to calculate Add node values
     connections.forEach(conn => {
         const sourceNode = nodes.find(n => n.id === conn.source);
         const targetNode = nodes.find(n => n.id === conn.target);
-        
+
         if (sourceNode && targetNode) {
             // Get the output value from source
             let outputValue = 0;
@@ -101,7 +110,7 @@ function processDataflow(editor, area) {
             } else if (sourceNode instanceof AddNode) {
                 outputValue = sourceNode.getValue();
             }
-            
+
             // Set input on target
             if (targetNode instanceof AddNode) {
                 targetNode.setInput(conn.targetInput, outputValue);
@@ -112,12 +121,12 @@ function processDataflow(editor, area) {
             }
         }
     });
-    
+
     // Second pass for display nodes (in case they're connected to Add nodes)
     connections.forEach(conn => {
         const sourceNode = nodes.find(n => n.id === conn.source);
         const targetNode = nodes.find(n => n.id === conn.target);
-        
+
         if (sourceNode instanceof AddNode && targetNode instanceof DisplayNode) {
             targetNode.setValue(sourceNode.getValue());
             // Force a re-render by updating the node
@@ -140,7 +149,7 @@ export async function createEditor(container) {
     render.addPreset(VuePresets.classic.setup());
 
     editor.use(area);
-    
+
     area.use(connection);
     area.use(render);
 
@@ -151,15 +160,22 @@ export async function createEditor(container) {
         processDataflow(editor, area);
     });
     await editor.addNode(n1);
-    
+
     const n2 = new NumberNode(3, () => {
         processDataflow(editor, area);
     });
     await editor.addNode(n2);
-    
+
+
+    const n3 = new NumberNode(3, () => {
+        processDataflow(editor, area);
+    });
+    await editor.addNode(n3);
+
+
     const add = new AddNode();
     await editor.addNode(add);
-    
+
     const display = new DisplayNode();
     await editor.addNode(display);
 
