@@ -306,6 +306,42 @@
             border-bottom: 1px solid #e2e8f0;
             background: #f8fafc;
         }
+
+        /* Fields display inside nodes */
+        .fields-display {
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            background: white;
+        }
+
+        .fields-display .no-fields {
+            color: #94a3b8;
+            font-style: italic;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .fields-display .field-row {
+            padding: 0.375rem 0.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+        }
+
+        .fields-display .field-row:last-child {
+            border-bottom: none;
+        }
+
+        .fields-display .field-name {
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .fields-display .field-type {
+            color: #64748b;
+            margin-left: 0.25rem;
+            font-size: 0.7rem;
+        }
     </style>
 </head>
 <body>

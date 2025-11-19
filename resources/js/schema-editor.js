@@ -14,6 +14,16 @@ const schemaState = {
 const relationSocket = new ClassicPreset.Socket('relation');
 
 /**
+ * Fields Display Control - shows fields inside the node
+ */
+class FieldsControl extends ClassicPreset.Control {
+    constructor(fields) {
+        super();
+        this.fields = fields;
+    }
+}
+
+/**
  * Model Node - represents a database model/table
  */
 class ModelNode extends ClassicPreset.Node {
@@ -26,6 +36,10 @@ class ModelNode extends ClassicPreset.Node {
         this.fields = data.fields || [];
         this.relations = data.relations || [];
         
+        // Add fields display control
+        this.fieldsControl = new FieldsControl(this.fields);
+        this.addControl('fields', this.fieldsControl);
+        
         // Add output socket for relations
         this.addOutput('relations', new ClassicPreset.Output(relationSocket, 'Relations'));
         // Add input socket for relations
@@ -34,6 +48,13 @@ class ModelNode extends ClassicPreset.Node {
     
     updateLabel(newLabel) {
         this.label = newLabel;
+    }
+    
+    updateFieldsDisplay() {
+        // Update the control with new fields data
+        if (this.fieldsControl) {
+            this.fieldsControl.fields = this.fields;
+        }
     }
     
     getData() {
@@ -93,8 +114,34 @@ class SchemaEditor {
             accumulating: AreaExtensions.accumulateOnCtrl()
         });
         
-        // Setup rendering
-        render.addPreset(VuePresets.classic.setup());
+        // Setup rendering with custom control for fields
+        render.addPreset(VuePresets.classic.setup({
+            customize: {
+                control(data) {
+                    if (data.payload instanceof FieldsControl) {
+                        return {
+                            component: {
+                                template: `
+                                    <div class="fields-display">
+                                        <div v-if="fields.length === 0" class="no-fields">No fields</div>
+                                        <div v-for="(field, index) in fields" :key="index" class="field-row">
+                                            <span class="field-name">{{ field.name }}</span>
+                                            <span class="field-type">: {{ field.type }}</span>
+                                        </div>
+                                    </div>
+                                `,
+                                props: ['data'],
+                                computed: {
+                                    fields() {
+                                        return this.data.payload.fields || [];
+                                    }
+                                }
+                            }
+                        };
+                    }
+                }
+            }
+        }));
         
         // Connect plugins
         this.editor.use(this.area);
@@ -272,8 +319,10 @@ class SchemaEditor {
             btn.addEventListener('click', (e) => {
                 const index = parseInt(e.currentTarget.dataset.index);
                 node.removeField(index);
+                node.updateFieldsDisplay();
                 this.renderFields(node);
                 this.updateSchema();
+                this.area.update('node', node.id);
             });
         });
     }
@@ -326,8 +375,10 @@ class SchemaEditor {
         };
         
         node.addField(newField);
+        node.updateFieldsDisplay();
         this.renderFields(node);
         this.updateSchema();
+        this.area.update('node', node.id);
         
         // Auto-edit the new field
         setTimeout(() => this.editField(node, node.fields.length - 1), 10);
@@ -388,8 +439,10 @@ class SchemaEditor {
             };
             
             node.updateField(index, updatedField);
+            node.updateFieldsDisplay();
             this.renderFields(node);
             this.updateSchema();
+            this.area.update('node', node.id);
         });
         
         // Cancel button
