@@ -2,7 +2,6 @@ import { NodeEditor, ClassicPreset } from 'rete';
 import { AreaPlugin, AreaExtensions } from 'rete-area-plugin';
 import { ConnectionPlugin, Presets as ConnectionPresets } from 'rete-connection-plugin';
 import { VuePlugin, Presets as VuePresets } from 'rete-vue-plugin';
-import { AutoArrangePlugin, Presets as ArrangePresets } from 'rete-auto-arrange-plugin';
 
 // Define Schemes
 class Node extends ClassicPreset.Node {}
@@ -13,18 +12,19 @@ const socket = new ClassicPreset.Socket('number');
 
 // Number Node - displays a number value
 class NumberNode extends ClassicPreset.Node {
-    constructor(initial = 0) {
+    constructor(initial = 0, change) {
         super('Number');
         
-        const control = new ClassicPreset.InputControl('number', { initial });
+        const control = new ClassicPreset.InputControl('number', { 
+            initial,
+            change
+        });
         this.addControl('value', control);
         this.addOutput('value', new ClassicPreset.Output(socket, 'Number'));
     }
     
-    data() {
-        return {
-            value: this.controls.value.value
-        };
+    getValue() {
+        return Number(this.controls.value.value) || 0;
     }
 }
 
@@ -36,14 +36,20 @@ class AddNode extends ClassicPreset.Node {
         this.addInput('a', new ClassicPreset.Input(socket, 'A'));
         this.addInput('b', new ClassicPreset.Input(socket, 'B'));
         this.addOutput('value', new ClassicPreset.Output(socket, 'Result'));
+        this.inputA = 0;
+        this.inputB = 0;
     }
     
-    data(inputs) {
-        const a = inputs.a?.[0] || 0;
-        const b = inputs.b?.[0] || 0;
-        return {
-            value: a + b
-        };
+    getValue() {
+        return this.inputA + this.inputB;
+    }
+    
+    setInput(key, value) {
+        if (key === 'a') {
+            this.inputA = value;
+        } else if (key === 'b') {
+            this.inputB = value;
+        }
     }
 }
 
@@ -55,15 +61,69 @@ class DisplayNode extends ClassicPreset.Node {
         this.addInput('value', new ClassicPreset.Input(socket, 'Value'));
         const control = new ClassicPreset.InputControl('text', { initial: '0', readonly: true });
         this.addControl('display', control);
+        this.currentValue = 0;
     }
     
-    data(inputs) {
-        const value = inputs.value?.[0] || 0;
+    setValue(value) {
+        this.currentValue = value;
         if (this.controls.display) {
+            // Update the control value property directly
             this.controls.display.value = String(value);
         }
-        return {};
     }
+}
+
+// Process the dataflow through the network
+function processDataflow(editor, area) {
+    const connections = editor.getConnections();
+    const nodes = editor.getNodes();
+    
+    // Create a map of node outputs
+    const nodeOutputs = new Map();
+    
+    // First, get all number node values
+    nodes.forEach(node => {
+        if (node instanceof NumberNode) {
+            nodeOutputs.set(node.id, { value: node.getValue() });
+        }
+    });
+    
+    // Process connections to calculate Add node values
+    connections.forEach(conn => {
+        const sourceNode = nodes.find(n => n.id === conn.source);
+        const targetNode = nodes.find(n => n.id === conn.target);
+        
+        if (sourceNode && targetNode) {
+            // Get the output value from source
+            let outputValue = 0;
+            if (sourceNode instanceof NumberNode) {
+                outputValue = sourceNode.getValue();
+            } else if (sourceNode instanceof AddNode) {
+                outputValue = sourceNode.getValue();
+            }
+            
+            // Set input on target
+            if (targetNode instanceof AddNode) {
+                targetNode.setInput(conn.targetInput, outputValue);
+                // Store the calculated output
+                nodeOutputs.set(targetNode.id, { value: targetNode.getValue() });
+            } else if (targetNode instanceof DisplayNode) {
+                targetNode.setValue(outputValue);
+            }
+        }
+    });
+    
+    // Second pass for display nodes (in case they're connected to Add nodes)
+    connections.forEach(conn => {
+        const sourceNode = nodes.find(n => n.id === conn.source);
+        const targetNode = nodes.find(n => n.id === conn.target);
+        
+        if (sourceNode instanceof AddNode && targetNode instanceof DisplayNode) {
+            targetNode.setValue(sourceNode.getValue());
+            // Force a re-render by updating the node
+            area.update('node', targetNode.id);
+        }
+    });
 }
 
 // Initialize the Rete.js editor
@@ -86,11 +146,15 @@ export async function createEditor(container) {
 
     connection.addPreset(ConnectionPresets.classic.setup());
 
-    // Create sample nodes
-    const n1 = new NumberNode(5);
+    // Create sample nodes with process callback for number nodes
+    const n1 = new NumberNode(5, () => {
+        processDataflow(editor, area);
+    });
     await editor.addNode(n1);
     
-    const n2 = new NumberNode(3);
+    const n2 = new NumberNode(3, () => {
+        processDataflow(editor, area);
+    });
     await editor.addNode(n2);
     
     const add = new AddNode();
@@ -110,10 +174,23 @@ export async function createEditor(container) {
     await editor.addConnection(new Connection(n2, 'value', add, 'b'));
     await editor.addConnection(new Connection(add, 'value', display, 'value'));
 
+    // Initial processing to calculate values
+    setTimeout(() => {
+        processDataflow(editor, area);
+    }, 100);
+
+    // Reprocess when connections change
+    editor.addPipe(context => {
+        if (context.type === 'connectioncreated' || context.type === 'connectionremoved') {
+            setTimeout(() => processDataflow(editor, area), 10);
+        }
+        return context;
+    });
+
     // Fit to viewport
     setTimeout(() => {
         AreaExtensions.zoomAt(area, editor.getNodes());
-    }, 100);
+    }, 200);
 
     return { editor, area };
 }
