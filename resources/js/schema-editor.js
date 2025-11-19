@@ -18,9 +18,10 @@ const relationSocket = new ClassicPreset.Socket('relation');
  */
 class ModelNode extends ClassicPreset.Node {
     constructor(data = {}) {
-        super('Model');
+        const modelName = data.modelName || 'NewModel';
+        super(modelName);
         
-        this.modelName = data.modelName || 'NewModel';
+        this.modelName = modelName;
         this.tableName = data.tableName || this.modelName.toLowerCase() + 's';
         this.fields = data.fields || [];
         this.relations = data.relations || [];
@@ -29,6 +30,10 @@ class ModelNode extends ClassicPreset.Node {
         this.addOutput('relations', new ClassicPreset.Output(relationSocket, 'Relations'));
         // Add input socket for relations
         this.addInput('relations', new ClassicPreset.Input(relationSocket, 'Relations'));
+    }
+    
+    updateLabel(newLabel) {
+        this.label = newLabel;
     }
     
     getData() {
@@ -279,6 +284,7 @@ class SchemaEditor {
         if (modelNameInput) {
             modelNameInput.addEventListener('change', (e) => {
                 node.modelName = e.target.value;
+                node.updateLabel(e.target.value);
                 this.updateSchema();
                 this.area.update('node', node.id);
             });
