@@ -5,8 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import '@tabler/core/dist/js/tabler.min.js';
-import "@tabler/core/dist/css/tabler.min.css";
-import "@tabler/core/dist/css/tabler-vendors.min.css";
+// Import Tabler with custom variables instead of minified CSS
+import "../css/tabler.scss";
+// import "@tabler/core/dist/css/tabler.min.css";
+// import "@tabler/core/dist/css/tabler-vendors.min.css";
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 
 

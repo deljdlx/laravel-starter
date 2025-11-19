@@ -1,0 +1,18 @@
+/**
+ * Tabler with Custom Variables
+ * 
+ * This file imports Tabler with custom variable overrides.
+ * 
+ * 1. First, we import our custom variables (they override Tabler defaults)
+ * 2. Then, we import Tabler core (which uses our custom variables)
+ * 3. Finally, we import Tabler vendors (additional components)
+ */
+
+// Import custom variable overrides BEFORE Tabler
+@import './tabler-variables.scss';
+
+// Import Tabler core styles
+@import '@tabler/core/scss/tabler.scss';
+
+// Import Tabler vendors (additional components)
+@import '@tabler/core/scss/tabler-vendors.scss';
