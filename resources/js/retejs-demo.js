@@ -14,7 +14,7 @@ const socket = new ClassicPreset.Socket('number');
 class NumberNode extends ClassicPreset.Node {
     constructor(initial = 0, change) {
         super('Number');
-        
+
         const control = new ClassicPreset.InputControl('number', {
             initial,
             change
@@ -22,7 +22,7 @@ class NumberNode extends ClassicPreset.Node {
         this.addControl('value', control);
         this.addOutput('value', new ClassicPreset.Output(socket, 'Number'));
     }
-    
+
     getValue() {
         return Number(this.controls.value.value) || 0;
     }
