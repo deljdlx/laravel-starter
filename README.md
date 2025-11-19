@@ -13,6 +13,7 @@ This Laravel starter project provides a solid foundation for building modern web
 - **Development Ready** - Pre-configured for immediate development
 - **Modern Stack** - Includes Vite for asset bundling
 - **Testing Setup** - PHPUnit configured and ready to use
+- **Rete.js Integration** - Visual node-based editor for creating interactive workflows
 
 ```mermaid
 
@@ -86,6 +87,16 @@ Build assets for development:
 ```bash
 npm run dev
 ```
+
+## Demo Pages
+
+### Rete.js Visual Node Editor
+
+Access the Rete.js demo at `/retejs-demo` to see an interactive visual programming interface featuring:
+- Node-based editor for creating workflows
+- Pre-configured example with mathematical operations
+- Drag-and-drop node positioning
+- Interactive connection visualization
 
 ## Testing
 
