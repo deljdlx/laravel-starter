@@ -1,6 +1,6 @@
 import { NodeEditor, ClassicPreset } from 'rete';
-import { AreaPlugin } from 'rete-area-plugin';
-import { ConnectionPlugin } from 'rete-connection-plugin';
+import { AreaPlugin, AreaExtensions } from 'rete-area-plugin';
+import { ConnectionPlugin, Presets as ConnectionPresets } from 'rete-connection-plugin';
 import { VuePlugin, Presets as VuePresets } from 'rete-vue-plugin';
 import { AutoArrangePlugin, Presets as ArrangePresets } from 'rete-auto-arrange-plugin';
 
@@ -13,10 +13,10 @@ const socket = new ClassicPreset.Socket('number');
 
 // Number Node - displays a number value
 class NumberNode extends ClassicPreset.Node {
-    constructor(initial = 0, change) {
+    constructor(initial = 0) {
         super('Number');
         
-        const control = new ClassicPreset.InputControl('number', { initial, change });
+        const control = new ClassicPreset.InputControl('number', { initial });
         this.addControl('value', control);
         this.addOutput('value', new ClassicPreset.Output(socket, 'Number'));
     }
@@ -72,48 +72,47 @@ export async function createEditor(container) {
     const area = new AreaPlugin(container);
     const connection = new ConnectionPlugin();
     const render = new VuePlugin();
-    const arrange = new AutoArrangePlugin();
+
+    AreaExtensions.selectableNodes(area, AreaExtensions.selector(), {
+        accumulating: AreaExtensions.accumulateOnCtrl()
+    });
+
+    render.addPreset(VuePresets.classic.setup());
 
     editor.use(area);
+    
     area.use(connection);
     area.use(render);
-    
-    render.addPreset(VuePresets.classic.setup());
-    arrange.addPreset(ArrangePresets.classic.setup());
-    
-    connection.addPreset(() => ({
-        pick(sourceNodeId, sourceSocketId) {
-            return {
-                socket: socket
-            };
-        },
-        release(targetNodeId, targetSocketId, payload) {
-            return payload.socket === socket;
-        },
-    }));
+
+    connection.addPreset(ConnectionPresets.classic.setup());
 
     // Create sample nodes
     const n1 = new NumberNode(5);
-    const n2 = new NumberNode(3);
-    const add = new AddNode();
-    const display = new DisplayNode();
-    
     await editor.addNode(n1);
+    
+    const n2 = new NumberNode(3);
     await editor.addNode(n2);
+    
+    const add = new AddNode();
     await editor.addNode(add);
+    
+    const display = new DisplayNode();
     await editor.addNode(display);
+
+    // Position nodes manually
+    await area.translate(n1.id, { x: 100, y: 100 });
+    await area.translate(n2.id, { x: 100, y: 300 });
+    await area.translate(add.id, { x: 400, y: 200 });
+    await area.translate(display.id, { x: 700, y: 200 });
 
     // Create connections
     await editor.addConnection(new Connection(n1, 'value', add, 'a'));
     await editor.addConnection(new Connection(n2, 'value', add, 'b'));
     await editor.addConnection(new Connection(add, 'value', display, 'value'));
 
-    // Arrange nodes
-    await arrange.layout();
-
     // Fit to viewport
     setTimeout(() => {
-        AreaPlugin.zoomAt(area, editor.getNodes());
+        AreaExtensions.zoomAt(area, editor.getNodes());
     }, 100);
 
     return { editor, area };
