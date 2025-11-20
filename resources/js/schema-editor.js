@@ -14,6 +14,16 @@ const schemaState = {
 const relationSocket = new ClassicPreset.Socket('relation');
 
 /**
+ * Fields Display Control - renders fields as HTML
+ */
+class FieldsControl extends ClassicPreset.Control {
+    constructor(fields) {
+        super();
+        this.fields = fields;
+    }
+}
+
+/**
  * Model Node - represents a database model/table
  */
 class ModelNode extends ClassicPreset.Node {
@@ -26,35 +36,26 @@ class ModelNode extends ClassicPreset.Node {
         this.fields = data.fields || [];
         this.relations = data.relations || [];
         
+        // Add fields control
+        this.fieldsControl = new FieldsControl(this.fields);
+        this.addControl('fields', this.fieldsControl);
+        
         // Add output socket for relations
         this.addOutput('relations', new ClassicPreset.Output(relationSocket, 'Relations'));
         // Add input socket for relations
         this.addInput('relations', new ClassicPreset.Input(relationSocket, 'Relations'));
-        
-        // Update label to include fields
-        this.updateLabelWithFields();
     }
     
     updateLabel(newLabel) {
         this.modelName = newLabel;
-        this.updateLabelWithFields();
-    }
-    
-    updateLabelWithFields() {
-        // Create label with model name and field count
-        let label = this.modelName;
-        if (this.fields.length > 0) {
-            label += `\n─────────────\n`;
-            this.fields.forEach(field => {
-                const nullable = field.nullable ? '?' : '';
-                label += `${field.name}: ${field.type}${nullable}\n`;
-            });
-        }
-        this.label = label;
+        this.label = newLabel;
     }
     
     updateFieldsDisplay() {
-        this.updateLabelWithFields();
+        // Update the fields in the control
+        if (this.fieldsControl) {
+            this.fieldsControl.fields = this.fields;
+        }
     }
     
     getData() {
@@ -114,8 +115,38 @@ class SchemaEditor {
             accumulating: AreaExtensions.accumulateOnCtrl()
         });
         
-        // Setup rendering
-        render.addPreset(VuePresets.classic.setup());
+        // Setup rendering with custom control for fields
+        render.addPreset(VuePresets.classic.setup({
+            customize: {
+                control(data) {
+                    if (data.payload instanceof FieldsControl) {
+                        return {
+                            template: `
+                                <div class="model-fields-container">
+                                    <div class="fields-separator"></div>
+                                    <div v-if="fields.length === 0" class="no-fields-message">
+                                        No fields
+                                    </div>
+                                    <div v-else class="fields-list">
+                                        <div v-for="(field, index) in fields" :key="index" class="field-item">
+                                            <span class="field-name">{{ field.name }}</span>
+                                            <span class="field-type">{{ field.type }}</span>
+                                            <span v-if="field.nullable" class="field-nullable">?</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `,
+                            props: ['data'],
+                            computed: {
+                                fields() {
+                                    return this.data.payload.fields || [];
+                                }
+                            }
+                        };
+                    }
+                }
+            }
+        }));
         
         // Connect plugins
         this.editor.use(this.area);

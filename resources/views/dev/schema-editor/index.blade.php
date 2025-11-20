@@ -303,48 +303,71 @@
             font-weight: 600;
             color: #1e293b;
             padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e2e8f0;
             background: #f8fafc;
-            white-space: pre-line;
-            font-family: monospace;
-            font-size: 0.875rem;
-            line-height: 1.5;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Fields display inside nodes */
-        .fields-display {
-            padding: 0.5rem;
-            font-size: 0.75rem;
+        /* Model fields container - HTML display */
+        .model-fields-container {
             background: white;
+            width: 100%;
         }
 
-        .fields-display .no-fields {
+        .fields-separator {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 0;
+        }
+
+        .no-fields-message {
+            padding: 0.75rem 1rem;
             color: #94a3b8;
             font-style: italic;
-            padding: 0.5rem;
+            font-size: 0.75rem;
             text-align: center;
         }
 
-        .fields-display .field-row {
-            padding: 0.375rem 0.5rem;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            align-items: center;
+        .fields-list {
+            padding: 0.5rem 0;
         }
 
-        .fields-display .field-row:last-child {
+        .field-item {
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.8125rem;
+            transition: background-color 0.15s ease;
+        }
+
+        .field-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .field-item:last-child {
             border-bottom: none;
         }
 
-        .fields-display .field-name {
-            font-weight: 500;
-            color: #1e293b;
+        .field-name {
+            font-weight: 600;
+            color: #0f172a;
+            font-family: 'Courier New', monospace;
         }
 
-        .fields-display .field-type {
-            color: #64748b;
-            margin-left: 0.25rem;
-            font-size: 0.7rem;
+        .field-type {
+            color: #3b82f6;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #eff6ff;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+        }
+
+        .field-nullable {
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.875rem;
         }
 
         /* Sockets in custom node */
