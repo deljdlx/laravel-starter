@@ -52,10 +52,19 @@ function setupEventListeners() {
     
     // Drawflow node selection
     editor.on('nodeSelected', (id) => {
-        const nodeId = parseInt(id);
-        const model = schemaState.models.find(m => m.nodeId === nodeId);
-        if (model) {
-            selectModel(model);
+        // Drawflow uses its own internal ID system
+        // We need to find the model by checking the node's name attribute
+        const nodeData = editor.getNodeFromId(id);
+        if (nodeData && nodeData.name) {
+            // Extract our nodeId from the node name (format: "model_X")
+            const match = nodeData.name.match(/model_(\d+)/);
+            if (match) {
+                const ourNodeId = parseInt(match[1]);
+                const model = schemaState.models.find(m => m.nodeId === ourNodeId);
+                if (model) {
+                    selectModel(model);
+                }
+            }
         }
     });
     
@@ -66,14 +75,21 @@ function setupEventListeners() {
     
     // Drawflow node removal
     editor.on('nodeRemoved', (id) => {
-        const nodeId = parseInt(id);
-        const modelIndex = schemaState.models.findIndex(m => m.nodeId === nodeId);
-        if (modelIndex !== -1) {
-            schemaState.models.splice(modelIndex, 1);
-            if (schemaState.selectedModel && schemaState.selectedModel.nodeId === nodeId) {
-                schemaState.selectedModel = null;
+        // Find model by checking all nodes to match Drawflow's internal ID
+        const nodeData = editor.getNodeFromId(id);
+        if (nodeData && nodeData.name) {
+            const match = nodeData.name.match(/model_(\d+)/);
+            if (match) {
+                const ourNodeId = parseInt(match[1]);
+                const modelIndex = schemaState.models.findIndex(m => m.nodeId === ourNodeId);
+                if (modelIndex !== -1) {
+                    schemaState.models.splice(modelIndex, 1);
+                    if (schemaState.selectedModel && schemaState.selectedModel.nodeId === ourNodeId) {
+                        schemaState.selectedModel = null;
+                    }
+                    renderUI();
+                }
             }
-            renderUI();
         }
     });
 }
@@ -154,8 +170,11 @@ function createDrawflowNode(modelData) {
     const posX = 50 + (schemaState.models.length - 1) * 250;
     const posY = 50 + Math.floor((schemaState.models.length - 1) / 3) * 200;
     
+    // Store the original nodeId before adding
+    const originalNodeId = modelData.nodeId;
+    
     editor.addNode(
-        `model_${modelData.nodeId}`,
+        `model_${originalNodeId}`,
         1, // inputs
         1, // outputs
         posX,
@@ -165,7 +184,8 @@ function createDrawflowNode(modelData) {
         html
     );
     
-    modelData.nodeId = editor.nodeId;
+    // IMPORTANT: Keep the original nodeId, don't overwrite it
+    // The Drawflow library assigns editor.nodeId after adding, but we use our own counter
 }
 
 /**
@@ -206,12 +226,24 @@ function generateNodeHTML(modelData) {
  */
 function updateNodeVisual(modelData) {
     const html = generateNodeHTML(modelData);
-    editor.updateNodeDataFromId(modelData.nodeId, {});
     
-    // Update the node's HTML content
-    const nodeElement = document.querySelector(`#node-${modelData.nodeId} .drawflow_content_node`);
-    if (nodeElement) {
-        nodeElement.innerHTML = html;
+    // Find the Drawflow node ID by searching for our model name
+    const drawflowData = editor.export();
+    let drawflowNodeId = null;
+    
+    for (const [id, node] of Object.entries(drawflowData.drawflow.Home.data)) {
+        if (node.name === `model_${modelData.nodeId}`) {
+            drawflowNodeId = id;
+            break;
+        }
+    }
+    
+    if (drawflowNodeId) {
+        // Update the node's HTML content directly
+        const nodeElement = document.querySelector(`#node-${drawflowNodeId} .drawflow_content_node`);
+        if (nodeElement) {
+            nodeElement.innerHTML = html;
+        }
     }
 }
 
@@ -229,7 +261,20 @@ function selectModel(model) {
 function deleteSelectedModel() {
     if (!schemaState.selectedModel) return;
     
-    editor.removeNodeId(`node-${schemaState.selectedModel.nodeId}`);
+    // Find the Drawflow node ID
+    const drawflowData = editor.export();
+    let drawflowNodeId = null;
+    
+    for (const [id, node] of Object.entries(drawflowData.drawflow.Home.data)) {
+        if (node.name === `model_${schemaState.selectedModel.nodeId}`) {
+            drawflowNodeId = id;
+            break;
+        }
+    }
+    
+    if (drawflowNodeId) {
+        editor.removeNodeId(`node-${drawflowNodeId}`);
+    }
     
     const index = schemaState.models.findIndex(m => m.nodeId === schemaState.selectedModel.nodeId);
     if (index !== -1) {
