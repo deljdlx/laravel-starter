@@ -449,6 +449,72 @@
             margin-left: auto;
         }
 
+        /* Fields Control styling */
+        .fields-control {
+            width: 100%;
+            background: white;
+        }
+
+        .fields-control .fields-separator {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 0;
+        }
+
+        .fields-control .no-fields {
+            padding: 1rem;
+            text-align: center;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 0.8125rem;
+        }
+
+        .fields-control .fields-list {
+            padding: 0;
+        }
+
+        .fields-control .field-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.8125rem;
+            transition: background-color 0.15s ease;
+        }
+
+        .fields-control .field-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .fields-control .field-row:last-child {
+            border-bottom: none;
+        }
+
+        .fields-control .field-name {
+            font-weight: 600;
+            color: #0f172a;
+            font-family: 'Courier New', monospace;
+            flex-shrink: 0;
+        }
+
+        .fields-control .field-type {
+            color: #3b82f6;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #eff6ff;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .fields-control .field-nullable {
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-left: auto;
+        }
+
         /* Sockets in custom node */
         .rete-sockets {
             padding: 0.5rem;

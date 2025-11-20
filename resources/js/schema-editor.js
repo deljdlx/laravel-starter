@@ -14,7 +14,17 @@ const schemaState = {
 const relationSocket = new ClassicPreset.Socket('relation');
 
 /**
- * Model Node - represents a database model/table with custom HTML rendering
+ * Fields Control - displays fields inside node
+ */
+class FieldsControl extends ClassicPreset.Control {
+    constructor(fields) {
+        super();
+        this.fields = fields || [];
+    }
+}
+
+/**
+ * Model Node - represents a database model/table
  */
 class ModelNode extends ClassicPreset.Node {
     constructor(data = {}) {
@@ -25,6 +35,10 @@ class ModelNode extends ClassicPreset.Node {
         this.tableName = data.tableName || this.modelName.toLowerCase() + 's';
         this.fields = data.fields || [];
         this.relations = data.relations || [];
+        
+        // Add fields control
+        this.fieldsControl = new FieldsControl(this.fields);
+        this.addControl('fields', this.fieldsControl);
         
         // Add output socket for relations
         this.addOutput('relations', new ClassicPreset.Output(relationSocket, 'Relations'));
@@ -38,18 +52,8 @@ class ModelNode extends ClassicPreset.Node {
     }
     
     updateFieldsDisplay() {
-        // Fields are rendered via the custom node component
-        // This method is called to trigger a re-render
-    }
-    
-    data() {
-        // Return data needed for custom rendering
-        return {
-            modelName: this.modelName,
-            tableName: this.tableName,
-            fields: this.fields,
-            relations: this.relations
-        };
+        // Update the control with new fields
+        this.fieldsControl.fields = this.fields;
     }
     
     getData() {
@@ -64,14 +68,17 @@ class ModelNode extends ClassicPreset.Node {
     
     addField(field) {
         this.fields.push(field);
+        this.updateFieldsDisplay();
     }
     
     removeField(index) {
         this.fields.splice(index, 1);
+        this.updateFieldsDisplay();
     }
     
     updateField(index, field) {
         this.fields[index] = field;
+        this.updateFieldsDisplay();
     }
 }
 
@@ -109,37 +116,29 @@ class SchemaEditor {
             accumulating: AreaExtensions.accumulateOnCtrl()
         });
         
-        // Setup rendering with custom node component
+        // Setup rendering with custom control for fields
         render.addPreset(VuePresets.classic.setup({
             customize: {
-                node(context) {
-                    // Custom node rendering for ModelNode
-                    if (context.payload instanceof ModelNode) {
+                control(context) {
+                    if (context.payload instanceof FieldsControl) {
                         return {
                             props: ['data'],
                             computed: {
-                                modelName() {
-                                    return this.data.payload.modelName;
-                                },
                                 fields() {
                                     return this.data.payload.fields || [];
                                 }
                             },
                             template: `
-                                <div class="custom-model-node">
-                                    <div class="model-node-header">
-                                        {{ modelName }}
+                                <div class="fields-control">
+                                    <div class="fields-separator"></div>
+                                    <div v-if="fields.length === 0" class="no-fields">
+                                        No fields
                                     </div>
-                                    <div class="model-node-body">
-                                        <div v-if="fields.length === 0" class="no-fields">
-                                            No fields
-                                        </div>
-                                        <div v-else class="fields-list">
-                                            <div v-for="(field, index) in fields" :key="'field-' + field.name + '-' + index" class="field-row">
-                                                <span class="field-name">{{ field.name }}</span>
-                                                <span class="field-type">{{ field.type }}</span>
-                                                <span v-if="field.nullable" class="field-nullable">?</span>
-                                            </div>
+                                    <div v-else class="fields-list">
+                                        <div v-for="(field, index) in fields" :key="'field-' + index" class="field-row">
+                                            <span class="field-name">{{ field.name }}</span>
+                                            <span class="field-type">{{ field.type }}</span>
+                                            <span v-if="field.nullable" class="field-nullable">?</span>
                                         </div>
                                     </div>
                                 </div>
