@@ -305,6 +305,10 @@
             padding: 0.75rem 1rem;
             background: #f8fafc;
             border-bottom: 1px solid #e2e8f0;
+            white-space: pre-line;
+            font-family: monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
         }
 
         /* Model fields container - HTML display */
