@@ -14,18 +14,7 @@ const schemaState = {
 const relationSocket = new ClassicPreset.Socket('relation');
 
 /**
- * Fields Display Control - renders fields as HTML using DOM
- */
-class FieldsControl extends ClassicPreset.Control {
-    constructor(fields, node) {
-        super();
-        this.fields = fields;
-        this.node = node;
-    }
-}
-
-/**
- * Model Node - represents a database model/table
+ * Model Node - represents a database model/table with custom HTML rendering
  */
 class ModelNode extends ClassicPreset.Node {
     constructor(data = {}) {
@@ -41,31 +30,26 @@ class ModelNode extends ClassicPreset.Node {
         this.addOutput('relations', new ClassicPreset.Output(relationSocket, 'Relations'));
         // Add input socket for relations
         this.addInput('relations', new ClassicPreset.Input(relationSocket, 'Relations'));
-        
-        // Update label to include fields
-        this.updateLabelWithFields();
     }
     
     updateLabel(newLabel) {
         this.modelName = newLabel;
-        this.updateLabelWithFields();
-    }
-    
-    updateLabelWithFields() {
-        // Create label with model name and fields
-        let label = this.modelName;
-        if (this.fields.length > 0) {
-            label += `\n─────────────\n`;
-            this.fields.forEach(field => {
-                const nullable = field.nullable ? '?' : '';
-                label += `${field.name}: ${field.type}${nullable}\n`;
-            });
-        }
-        this.label = label;
+        this.label = newLabel;
     }
     
     updateFieldsDisplay() {
-        this.updateLabelWithFields();
+        // Fields are rendered via the custom node component
+        // This method is called to trigger a re-render
+    }
+    
+    data() {
+        // Return data needed for custom rendering
+        return {
+            modelName: this.modelName,
+            tableName: this.tableName,
+            fields: this.fields,
+            relations: this.relations
+        };
     }
     
     getData() {
@@ -125,8 +109,46 @@ class SchemaEditor {
             accumulating: AreaExtensions.accumulateOnCtrl()
         });
         
-        // Setup rendering
-        render.addPreset(VuePresets.classic.setup());
+        // Setup rendering with custom node component
+        render.addPreset(VuePresets.classic.setup({
+            customize: {
+                node(context) {
+                    // Custom node rendering for ModelNode
+                    if (context.payload instanceof ModelNode) {
+                        return {
+                            props: ['data'],
+                            computed: {
+                                modelName() {
+                                    return this.data.payload.modelName;
+                                },
+                                fields() {
+                                    return this.data.payload.fields || [];
+                                }
+                            },
+                            template: `
+                                <div class="custom-model-node">
+                                    <div class="model-node-header">
+                                        {{ modelName }}
+                                    </div>
+                                    <div class="model-node-body">
+                                        <div v-if="fields.length === 0" class="no-fields">
+                                            No fields
+                                        </div>
+                                        <div v-else class="fields-list">
+                                            <div v-for="(field, index) in fields" :key="'field-' + field.name + '-' + index" class="field-row">
+                                                <span class="field-name">{{ field.name }}</span>
+                                                <span class="field-type">{{ field.type }}</span>
+                                                <span v-if="field.nullable" class="field-nullable">?</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `
+                        };
+                    }
+                }
+            }
+        }));
         
         // Connect plugins
         this.editor.use(this.area);

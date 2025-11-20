@@ -374,6 +374,81 @@
             font-size: 0.875rem;
         }
 
+        /* Custom Model Node Styling */
+        .custom-model-node {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            min-width: 220px;
+        }
+
+        .model-node-header {
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 0.9375rem;
+        }
+
+        .model-node-body {
+            padding: 0;
+        }
+
+        .no-fields {
+            padding: 1rem;
+            text-align: center;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 0.8125rem;
+        }
+
+        .fields-list {
+            padding: 0;
+        }
+
+        .field-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.8125rem;
+            transition: background-color 0.15s ease;
+        }
+
+        .field-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .field-row:last-child {
+            border-bottom: none;
+        }
+
+        .field-row .field-name {
+            font-weight: 600;
+            color: #0f172a;
+            font-family: 'Courier New', monospace;
+            flex-shrink: 0;
+        }
+
+        .field-row .field-type {
+            color: #3b82f6;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #eff6ff;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .field-row .field-nullable {
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-left: auto;
+        }
+
         /* Sockets in custom node */
         .rete-sockets {
             padding: 0.5rem;
