@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Schema Editor - Developer Tools</title>
-    @vite(['resources/css/app.css', 'resources/js/schema-editor.js'])
+    @vite(['resources/css/app.css', 'resources/js/schema-editor-drawflow.js'])
     <style>
         body {
             margin: 0;
@@ -103,10 +103,88 @@
             gap: 0.5rem;
         }
 
-        #rete-editor {
+        #drawflow {
             flex: 1;
             position: relative;
             background: #f1f5f9;
+        }
+        
+        /* Drawflow styling */
+        .drawflow .parent-node {
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .drawflow .parent-node.selected {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .model-node-content {
+            min-width: 220px;
+        }
+        
+        .model-header {
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 0.9375rem;
+        }
+        
+        .model-body {
+            padding: 0;
+            background: white;
+        }
+        
+        .model-body .no-fields {
+            padding: 1rem;
+            text-align: center;
+            color: #94a3b8;
+            font-style: italic;
+            font-size: 0.8125rem;
+        }
+        
+        .model-body .field-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.8125rem;
+            transition: background-color 0.15s ease;
+        }
+        
+        .model-body .field-item:hover {
+            background-color: #f8fafc;
+        }
+        
+        .model-body .field-item:last-child {
+            border-bottom: none;
+        }
+        
+        .model-body .field-name {
+            font-weight: 600;
+            color: #0f172a;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .model-body .field-type-badge {
+            color: #3b82f6;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #eff6ff;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+        
+        .model-body .nullable-indicator {
+            color: #f59e0b;
+            font-weight: 700;
+            font-size: 0.875rem;
         }
 
         /* Right Panel - Properties */
@@ -557,7 +635,7 @@
                     📝 Schema JSON (Debug)
                 </div>
                 <div class="json-panel-body">
-                    <div class="json-display" id="json-display">
+                    <div class="json-display" id="json-debug-panel">
 {
   "models": []
 }
@@ -572,7 +650,7 @@
                         ➕ Add Model
                     </button>
                 </div>
-                <div id="rete-editor"></div>
+                <div id="drawflow"></div>
             </div>
 
             <!-- Right Panel: Properties -->
@@ -580,7 +658,7 @@
                 <div class="properties-panel-header">
                     ⚙️ Properties
                 </div>
-                <div class="properties-panel-body" id="properties-body">
+                <div class="properties-panel-body" id="properties-panel">
                     <div class="empty-state">
                         <div class="empty-state-icon">📦</div>
                         <div>Select a model to view and edit its properties</div>

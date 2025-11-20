@@ -13,7 +13,8 @@ export default defineConfig({
         'resources/js/model-builder.js',
         'resources/js/model-builder-app.js',
         'resources/js/retejs-demo.js',
-        'resources/js/schema-editor.js'
+        'resources/js/schema-editor.js',
+        'resources/js/schema-editor-drawflow.js'
       ],
       refresh: true,
     }),
