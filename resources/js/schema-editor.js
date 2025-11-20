@@ -14,16 +14,6 @@ const schemaState = {
 const relationSocket = new ClassicPreset.Socket('relation');
 
 /**
- * Fields Display Control - shows fields inside the node
- */
-class FieldsControl extends ClassicPreset.Control {
-    constructor(fields) {
-        super();
-        this.fields = fields;
-    }
-}
-
-/**
  * Model Node - represents a database model/table
  */
 class ModelNode extends ClassicPreset.Node {
@@ -36,25 +26,35 @@ class ModelNode extends ClassicPreset.Node {
         this.fields = data.fields || [];
         this.relations = data.relations || [];
         
-        // Add fields display control
-        this.fieldsControl = new FieldsControl(this.fields);
-        this.addControl('fields', this.fieldsControl);
-        
         // Add output socket for relations
         this.addOutput('relations', new ClassicPreset.Output(relationSocket, 'Relations'));
         // Add input socket for relations
         this.addInput('relations', new ClassicPreset.Input(relationSocket, 'Relations'));
+        
+        // Update label to include fields
+        this.updateLabelWithFields();
     }
     
     updateLabel(newLabel) {
-        this.label = newLabel;
+        this.modelName = newLabel;
+        this.updateLabelWithFields();
+    }
+    
+    updateLabelWithFields() {
+        // Create label with model name and field count
+        let label = this.modelName;
+        if (this.fields.length > 0) {
+            label += `\n─────────────\n`;
+            this.fields.forEach(field => {
+                const nullable = field.nullable ? '?' : '';
+                label += `${field.name}: ${field.type}${nullable}\n`;
+            });
+        }
+        this.label = label;
     }
     
     updateFieldsDisplay() {
-        // Update the control with new fields data
-        if (this.fieldsControl) {
-            this.fieldsControl.fields = this.fields;
-        }
+        this.updateLabelWithFields();
     }
     
     getData() {
@@ -114,34 +114,8 @@ class SchemaEditor {
             accumulating: AreaExtensions.accumulateOnCtrl()
         });
         
-        // Setup rendering with custom control for fields
-        render.addPreset(VuePresets.classic.setup({
-            customize: {
-                control(data) {
-                    if (data.payload instanceof FieldsControl) {
-                        return {
-                            component: {
-                                template: `
-                                    <div class="fields-display">
-                                        <div v-if="fields.length === 0" class="no-fields">No fields</div>
-                                        <div v-for="(field, index) in fields" :key="index" class="field-row">
-                                            <span class="field-name">{{ field.name }}</span>
-                                            <span class="field-type">: {{ field.type }}</span>
-                                        </div>
-                                    </div>
-                                `,
-                                props: ['data'],
-                                computed: {
-                                    fields() {
-                                        return this.data.payload.fields || [];
-                                    }
-                                }
-                            }
-                        };
-                    }
-                }
-            }
-        }));
+        // Setup rendering
+        render.addPreset(VuePresets.classic.setup());
         
         // Connect plugins
         this.editor.use(this.area);

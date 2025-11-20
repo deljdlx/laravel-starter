@@ -305,6 +305,10 @@
             padding: 0.75rem 1rem;
             border-bottom: 1px solid #e2e8f0;
             background: #f8fafc;
+            white-space: pre-line;
+            font-family: monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
         }
 
         /* Fields display inside nodes */
@@ -341,6 +345,24 @@
             color: #64748b;
             margin-left: 0.25rem;
             font-size: 0.7rem;
+        }
+
+        /* Sockets in custom node */
+        .rete-sockets {
+            padding: 0.5rem;
+        }
+
+        .input-socket,
+        .output-socket {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.25rem 0;
+        }
+
+        .socket-label {
+            font-size: 0.75rem;
+            color: #64748b;
         }
     </style>
 </head>
