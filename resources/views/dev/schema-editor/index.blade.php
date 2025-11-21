@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Schema Editor - Developer Tools</title>
-    @vite(['resources/css/app.css', 'resources/js/schema-editor-drawflow.js'])
+    @vite(['resources/css/app.css', 'resources/js/schema-editor/SchemaEditor.js'])
     <style>
         body {
             margin: 0;
