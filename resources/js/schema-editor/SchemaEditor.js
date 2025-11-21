@@ -54,7 +54,6 @@ export class SchemaEditor {
         // Add Model button
         const addModelBtn = document.getElementById('add-model-btn');
         if (addModelBtn) {
-            addModelBtn.removeEventListener('click', () => this.addModel());
             addModelBtn.addEventListener('click', () => this.addModel());
         }
 
