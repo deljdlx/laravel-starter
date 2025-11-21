@@ -198,6 +198,12 @@
             margin-left: 0.25rem;
         }
 
+        .model-body .unique-indicator {
+            color: #8b5cf6;
+            font-size: 0.75rem;
+            margin-left: 0.25rem;
+        }
+
         /* Right Panel - Properties */
         .properties-panel {
             width: 350px;
