@@ -192,6 +192,12 @@
             font-size: 0.875rem;
         }
 
+        .model-body .index-indicator {
+            color: #10b981;
+            font-size: 0.75rem;
+            margin-left: 0.25rem;
+        }
+
         /* Right Panel - Properties */
         .properties-panel {
             width: 350px;

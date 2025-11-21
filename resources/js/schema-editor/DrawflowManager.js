@@ -169,11 +169,13 @@ export class DrawflowManager {
         if (modelData.fields && modelData.fields.length > 0) {
             fieldsHTML = modelData.fields.map(field => {
                 const nullable = field.nullable ? '<span class="nullable-indicator">?</span>' : '';
+                const indexed = field.index ? '<span class="index-indicator" title="Indexed">🔍</span>' : '';
                 return `
                     <div class="field-item">
                         <span class="field-name">${field.name}</span>
                         <span class="field-type-badge">${field.type}</span>
                         ${nullable}
+                        ${indexed}
                     </div>
                 `;
             }).join('');

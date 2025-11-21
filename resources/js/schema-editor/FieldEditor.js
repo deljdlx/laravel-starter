@@ -19,7 +19,8 @@ export class FieldEditor {
                 name: '',
                 type: 'string',
                 nullable: false,
-                default: null
+                default: null,
+                index: false
             };
 
         this.schemaState.editingField = fieldIndex;
@@ -71,6 +72,12 @@ export class FieldEditor {
                     </label>
                 </div>
                 <div class="property-field">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="field-index-input" ${fieldData.index ? 'checked' : ''} style="width: auto; margin-right: 0.5rem;" />
+                        Index
+                    </label>
+                </div>
+                <div class="property-field">
                     <label>Default Value</label>
                     <input type="text" id="field-default-input" placeholder="null" value="${fieldData.default || ''}" />
                 </div>
@@ -114,6 +121,7 @@ export class FieldEditor {
         const name = document.getElementById('field-name-input').value.trim();
         const type = document.getElementById('field-type-input').value;
         const nullable = document.getElementById('field-nullable-input').checked;
+        const index = document.getElementById('field-index-input').checked;
         const defaultValue = document.getElementById('field-default-input').value.trim() || null;
 
         if (!name) {
@@ -125,6 +133,7 @@ export class FieldEditor {
             name: name,
             type: type,
             nullable: nullable,
+            index: index,
             default: defaultValue
         };
 
