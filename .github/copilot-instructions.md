@@ -28,3 +28,4 @@ Utiliser des objets/classe bien structurés.
 Hypothèses minimalistes si le contexte est flou.
 Respect du style existant lors de la complétion.
 Préférer la clarté à la “smartitude”.
+Trim les espaces, indentations, lignes vides.
