@@ -31,6 +31,12 @@ export class UIRenderer {
         if (model.fields && model.fields.length > 0) {
             fieldsHTML = model.fields.map((field, index) => {
                 const nullable = field.nullable ? '<span style="color: #f59e0b; margin-left: 0.25rem;">?</span>' : '';
+                let indexed = '';
+                if (field.index === 'unique') {
+                    indexed = '<span style="color: #8b5cf6; margin-left: 0.25rem;" title="Unique Index">🔑</span>';
+                } else if (field.index === 'index' || field.index === true) {
+                    indexed = '<span style="color: #10b981; margin-left: 0.25rem;" title="Index">🔍</span>';
+                }
                 return `
                     <div class="field-item" style="display: flex; align-items: center; padding: 0.75rem; border-bottom: 1px solid #e2e8f0; background: white;">
                         <div class="field-info" style="flex: 1;">
@@ -38,7 +44,7 @@ export class UIRenderer {
                                 ${field.name}
                             </div>
                             <div class="field-type" style="font-size: 0.75rem; color: #64748b;">
-                                ${field.type}${nullable}
+                                ${field.type}${nullable}${indexed}
                             </div>
                         </div>
                         <div class="field-actions" style="display: flex; gap: 0.25rem;">
