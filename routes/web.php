@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dev\ModelInspectorController;
 use App\Http\Controllers\Dev\ModelBuilderController;
 use App\Http\Controllers\Dev\SchemaMermaidController;
+use App\Http\Controllers\Dev\SchemaEditorController;
 use App\Http\Controllers\ReteJsDemoController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +39,7 @@ Route::prefix('dev')->group(function () {
     
     // Schema Mermaid Diagram
     Route::get('/schema-mermaid', [SchemaMermaidController::class, 'show'])->name('dev.schema-mermaid.index');
+    
+    // Schema Editor
+    Route::get('/schema-editor', [SchemaEditorController::class, 'index'])->name('dev.schema-editor.index');
 });
