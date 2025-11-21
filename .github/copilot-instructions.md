@@ -1,9 +1,7 @@
 # GitHub Copilot – Instructions projet
 
 ## Contexte général
-
 Ce projet est une application Laravel 12 utilisant :
-
 - PHP 8.x
 - Laravel 12.x
 - Tabler comme base UI (Blade components + classes CSS)
@@ -25,10 +23,6 @@ L’architecture doit rester simple, lisible, orientée “maintenabilité” et
 Quand tu génères :
 
 - Un **modèle Eloquent** :
-  - Localiser le modèle dans `app/Models`.
-  - Protéger les colonnes via `$fillable` (éviter `$guarded = [];` sauf cas très particulier).
-  - Déclarer explicitement les relations (`hasMany`, `belongsTo`, `belongsToMany`, etc.).
-  - Ajouter les `casts` si nécessaire (ex: `protected $casts = ['config' => 'array'];`).
   - Déclarer les propriétés PHPDoc pour les colonnes et relations.
 
 
@@ -62,3 +56,9 @@ Quand je commente ou écris du code :
 - Quand le contexte n’est pas clair, **faire des hypothèses minimalistes**, pas des stacks complètes.
 - Éviter la génération de gros blocs monolithiques impossibles à maintenir.
 - Si tu complètes du code existant, respecter **le style déjà présent dans le fichier** (nommage, indentation, patterns, etc.).
+
+
+## Code javascript / front-end
+- Privilégier la POO JS (classes, modules) quand le contexte le justifie.
+- Documenter les fonctions et classes avec des commentaires JSDoc.
+- Bien lister les propriétés d’un objet ou d’une classe. Ne pas utiliser des objets “libres” sans structure claire.

@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cheatsheet Maths – Niveau Terminale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --card-bg: #020617;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.15);
+            --text: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-subtle: rgba(148, 163, 184, 0.25);
+            --code-bg: #020617;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+        }
+
+        header.page-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(15, 23, 42, 0.85);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .badge-dot {
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+        }
+
+        section {
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.2fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .card {
+            background: radial-gradient(circle at top left, rgba(56,189,248,0.08) 0, rgba(15,23,42,0.9) 55%, #020617 100%);
+            border-radius: 1rem;
+            border: 1px solid var(--border-subtle);
+            padding: 1.1rem 1.2rem;
+            box-shadow:
+                0 18px 40px rgba(0,0,0,0.75),
+                0 0 0 1px rgba(15,23,42,0.8);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin: 0.35rem 0 0.75rem;
+        }
+
+        .pill {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            color: var(--text-muted);
+        }
+
+        table.cheat-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        table.cheat-table th,
+        table.cheat-table td {
+            padding: 0.35rem 0.4rem;
+            border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+            vertical-align: middle;
+        }
+
+        table.cheat-table th {
+            text-align: left;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        table.cheat-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        math {
+            font-size: 1em;
+        }
+
+        .note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        .inline-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .code-block {
+            background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.7));
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-subtle);
+            padding: 0.75rem 0.9rem;
+            font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+            color: var(--text-muted);
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.1rem 0.45rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.72rem;
+            margin-left: 0.25rem;
+        }
+
+        /* Lexique local */
+        .lexique {
+            margin-top: 0.7rem;
+            padding-top: 0.55rem;
+            border-top: 1px dashed rgba(148, 163, 184, 0.4);
+        }
+
+        .lexique-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin: 0 0 0.25rem;
+        }
+
+        .lexique-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .lexique-list li + li {
+            margin-top: 0.15rem;
+        }
+
+        .lex-term {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Lexique global */
+        .lexique-global {
+            background: radial-gradient(circle at top right, rgba(56,189,248,0.12) 0, rgba(15,23,42,0.95) 45%, #020617 100%);
+        }
+
+        /* Exercices */
+        .exo {
+            margin-top: 0.7rem;
+            padding: 0.6rem 0.7rem;
+            border-radius: 0.6rem;
+            border: 1px dashed rgba(148, 163, 184, 0.55);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.82rem;
+        }
+
+        .exo-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin: 0 0 0.25rem;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header class="page-header">
+        <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Cheatsheet – Niveau Terminale</span>
+        </div>
+        <h1 class="page-title">Dérivées, Intégrales, Complexes &amp; Matrices</h1>
+        <p class="page-subtitle">
+            Version light, zéro formule de l’enfer. Juste les outils utiles pour aller plus loin (y compris vers Schrödinger plus tard).
+        </p>
+    </header>
+
+    <!-- 1. Dérivées -->
+    <section aria-labelledby="sec-deriv">
+        <div class="grid">
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-deriv" class="card-title">1. Dérivées – classiques</h2>
+                    <span class="card-tag">Outils de base</span>
+                </header>
+
+                <div class="pill-row">
+                    <span class="pill">Polynômes</span>
+                    <span class="pill">Exponentielle</span>
+                    <span class="pill">Logarithme</span>
+                    <span class="pill">Trigonométrie (rad)</span>
+                </div>
+
+                <table class="cheat-table">
+                    <thead>
+                    <tr>
+                        <th>Fonction</th>
+                        <th>Dérivée</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><math><mi>k</mi></math> (constante)</td>
+                        <td><math><mn>0</mn></math></td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>x</mi></math></td>
+                        <td><math><mn>1</mn></math></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <math>
+                                <msup><mi>x</mi><mi>n</mi></msup>
+                            </math>
+                        </td>
+                        <td>
+                            <math>
+                                <mi>n</mi>
+                                <msup><mi>x</mi><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msup>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <math>
+                                <msqrt><mi>x</mi></msqrt>
+                            </math>
+                        </td>
+                        <td>
+                            <math>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mrow>
+                                        <mn>2</mn>
+                                        <msqrt><mi>x</mi></msqrt>
+                                    </mrow>
+                                </mfrac>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <math>
+                                <mfrac><mn>1</mn><mi>x</mi></mfrac>
+                            </math>
+                        </td>
+                        <td>
+                            <math>
+                                <mo>-</mo>
+                                <mfrac><mn>1</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>e</mi><mo>^</mo><mi>x</mi></math></td>
+                        <td><math><mi>e</mi><mo>^</mo><mi>x</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>a</mi><mo>^</mo><mi>x</mi></math></td>
+                        <td>
+                            <math>
+                                <mi>a</mi><mo>^</mo><mi>x</mi>
+                                <mo>&#xB7;</mo>
+                                <mi>ln</mi><mo>&#x2061;</mo><mo>(</mo><mi>a</mi><mo>)</mo>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>ln</mi><mo>&#x2061;</mo><mo>(</mo><mi>x</mi><mo>)</mo></math></td>
+                        <td>
+                            <math>
+                                <mfrac><mn>1</mn><mi>x</mi></mfrac>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>sin</mi><mo>&#x2061;</mo><mo>(</mo><mi>x</mi><mo>)</mo></math></td>
+                        <td><math><mi>cos</mi><mo>&#x2061;</mo><mo>(</mo><mi>x</mi><mo>)</mo></math></td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>cos</mi><mo>&#x2061;</mo><mo>(</mo><mi>x</mi><mo>)</mo></math></td>
+                        <td>
+                            <math>
+                                <mo>-</mo>
+                                <mi>sin</mi><mo>&#x2061;</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+                            </math>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="note">
+                    Suffit largement pour 99% des exos de Terminale, et déjà utile en physique.
+                </p>
+
+                <div class="lexique" aria-label="Lexique dérivées">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Fonction</span> : une machine qui prend un nombre en entrée et renvoie un nombre en sortie.</li>
+                        <li><span class="lex-term">Dérivée</span> : mesure de la vitesse à laquelle la fonction change (la pente de la courbe à un point).</li>
+                        <li><span class="lex-term">Constante</span> : un nombre fixe qui ne dépend pas de <math><mi>x</mi></math>.</li>
+                        <li><span class="lex-term">Polynôme</span> : somme de termes du type <math><msup><mi>x</mi><mi>n</mi></msup></math> avec des coefficients.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">Règles de calcul</h2>
+                    <span class="card-tag">Combiner les fonctions</span>
+                </header>
+
+                <table class="cheat-table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Formule</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Somme</td>
+                        <td>
+                            <math>
+                                <mrow>
+                                    <mo>(</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo>)</mo><mo>'</mo>
+                                    <mo>=</mo>
+                                    <mi>u</mi><mo>'</mo><mo>+</mo><mi>v</mi><mo>'</mo>
+                                </mrow>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Produit</td>
+                        <td>
+                            <math>
+                                <mrow>
+                                    <mo>(</mo><mi>u</mi><mi>v</mi><mo>)</mo><mo>'</mo>
+                                    <mo>=</mo>
+                                    <mi>u</mi><mo>'</mo><mi>v</mi>
+                                    <mo>+</mo>
+                                    <mi>u</mi><mi>v</mi><mo>'</mo>
+                                </mrow>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quotient</td>
+                        <td>
+                            <math>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mfrac><mi>u</mi><mi>v</mi></mfrac>
+                                    <mo>)</mo><mo>'</mo>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>u</mi><mo>'</mo><mi>v</mi>
+                                            <mo>-</mo>
+                                            <mi>u</mi><mi>v</mi><mo>'</mo>
+                                        </mrow>
+                                        <msup><mi>v</mi><mn>2</mn></msup>
+                                    </mfrac>
+                                </mrow>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Composition</td>
+                        <td>
+                            <math>
+                                <mrow>
+                                    <mo>(</mo><mi>u</mi><mo>&#x2218;</mo><mi>v</mi><mo>)</mo><mo>'</mo>
+                                    <mo>(</mo><mi>x</mi><mo>)</mo>
+                                    <mo>=</mo>
+                                    <mi>u</mi><mo>'</mo><mo>(</mo><mi>v</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo>
+                                    <mo>&#xB7;</mo>
+                                    <mi>v</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo>
+                                </mrow>
+                            </math>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p class="note">
+                    La règle de composition (chaîne) devient importante dès qu’il y a
+                    <math><mi>sin</mi><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>)</mo></math>,
+                    <math><mi>e</mi><mo>^</mo><msup><mi>x</mi><mn>2</mn></msup></math>, etc.
+                </p>
+
+                <div class="lexique" aria-label="Lexique règles de calcul">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Somme de fonctions</span> : tu additionnes les sorties de deux fonctions.</li>
+                        <li><span class="lex-term">Produit de fonctions</span> : tu multiplies les sorties de deux fonctions.</li>
+                        <li><span class="lex-term">Quotient</span> : une fonction divisée par une autre (comme <math><mfrac><mi>u</mi><mi>v</mi></mfrac></math>).</li>
+                        <li><span class="lex-term">Composition</span> : “fonction dans une fonction”, tu calcules d’abord <math><mi>v</mi><mo>(</mo><mi>x</mi><mo>)</mo></math>, puis tu passes le résultat dans <math><mi>u</mi></math>.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 2. Intégrales / primitives -->
+    <section aria-labelledby="sec-int">
+        <div class="grid">
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-int" class="card-title">2. Primitives &amp; intégrales</h2>
+                    <span class="card-tag">Retour en arrière des dérivées</span>
+                </header>
+
+                <table class="cheat-table">
+                    <thead>
+                    <tr>
+                        <th>Fonction <math><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></math></th>
+                        <th>Primitive <math><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></math></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><math><mn>0</mn></math></td>
+                        <td><math><mi>k</mi></math> (constante)</td>
+                    </tr>
+                    <tr>
+                        <td><math><mn>1</mn></math></td>
+                        <td><math><mi>x</mi><mo>+</mo><mi>C</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <math>
+                                <msup><mi>x</mi><mi>n</mi></msup>
+                                <mo>,</mo>
+                                <mi>n</mi><mo>&#x2260;</mo><mo>-</mo><mn>1</mn>
+                            </math>
+                        </td>
+                        <td>
+                            <math>
+                                <mfrac>
+                                    <msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+                                    <mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow>
+                                </mfrac>
+                                <mo>+</mo><mi>C</mi>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <math>
+                                <mfrac><mn>1</mn><mi>x</mi></mfrac>
+                            </math>
+                        </td>
+                        <td>
+                            <math>
+                                <mi>ln</mi><mo>&#x2061;</mo><mo>(</mo><mo>|</mo><mi>x</mi><mo>|</mo><mo>)</mo>
+                                <mo>+</mo><mi>C</mi>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>e</mi><mo>^</mo><mi>x</mi></math></td>
+                        <td><math><mi>e</mi><mo>^</mo><mi>x</mi><mo>+</mo><mi>C</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>cos</mi><mo>(</mo><mi>x</mi><mo>)</mo></math></td>
+                        <td><math><mi>sin</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>C</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td><math><mi>sin</mi><mo>(</mo><mi>x</mi><mo>)</mo></math></td>
+                        <td>
+                            <math>
+                                <mo>-</mo><mi>cos</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>C</mi>
+                            </math>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p class="note">
+                    Idée clé : si <math><mi>F</mi><mo>'</mo><mo>=</mo><mi>f</mi></math>, alors
+                    <math>
+                        <mo>&#x222B;</mo>
+                        <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+                        <mi>d</mi><mi>x</mi>
+                        <mo>=</mo>
+                        <mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>C</mi>
+                    </math>.
+                </p>
+
+                <div class="lexique" aria-label="Lexique primitives">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Primitive</span> : fonction dont la dérivée redonne la fonction de départ.</li>
+                        <li><span class="lex-term">Intégrale indéfinie</span> : symbole <math><mo>&#x222B;</mo><mi>f</mi><mi>d</mi><mi>x</mi></math> quand on ne met pas de bornes.</li>
+                        <li><span class="lex-term">Constante C</span> : “+ un nombre quelconque”; on ne cherche pas sa valeur exacte.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">Intégrale définie</h2>
+                    <span class="card-tag">Aire signée</span>
+                </header>
+
+                <p>
+                    Si <math><mi>F</mi></math> est une primitive de <math><mi>f</mi></math>, alors :
+                </p>
+
+                <p>
+                    <math>
+                        <mrow>
+                            <mo>&#x222B;</mo>
+                            <msub><mi>a</mi></msub>
+                            <msup><mi>b</mi></msup>
+                            <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+                            <mi>d</mi><mi>x</mi>
+                            <mo>=</mo>
+                            <mi>F</mi><mo>(</mo><mi>b</mi><mo>)</mo>
+                            <mo>-</mo>
+                            <mi>F</mi><mo>(</mo><mi>a</mi><mo>)</mo>
+                        </mrow>
+                    </math>
+                </p>
+
+                <div class="code-block" aria-label="Rappel visuel">
+                    Idée mentale :<br />
+                    &bull; On trouve une primitive F de f<br />
+                    &bull; On calcule F(b) - F(a)<br />
+                    &bull; Ça donne l’aire algébrique entre a et b (positif ou négatif selon la courbe).
+                </div>
+
+                <div class="lexique" aria-label="Lexique intégrale définie">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Bornes a et b</span> : les deux points entre lesquels on “additionne” les valeurs de la fonction.</li>
+                        <li><span class="lex-term">Aire algébrique</span> : aire positive si la courbe est au-dessus de l’axe, négative si elle est en dessous.</li>
+                        <li><span class="lex-term">Intégrale définie</span> : intégrale avec des bornes, qui donne un nombre (pas une fonction).</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 3. Nombres complexes -->
+    <section aria-labelledby="sec-cplx">
+        <div class="grid">
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-cplx" class="card-title">3. Nombres complexes – kit de survie</h2>
+                    <span class="card-tag">Base indispensable</span>
+                </header>
+
+                <p>
+                    Un nombre complexe se note :
+                    <math>
+                        <mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi>
+                    </math>,
+                    avec <math><mi>i</mi><mo>^</mo><mn>2</mn><mo>=</mo><mo>-</mo><mn>1</mn></math>.
+                </p>
+
+                <table class="cheat-table">
+                    <thead>
+                    <tr>
+                        <th>Notion</th>
+                        <th>Expression</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Partie réelle</td>
+                        <td><math><mi>Re</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mi>a</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td>Partie imaginaire</td>
+                        <td><math><mi>Im</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mi>b</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td>Conjugué</td>
+                        <td><math><mover><mi>z</mi><mo>&#xAF;</mo></mover><mo>=</mo><mi>a</mi><mo>-</mo><mi>i</mi><mi>b</mi></math></td>
+                    </tr>
+                    <tr>
+                        <td>Module</td>
+                        <td>
+                            <math>
+                                <mo>|</mo><mi>z</mi><mo>|</mo>
+                                <mo>=</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <msup><mi>a</mi><mn>2</mn></msup>
+                                        <mo>+</mo>
+                                        <msup><mi>b</mi><mn>2</mn></msup>
+                                    </mrow>
+                                </msqrt>
+                            </math>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="lexique" aria-label="Lexique complexes (1)">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Nombre complexe</span> : un nombre qui a une partie “normale” (réelle) et une partie “imaginaire”.</li>
+                        <li><span class="lex-term">Partie réelle</span> : le “morceau normal” du nombre, sans le <math><mi>i</mi></math>.</li>
+                        <li><span class="lex-term">Partie imaginaire</span> : ce qui multiplie <math><mi>i</mi></math> (qui lui-même est défini par <math><mi>i</mi><mo>^</mo><mn>2</mn><mo>=</mo><mo>-</mo><mn>1</mn></math>).</li>
+                        <li><span class="lex-term">Module</span> : la distance entre le point et l’origine dans le plan complexe.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">Opérations de base</h2>
+                    <span class="card-tag">Sans douleur</span>
+                </header>
+
+                <table class="cheat-table">
+                    <thead>
+                    <tr>
+                        <th>Opération</th>
+                        <th>Résultat</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Somme</td>
+                        <td>
+                            <math>
+                                <mrow>
+                                    <mo>(</mo><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi><mo>)</mo>
+                                    <mo>+</mo>
+                                    <mo>(</mo><mi>c</mi><mo>+</mo><mi>i</mi><mi>d</mi><mo>)</mo>
+                                    <mo>=</mo>
+                                    <mo>(</mo><mi>a</mi><mo>+</mo><mi>c</mi><mo>)</mo>
+                                    <mo>+</mo>
+                                    <mi>i</mi><mo>(</mo><mi>b</mi><mo>+</mo><mi>d</mi><mo>)</mo>
+                                </mrow>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Produit</td>
+                        <td>
+                            <math>
+                                <mrow>
+                                    <mo>(</mo><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi><mo>)</mo>
+                                    <mo>(</mo><mi>c</mi><mo>+</mo><mi>i</mi><mi>d</mi><mo>)</mo>
+                                    <mo>=</mo>
+                                    <mo>(</mo><mi>a</mi><mi>c</mi><mo>-</mo><mi>b</mi><mi>d</mi><mo>)</mo>
+                                    <mo>+</mo>
+                                    <mi>i</mi><mo>(</mo><mi>a</mi><mi>d</mi><mo>+</mo><mi>b</mi><mi>c</mi><mo>)</mo>
+                                </mrow>
+                            </math>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Inverse (<math><mi>z</mi><mo>&#x2260;</mo><mn>0</mn></math>)</td>
+                        <td>
+                            <math>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mi>z</mi>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mover><mi>z</mi><mo>&#xAF;</mo></mover>
+                                    <msup>
+                                        <mrow>
+                                            <mo>|</mo><mi>z</mi><mo>|</mo>
+                                        </mrow>
+                                        <mn>2</mn>
+                                    </msup>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow><mi>a</mi><mo>-</mo><mi>i</mi><mi>b</mi></mrow>
+                                    <mrow>
+                                        <msup><mi>a</mi><mn>2</mn></msup>
+                                        <mo>+</mo>
+                                        <msup><mi>b</mi><mn>2</mn></msup>
+                                    </mrow>
+                                </mfrac>
+                            </math>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p class="note">
+                    Pour plus tard : les exponentielles complexes serviront beaucoup en physique quantique,
+                    mais pour l’instant tu peux rester au niveau algébrique.
+                </p>
+
+                <div class="lexique" aria-label="Lexique opérations complexes">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Addition de complexes</span> : on additionne séparément les parties réelles et les parties imaginaires.</li>
+                        <li><span class="lex-term">Produit de complexes</span> : on développe comme une identité remarquable en utilisant <math><mi>i</mi><mo>^</mo><mn>2</mn><mo>=</mo><mo>-</mo><mn>1</mn></math>.</li>
+                        <li><span class="lex-term">Inverse</span> : le nombre qui, multiplié par <math><mi>z</mi></math>, donne <math><mn>1</mn></math>.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 4. Matrices -->
+    <section aria-labelledby="sec-mat">
+        <div class="grid">
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-mat" class="card-title">4. Vecteurs &amp; matrices 2×2</h2>
+                    <span class="card-tag">Version simple</span>
+                </header>
+
+                <p>
+                    Vecteur colonne :
+                </p>
+                <p>
+                    <math>
+                        <mi>&#x2192;v</mi>
+                        <mo>=</mo>
+                        <mfenced open="(" close=")">
+                            <mtable>
+                                <mtr><mtd><mi>x</mi></mtd></mtr>
+                                <mtr><mtd><mi>y</mi></mtd></mtr>
+                            </mtable>
+                        </mfenced>
+                    </math>
+                </p>
+
+                <p>Matrice :</p>
+                <p>
+                    <math>
+                        <mi>A</mi>
+                        <mo>=</mo>
+                        <mfenced open="(" close=")">
+                            <mtable>
+                                <mtr>
+                                    <mtd><mi>a</mi></mtd>
+                                    <mtd><mi>b</mi></mtd>
+                                </mtr>
+                                <mtr>
+                                    <mtd><mi>c</mi></mtd>
+                                    <mtd><mi>d</mi></mtd>
+                                </mtr>
+                            </mtable>
+                        </mfenced>
+                    </math>
+                </p>
+
+                <p>Produit matrice &times; vecteur :</p>
+                <p>
+                    <math>
+                        <mrow>
+                            <mi>A</mi>
+                            <mi>&#x2192;v</mi>
+                            <mo>=</mo>
+                            <mfenced open="(" close=")">
+                                <mtable>
+                                    <mtr>
+                                        <mtd>
+                                            <mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi>
+                                        </mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd>
+                                            <mi>c</mi><mi>x</mi><mo>+</mo><mi>d</mi><mi>y</mi>
+                                        </mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                        </mrow>
+                    </math>
+                </p>
+
+                <div class="lexique" aria-label="Lexique matrices/vecteurs">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Vecteur</span> : une “liste” ordonnée de nombres (ici, deux nombres).</li>
+                        <li><span class="lex-term">Matrice</span> : un tableau de nombres, organisé en lignes et colonnes.</li>
+                        <li><span class="lex-term">Produit matrice–vecteur</span> : une façon standard d’appliquer une transformation à un vecteur.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">Déterminant &amp; inverse</h2>
+                    <span class="card-tag">Condition d’inversibilité</span>
+                </header>
+
+                <p>Déterminant :</p>
+                <p>
+                    <math>
+                        <mi>det</mi><mo>(</mo><mi>A</mi><mo>)</mo>
+                        <mo>=</mo>
+                        <mi>a</mi><mi>d</mi>
+                        <mo>-</mo>
+                        <mi>b</mi><mi>c</mi>
+                    </math>
+                </p>
+
+                <p>
+                    Si <math><mi>det</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>&#x2260;</mo><mn>0</mn></math>,
+                    alors <math><mi>A</mi></math> est inversible, et :
+                </p>
+
+                <p>
+                    <math>
+                        <msup><mi>A</mi><mo>-</mo><mn>1</mn></msup>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mrow>
+                                <mi>a</mi><mi>d</mi><mo>-</mo><mi>b</mi><mi>c</mi>
+                            </mrow>
+                        </mfrac>
+                        <mfenced open="(" close=")">
+                            <mtable>
+                                <mtr>
+                                    <mtd><mi>d</mi></mtd>
+                                    <mtd><mo>-</mo><mi>b</mi></mtd>
+                                </mtr>
+                                <mtr>
+                                    <mtd><mo>-</mo><mi>c</mi></mtd>
+                                    <mtd><mi>a</mi></mtd>
+                                </mtr>
+                            </mtable>
+                        </mfenced>
+                    </math>
+                </p>
+
+                <p class="note">
+                    Pour plus tard : en physique quantique, les matrices (ou opérateurs) serviront à faire agir
+                    des transformations sur des “états”.
+                </p>
+
+                <div class="lexique" aria-label="Lexique déterminant/inverse">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Déterminant</span> : un nombre associé à la matrice qui résume certaines de ses propriétés (par ex. si elle est inversible ou pas).</li>
+                        <li><span class="lex-term">Matrice inversible</span> : une matrice qui possède une “inverse” <math><msup><mi>A</mi><mo>-</mo><mn>1</mn></msup></math> telle que <math><mi>A</mi><msup><mi>A</mi><mo>-</mo><mn>1</mn></msup><mo>=</mo><msup><mi>A</mi><mo>-</mo><mn>1</mn></msup><mi>A</mi><mo>=</mo><mi>I</mi></math> (matrice identité).</li>
+                        <li><span class="lex-term">Matrice identité</span> : matrice qui laisse tout vecteur inchangé quand on la multiplie (analogue du nombre 1 pour les nombres réels).</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 5. Notations -->
+    <section aria-labelledby="sec-not">
+        <article class="card">
+            <header class="card-header">
+                <h2 id="sec-not" class="card-title">5. Notations qui reviennent partout</h2>
+                <span class="card-tag">Réflexes de base</span>
+            </header>
+
+            <ul>
+                <li>
+                    <math><mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo></math> :
+                    dérivée de <math><mi>f</mi></math> au point <math><mi>x</mi></math>.
+                </li>
+                <li>
+                    <math>
+                        <mfrac>
+                            <mi>d</mi><mi>f</mi>
+                        </mfrac>
+                        <mfrac>
+                            <mi>d</mi><mi>x</mi>
+                        </mfrac>
+                    </math>
+                    (souvent écrit <code>df/dx</code>) : même idée, écriture “différentielle”.
+                </li>
+                <li>
+                    <math>
+                        <mo>&#x222B;</mo>
+                        <mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo>
+                        <mi>d</mi><mi>x</mi>
+                    </math> : primitive (ou intégrale indéfinie) de <math><mi>f</mi></math>.
+                </li>
+                <li>
+                    <math><mi>C</mi></math> : constante quelconque (on ne connaît pas sa valeur précise, et ce n’est pas grave).
+                </li>
+            </ul>
+
+            <p class="note">
+                Avec juste ces briques, tu peux déjà faire une grosse partie des calculs qu’on croise au lycée
+                et commencer à regarder des équations plus sérieuses
+                <span class="chip">dont Schrödinger plus tard</span>.
+            </p>
+
+            <div class="lexique" aria-label="Lexique notations">
+                <h3 class="lexique-title">Lexique rapide</h3>
+                <ul class="lexique-list">
+                    <li><span class="lex-term">f'(x)</span> : nouvelle fonction qui donne la pente de la courbe de <math><mi>f</mi></math> en chaque point.</li>
+                    <li><span class="lex-term">df/dx</span> : autre manière d’écrire la dérivée par rapport à <math><mi>x</mi></math>.</li>
+                    <li><span class="lex-term">&#x222B; f(x) dx</span> : opération inverse de la dérivée, “somme continue” des valeurs de <math><mi>f</mi></math>.</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <!-- 6. Lexique global noob -->
+    <section aria-labelledby="sec-lexique-global">
+        <article class="card lexique-global">
+            <header class="card-header">
+                <h2 id="sec-lexique-global" class="card-title">6. Lexique global – mode noob assumé</h2>
+                <span class="card-tag">Relecture rapide des mots-clés</span>
+            </header>
+
+            <ul class="lexique-list">
+                <li>
+                    <span class="lex-term">Fonction</span> : une règle qui, pour chaque nombre en entrée, donne un nombre en sortie.
+                    Tu peux la voir comme une “boîte noire” : tu mets <math><mi>x</mi></math>, tu récupères <math><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></math>.
+                </li>
+                <li>
+                    <span class="lex-term">Dérivée</span> : ce que donnerait la pente de la courbe si tu collais une tangente en un point.
+                    “À quelle vitesse ça monte ou ça descend ici ?”.
+                </li>
+                <li>
+                    <span class="lex-term">Primitive / intégrale indéfinie</span> :
+                    opération inverse de la dérivée. Tu cherches une fonction dont la dérivée est celle qu’on t’a donnée.
+                </li>
+                <li>
+                    <span class="lex-term">Intégrale définie</span> :
+                    une intégrale avec deux bornes <math><mi>a</mi></math> et <math><mi>b</mi></math>. Elle donne un nombre, souvent interprété comme une aire
+                    (avec signe) sous une courbe.
+                </li>
+                <li>
+                    <span class="lex-term">Constante d’intégration C</span> :
+                    comme on “remonte” une dérivée, il manque toujours l’info “+ un nombre”.
+                    Plutôt que de le chercher, on note juste <math><mi>C</mi></math>.
+                </li>
+                <li>
+                    <span class="lex-term">Nombre complexe</span> :
+                    nombre avec un “axe normal” (réel) et un “axe imaginaire”.
+                    Très utilisé en physique pour gérer des oscillations, des phases, etc.
+                </li>
+                <li>
+                    <span class="lex-term">Partie réelle / imaginaire</span> :
+                    pour <math><mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi></math>,
+                    <math><mi>a</mi></math> est la partie réelle, <math><mi>b</mi></math> la partie imaginaire.
+                </li>
+                <li>
+                    <span class="lex-term">Module d’un complexe</span> :
+                    distance entre le point <math><mi>z</mi></math> et l’origine dans le plan complexe,
+                    calculée comme <math><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></math>.
+                </li>
+                <li>
+                    <span class="lex-term">Vecteur</span> :
+                    une “flèche” ou une liste ordonnée de nombres, qui peut représenter une position, une vitesse, etc.
+                </li>
+                <li>
+                    <span class="lex-term">Matrice</span> :
+                    tableau de nombres qui sert souvent à décrire une transformation (rotation, changement de base, etc.).
+                </li>
+                <li>
+                    <span class="lex-term">Déterminant</span> :
+                    un nombre calculé à partir d’une matrice. S’il est nul, la matrice “écrase” l’espace (pas d’inverse) ;
+                    s’il n’est pas nul, la matrice est réversible.
+                </li>
+                <li>
+                    <span class="lex-term">Inverse d’une matrice</span> :
+                    analogue de <math><mfrac><mn>1</mn><mi>a</mi></mfrac></math> pour un nombre :
+                    c’est la matrice qui annule l’effet de la première.
+                </li>
+                <li>
+                    <span class="lex-term">Composition de fonctions</span> :
+                    appliquer une fonction, puis une autre. Par exemple,
+                    tu convertis d’abord des euros en dollars, puis des dollars en yens.
+                </li>
+                <li>
+                    <span class="lex-term">Notations <math><mi>f</mi><mo>'</mo></math> et <math>df/dx</math></span> :
+                    deux façons différentes d’écrire la même chose : la dérivée de <math><mi>f</mi></math> par rapport à <math><mi>x</mi></math>.
+                </li>
+            </ul>
+
+            <p class="note">
+                L’idée, ce n’est pas de “tout connaître par cœur”, mais de savoir
+                <strong>où regarder</strong> quand un symbole te bloque.
+                Ce fichier est ton mini-dictionnaire perso pour la suite.
+            </p>
+        </article>
+    </section>
+
+    <!-- 1. Factorielle -->
+    <section aria-labelledby="sec-factorielle">
+        <article class="card">
+            <header class="card-header">
+                <h2 id="sec-factorielle" class="card-title">1. Factorielle</h2>
+                <span class="card-tag">Bloc de base</span>
+            </header>
+
+            <p>
+                Pour un entier naturel <math><mi>n</mi></math> (avec <math><mi>n</mi><mo>&#x2265;</mo><mn>1</mn></math>), la factorielle est définie par :
+            </p>
+
+            <p>
+                <math>
+                    <mrow>
+                        <mi>n</mi><mo>!</mo>
+                        <mo>=</mo>
+                        <mi>n</mi><mo>&#xB7;</mo>
+                        <mo>(</mo><mi>n</mi><mo>-</mo><mn>1</mn><mo>)</mo>
+                        <mo>&#xB7;</mo>
+                        <mo>(</mo><mi>n</mi><mo>-</mo><mn>2</mn><mo>)</mo>
+                        <mo>&#xB7;</mo>
+                        <mo>&#x22EF;</mo>
+                        <mo>&#xB7;</mo>
+                        <mn>2</mn><mo>&#xB7;</mo><mn>1</mn>
+                    </mrow>
+                </math>
+            </p>
+
+            <p>Et par convention :</p>
+
+            <p>
+                <math>
+                    <mrow>
+                        <mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn>
+                    </mrow>
+                </math>
+            </p>
+
+            <table class="cheat-table">
+                <thead>
+                <tr>
+                    <th>n</th>
+                    <th><math><mi>n</mi><mo>!</mo></math></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>1</td><td><math><mn>1</mn></math></td></tr>
+                <tr><td>2</td><td><math><mn>2</mn></math></td></tr>
+                <tr><td>3</td><td><math><mn>6</mn></math></td></tr>
+                <tr><td>4</td><td><math><mn>24</mn></math></td></tr>
+                <tr><td>5</td><td><math><mn>120</mn></math></td></tr>
+                </tbody>
+            </table>
+
+            <div class="exo" aria-label="Exercice factorielle">
+                <h3 class="exo-title">Exercice trivial</h3>
+                <p>
+                    Calcule&nbsp;: <math><mn>4</mn><mo>!</mo></math> et <math><mn>6</mn><mo>!</mo></math>.
+                    Puis écris en une phrase ce que représente <math><mn>4</mn><mo>!</mo></math> si tu as 4 livres différents à ranger sur une étagère.
+                </p>
+                <p class="inline-note">
+                    Objectif&nbsp;: manipuler la notation factorielle et la relier à une situation concrète.
+                </p>
+            </div>
+
+            <div class="lexique">
+                <h3 class="lexique-title">Lexique rapide</h3>
+                <ul class="lexique-list">
+                    <li><span class="lex-term">Factorielle</span> : produit de tous les entiers de 1 à <math><mi>n</mi></math>.</li>
+                    <li><span class="lex-term">Notation n!</span> : se lit “n factorielle”.</li>
+                    <li><span class="lex-term">Usage</span> : compter les façons de ranger des objets distincts.</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <!-- 2. Permutations -->
+    <section aria-labelledby="sec-permutations">
+        <div class="grid">
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-permutations" class="card-title">2. Permutations</h2>
+                    <span class="card-tag">Tout ranger</span>
+                </header>
+
+            <p>
+                Une <strong>permutation</strong> de <math><mi>n</mi></math> objets distincts est une manière de les ranger tous dans un ordre.
+            </p>
+
+            <p>
+                Nombre de permutations de <math><mi>n</mi></math> objets :
+            </p>
+
+            <p>
+                <math>
+                    <mrow>
+                        <mi>P</mi><mo>(</mo><mi>n</mi><mo>)</mo>
+                        <mo>=</mo>
+                        <mi>n</mi><mo>!</mo>
+                    </mrow>
+                </math>
+            </p>
+
+            <p class="note">
+                Ex : ranger 4 livres distincts sur une étagère → <math><mn>4</mn><mo>!</mo><mo>=</mo><mn>24</mn></math> façons.
+            </p>
+
+            <div class="exo" aria-label="Exercice permutations">
+                <h3 class="exo-title">Exercice trivial</h3>
+                <p>
+                    Tu as 3 cartes différentes marquées A, B et C.
+                    Écris <strong>toutes</strong> les permutations possibles de ces 3 cartes.
+                    Vérifie ensuite que tu en as bien <math><mn>3</mn><mo>!</mo></math>.
+                </p>
+                <p class="inline-note">
+                    Objectif&nbsp;: faire le lien entre la formule <math><mi>n</mi><mo>!</mo></math> et le listing concret des cas.
+                </p>
+            </div>
+
+            <div class="lexique">
+                <h3 class="lexique-title">Lexique rapide</h3>
+                <ul class="lexique-list">
+                    <li><span class="lex-term">Permutation</span> : réorganisation complète de tous les éléments.</li>
+                    <li><span class="lex-term">Ordre</span> : important ici, changer l’ordre donne une autre permutation.</li>
+                </ul>
+            </div>
+            </article>
+
+            <!-- 3. Arrangements -->
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">3. Arrangements (ou variations)</h2>
+                    <span class="card-tag">Choisir et ordonner</span>
+                </header>
+
+                <p>
+                    Un <strong>arrangement</strong> de <math><mi>k</mi></math> éléments parmi <math><mi>n</mi></math> (sans répétition)
+                    est un choix de <math><mi>k</mi></math> éléments distincts, <strong>avec ordre</strong>.
+                </p>
+
+                <p>
+                    Nombre d’arrangements de <math><mi>k</mi></math> parmi <math><mi>n</mi></math> (sans répétition) :
+                </p>
+
+                <p>
+                    <math>
+                        <mrow>
+                            <msub><mi>A</mi><mi>n</mi></msub><mo>^</mo><mi>k</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow><mi>n</mi><mo>!</mo></mrow>
+                                <mrow><mo>(</mo><mi>n</mi><mo>-</mo><mi>k</mi><mo>)</mo><mo>!</mo></mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+
+                <p class="note">
+                    Ex : former un “top 3” sur 10 candidats (sans ex æquo) → <math><msub><mi>A</mi><mn>10</mn></msub><mo>^</mo><mn>3</mn></math>.
+                </p>
+
+                <div class="exo" aria-label="Exercice arrangements">
+                    <h3 class="exo-title">Exercice trivial</h3>
+                    <p>
+                        Dans une classe de 5 élèves, on veut choisir un <strong>président</strong> et un <strong>vice-président</strong>,
+                        tous deux différents. Combien y a-t-il d’arrangements possibles&nbsp;?
+                        Fais d’abord le calcul avec la formule, puis vérifie sur un petit dessin (ou en listant quelques cas) que l’ordre compte.
+                    </p>
+                    <p class="inline-note">
+                        Objectif&nbsp;: comprendre “choisir <em>et</em> ordonner” et voir que (A,B) et (B,A) sont deux cas différents.
+                    </p>
+                </div>
+
+                <div class="lexique">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Sans répétition</span> : un même objet ne peut pas être choisi plusieurs fois.</li>
+                        <li><span class="lex-term">Avec ordre</span> : (A,B) et (B,A) sont deux arrangements différents.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 4. Arrangements & combinaisons avec/sans répétition -->
+    <section aria-labelledby="sec-arr-comb">
+        <div class="grid">
+            <!-- Arrangements avec répétition -->
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-arr-comb" class="card-title">4. Arrangements avec répétition</h2>
+                    <span class="card-tag">On peut réutiliser</span>
+                </header>
+
+                <p>
+                    Si l’on choisit <math><mi>k</mi></math> éléments parmi <math><mi>n</mi></math>,
+                    <strong>avec répétition</strong> possible et <strong>en tenant compte de l’ordre</strong>, on obtient :
+                </p>
+
+                <p>
+                    <math>
+                        <mrow>
+                            <mi>A</mi><mo>'</mo><mo>(</mo><mi>n</mi><mo>,</mo><mi>k</mi><mo>)</mo>
+                            <mo>=</mo>
+                            <msup><mi>n</mi><mi>k</mi></msup>
+                        </mrow>
+                    </math>
+                </p>
+
+                <p class="note">
+                    Ex : créer un code de 4 chiffres (0–9) → <math><msup><mn>10</mn><mn>4</mn></msup><mo>=</mo><mn>10000</mn></math> possibilités.
+                </p>
+
+                <div class="exo" aria-label="Exercice arrangements avec répétition">
+                    <h3 class="exo-title">Exercice trivial</h3>
+                    <p>
+                        On veut créer un code de 3 lettres en utilisant seulement A, B et C.
+                        Les lettres peuvent se répéter et l’ordre compte (par exemple AAA, ABC, CBA sont autorisés).
+                        Combien de codes différents peut-on former&nbsp;?
+                    </p>
+                    <p class="inline-note">
+                        Objectif&nbsp;: ancrer le réflexe “avec répétition + ordre =&nbsp;<math><msup><mi>n</mi><mi>k</mi></msup></math>”.
+                    </p>
+                </div>
+
+                <div class="lexique">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Avec répétition</span> : on peut reprendre plusieurs fois le même élément.</li>
+                        <li><span class="lex-term">Exemple typique</span> : codes, mots de passe, tirages “avec remise”.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Combinaisons -->
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">5. Combinaisons (sans répétition)</h2>
+                    <span class="card-tag">Choisir sans se soucier de l’ordre</span>
+                </header>
+
+                <p>
+                    Une <strong>combinaison</strong> de <math><mi>k</mi></math> éléments parmi <math><mi>n</mi></math> (sans répétition)
+                    est un choix de <math><mi>k</mi></math> éléments, <strong>sans tenir compte de l’ordre</strong>.
+                </p>
+
+                <p>
+                    Nombre de combinaisons de <math><mi>k</mi></math> parmi <math><mi>n</mi></math> :
+                </p>
+
+                <p>
+                    <math>
+                        <mrow>
+                            <mfenced open="(" close=")">
+                                <mtable>
+                                    <mtr>
+                                        <mtd><mi>n</mi></mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd><mi>k</mi></mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                            <mo>=</mo>
+                            <msub><mi>C</mi><mi>n</mi></msub><mo>^</mo><mi>k</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow><mi>n</mi><mo>!</mo></mrow>
+                                <mrow><mi>k</mi><mo>!</mo><mo>(</mo><mi>n</mi><mo>-</mo><mi>k</mi><mo>)</mo><mo>!</mo></mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+
+                <p class="note">
+                    Ex : choisir 3 élèves parmi 10 pour un projet → on se fiche de l’ordre dans lequel on les liste.
+                </p>
+
+                <div class="exo" aria-label="Exercice combinaisons sans répétition">
+                    <h3 class="exo-title">Exercice trivial</h3>
+                    <p>
+                        Dans une équipe de 8 personnes, on doit former un groupe de travail de 3 personnes.
+                        Combien de groupes différents peut-on former&nbsp;?
+                        Compare avec le cas où on devrait choisir un “1er, 2e, 3e” (donc avec ordre) pour sentir la différence avec les arrangements.
+                    </p>
+                    <p class="inline-note">
+                        Objectif&nbsp;: sentir que les combinaisons “oublient” l’ordre alors que les arrangements le gardent.
+                    </p>
+                </div>
+
+                <div class="lexique">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Sans ordre</span> : {A,B,C} = {B,C,A} = la même combinaison.</li>
+                        <li><span class="lex-term">Notation</span> : souvent noté <math><msub><mi>C</mi><mi>n</mi></msub><mo>^</mo><mi>k</mi></math> ou <math><mfenced><mtable><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable></mfenced></math>.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 6. Combinaisons avec répétition + binôme -->
+    <section aria-labelledby="sec-comb-rep">
+        <div class="grid">
+            <!-- Combinaisons avec répétition -->
+            <article class="card">
+                <header class="card-header">
+                    <h2 id="sec-comb-rep" class="card-title">6. Combinaisons avec répétition</h2>
+                    <span class="card-tag">Moins utilisée au lycée, mais utile à connaître</span>
+                </header>
+
+                <p>
+                    Choisir <math><mi>k</mi></math> éléments parmi <math><mi>n</mi></math>,
+                    avec <strong>répétition possible</strong> et <strong>sans ordre</strong>, donne :
+                </p>
+
+                <p>
+                    <math>
+                        <mrow>
+                            <mi>C</mi><mo>'</mo><mo>(</mo><mi>n</mi><mo>,</mo><mi>k</mi><mo>)</mo>
+                            <mo>=</mo>
+                            <mfenced open="(" close=")">
+                                <mtable>
+                                    <mtr>
+                                        <mtd>
+                                            <mrow><mi>n</mi><mo>+</mo><mi>k</mi><mo>-</mo><mn>1</mn></mrow>
+                                        </mtd>
+                                    </mtr>
+                                    <mtr>
+                                        <mtd><mi>k</mi></mtd>
+                                    </mtr>
+                                </mtable>
+                            </mfenced>
+                        </mrow>
+                    </math>
+                </p>
+
+                <p class="note">
+                    Exemple type : façons de choisir 5 bonbons (non distingués individuellement) parmi 3 parfums différents.
+                </p>
+
+                <div class="exo" aria-label="Exercice combinaisons avec répétition">
+                    <h3 class="exo-title">Exercice trivial</h3>
+                    <p>
+                        Tu as 3 parfums de glace (vanille, chocolat, fraise) et tu veux commander 4 boules au total.
+                        Les parfums peuvent se répéter, et seul compte le “contenu” du cornet (pas l’ordre des boules).
+                        Combien de commandes différentes possibles&nbsp;?
+                    </p>
+                    <p class="inline-note">
+                        Objectif&nbsp;: visualiser une situation “avec répétition mais sans ordre” et l’associer à la formule de combinaison avec répétition.
+                    </p>
+                </div>
+
+                <div class="lexique">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Avec répétition</span> : tu peux prendre plusieurs fois le même type d’objet.</li>
+                        <li><span class="lex-term">Sans ordre</span> : seulement le contenu du “sac” compte, pas l’ordre de prise.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Binôme de Newton -->
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title">7. Binôme de Newton</h2>
+                    <span class="card-tag">Lien direct avec les combinaisons</span>
+                </header>
+
+                <p>
+                    Pour un entier <math><mi>n</mi></math> et deux nombres réels <math><mi>a</mi></math>, <math><mi>b</mi></math> :
+                </p>
+
+                <p>
+                    <math>
+                        <mrow>
+                            <msup><mrow><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo></mrow><mi>n</mi></msup>
+                            <mo>=</mo>
+                            <munder>
+                                <mo>&#x2211;</mo>
+                                <mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+                            </munder>
+                            <mover>
+                                <mrow>
+                                    <mfenced open="(" close=")">
+                                        <mtable>
+                                            <mtr>
+                                                <mtd><mi>n</mi></mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd><mi>k</mi></mtd>
+                                            </mtr>
+                                        </mtable>
+                                    </mfenced>
+                                    <msup><mi>a</mi><mrow><mi>n</mi><mo>-</mo><mi>k</mi></mrow></msup>
+                                    <msup><mi>b</mi><mi>k</mi></msup>
+                                </mrow>
+                                <mrow></mrow>
+                            </mover>
+                        </mrow>
+                    </math>
+                </p>
+
+                <p class="note">
+                    Chaque terme du développement correspond à “choisir <math><mi>k</mi></math> fois <math><mi>b</mi></math> parmi les <math><mi>n</mi></math> facteurs”.
+                </p>
+
+                <div class="exo" aria-label="Exercice binôme de Newton">
+                    <h3 class="exo-title">Exercice trivial</h3>
+                    <p>
+                        Développe <math><msup><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mn>3</mn></msup></math>
+                        de deux façons&nbsp;:
+                    </p>
+                    <ul class="lexique-list">
+                        <li>1) en développant “à la main” (produit de trois parenthèses) ;</li>
+                        <li>2) en utilisant le binôme de Newton avec les coefficients <math><mfenced><mtable><mtr><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable></mfenced></math>.</li>
+                    </ul>
+                    <p class="inline-note">
+                        Objectif&nbsp;: voir concrètement que les coefficients binomiaux apparaissent dans un simple développement.
+                    </p>
+                </div>
+
+                <div class="lexique">
+                    <h3 class="lexique-title">Lexique rapide</h3>
+                    <ul class="lexique-list">
+                        <li><span class="lex-term">Coefficient binomial</span> : le <math><mfenced><mtable><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable></mfenced></math> devant <math><msup><mi>a</mi><mrow><mi>n</mi><mo>-</mo><mi>k</mi></mrow></msup><msup><mi>b</mi><mi>k</mi></msup></math>.</li>
+                        <li><span class="lex-term">Somme &#x2211;</span> : addition de tous les termes pour <math><mi>k</mi></math> allant de 0 à <math><mi>n</mi></math>.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 8. Principe multiplicatif / additif -->
+    <section aria-labelledby="sec-principes">
+        <article class="card">
+            <header class="card-header">
+                <h2 id="sec-principes" class="card-title">8. Principes additif &amp; multiplicatif</h2>
+                <span class="card-tag">Avant les formules, les réflexes</span>
+            </header>
+
+            <table class="cheat-table">
+                <thead>
+                <tr>
+                    <th>Principe</th>
+                    <th>Idée</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Principe additif</td>
+                    <td>
+                        <p>
+                            Si une tâche peut être réalisée :
+                        </p>
+                        <ul class="lexique-list">
+                            <li>de <math><mi>n</mi></math> façons exclusives d’un type A,</li>
+                            <li>ou de <math><mi>m</mi></math> façons exclusives d’un type B,</li>
+                        </ul>
+                        <p>
+                            alors au total : <math><mi>n</mi><mo>+</mo><mi>m</mi></math> façons.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Principe multiplicatif</td>
+                    <td>
+                        <p>
+                            Si une tâche se décompose en étapes indépendantes :
+                        </p>
+                        <ul class="lexique-list">
+                            <li>première étape : <math><mi>n</mi></math> choix possibles,</li>
+                            <li>deuxième étape : <math><mi>m</mi></math> choix possibles,</li>
+                        </ul>
+                        <p>
+                            alors au total : <math><mi>n</mi><mo>&#xB7;</mo><mi>m</mi></math> façons.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="exo" aria-label="Exercice principes additif et multiplicatif">
+                <h3 class="exo-title">Exercice trivial</h3>
+                <p>
+                    Une boisson au fast-food se choisit en deux étapes&nbsp;:
+                </p>
+                <ul class="lexique-list">
+                    <li>Choix de la boisson : eau, soda, jus (3 possibilités) ;</li>
+                    <li>Choix de la taille : petite ou grande (2 possibilités).</li>
+                </ul>
+                <p>
+                    1) Combien de boissons différentes peut-on commander&nbsp;?<br />
+                    2) Si on ajoute une option “avec glace” ou “sans glace” (2 possibilités indépendantes), comment évolue le nombre total de possibilités&nbsp;?
+                </p>
+                <p class="inline-note">
+                    Objectif&nbsp;: automatiser le réflexe “plusieurs étapes indépendantes =&nbsp;on multiplie les nombres de choix”.
+                </p>
+            </div>
+
+            <div class="lexique">
+                <h3 class="lexique-title">Lexique rapide</h3>
+                <ul class="lexique-list">
+                    <li><span class="lex-term">Exclusif</span> : on ne fait qu’un seul choix parmi plusieurs types possibles.</li>
+                    <li><span class="lex-term">Étapes indépendantes</span> : le choix dans une étape ne limite pas les possibilités dans l’autre (ou la dépendance est déjà intégrée dans le compte).</li>
+                    <li><span class="lex-term">Réflexe</span> : “OU” → plutôt addition, “ET” (plusieurs étapes) → plutôt multiplication.</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <!-- 9. Lexique global -->
+    <section aria-labelledby="sec-lexique-global-comb">
+        <article class="card lexique-global">
+            <header class="card-header">
+                <h2 id="sec-lexique-global-comb" class="card-title">9. Lexique global – combinatoire</h2>
+                <span class="card-tag">Traduction noob → maths</span>
+            </header>
+
+            <ul class="lexique-list">
+                <li>
+                    <span class="lex-term">Dénombrer</span> : compter le nombre de cas possibles, pas les lister un par un.
+                </li>
+                <li>
+                    <span class="lex-term">Permutation</span> : ranger tous les objets dans un ordre ; on les utilise tous.
+                </li>
+                <li>
+                    <span class="lex-term">Arrangement</span> : choisir quelques objets et les ranger dans un ordre précis.
+                </li>
+                <li>
+                    <span class="lex-term">Combinaison</span> : choisir quelques objets, l’ordre n’a pas d’importance.
+                </li>
+                <li>
+                    <span class="lex-term">Avec répétition</span> : on peut prendre plusieurs fois le même type d’objet (ex : plusieurs fois le même parfum de glace).</li>
+                <li>
+                    <span class="lex-term">Sans répétition</span> : chaque objet ne peut être choisi qu’une seule fois.</li>
+                </li>
+                <li>
+                    <span class="lex-term">Coefficient binomial</span> : <math><mfenced><mtable><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable></mfenced></math>,
+                    c’est exactement “le nombre de combinaisons de <math><mi>k</mi></math> parmi <math><mi>n</mi></math>”.
+                </li>
+                <li>
+                    <span class="lex-term">Arbre de dénombrement</span> : schéma en branches qui permet de visualiser toutes les étapes / choix possibles.
+                </li>
+                <li>
+                    <span class="lex-term">Principe multiplicatif</span> : plusieurs étapes successives → on multiplie les nombres de choix.
+                </li>
+                <li>
+                    <span class="lex-term">Principe additif</span> : plusieurs possibilités exclusives → on additionne les nombres de choix.</li>
+            </ul>
+
+            <div class="exo" aria-label="Exercice lexique combinatoire">
+                <h3 class="exo-title">Exercice trivial</h3>
+                <p>
+                    Prends un exo que tu as déjà fait (ou invente-en un simple) et écris une phrase du type&nbsp;:<br />
+                    «&nbsp;Ici j’utilise une <strong>combinaison sans répétition</strong> parce que …&nbsp;» ou<br />
+                    «&nbsp;Ici j’utilise un <strong>arrangement avec répétition</strong> parce que …&nbsp;».
+                </p>
+                <p class="inline-note">
+                    Objectif&nbsp;: t’entraîner à nommer correctement l’outil que tu utilises (vocabulaire ↔ situation).
+                </p>
+            </div>
+
+            <p class="note">
+                Avec ces briques, tu couvres l’essentiel de la combinatoire “officielle” niveau lycée,
+                et tu as déjà de quoi attaquer beaucoup d’exos de proba / dénombrement sans paniquer.
+            </p>
+        </article>
+    </section>
+
+</main>
+</body>
+</html>
