@@ -45,7 +45,11 @@ export class EventEmitter {
             return this;
         }
         this._events[event].forEach(callback => {
-            callback(...args);
+            try {
+                callback(...args);
+            } catch (error) {
+                console.error(`Error in event listener for "${event}":`, error);
+            }
         });
         return this;
     }

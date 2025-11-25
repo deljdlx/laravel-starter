@@ -1,3 +1,5 @@
+import { IndexIndicator } from '../utils/IndexIndicator.js';
+
 /**
  * NodeView - Responsible for rendering Drawflow node HTML
  * Pure view class - only handles HTML generation
@@ -43,7 +45,7 @@ export class NodeView {
      */
     _renderField(field) {
         const nullable = field.nullable ? '<span class="nullable-indicator">?</span>' : '';
-        const indexed = this._renderIndexIndicator(field.index);
+        const indexed = IndexIndicator.render(field.index);
 
         return `
             <div class="field-item">
@@ -53,25 +55,6 @@ export class NodeView {
                 ${indexed}
             </div>
         `;
-    }
-
-    /**
-     * Render index indicator based on index type
-     * @param {string} indexType - Index type (primary, index, unique, none)
-     * @returns {string} HTML string for the indicator
-     */
-    _renderIndexIndicator(indexType) {
-        switch (indexType) {
-            case 'primary':
-                return '<span class="unique-indicator" title="Primary Key">🔑</span>';
-            case 'index':
-            case true:
-                return '<span class="index-indicator" title="Index">🔍</span>';
-            case 'unique':
-                return '<span class="unique-indicator" title="Unique Index">1️⃣</span>';
-            default:
-                return '';
-        }
     }
 
     /**

@@ -1,4 +1,5 @@
 import { EventEmitter } from '../utils/EventEmitter.js';
+import { IndexIndicator } from '../utils/IndexIndicator.js';
 
 /**
  * PropertiesPanelView - Responsible for rendering the properties panel
@@ -113,7 +114,7 @@ export class PropertiesPanelView extends EventEmitter {
      */
     _renderFieldItem(field, index) {
         const nullable = field.nullable ? '<span style="color: #f59e0b; margin-left: 0.25rem;">?</span>' : '';
-        const indexed = this._renderIndexIndicator(field.index);
+        const indexed = IndexIndicator.render(field.index, { inline: true });
 
         return `
             <div class="field-item" style="display: flex; align-items: center; padding: 0.75rem; border-bottom: 1px solid #e2e8f0; background: white;">
@@ -131,23 +132,6 @@ export class PropertiesPanelView extends EventEmitter {
                 </div>
             </div>
         `;
-    }
-
-    /**
-     * Render index indicator
-     * @param {string} indexType - Index type
-     * @returns {string} HTML string
-     */
-    _renderIndexIndicator(indexType) {
-        switch (indexType) {
-            case 'unique':
-                return '<span style="color: #8b5cf6; margin-left: 0.25rem;" title="Unique Index">🔑</span>';
-            case 'index':
-            case true:
-                return '<span style="color: #10b981; margin-left: 0.25rem;" title="Index">🔍</span>';
-            default:
-                return '';
-        }
     }
 
     /**
