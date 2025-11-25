@@ -23,6 +23,7 @@ Ne pas supposer l’usage d’Inertia, Livewire, Vue, React sans indication.
 Privilégier la POO JS si pertinent.
 Documenter les classes/fonctions JS (JSDoc).
 Utiliser des objets/classe bien structurés.
+Privilégier approche MVC si applicable.
 
 ## Comportement
 Hypothèses minimalistes si le contexte est flou.

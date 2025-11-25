@@ -170,10 +170,13 @@ export class DrawflowManager {
             fieldsHTML = modelData.fields.map(field => {
                 const nullable = field.nullable ? '<span class="nullable-indicator">?</span>' : '';
                 let indexed = '';
-                if (field.index === 'unique') {
+                if (field.index === 'primary') {
                     indexed = '<span class="unique-indicator" title="Unique Index">🔑</span>';
                 } else if (field.index === 'index' || field.index === true) {
                     indexed = '<span class="index-indicator" title="Index">🔍</span>';
+                }
+                else if (field.index === 'unique') {
+                    indexed = '<span class="unique-indicator" title="Unique Index">1️⃣</span>';
                 }
                 return `
                     <div class="field-item">

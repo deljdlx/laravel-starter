@@ -2,6 +2,27 @@
  * FieldEditor - Manages field creation and editing
  */
 export class FieldEditor {
+
+
+    _fieldTypes = [
+        'string',
+        'text',
+        'integer',
+        'boolean',
+        'float',
+        'date',
+        'datetime'
+    ];
+
+    _indexTypes = [
+        'none',
+        'primary',
+        'index',
+        'unique',
+    ];
+    
+
+
     constructor(schemaState, onFieldSaved) {
         this.schemaState = schemaState;
         this.onFieldSaved = onFieldSaved;
@@ -56,13 +77,7 @@ export class FieldEditor {
                 <div class="property-field">
                     <label>Field Type</label>
                     <select id="field-type-input">
-                        <option value="string" ${fieldData.type === 'string' ? 'selected' : ''}>string</option>
-                        <option value="text" ${fieldData.type === 'text' ? 'selected' : ''}>text</option>
-                        <option value="integer" ${fieldData.type === 'integer' ? 'selected' : ''}>integer</option>
-                        <option value="boolean" ${fieldData.type === 'boolean' ? 'selected' : ''}>boolean</option>
-                        <option value="float" ${fieldData.type === 'float' ? 'selected' : ''}>float</option>
-                        <option value="date" ${fieldData.type === 'date' ? 'selected' : ''}>date</option>
-                        <option value="datetime" ${fieldData.type === 'datetime' ? 'selected' : ''}>datetime</option>
+                        ${this._fieldTypes.map(type => `<option value="${type}" ${fieldData.type === type ? 'selected' : ''}>${type}</option>`).join('')}
                     </select>
                 </div>
                 <div class="property-field">
@@ -74,9 +89,7 @@ export class FieldEditor {
                 <div class="property-field">
                     <label>Index Type</label>
                     <select id="field-index-input">
-                        <option value="none" ${(!fieldData.index || fieldData.index === 'none' || fieldData.index === false) ? 'selected' : ''}>No index</option>
-                        <option value="index" ${(fieldData.index === 'index' || fieldData.index === true) ? 'selected' : ''}>Index</option>
-                        <option value="unique" ${fieldData.index === 'unique' ? 'selected' : ''}>Unique</option>
+                        ${this._indexTypes.map(indexType => `<option value="${indexType}" ${fieldData.index === indexType ? 'selected' : ''}>${indexType}</option>`).join('')}
                     </select>
                 </div>
                 <div class="property-field">
