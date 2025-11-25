@@ -11,7 +11,8 @@ export default defineConfig({
         'resources/js/app.js',
         'resources/js/home.js',
         'resources/js/model-builder.js',
-        'resources/js/schema-editor/SchemaEditor.js'
+        'resources/packages/schema-editor/js/SchemaEditor.js',
+        'resources/packages/schema-editor/scss/schema-editor.scss'
       ],
       refresh: true,
     }),
