@@ -1,158 +1,55 @@
-import { SchemaState } from './SchemaState.js';
-import { DrawflowManager } from './DrawflowManager.js';
-import { FieldEditor } from './FieldEditor.js';
-import { UIRenderer } from './UIRenderer.js';
+import { SchemaModel } from './models/SchemaModel.js';
+import { SchemaEditorController } from './controllers/SchemaEditorController.js';
+import { DrawflowAdapter } from './views/DrawflowAdapter.js';
+import { NodeView } from './views/NodeView.js';
+import { PropertiesPanelView } from './views/PropertiesPanelView.js';
+import { JsonPanelView } from './views/JsonPanelView.js';
+import { FieldEditorView } from './views/FieldEditorView.js';
 
 /**
- * SchemaEditor - Main class that coordinates all schema editor components
+ * SchemaEditor - Entry point that bootstraps the MVC architecture
+ * 
+ * Architecture:
+ * - Model: SchemaModel - handles all data state and emits events on changes
+ * - Views: Separate view classes that handle only DOM rendering
+ *   - DrawflowAdapter: Manages Drawflow library interactions
+ *   - NodeView: Renders node HTML content
+ *   - PropertiesPanelView: Renders the properties panel
+ *   - JsonPanelView: Renders the JSON debug panel
+ *   - FieldEditorView: Renders the field editor form
+ * - Controllers: Handle user interactions and coordinate between Model and Views
+ *   - SchemaEditorController: Main application controller
+ *   - FieldController: Handles field-related operations
  */
 export class SchemaEditor {
     constructor() {
-        this.schemaState = new SchemaState();
-        this.drawflowManager = null;
-        this.fieldEditor = null;
-        this.uiRenderer = null;
+        this._model = null;
+        this._controller = null;
     }
 
     /**
-     * Initialize the schema editor
+     * Initialize the schema editor MVC components
      */
     initialize() {
-        // Initialize Drawflow manager
-        this.drawflowManager = new DrawflowManager('drawflow', this.schemaState);
-        if (!this.drawflowManager.initialize()) {
-            console.error('Failed to initialize Drawflow manager');
-            return;
-        }
+        // Create Model
+        this._model = new SchemaModel();
 
-        // Initialize field editor
-        this.fieldEditor = new FieldEditor(
-            this.schemaState,
-            () => this.onFieldSaved()
-        );
-
-        // Initialize UI renderer
-        this.uiRenderer = new UIRenderer(
-            this.schemaState,
-            this.fieldEditor,
-            () => this.deleteSelectedModel()
-        );
-
-        // Setup event handlers
-        this.setupEventHandlers();
-
-        // Initial render
-        this.uiRenderer.renderAll();
-
-        console.log('Schema Editor initialized successfully');
-    }
-
-    /**
-     * Setup event handlers
-     */
-    setupEventHandlers() {
-        // Add Model button
-        const addModelBtn = document.getElementById('add-model-btn');
-        if (addModelBtn) {
-            addModelBtn.addEventListener('click', () => this.addModel());
-        }
-
-        // Drawflow event handlers
-        this.drawflowManager.on('nodeSelected', (model) => {
-            this.schemaState.selectModel(model);
-            this.uiRenderer.renderPropertiesPanel();
-        });
-
-        this.drawflowManager.on('nodeUnselected', () => {
-            // Optionally clear selection
-        });
-
-        this.drawflowManager.on('nodeRemoved', () => {
-            this.uiRenderer.renderAll();
-        });
-
-        // UI Renderer callback for model property changes
-        this.uiRenderer.onModelPropertyChange(() => {
-            this.updateNodeVisual(this.schemaState.selectedModel);
-            this.uiRenderer.renderJSON();
-        });
-
-        // Setup global window functions for onclick handlers
-        this.setupGlobalHandlers();
-    }
-
-    /**
-     * Setup global window handlers for inline onclick attributes
-     */
-    setupGlobalHandlers() {
-        window.editField = (index) => {
-            if (!this.schemaState.selectedModel) return;
-            this.fieldEditor.show(index);
+        // Create Views
+        const views = {
+            drawflowAdapter: new DrawflowAdapter('drawflow'),
+            nodeView: new NodeView(),
+            propertiesPanelView: new PropertiesPanelView('properties-panel'),
+            jsonPanelView: new JsonPanelView('json-debug-panel'),
+            fieldEditorView: new FieldEditorView('field-editor-container')
         };
 
-        window.deleteField = (index) => {
-            if (!this.schemaState.selectedModel) return;
-            if (confirm(`Delete field "${this.schemaState.selectedModel.fields[index].name}"?`)) {
-                this.schemaState.selectedModel.fields.splice(index, 1);
-                this.updateNodeVisual(this.schemaState.selectedModel);
-                this.uiRenderer.renderPropertiesPanel();
-                this.uiRenderer.renderJSON();
-            }
-        };
-    }
+        // Create Controller
+        this._controller = new SchemaEditorController(this._model, views);
 
-    /**
-     * Add a new model
-     */
-    addModel() {
-        const modelData = {
-            nodeId: this.schemaState.getNextNodeId(),
-            modelName: `Model${this.schemaState.models.length + 1}`,
-            tableName: `model${this.schemaState.models.length + 1}s`,
-            fields: [],
-            relations: []
-        };
+        // Initialize controller (which initializes all components)
+        this._controller.initialize();
 
-        this.schemaState.addModel(modelData);
-
-        // Create Drawflow node
-        const html = this.drawflowManager.generateNodeHTML(modelData);
-        this.drawflowManager.createNode(modelData, html);
-
-        // Select the new model
-        this.schemaState.selectModel(modelData);
-
-        this.uiRenderer.renderAll();
-    }
-
-    /**
-     * Delete the selected model
-     */
-    deleteSelectedModel() {
-        if (!this.schemaState.selectedModel) return;
-
-        this.drawflowManager.removeNode(this.schemaState.selectedModel);
-        this.schemaState.removeModel(this.schemaState.selectedModel.nodeId);
-
-        this.uiRenderer.renderAll();
-    }
-
-    /**
-     * Update node visual representation
-     * @param {Object} modelData - Model data
-     */
-    updateNodeVisual(modelData) {
-        const html = this.drawflowManager.generateNodeHTML(modelData);
-        this.drawflowManager.updateNodeVisual(modelData, html);
-    }
-
-    /**
-     * Callback for when a field is saved
-     */
-    onFieldSaved() {
-        this.updateNodeVisual(this.schemaState.selectedModel);
-        this.uiRenderer.renderPropertiesPanel();
-        this.uiRenderer.renderJSON();
+        console.log('Schema Editor (MVC) initialized successfully');
     }
 }
 
