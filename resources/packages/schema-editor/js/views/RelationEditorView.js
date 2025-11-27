@@ -8,6 +8,12 @@ import { EventEmitter } from '../utils/EventEmitter.js';
  * - cancel: when cancel button is clicked or modal is closed
  */
 export class RelationEditorView extends EventEmitter {
+    /** @type {string} Default cardinality for the source side of a relation */
+    static DEFAULT_SOURCE_CARDINALITY = '1,1';
+    
+    /** @type {string} Default cardinality for the target side of a relation */
+    static DEFAULT_TARGET_CARDINALITY = '0,n';
+
     constructor() {
         super();
         this._modalElement = null;
@@ -64,8 +70,8 @@ export class RelationEditorView extends EventEmitter {
             this._modalElement.remove();
         }
 
-        const sourceCardinality = existingRelation?.sourceCardinality || '1,1';
-        const targetCardinality = existingRelation?.targetCardinality || '0,n';
+        const sourceCardinality = existingRelation?.sourceCardinality || RelationEditorView.DEFAULT_SOURCE_CARDINALITY;
+        const targetCardinality = existingRelation?.targetCardinality || RelationEditorView.DEFAULT_TARGET_CARDINALITY;
 
         this._modalElement = document.createElement('div');
         this._modalElement.className = 'relation-modal-overlay';
@@ -190,8 +196,8 @@ export class RelationEditorView extends EventEmitter {
      * Update the relation preview text
      */
     _updatePreview() {
-        const sourceCardinality = this._modalElement.querySelector('#source-cardinality')?.value || '1,1';
-        const targetCardinality = this._modalElement.querySelector('#target-cardinality')?.value || '0,n';
+        const sourceCardinality = this._modalElement.querySelector('#source-cardinality')?.value || RelationEditorView.DEFAULT_SOURCE_CARDINALITY;
+        const targetCardinality = this._modalElement.querySelector('#target-cardinality')?.value || RelationEditorView.DEFAULT_TARGET_CARDINALITY;
         const previewText = this._modalElement.querySelector('#relation-preview-text');
         
         if (previewText) {
@@ -207,8 +213,8 @@ export class RelationEditorView extends EventEmitter {
      * Handle save button click
      */
     _handleSave() {
-        const sourceCardinality = this._modalElement.querySelector('#source-cardinality')?.value || '1,1';
-        const targetCardinality = this._modalElement.querySelector('#target-cardinality')?.value || '0,n';
+        const sourceCardinality = this._modalElement.querySelector('#source-cardinality')?.value || RelationEditorView.DEFAULT_SOURCE_CARDINALITY;
+        const targetCardinality = this._modalElement.querySelector('#target-cardinality')?.value || RelationEditorView.DEFAULT_TARGET_CARDINALITY;
 
         const relationData = {
             sourceNodeId: this._sourceModel?.nodeId,

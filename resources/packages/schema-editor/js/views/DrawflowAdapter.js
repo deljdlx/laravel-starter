@@ -83,7 +83,7 @@ export class DrawflowAdapter extends EventEmitter {
                 this.emit('connectionCreated', {
                     sourceNodeId: outputNodeId,
                     targetNodeId: inputNodeId,
-                    connectionId: `${connection.output_id}_${connection.output_class}_${connection.input_id}_${connection.input_class}`
+                    connectionId: this._generateConnectionId(connection)
                 });
             }
         });
@@ -97,9 +97,23 @@ export class DrawflowAdapter extends EventEmitter {
                 this.emit('connectionRemoved', {
                     sourceNodeId: outputNodeId,
                     targetNodeId: inputNodeId,
-                    connectionId: `${connection.output_id}_${connection.output_class}_${connection.input_id}_${connection.input_class}`
+                    connectionId: this._generateConnectionId(connection)
                 });
             }
+        });
+    }
+
+    /**
+     * Generate a unique connection ID from a Drawflow connection object
+     * @param {Object} connection - Drawflow connection object
+     * @returns {string} Unique connection ID
+     */
+    _generateConnectionId(connection) {
+        return JSON.stringify({
+            outputId: connection.output_id,
+            outputClass: connection.output_class,
+            inputId: connection.input_id,
+            inputClass: connection.input_class
         });
     }
 
