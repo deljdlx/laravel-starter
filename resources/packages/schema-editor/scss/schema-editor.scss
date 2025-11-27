@@ -105,18 +105,11 @@ body {
     background: #f1f5f9;
 }
 
-// Drawflow styling
-.drawflow .parent-node {
-    background: white;
-    border-radius: 8px;
-    border: 2px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+#schema-editor-container {
 
-    &.selected {
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+    .drawflow .connection {
+        top: 0;
     }
-}
 
 // Connection lines - make them clickable for editing relations
 .drawflow .connection {
@@ -136,19 +129,37 @@ body {
     width: 300px;
 }
 
-// Model node content
-.model-node-content {
-    min-width: 220px;
+        &.selected {
+            // box-shadow: 0 0 3px 0px rgba(255, 255, 0, 0.5);
+            border: dashed 2px #ff0;
+            box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .output {
+            // margin-top: 10px;
+        }
+
+        .model-node-content {
+            min-width: auto;
+
+            .model-header {
+                background: #f8fafc;
+                // padding: 0.75rem 1rem;
+                color: #1e293b;
+                border-bottom: 2px solid #e2e8f0;
+                font-size: 14px;
+                padding: 4px;
+            }
+
+
+        }
+    }
 }
 
-.model-header {
-    background: #f8fafc;
-    padding: 0.75rem 1rem;
-    font-weight: 600;
-    color: #1e293b;
-    border-bottom: 2px solid #e2e8f0;
-    font-size: 0.9375rem;
-}
+
+
+
+
 
 .model-body {
     padding: 0;

@@ -6,10 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Schema Editor - Developer Tools</title>
-    @vite(['resources/css/app.css', 'resources/packages/schema-editor/scss/schema-editor.scss', 'resources/packages/schema-editor/js/SchemaEditor.js'])
+    @vite([
+        'resources/css/app.css',
+        'resources/packages/schema-editor/scss/schema-editor.scss',
+        'resources/packages/schema-editor/js/SchemaEditor.js'
+    ])
 </head>
 <body>
-    <div class="schema-editor-container">
+    <div id="schema-editor-container" class="schema-editor-container">
         <!-- Header -->
         <div class="editor-header">
             <div>
