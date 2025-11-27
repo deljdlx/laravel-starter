@@ -144,6 +144,8 @@ export class DrawflowAdapter extends EventEmitter {
     _parseConnectionElement(connectionElement) {
         // Drawflow connection elements have classes like:
         // "connection node_in_node-2 node_out_node-1 output_1 input_1"
+        // SVG elements use className.baseVal (SVGAnimatedString), while regular
+        // HTML elements use className (string). We check baseVal first for SVG.
         const classList = connectionElement.className.baseVal || connectionElement.className;
         
         // Extract node IDs from class names

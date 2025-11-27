@@ -139,7 +139,9 @@ export class SchemaEditorController {
                 // Find existing relation data
                 const existingRelation = this._model.findRelation(sourceNodeId, targetNodeId);
                 
-                // Mark as editing existing connection (not pending new connection)
+                // Switch to editing mode: clear any pending new connection and track the
+                // connection being edited. This ensures cancel behavior differs between
+                // creating (removes connection) vs editing (keeps original values).
                 this._pendingConnection = null;
                 this._editingConnection = { sourceNodeId, targetNodeId };
                 
@@ -192,7 +194,10 @@ export class SchemaEditorController {
      */
     _setupRelationEditorListeners() {
         this._relationEditorView.on('save', ({ relationData }) => {
-            // Save the relation to the model (works for both new and edited relations)
+            // Save the relation to the model. The model's addRelation method uses
+            // upsert logic: if a relation with the same source/target already exists,
+            // it updates the cardinalities; otherwise it creates a new relation.
+            // See SchemaModel.addRelation() for implementation details.
             this._model.addRelation(relationData);
             this._pendingConnection = null;
             this._editingConnection = null;
