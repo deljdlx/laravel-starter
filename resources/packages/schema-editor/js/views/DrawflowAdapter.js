@@ -10,6 +10,7 @@ import { EventEmitter } from '../utils/EventEmitter.js';
  * - nodeSelected: when a node is selected, payload: { drawflowId, nodeId }
  * - nodeUnselected: when a node is unselected
  * - nodeRemoved: when a node is removed, payload: { nodeId }
+ * - connectionClicked: when a connection is clicked, payload: { sourceNodeId, targetNodeId }
  */
 export class DrawflowAdapter extends EventEmitter {
     /**
@@ -41,6 +42,7 @@ export class DrawflowAdapter extends EventEmitter {
         this._editor.start();
 
         this._setupDrawflowListeners();
+        this._setupConnectionClickListener();
 
         console.log('Drawflow adapter initialized');
         return true;
@@ -101,6 +103,63 @@ export class DrawflowAdapter extends EventEmitter {
                 });
             }
         });
+    }
+
+    /**
+     * Setup click event listeners on connection paths (SVG)
+     * Allows users to click on existing connections to edit them
+     */
+    _setupConnectionClickListener() {
+        // Use event delegation on the container to handle clicks on connection paths
+        this._container.addEventListener('click', (event) => {
+            const target = event.target;
+            
+            // Check if the clicked element is a connection path (SVG path element)
+            if (target.classList.contains('main-path')) {
+                // Get the parent connection element
+                const connectionElement = target.closest('.connection');
+                if (connectionElement) {
+                    const connectionInfo = this._parseConnectionElement(connectionElement);
+                    if (connectionInfo) {
+                        const sourceNodeId = this.getNodeIdFromDrawflowId(connectionInfo.outputNodeId);
+                        const targetNodeId = this.getNodeIdFromDrawflowId(connectionInfo.inputNodeId);
+                        
+                        if (sourceNodeId !== null && targetNodeId !== null) {
+                            this.emit('connectionClicked', {
+                                sourceNodeId,
+                                targetNodeId
+                            });
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    /**
+     * Parse connection element to extract source and target node IDs
+     * @param {Element} connectionElement - The connection DOM element
+     * @returns {Object|null} Object with outputNodeId and inputNodeId or null
+     */
+    _parseConnectionElement(connectionElement) {
+        // Drawflow connection elements have classes like:
+        // "connection node_in_node-2 node_out_node-1 output_1 input_1"
+        // SVG elements use className.baseVal (SVGAnimatedString), while regular
+        // HTML elements use className (string). We check baseVal first for SVG.
+        const classList = connectionElement.className.baseVal || connectionElement.className;
+        
+        // Extract node IDs from class names
+        const nodeInMatch = classList.match(/node_in_node-(\d+)/);
+        const nodeOutMatch = classList.match(/node_out_node-(\d+)/);
+        
+        if (nodeInMatch && nodeOutMatch) {
+            return {
+                inputNodeId: parseInt(nodeInMatch[1], 10),
+                outputNodeId: parseInt(nodeOutMatch[1], 10)
+            };
+        }
+        
+        return null;
     }
 
     /**
