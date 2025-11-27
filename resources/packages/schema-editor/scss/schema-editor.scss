@@ -111,53 +111,31 @@ body {
         top: 0;
     }
 
-// Connection lines - make them clickable for editing relations
-.drawflow .connection {
-    .main-path {
-        cursor: pointer;
-        stroke-width: 3px;
-        transition: stroke 0.15s ease, stroke-width 0.15s ease;
+    // Connection lines - make them clickable for editing relations
+    .drawflow .connection {
+        .main-path {
+            cursor: pointer;
+            stroke-width: 3px;
+            transition: stroke 0.15s ease, stroke-width 0.15s ease;
 
-        &:hover {
-            stroke: #3b82f6;
-            stroke-width: 4px;
+            &:hover {
+                stroke: #3b82f6;
+                stroke-width: 4px;
+            }
         }
     }
-}
 
-.drawflow .drawflow-node {
-    width: 300px;
-}
+    .drawflow .drawflow-node {
+        width: 200px;
+        padding: 4px;
+        box-shadow: 3px 3px 3px #0003;
 
         &.selected {
-            // box-shadow: 0 0 3px 0px rgba(255, 255, 0, 0.5);
+            box-shadow: 3px 3px 5px #0007;
             border: dashed 2px #ff0;
-            box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
-        }
-
-        .output {
-            // margin-top: 10px;
-        }
-
-        .model-node-content {
-            min-width: auto;
-
-            .model-header {
-                background: #f8fafc;
-                // padding: 0.75rem 1rem;
-                color: #1e293b;
-                border-bottom: 2px solid #e2e8f0;
-                font-size: 14px;
-                padding: 4px;
-            }
-
-
         }
     }
 }
-
-
-
 
 
 
