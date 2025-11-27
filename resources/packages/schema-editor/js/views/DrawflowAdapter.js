@@ -13,6 +13,21 @@ import { EventEmitter } from '../utils/EventEmitter.js';
  * - connectionClicked: when a connection is clicked, payload: { sourceNodeId, targetNodeId }
  */
 export class DrawflowAdapter extends EventEmitter {
+    /** @type {number} Maximum offset from path endpoint for cardinality labels */
+    static LABEL_MAX_OFFSET = 40;
+
+    /** @type {number} Minimum offset from path endpoint for cardinality labels */
+    static LABEL_MIN_OFFSET = 20;
+
+    /** @type {number} Percentage of path length to use for label positioning */
+    static LABEL_PATH_PERCENTAGE = 0.15;
+
+    /** @type {number} Vertical offset to position labels above the connection line */
+    static LABEL_VERTICAL_OFFSET = -15;
+
+    /** @type {number} Padding around cardinality label text for background rectangle */
+    static LABEL_BG_PADDING = 4;
+
     /**
      * @param {string} containerId - ID of the Drawflow container element
      */
@@ -366,26 +381,25 @@ export class DrawflowAdapter extends EventEmitter {
      * @param {string} targetCardinality - Cardinality for target end
      */
     _addCardinalityLabels(connectionElement, pathElement, sourceCardinality, targetCardinality) {
-        // Get path points to position labels
         const pathLength = pathElement.getTotalLength();
 
-        // Position labels at 15% and 85% of path length for better visibility
-        // Use minimum offset of 20px and maximum of 40px from endpoints
-        const sourceOffset = Math.min(40, Math.max(20, pathLength * 0.15));
-        const targetOffset = Math.min(40, Math.max(20, pathLength * 0.15));
+        // Calculate offset from endpoints using configured percentage and bounds
+        const calculatedOffset = pathLength * DrawflowAdapter.LABEL_PATH_PERCENTAGE;
+        const sourceOffset = Math.min(
+            DrawflowAdapter.LABEL_MAX_OFFSET,
+            Math.max(DrawflowAdapter.LABEL_MIN_OFFSET, calculatedOffset)
+        );
+        const targetOffset = sourceOffset;
 
         // Get positions near the start and end of the path
         const sourcePoint = pathElement.getPointAtLength(sourceOffset);
         const targetPoint = pathElement.getPointAtLength(pathLength - targetOffset);
 
-        // Add vertical offset to position labels above the line
-        const verticalOffset = -15;
-
         // Create source cardinality label
         const sourceLabel = this._createCardinalityLabel(
             sourceCardinality,
             sourcePoint.x,
-            sourcePoint.y + verticalOffset,
+            sourcePoint.y + DrawflowAdapter.LABEL_VERTICAL_OFFSET,
             'source'
         );
         connectionElement.appendChild(sourceLabel);
@@ -394,7 +408,7 @@ export class DrawflowAdapter extends EventEmitter {
         const targetLabel = this._createCardinalityLabel(
             targetCardinality,
             targetPoint.x,
-            targetPoint.y + verticalOffset,
+            targetPoint.y + DrawflowAdapter.LABEL_VERTICAL_OFFSET,
             'target'
         );
         connectionElement.appendChild(targetLabel);
@@ -434,15 +448,18 @@ export class DrawflowAdapter extends EventEmitter {
         group.appendChild(textEl);
 
         // Position the background after text is added (need to measure text)
-        // Use requestAnimationFrame to ensure text is rendered
-        requestAnimationFrame(() => {
+        // Use setTimeout to ensure text is rendered and getBBox returns valid dimensions
+        setTimeout(() => {
             const bbox = textEl.getBBox();
-            const padding = 4;
-            bg.setAttribute('x', bbox.x - padding);
-            bg.setAttribute('y', bbox.y - padding);
-            bg.setAttribute('width', bbox.width + padding * 2);
-            bg.setAttribute('height', bbox.height + padding * 2);
-        });
+            // Only update if bbox has valid dimensions
+            if (bbox.width > 0 && bbox.height > 0) {
+                const padding = DrawflowAdapter.LABEL_BG_PADDING;
+                bg.setAttribute('x', bbox.x - padding);
+                bg.setAttribute('y', bbox.y - padding);
+                bg.setAttribute('width', bbox.width + padding * 2);
+                bg.setAttribute('height', bbox.height + padding * 2);
+            }
+        }, 0);
 
         return group;
     }
