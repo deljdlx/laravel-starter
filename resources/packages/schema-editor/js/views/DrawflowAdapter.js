@@ -73,6 +73,34 @@ export class DrawflowAdapter extends EventEmitter {
                 this.emit('nodeRemoved', { drawflowId, nodeId });
             }
         });
+
+        // Listen for connection created events
+        this._editor.on('connectionCreated', (connection) => {
+            const outputNodeId = this.getNodeIdFromDrawflowId(connection.output_id);
+            const inputNodeId = this.getNodeIdFromDrawflowId(connection.input_id);
+            
+            if (outputNodeId !== null && inputNodeId !== null) {
+                this.emit('connectionCreated', {
+                    sourceNodeId: outputNodeId,
+                    targetNodeId: inputNodeId,
+                    connectionId: `${connection.output_id}_${connection.output_class}_${connection.input_id}_${connection.input_class}`
+                });
+            }
+        });
+
+        // Listen for connection removed events
+        this._editor.on('connectionRemoved', (connection) => {
+            const outputNodeId = this.getNodeIdFromDrawflowId(connection.output_id);
+            const inputNodeId = this.getNodeIdFromDrawflowId(connection.input_id);
+            
+            if (outputNodeId !== null && inputNodeId !== null) {
+                this.emit('connectionRemoved', {
+                    sourceNodeId: outputNodeId,
+                    targetNodeId: inputNodeId,
+                    connectionId: `${connection.output_id}_${connection.output_class}_${connection.input_id}_${connection.input_class}`
+                });
+            }
+        });
     }
 
     /**
@@ -166,6 +194,42 @@ export class DrawflowAdapter extends EventEmitter {
             }
         }
         return null;
+    }
+
+    /**
+     * Remove connection between two nodes by our internal node IDs
+     * @param {number} sourceNodeId - Source node ID
+     * @param {number} targetNodeId - Target node ID
+     */
+    removeConnectionBetweenNodes(sourceNodeId, targetNodeId) {
+        const sourceDrawflowId = this._findDrawflowIdByNodeId(sourceNodeId);
+        const targetDrawflowId = this._findDrawflowIdByNodeId(targetNodeId);
+        
+        if (!sourceDrawflowId || !targetDrawflowId) {
+            return;
+        }
+
+        // Get the connections from the source node
+        const drawflowData = this._editor.export();
+        const sourceNode = drawflowData.drawflow.Home.data[sourceDrawflowId];
+        
+        if (sourceNode && sourceNode.outputs) {
+            for (const [outputKey, output] of Object.entries(sourceNode.outputs)) {
+                if (output.connections) {
+                    for (const conn of output.connections) {
+                        if (conn.node === targetDrawflowId) {
+                            // Remove this connection
+                            this._editor.removeSingleConnection(
+                                sourceDrawflowId,
+                                targetDrawflowId,
+                                outputKey,
+                                conn.output
+                            );
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /**

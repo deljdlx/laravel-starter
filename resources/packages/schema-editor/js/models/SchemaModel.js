@@ -203,6 +203,97 @@ export class SchemaModel extends EventEmitter {
     }
 
     /**
+     * Add a relation between two models
+     * @param {Object} relationData - Relation data with source/target nodeIds and cardinalities
+     * @returns {Object} The added relation
+     */
+    addRelation(relationData) {
+        const sourceModel = this.findModelByNodeId(relationData.sourceNodeId);
+        const targetModel = this.findModelByNodeId(relationData.targetNodeId);
+        
+        if (!sourceModel || !targetModel) {
+            console.error('Could not find source or target model for relation');
+            return null;
+        }
+
+        // Create relation object for the source model
+        const relation = {
+            targetModel: targetModel.modelName,
+            targetNodeId: relationData.targetNodeId,
+            sourceCardinality: relationData.sourceCardinality,
+            targetCardinality: relationData.targetCardinality
+        };
+
+        // Add relation to source model
+        if (!sourceModel.relations) {
+            sourceModel.relations = [];
+        }
+        
+        // Check if relation already exists
+        const existingIndex = sourceModel.relations.findIndex(
+            r => r.targetNodeId === relationData.targetNodeId
+        );
+        
+        if (existingIndex >= 0) {
+            // Update existing relation
+            sourceModel.relations[existingIndex] = relation;
+        } else {
+            // Add new relation
+            sourceModel.relations.push(relation);
+        }
+
+        this.emit('relationAdded', { sourceModel, targetModel, relation });
+        this.emit('modelUpdated', sourceModel);
+        this.emit('schemaChanged', this.toJSON());
+        
+        return relation;
+    }
+
+    /**
+     * Remove a relation between two models
+     * @param {number} sourceNodeId - Source node ID
+     * @param {number} targetNodeId - Target node ID
+     * @returns {boolean} True if relation was removed
+     */
+    removeRelation(sourceNodeId, targetNodeId) {
+        const sourceModel = this.findModelByNodeId(sourceNodeId);
+        
+        if (!sourceModel || !sourceModel.relations) {
+            return false;
+        }
+
+        const index = sourceModel.relations.findIndex(
+            r => r.targetNodeId === targetNodeId
+        );
+        
+        if (index >= 0) {
+            const removedRelation = sourceModel.relations.splice(index, 1)[0];
+            this.emit('relationRemoved', { sourceModel, relation: removedRelation });
+            this.emit('modelUpdated', sourceModel);
+            this.emit('schemaChanged', this.toJSON());
+            return true;
+        }
+        
+        return false;
+    }
+
+    /**
+     * Find a relation between two models
+     * @param {number} sourceNodeId - Source node ID
+     * @param {number} targetNodeId - Target node ID
+     * @returns {Object|null} The relation or null
+     */
+    findRelation(sourceNodeId, targetNodeId) {
+        const sourceModel = this.findModelByNodeId(sourceNodeId);
+        
+        if (!sourceModel || !sourceModel.relations) {
+            return null;
+        }
+
+        return sourceModel.relations.find(r => r.targetNodeId === targetNodeId) || null;
+    }
+
+    /**
      * Convert schema to JSON format
      * @returns {Object} Schema as JSON
      */

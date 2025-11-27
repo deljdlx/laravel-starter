@@ -1,4 +1,5 @@
 import { FieldController } from './FieldController.js';
+import { RelationEditorView } from '../views/RelationEditorView.js';
 
 /**
  * SchemaEditorController - Main controller coordinating all components
@@ -23,6 +24,8 @@ export class SchemaEditorController {
         this._fieldEditorView = views.fieldEditorView;
 
         this._fieldController = null;
+        this._relationEditorView = null;
+        this._pendingConnection = null;
     }
 
     /**
@@ -40,6 +43,10 @@ export class SchemaEditorController {
             this._model,
             this._fieldEditorView
         );
+
+        // Initialize relation editor view
+        this._relationEditorView = new RelationEditorView();
+        this._setupRelationEditorListeners();
 
         // Setup all event handlers
         this._setupModelListeners();
@@ -105,6 +112,28 @@ export class SchemaEditorController {
             }
         });
 
+        // Connection events - show popup when a relation is created
+        this._drawflowAdapter.on('connectionCreated', ({ sourceNodeId, targetNodeId, connectionId }) => {
+            const sourceModel = this._model.findModelByNodeId(sourceNodeId);
+            const targetModel = this._model.findModelByNodeId(targetNodeId);
+            
+            if (sourceModel && targetModel) {
+                // Store the pending connection info
+                this._pendingConnection = { sourceNodeId, targetNodeId, connectionId };
+                
+                // Check if relation already exists (editing mode)
+                const existingRelation = this._model.findRelation(sourceNodeId, targetNodeId);
+                
+                // Show the relation editor popup
+                this._relationEditorView.show(sourceModel, targetModel, existingRelation);
+            }
+        });
+
+        this._drawflowAdapter.on('connectionRemoved', ({ sourceNodeId, targetNodeId }) => {
+            // Remove relation from model when connection is removed
+            this._model.removeRelation(sourceNodeId, targetNodeId);
+        });
+
         // Properties panel events
         this._propertiesPanelView.on('addFieldClick', () => {
             this._fieldController.showAddField();
@@ -136,6 +165,32 @@ export class SchemaEditorController {
 
         this._propertiesPanelView.on('deleteFieldClick', ({ index }) => {
             this._fieldController.deleteField(index);
+        });
+    }
+
+    /**
+     * Setup listeners for relation editor view events
+     */
+    _setupRelationEditorListeners() {
+        this._relationEditorView.on('save', ({ relationData }) => {
+            // Save the relation to the model
+            this._model.addRelation(relationData);
+            this._pendingConnection = null;
+            console.log('Relation saved:', relationData);
+        });
+
+        this._relationEditorView.on('cancel', () => {
+            // If cancelled, we need to remove the connection that was just created
+            // (user decided not to define the relation)
+            if (this._pendingConnection) {
+                // Remove the visual connection from Drawflow
+                this._drawflowAdapter.removeConnectionBetweenNodes(
+                    this._pendingConnection.sourceNodeId,
+                    this._pendingConnection.targetNodeId
+                );
+                this._pendingConnection = null;
+            }
+            console.log('Relation creation cancelled');
         });
     }
 
