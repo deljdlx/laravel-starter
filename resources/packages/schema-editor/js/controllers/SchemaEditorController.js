@@ -206,6 +206,15 @@ export class SchemaEditorController {
             // it updates the cardinalities; otherwise it creates a new relation.
             // See SchemaModel.addRelation() for implementation details.
             this._model.addRelation(relationData);
+
+            // Update cardinality labels on the connection
+            this._drawflowAdapter.updateConnectionCardinalities(
+                relationData.sourceNodeId,
+                relationData.targetNodeId,
+                relationData.sourceCardinality,
+                relationData.targetCardinality
+            );
+
             this._pendingConnection = null;
             this._editingConnection = null;
             console.log('Relation saved:', relationData);
