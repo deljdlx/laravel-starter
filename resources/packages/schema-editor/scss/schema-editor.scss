@@ -118,6 +118,20 @@ body {
     }
 }
 
+// Connection lines - make them clickable for editing relations
+.drawflow .connection {
+    .main-path {
+        cursor: pointer;
+        stroke-width: 3px;
+        transition: stroke 0.15s ease, stroke-width 0.15s ease;
+
+        &:hover {
+            stroke: #3b82f6;
+            stroke-width: 4px;
+        }
+    }
+}
+
 .drawflow .drawflow-node {
     width: 300px;
 }

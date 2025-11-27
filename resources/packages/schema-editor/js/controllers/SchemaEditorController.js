@@ -26,6 +26,7 @@ export class SchemaEditorController {
         this._fieldController = null;
         this._relationEditorView = null;
         this._pendingConnection = null;
+        this._editingConnection = null;
     }
 
     /**
@@ -129,6 +130,24 @@ export class SchemaEditorController {
             }
         });
 
+        // Connection clicked - show popup to edit existing relation
+        this._drawflowAdapter.on('connectionClicked', ({ sourceNodeId, targetNodeId }) => {
+            const sourceModel = this._model.findModelByNodeId(sourceNodeId);
+            const targetModel = this._model.findModelByNodeId(targetNodeId);
+            
+            if (sourceModel && targetModel) {
+                // Find existing relation data
+                const existingRelation = this._model.findRelation(sourceNodeId, targetNodeId);
+                
+                // Mark as editing existing connection (not pending new connection)
+                this._pendingConnection = null;
+                this._editingConnection = { sourceNodeId, targetNodeId };
+                
+                // Show the relation editor popup with existing data
+                this._relationEditorView.show(sourceModel, targetModel, existingRelation);
+            }
+        });
+
         this._drawflowAdapter.on('connectionRemoved', ({ sourceNodeId, targetNodeId }) => {
             // Remove relation from model when connection is removed
             this._model.removeRelation(sourceNodeId, targetNodeId);
@@ -173,14 +192,15 @@ export class SchemaEditorController {
      */
     _setupRelationEditorListeners() {
         this._relationEditorView.on('save', ({ relationData }) => {
-            // Save the relation to the model
+            // Save the relation to the model (works for both new and edited relations)
             this._model.addRelation(relationData);
             this._pendingConnection = null;
+            this._editingConnection = null;
             console.log('Relation saved:', relationData);
         });
 
         this._relationEditorView.on('cancel', () => {
-            // If cancelled, we need to remove the connection that was just created
+            // If cancelled while creating a new connection, remove it
             // (user decided not to define the relation)
             if (this._pendingConnection) {
                 // Remove the visual connection from Drawflow
@@ -189,8 +209,12 @@ export class SchemaEditorController {
                     this._pendingConnection.targetNodeId
                 );
                 this._pendingConnection = null;
+                console.log('Relation creation cancelled');
+            } else if (this._editingConnection) {
+                // When editing an existing connection, cancelling keeps the original values
+                this._editingConnection = null;
+                console.log('Relation editing cancelled');
             }
-            console.log('Relation creation cancelled');
         });
     }
 
