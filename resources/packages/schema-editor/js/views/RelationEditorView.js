@@ -22,11 +22,14 @@ export class RelationEditorView extends EventEmitter {
         
         // Available cardinality options
         this._cardinalityOptions = [
-            { value: '0,1', label: '0,1 (Zero or one)' },
-            { value: '1,1', label: '1,1 (Exactly one)' },
-            { value: '0,n', label: '0,n (Zero or many)' },
-            { value: '1,n', label: '1,n (One or many)' },
-            { value: 'n,n', label: 'n,n (Many to many)' }
+            // { value: '0,1', label: '0,1 (Zero or one)' },
+            // { value: '1,1', label: '1,1 (Exactly one)' },
+            // { value: '0,n', label: '0,n (Zero or many)' },
+            // { value: '1,n', label: '1,n (One or many)' },
+            // { value: 'n,n', label: 'n,n (Many to many)' }
+
+            { value: 'n', label: 'n (0 or more)' },
+            { value: '1', label: '1 (Exactly one)' },
         ];
     }
 
