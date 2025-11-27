@@ -8,7 +8,10 @@ import { EventEmitter } from '../utils/EventEmitter.js';
  * - modelAdded: when a model is added
  * - modelRemoved: when a model is removed
  * - modelSelected: when a model is selected
- * - modelUpdated: when a model's properties are updated
+ * - modelUpdated: when a model's fields or relations are updated. Triggers re-render of
+ *                 both the node visual and the properties panel (fields list needs updating)
+ * - modelPropertiesUpdated: when model name or table name changes. Updates only the node
+ *                           visual, NOT the properties panel, to preserve input focus
  * - fieldAdded: when a field is added to a model
  * - fieldUpdated: when a field is updated
  * - fieldRemoved: when a field is removed
@@ -130,7 +133,7 @@ export class SchemaModel extends EventEmitter {
         const model = this.findModelByNodeId(nodeId);
         if (model) {
             Object.assign(model, properties);
-            this.emit('modelUpdated', model);
+            this.emit('modelPropertiesUpdated', model);
             this.emit('schemaChanged', this.toJSON());
         }
     }

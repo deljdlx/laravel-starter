@@ -74,6 +74,13 @@ export class SchemaEditorController {
             }
         });
 
+        // Model properties updated (name/table) - refresh only node visual, not properties panel
+        // This prevents input focus loss when typing in the model/table name fields
+        this._model.on('modelPropertiesUpdated', (model) => {
+            const html = this._nodeView.render(model);
+            this._drawflowAdapter.updateNodeContent(model.nodeId, html);
+        });
+
         // Model selected - refresh properties panel
         this._model.on('modelSelected', () => {
             this._propertiesPanelView.render(this._model.selectedModel);
