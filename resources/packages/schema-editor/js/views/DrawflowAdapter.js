@@ -91,6 +91,14 @@ export class DrawflowAdapter extends EventEmitter {
             }
         });
 
+        // Listen for node moved events to update cardinality labels
+        this._editor.on('nodeMoved', (drawflowId) => {
+            const nodeId = this.getNodeIdFromDrawflowId(drawflowId);
+            if (nodeId !== null) {
+                this.emit('nodeMoved', { drawflowId, nodeId });
+            }
+        });
+
         // Listen for connection created events
         this._editor.on('connectionCreated', (connection) => {
             const outputNodeId = this.getNodeIdFromDrawflowId(connection.output_id);
