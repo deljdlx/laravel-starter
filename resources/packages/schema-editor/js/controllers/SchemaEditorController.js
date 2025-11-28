@@ -120,6 +120,11 @@ export class SchemaEditorController {
             }
         });
 
+        // Node moved - update cardinality labels for all connections involving this node
+        this._drawflowAdapter.on('nodeMoved', ({ nodeId }) => {
+            this._updateCardinalityLabelsForNode(nodeId);
+        });
+
         // Connection events - show popup when a relation is created
         this._drawflowAdapter.on('connectionCreated', ({ sourceNodeId, targetNodeId, connectionId }) => {
             const sourceModel = this._model.findModelByNodeId(sourceNodeId);
@@ -197,6 +202,29 @@ export class SchemaEditorController {
     }
 
     /**
+     * Update cardinality labels for all connections involving a specific node
+     * @param {number} nodeId - The node ID that was moved
+     */
+    _updateCardinalityLabelsForNode(nodeId) {
+        // Find all relations where this node is source or target
+        for (const model of this._model.models) {
+            if (model.relations) {
+                for (const relation of model.relations) {
+                    // Check if this node is involved in the relation
+                    if (model.nodeId === nodeId || relation.targetNodeId === nodeId) {
+                        this._drawflowAdapter.updateConnectionCardinalities(
+                            model.nodeId,
+                            relation.targetNodeId,
+                            relation.sourceCardinality,
+                            relation.targetCardinality
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    /**
      * Setup listeners for relation editor view events
      */
     _setupRelationEditorListeners() {
@@ -206,6 +234,15 @@ export class SchemaEditorController {
             // it updates the cardinalities; otherwise it creates a new relation.
             // See SchemaModel.addRelation() for implementation details.
             this._model.addRelation(relationData);
+
+            // Update cardinality labels on the connection
+            this._drawflowAdapter.updateConnectionCardinalities(
+                relationData.sourceNodeId,
+                relationData.targetNodeId,
+                relationData.sourceCardinality,
+                relationData.targetCardinality
+            );
+
             this._pendingConnection = null;
             this._editingConnection = null;
             console.log('Relation saved:', relationData);

@@ -123,6 +123,32 @@ body {
                 stroke-width: 4px;
             }
         }
+
+        // Cardinality labels on connections
+        .cardinality-label {
+            pointer-events: none;
+
+            .cardinality-bg {
+                fill: white;
+                stroke: #e2e8f0;
+                stroke-width: 1px;
+            }
+
+            .cardinality-text {
+                font-family: 'Monaco', 'Courier New', monospace;
+                font-size: 12px;
+                font-weight: 600;
+                fill: #3b82f6;
+            }
+
+            &.cardinality-source .cardinality-text {
+                fill: #10b981;
+            }
+
+            &.cardinality-target .cardinality-text {
+                fill: #8b5cf6;
+            }
+        }
     }
 
     .drawflow .drawflow-node {

@@ -13,6 +13,21 @@ import { EventEmitter } from '../utils/EventEmitter.js';
  * - connectionClicked: when a connection is clicked, payload: { sourceNodeId, targetNodeId }
  */
 export class DrawflowAdapter extends EventEmitter {
+    /** @type {number} Maximum offset from path endpoint for cardinality labels */
+    static LABEL_MAX_OFFSET = 40;
+
+    /** @type {number} Minimum offset from path endpoint for cardinality labels */
+    static LABEL_MIN_OFFSET = 20;
+
+    /** @type {number} Percentage of path length to use for label positioning */
+    static LABEL_PATH_PERCENTAGE = 0.15;
+
+    /** @type {number} Vertical offset to position labels above the connection line */
+    static LABEL_VERTICAL_OFFSET = -15;
+
+    /** @type {number} Padding around cardinality label text for background rectangle */
+    static LABEL_BG_PADDING = 4;
+
     /**
      * @param {string} containerId - ID of the Drawflow container element
      */
@@ -73,6 +88,14 @@ export class DrawflowAdapter extends EventEmitter {
             this._nodeIdMap.delete(String(drawflowId));
             if (nodeId !== undefined) {
                 this.emit('nodeRemoved', { drawflowId, nodeId });
+            }
+        });
+
+        // Listen for node moved events to update cardinality labels
+        this._editor.on('nodeMoved', (drawflowId) => {
+            const nodeId = this.getNodeIdFromDrawflowId(drawflowId);
+            if (nodeId !== null) {
+                this.emit('nodeMoved', { drawflowId, nodeId });
             }
         });
 
@@ -311,5 +334,162 @@ export class DrawflowAdapter extends EventEmitter {
      */
     export() {
         return this._editor.export();
+    }
+
+    /**
+     * Update cardinality labels on a connection between two nodes
+     * @param {number} sourceNodeId - Source node ID (our internal ID)
+     * @param {number} targetNodeId - Target node ID (our internal ID)
+     * @param {string} sourceCardinality - Cardinality label for source end
+     * @param {string} targetCardinality - Cardinality label for target end
+     */
+    updateConnectionCardinalities(sourceNodeId, targetNodeId, sourceCardinality, targetCardinality) {
+        const sourceDrawflowId = this._findDrawflowIdByNodeId(sourceNodeId);
+        const targetDrawflowId = this._findDrawflowIdByNodeId(targetNodeId);
+
+        if (!sourceDrawflowId || !targetDrawflowId) {
+            return;
+        }
+
+        // Find the connection element using class names
+        const connectionSelector = `.connection.node_out_node-${sourceDrawflowId}.node_in_node-${targetDrawflowId}`;
+        const connectionElement = this._container.querySelector(connectionSelector);
+
+        if (!connectionElement) {
+            return;
+        }
+
+        // Remove existing labels if any
+        this._removeCardinalityLabels(connectionElement);
+
+        // Get the SVG path element
+        const pathElement = connectionElement.querySelector('.main-path');
+        if (!pathElement) {
+            return;
+        }
+
+        // Add new cardinality labels
+        this._addCardinalityLabels(connectionElement, pathElement, sourceCardinality, targetCardinality);
+    }
+
+    /**
+     * Remove existing cardinality labels from a connection
+     * @param {Element} connectionElement - The connection SVG element
+     */
+    _removeCardinalityLabels(connectionElement) {
+        const existingLabels = connectionElement.querySelectorAll('.cardinality-label');
+        existingLabels.forEach(label => label.remove());
+    }
+
+    /**
+     * Add cardinality labels to a connection SVG
+     * @param {SVGElement} connectionElement - The connection SVG element
+     * @param {SVGPathElement} pathElement - The path element of the connection
+     * @param {string} sourceCardinality - Cardinality for source end
+     * @param {string} targetCardinality - Cardinality for target end
+     */
+    _addCardinalityLabels(connectionElement, pathElement, sourceCardinality, targetCardinality) {
+        const pathLength = pathElement.getTotalLength();
+
+        // Calculate offset from endpoints using configured percentage and bounds
+        const calculatedOffset = pathLength * DrawflowAdapter.LABEL_PATH_PERCENTAGE;
+        const sourceOffset = Math.min(
+            DrawflowAdapter.LABEL_MAX_OFFSET,
+            Math.max(DrawflowAdapter.LABEL_MIN_OFFSET, calculatedOffset)
+        );
+        const targetOffset = sourceOffset;
+
+        // Get positions near the start and end of the path
+        const sourcePoint = pathElement.getPointAtLength(sourceOffset);
+        const targetPoint = pathElement.getPointAtLength(pathLength - targetOffset);
+
+        // Create source cardinality label
+        const sourceLabel = this._createCardinalityLabel(
+            sourceCardinality,
+            sourcePoint.x,
+            sourcePoint.y + DrawflowAdapter.LABEL_VERTICAL_OFFSET,
+            'source'
+        );
+        connectionElement.appendChild(sourceLabel);
+
+        // Create target cardinality label
+        const targetLabel = this._createCardinalityLabel(
+            targetCardinality,
+            targetPoint.x,
+            targetPoint.y + DrawflowAdapter.LABEL_VERTICAL_OFFSET,
+            'target'
+        );
+        connectionElement.appendChild(targetLabel);
+    }
+
+    /**
+     * Create an SVG text element for cardinality label
+     * @param {string} text - The cardinality text
+     * @param {number} x - X position
+     * @param {number} y - Y position
+     * @param {string} position - 'source' or 'target' for styling
+     * @returns {SVGGElement} The label group element
+     */
+    _createCardinalityLabel(text, x, y, position) {
+        const svgNS = 'http://www.w3.org/2000/svg';
+
+        // Create a group to hold background and text
+        const group = document.createElementNS(svgNS, 'g');
+        group.setAttribute('class', `cardinality-label cardinality-${position}`);
+
+        // Create background rectangle for better readability
+        const bg = document.createElementNS(svgNS, 'rect');
+        bg.setAttribute('class', 'cardinality-bg');
+        bg.setAttribute('rx', '3');
+        bg.setAttribute('ry', '3');
+
+        // Create text element
+        const textEl = document.createElementNS(svgNS, 'text');
+        textEl.setAttribute('x', x);
+        textEl.setAttribute('y', y);
+        textEl.setAttribute('class', 'cardinality-text');
+        textEl.setAttribute('text-anchor', 'middle');
+        textEl.setAttribute('dominant-baseline', 'middle');
+        textEl.textContent = text;
+
+        group.appendChild(bg);
+        group.appendChild(textEl);
+
+        // Position the background after text is added (need to measure text)
+        // Use setTimeout to ensure text is rendered and getBBox returns valid dimensions
+        setTimeout(() => {
+            const bbox = textEl.getBBox();
+            // Only update if bbox has valid dimensions
+            if (bbox.width > 0 && bbox.height > 0) {
+                const padding = DrawflowAdapter.LABEL_BG_PADDING;
+                bg.setAttribute('x', bbox.x - padding);
+                bg.setAttribute('y', bbox.y - padding);
+                bg.setAttribute('width', bbox.width + padding * 2);
+                bg.setAttribute('height', bbox.height + padding * 2);
+            }
+        }, 0);
+
+        return group;
+    }
+
+    /**
+     * Remove cardinality labels for a connection between two nodes
+     * @param {number} sourceNodeId - Source node ID
+     * @param {number} targetNodeId - Target node ID
+     */
+    removeConnectionCardinalityLabels(sourceNodeId, targetNodeId) {
+        const sourceDrawflowId = this._findDrawflowIdByNodeId(sourceNodeId);
+        const targetDrawflowId = this._findDrawflowIdByNodeId(targetNodeId);
+
+        if (!sourceDrawflowId || !targetDrawflowId) {
+            return;
+        }
+
+        const connectionSelector = `.connection.node_out_node-${sourceDrawflowId}.node_in_node-${targetDrawflowId}`;
+        const connectionElement = this._container.querySelector(connectionSelector);
+
+        if (connectionElement) {
+            this._removeCardinalityLabels(connectionElement);
+        }
     }
 }
