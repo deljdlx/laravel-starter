@@ -324,7 +324,11 @@
                 const data = await response.json();
                 users = data.users;
                 displayUsers();
-                document.getElementById('user-count').textContent = `${data.count} utilisateur${data.count !== 1 ? 's' : ''}`;
+                const userCountText = `${data.count} utilisateur${data.count !== 1 ? 's' : ''}`;
+                const countDisplay = data.total > data.count 
+                    ? `${userCountText} (${data.total} au total)` 
+                    : userCountText;
+                document.getElementById('user-count').textContent = countDisplay;
             } catch (error) {
                 console.error('Error loading users:', error);
                 showToast('Erreur lors du chargement des utilisateurs', 'danger');
@@ -373,7 +377,7 @@
             container.innerHTML = filteredUsers.map(user => {
                 const userRoles = user.roles || [];
                 
-                // Collect all unique permissions from all roles using a Set for O(n) complexity
+                // Collect all unique permissions from all roles using a Map for O(n) complexity
                 const permissionMap = new Map();
                 userRoles.forEach(role => {
                     if (role.permissions) {
