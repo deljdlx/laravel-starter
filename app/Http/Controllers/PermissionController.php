@@ -82,11 +82,15 @@ class PermissionController extends Controller
      */
     public function users(): JsonResponse
     {
-        $users = User::with(['roles.permissions'])->get();
+        // Limit to 100 users to prevent performance issues
+        // For a full user management interface, pagination should be implemented
+        $users = User::with(['roles.permissions'])->limit(100)->get();
+        $totalCount = User::count();
 
         return response()->json([
             'users' => $users,
             'count' => $users->count(),
+            'total' => $totalCount,
         ]);
     }
 }

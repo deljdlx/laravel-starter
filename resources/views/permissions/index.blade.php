@@ -372,18 +372,17 @@
 
             container.innerHTML = filteredUsers.map(user => {
                 const userRoles = user.roles || [];
-                const allPermissions = [];
                 
-                // Collect all permissions from all roles
+                // Collect all unique permissions from all roles using a Set for O(n) complexity
+                const permissionMap = new Map();
                 userRoles.forEach(role => {
                     if (role.permissions) {
                         role.permissions.forEach(perm => {
-                            if (!allPermissions.find(p => p.name === perm.name)) {
-                                allPermissions.push(perm);
-                            }
+                            permissionMap.set(perm.name, perm);
                         });
                     }
                 });
+                const allPermissions = Array.from(permissionMap.values());
 
                 return `
                     <div class="card mb-2">
