@@ -47,7 +47,7 @@ Route::prefix('dev')->group(function () {
 });
 
 // Permissions Management Routes
-Route::prefix('permissions')->name('permissions.')->group(function () {
+Route::prefix('permissions')->name('permissions.')->middleware(['web'])->group(function () {
     // UI
     Route::get('/', function () {
         return view('permissions.index');

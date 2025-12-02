@@ -252,9 +252,13 @@
         }
 
         function showToast(message, type = 'success') {
+            // Validate type parameter
+            const allowedTypes = ['success', 'danger', 'warning', 'info'];
+            const safeType = allowedTypes.includes(type) ? type : 'info';
+            
             // Simple toast notification
             const toast = document.createElement('div');
-            toast.className = `alert alert-${type} alert-dismissible position-fixed top-0 end-0 m-3`;
+            toast.className = `alert alert-${safeType} alert-dismissible position-fixed top-0 end-0 m-3`;
             toast.style.zIndex = '9999';
             toast.innerHTML = `
                 ${escapeHtml(message)}

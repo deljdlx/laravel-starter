@@ -12,7 +12,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-#[ApiResource]
+// Temporarily disabled due to ApiPlatform/ModelMetadata issue
+// #[ApiResource]
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */

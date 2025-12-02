@@ -9,6 +9,9 @@ class UpdateRoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     * 
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can('update-roles');
      */
     public function authorize(): bool
     {
