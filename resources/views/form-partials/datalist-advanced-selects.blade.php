@@ -95,7 +95,20 @@
         </div>
     </div>
     <div class="mb-3">
-        <x-select-input 
+
+        <label class="form-label">Tags input</label>
+        <select class="form-select tags" placeholder="Select tags" id="select-tags" value="" multiple>
+        <option value="HTML">HTML</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="CSS">CSS</option>
+        <option value="jQuery">jQuery</option>
+        <option value="Bootstrap">Bootstrap</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Python">Python</option>
+        </select>
+
+
+        {{-- <x-select-input 
             name="tags" 
             label="Tags input" 
             id="select-tags" 
@@ -110,7 +123,7 @@
             ]" 
             :multiple="true" 
             class="tags" 
-        />
+        /> --}}
     </div>
     <div class="mb-3">
         <x-select-input 

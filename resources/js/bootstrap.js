@@ -37,4 +37,5 @@ window.ApexCharts = ApexCharts;
 window.jsVectorMap = jsVectorMap;
 
 window.TomSelect = TomSelect;
+
 window.echarts = echarts;

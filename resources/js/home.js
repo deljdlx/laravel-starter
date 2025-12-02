@@ -9,7 +9,7 @@ import './home/jsVectorMap';
 import './home/theme';
 
 document.addEventListener('DOMContentLoaded', () => {
-  new TomSelect("select.tags",{
+  new TomSelect("input.tags",{
 	  maxItems: 3
   });
 });
