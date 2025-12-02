@@ -62,7 +62,7 @@
                         <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Utilisateurs</h3>
+                                    <h3 class="card-title" id="users-title">Utilisateurs</h3>
                                     <div class="ms-auto">
                                         <span class="badge bg-purple-lt" id="user-count">0</span>
                                     </div>
@@ -255,6 +255,7 @@
         let users = [];
         let currentRole = null;
         let currentPermission = null;
+        let selectedRole = null;
 
         // CSRF Token
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -323,12 +324,7 @@
                 const response = await fetch(USERS_API);
                 const data = await response.json();
                 users = data.users;
-                displayUsers();
-                const userCountText = `${data.count} utilisateur${data.count !== 1 ? 's' : ''}`;
-                const countDisplay = data.total > data.count 
-                    ? `${userCountText} (${data.total} au total)` 
-                    : userCountText;
-                document.getElementById('user-count').textContent = countDisplay;
+                displayUsers(); // This will show the "select a role" message initially
             } catch (error) {
                 console.error('Error loading users:', error);
                 showToast('Erreur lors du chargement des utilisateurs', 'danger');
@@ -364,13 +360,30 @@
         // Display Functions
         function displayUsers(filter = '') {
             const container = document.getElementById('users-container');
-            const filteredUsers = users.filter(user => 
-                user.name.toLowerCase().includes(filter.toLowerCase()) ||
-                user.email.toLowerCase().includes(filter.toLowerCase())
-            );
+            
+            // If no role is selected, show a message
+            if (!selectedRole) {
+                container.innerHTML = '<div class="text-center text-muted py-4">Sélectionnez un rôle pour voir les utilisateurs</div>';
+                document.getElementById('user-count').textContent = '0';
+                return;
+            }
+            
+            // Filter users by selected role
+            const filteredUsers = users.filter(user => {
+                const hasRole = user.roles && user.roles.some(r => r.id === selectedRole.id);
+                if (!hasRole) return false;
+                
+                // Apply search filter
+                if (filter) {
+                    return user.name.toLowerCase().includes(filter.toLowerCase()) ||
+                           user.email.toLowerCase().includes(filter.toLowerCase());
+                }
+                return true;
+            });
 
             if (filteredUsers.length === 0) {
-                container.innerHTML = '<div class="text-center text-muted py-4">Aucun utilisateur trouvé</div>';
+                container.innerHTML = '<div class="text-center text-muted py-4">Aucun utilisateur trouvé avec ce rôle</div>';
+                document.getElementById('user-count').textContent = '0';
                 return;
             }
 
@@ -413,6 +426,8 @@
                     </div>
                 `;
             }).join('');
+            
+            document.getElementById('user-count').textContent = `${filteredUsers.length} utilisateur${filteredUsers.length !== 1 ? 's' : ''}`;
         }
 
         function displayRoles(filter = '') {
@@ -426,8 +441,10 @@
                 return;
             }
 
-            container.innerHTML = filteredRoles.map(role => `
-                <div class="card role-card mb-2" onclick="showEditRoleModal(${role.id})">
+            container.innerHTML = filteredRoles.map(role => {
+                const isSelected = selectedRole && selectedRole.id === role.id;
+                return `
+                <div class="card role-card mb-2 ${isSelected ? 'border-primary' : ''}" onclick="selectRole(${role.id})" style="${isSelected ? 'border-width: 2px;' : ''}">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div class="flex-fill">
@@ -437,7 +454,15 @@
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-sm btn-icon btn-ghost-danger" onclick="event.stopPropagation(); confirmDeleteRole(${role.id}, '${escapeHtml(role.name)}')">
+                                <button class="btn btn-sm btn-icon btn-ghost-primary me-1" onclick="event.stopPropagation(); showEditRoleModal(${role.id})" title="Modifier">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                        <path d="M16 5l3 3"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-sm btn-icon btn-ghost-danger" onclick="event.stopPropagation(); confirmDeleteRole(${role.id}, '${escapeHtml(role.name)}')" title="Supprimer">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M4 7l16 0"></path>
@@ -454,7 +479,8 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `;
+            }).join('');
         }
 
         function displayPermissions(filter = '') {
@@ -516,6 +542,22 @@
                     </label>
                 </div>
             `).join('');
+        }
+
+        // Role Selection Function
+        function selectRole(roleId) {
+            selectedRole = roles.find(r => r.id === roleId);
+            
+            // Update users title
+            const usersTitle = document.getElementById('users-title');
+            if (selectedRole) {
+                usersTitle.textContent = `Utilisateurs - ${selectedRole.name}`;
+            } else {
+                usersTitle.textContent = 'Utilisateurs';
+            }
+            
+            displayRoles(); // Refresh to show selected state
+            displayUsers(); // Show users with this role
         }
 
         // Role Modal Functions
