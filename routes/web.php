@@ -7,6 +7,7 @@ use App\Http\Controllers\Dev\SchemaEditorController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReteJsDemoController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -69,5 +70,22 @@ Route::prefix('permissions')->name('permissions.')->middleware(['web'])->group(f
         Route::get('/{permission}', [PermissionController::class, 'show'])->name('show');
         Route::put('/{permission}', [PermissionController::class, 'update'])->name('update');
         Route::delete('/{permission}', [PermissionController::class, 'destroy'])->name('destroy');
+    });
+});
+
+// Users Management Routes
+Route::prefix('users')->name('users.')->middleware(['web'])->group(function () {
+    // UI
+    Route::get('/', function () {
+        return view('users.index');
+    })->name('index');
+
+    // API Routes for Users
+    Route::prefix('api')->name('api.')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::post('/', [UserController::class, 'store'])->name('store');
+        Route::get('/{user}', [UserController::class, 'show'])->name('show');
+        Route::put('/{user}', [UserController::class, 'update'])->name('update');
+        Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
     });
 });
