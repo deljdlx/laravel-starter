@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePermissionRequest;
 use App\Http\Requests\UpdatePermissionRequest;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Spatie\Permission\Models\Permission;
 
@@ -73,6 +74,19 @@ class PermissionController extends Controller
 
         return response()->json([
             'message' => 'Permission supprimée avec succès',
+        ]);
+    }
+
+    /**
+     * Display a listing of users with their roles and permissions.
+     */
+    public function users(): JsonResponse
+    {
+        $users = User::with(['roles.permissions'])->get();
+
+        return response()->json([
+            'users' => $users,
+            'count' => $users->count(),
         ]);
     }
 }

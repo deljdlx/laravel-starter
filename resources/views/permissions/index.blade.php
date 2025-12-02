@@ -58,8 +58,31 @@
             <div class="page-body">
                 <div class="container-xl">
                     <div class="row row-deck row-cards">
+                        <!-- Users Section -->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Utilisateurs</h3>
+                                    <div class="ms-auto">
+                                        <span class="badge bg-purple-lt" id="user-count">0</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="search-box">
+                                        <input type="text" class="form-control" id="user-search" placeholder="Rechercher un utilisateur...">
+                                    </div>
+                                    <div id="users-container">
+                                        <div class="text-center py-4">
+                                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                                            Chargement des utilisateurs...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Roles Section -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Rôles</h3>
@@ -90,7 +113,7 @@
                         </div>
 
                         <!-- Permissions Section -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Permissions</h3>
@@ -229,6 +252,7 @@
         // State
         let roles = [];
         let permissions = [];
+        let users = [];
         let currentRole = null;
         let currentPermission = null;
 
@@ -238,6 +262,7 @@
         // API Base URLs
         const ROLES_API = '/permissions/api/roles';
         const PERMISSIONS_API = '/permissions/api/permissions';
+        const USERS_API = '/permissions/api/users';
 
         // Utility Functions
         function escapeHtml(text) {
@@ -293,6 +318,19 @@
         }
 
         // Load Data Functions
+        async function loadUsers() {
+            try {
+                const response = await fetch(USERS_API);
+                const data = await response.json();
+                users = data.users;
+                displayUsers();
+                document.getElementById('user-count').textContent = `${data.count} utilisateur${data.count !== 1 ? 's' : ''}`;
+            } catch (error) {
+                console.error('Error loading users:', error);
+                showToast('Erreur lors du chargement des utilisateurs', 'danger');
+            }
+        }
+
         async function loadRoles() {
             try {
                 const response = await fetch(ROLES_API);
@@ -320,6 +358,60 @@
         }
 
         // Display Functions
+        function displayUsers(filter = '') {
+            const container = document.getElementById('users-container');
+            const filteredUsers = users.filter(user => 
+                user.name.toLowerCase().includes(filter.toLowerCase()) ||
+                user.email.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            if (filteredUsers.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted py-4">Aucun utilisateur trouvé</div>';
+                return;
+            }
+
+            container.innerHTML = filteredUsers.map(user => {
+                const userRoles = user.roles || [];
+                const allPermissions = [];
+                
+                // Collect all permissions from all roles
+                userRoles.forEach(role => {
+                    if (role.permissions) {
+                        role.permissions.forEach(perm => {
+                            if (!allPermissions.find(p => p.name === perm.name)) {
+                                allPermissions.push(perm);
+                            }
+                        });
+                    }
+                });
+
+                return `
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-fill">
+                                    <div class="font-weight-medium">${escapeHtml(user.name)}</div>
+                                    <div class="text-secondary small">${escapeHtml(user.email)}</div>
+                                    ${userRoles.length > 0 ? `
+                                        <div class="mt-2">
+                                            <strong class="small">Rôles:</strong><br>
+                                            ${userRoles.map(r => `<span class="badge bg-blue-lt me-1 mt-1">${escapeHtml(r.name)}</span>`).join('')}
+                                        </div>
+                                    ` : '<div class="mt-2 text-muted small">Aucun rôle</div>'}
+                                    ${allPermissions.length > 0 ? `
+                                        <div class="mt-2">
+                                            <strong class="small">Permissions:</strong><br>
+                                            ${allPermissions.map(p => `<span class="badge bg-green-lt me-1 mt-1">${escapeHtml(p.name)}</span>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
         function displayRoles(filter = '') {
             const container = document.getElementById('roles-container');
             const filteredRoles = roles.filter(role => 
@@ -633,6 +725,10 @@
         }
 
         // Search Functions
+        document.getElementById('user-search').addEventListener('input', (e) => {
+            displayUsers(e.target.value);
+        });
+
         document.getElementById('role-search').addEventListener('input', (e) => {
             displayRoles(e.target.value);
         });
@@ -643,7 +739,7 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', async () => {
-            await Promise.all([loadRoles(), loadPermissions()]);
+            await Promise.all([loadUsers(), loadRoles(), loadPermissions()]);
         });
     </script>
 </body>
