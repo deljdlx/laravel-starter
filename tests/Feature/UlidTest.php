@@ -22,7 +22,7 @@ class UlidTest extends TestCase
     public function test_user_model_uses_ulid(): void
     {
         $user = User::factory()->create();
-        
+
         $this->assertIsString($user->id);
         $this->assertEquals(26, strlen($user->id));
         $this->assertMatchesRegularExpression(self::ULID_PATTERN, $user->id);
@@ -34,7 +34,7 @@ class UlidTest extends TestCase
     public function test_task_model_uses_ulid(): void
     {
         $task = Task::factory()->create();
-        
+
         $this->assertIsString($task->id);
         $this->assertEquals(26, strlen($task->id));
         $this->assertMatchesRegularExpression(self::ULID_PATTERN, $task->id);
@@ -47,7 +47,7 @@ class UlidTest extends TestCase
     {
         $user = User::factory()->create();
         $task = Task::factory()->create(['user_id' => $user->id]);
-        
+
         $this->assertIsString($task->user_id);
         $this->assertEquals(26, strlen($task->user_id));
         $this->assertEquals($user->id, $task->user_id);
@@ -62,7 +62,7 @@ class UlidTest extends TestCase
         $user1 = User::factory()->create();
         usleep(1000);
         $user2 = User::factory()->create();
-        
+
         // ULIDs are designed to be sortable, so the second one should be "greater"
         $this->assertGreaterThan($user1->id, $user2->id);
     }
@@ -73,10 +73,10 @@ class UlidTest extends TestCase
     public function test_ulids_are_unique(): void
     {
         $users = User::factory()->count(10)->create();
-        
+
         $ids = $users->pluck('id')->toArray();
         $uniqueIds = array_unique($ids);
-        
+
         $this->assertCount(10, $uniqueIds);
     }
 }

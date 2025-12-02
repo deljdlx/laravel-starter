@@ -11,7 +11,6 @@ use Spatie\ModelStatus\HasStatuses;
 
 // properties list
 /**
- * 
  * @property ?string $id
  * @property string $title
  * @property ?string $description
@@ -24,7 +23,6 @@ class Task extends Model
 {
     /** @use HasFactory<\Database\Factories\TaskFactory> */
     use HasFactory, HasStatuses, HasUlids;
-
 
     /**
      * @return BelongsTo<User>
