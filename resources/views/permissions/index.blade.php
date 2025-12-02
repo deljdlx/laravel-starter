@@ -58,31 +58,8 @@
             <div class="page-body">
                 <div class="container-xl">
                     <div class="row row-deck row-cards">
-                        <!-- Users Section -->
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title" id="users-title">Utilisateurs</h3>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-purple-lt" id="user-count">0</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="search-box">
-                                        <input type="text" class="form-control" id="user-search" placeholder="Rechercher un utilisateur...">
-                                    </div>
-                                    <div id="users-container">
-                                        <div class="text-center py-4">
-                                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
-                                            Chargement des utilisateurs...
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Roles Section -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-6" id="roles-column">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Rôles</h3>
@@ -113,7 +90,7 @@
                         </div>
 
                         <!-- Permissions Section -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-6" id="permissions-column">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Permissions</h3>
@@ -137,6 +114,29 @@
                                         <div class="text-center py-4">
                                             <div class="spinner-border spinner-border-sm me-2" role="status"></div>
                                             Chargement des permissions...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Users Section (hidden by default, shown when role is selected) -->
+                        <div class="col-lg-4" id="users-column" style="display: none;">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title" id="users-title">Utilisateurs</h3>
+                                    <div class="ms-auto">
+                                        <span class="badge bg-purple-lt" id="user-count">0</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="search-box">
+                                        <input type="text" class="form-control" id="user-search" placeholder="Rechercher un utilisateur...">
+                                    </div>
+                                    <div id="users-container">
+                                        <div class="text-center py-4">
+                                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                                            Chargement des utilisateurs...
                                         </div>
                                     </div>
                                 </div>
@@ -550,10 +550,24 @@
             
             // Update users title
             const usersTitle = document.getElementById('users-title');
+            const usersColumn = document.getElementById('users-column');
+            const rolesColumn = document.getElementById('roles-column');
+            const permissionsColumn = document.getElementById('permissions-column');
+            
             if (selectedRole) {
                 usersTitle.textContent = `Utilisateurs - ${selectedRole.name}`;
+                // Show users column
+                usersColumn.style.display = 'block';
+                // Adjust column widths to make room for users column
+                rolesColumn.className = 'col-lg-4';
+                permissionsColumn.className = 'col-lg-4';
             } else {
                 usersTitle.textContent = 'Utilisateurs';
+                // Hide users column
+                usersColumn.style.display = 'none';
+                // Restore original column widths
+                rolesColumn.className = 'col-lg-6';
+                permissionsColumn.className = 'col-lg-6';
             }
             
             displayRoles(); // Refresh to show selected state
