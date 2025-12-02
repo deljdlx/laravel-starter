@@ -12,6 +12,11 @@ class UlidTest extends TestCase
     use RefreshDatabase;
 
     /**
+     * ULID regex pattern (26 lowercase alphanumeric characters, Crockford's Base32).
+     */
+    private const ULID_PATTERN = '/^[0-9a-hjkmnp-tv-z]{26}$/';
+
+    /**
      * Test that User model uses ULID.
      */
     public function test_user_model_uses_ulid(): void
@@ -20,7 +25,7 @@ class UlidTest extends TestCase
         
         $this->assertIsString($user->id);
         $this->assertEquals(26, strlen($user->id));
-        $this->assertMatchesRegularExpression('/^[0-9a-hjkmnp-tv-z]{26}$/', $user->id);
+        $this->assertMatchesRegularExpression(self::ULID_PATTERN, $user->id);
     }
 
     /**
@@ -32,7 +37,7 @@ class UlidTest extends TestCase
         
         $this->assertIsString($task->id);
         $this->assertEquals(26, strlen($task->id));
-        $this->assertMatchesRegularExpression('/^[0-9a-hjkmnp-tv-z]{26}$/', $task->id);
+        $this->assertMatchesRegularExpression(self::ULID_PATTERN, $task->id);
     }
 
     /**
@@ -55,7 +60,7 @@ class UlidTest extends TestCase
     public function test_ulids_are_sortable(): void
     {
         $user1 = User::factory()->create();
-        sleep(1);
+        usleep(1000);
         $user2 = User::factory()->create();
         
         // ULIDs are designed to be sortable, so the second one should be "greater"
