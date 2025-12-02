@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->ulid('id')->primary();
+            $table->ulid('user_id');
             $table->string('title');
             $table->text('description')->nullable();
             $table->timestamps();

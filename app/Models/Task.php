@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use ApiPlatform\Metadata\ApiResource;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,11 +11,10 @@ use Spatie\ModelStatus\HasStatuses;
 
 // properties list
 /**
- * 
- * @property ?int $id
+ * @property ?string $id
  * @property string $title
  * @property ?string $description
- * @property int $user_id
+ * @property string $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  */
@@ -22,8 +22,7 @@ use Spatie\ModelStatus\HasStatuses;
 class Task extends Model
 {
     /** @use HasFactory<\Database\Factories\TaskFactory> */
-    use HasFactory, HasStatuses;
-
+    use HasFactory, HasStatuses, HasUlids;
 
     /**
      * @return BelongsTo<User>
