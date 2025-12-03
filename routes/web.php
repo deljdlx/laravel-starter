@@ -71,6 +71,9 @@ Route::prefix('permissions')->name('permissions.')->middleware(['web'])->group(f
         Route::put('/{permission}', [PermissionController::class, 'update'])->name('update');
         Route::delete('/{permission}', [PermissionController::class, 'destroy'])->name('destroy');
     });
+
+    // API Routes for Users
+    Route::get('/api/users', [PermissionController::class, 'users'])->name('api.users.index');
 });
 
 // Users Management Routes
