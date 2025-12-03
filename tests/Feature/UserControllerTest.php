@@ -41,11 +41,189 @@ class UserControllerTest extends TestCase
                     'created_at',
                 ],
             ],
-            'count',
+            'pagination' => [
+                'current_page',
+                'per_page',
+                'total',
+                'last_page',
+                'from',
+                'to',
+            ],
         ]);
 
         $data = $response->json();
-        $this->assertEquals(3, $data['count']);
+        $this->assertEquals(3, $data['pagination']['total']);
+    }
+
+    /**
+     * Test pagination with default per_page.
+     */
+    public function test_api_pagination_with_default_per_page(): void
+    {
+        User::factory()->count(15)->create();
+
+        $response = $this->getJson('/users/api');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(10, $data['pagination']['per_page']);
+        $this->assertEquals(1, $data['pagination']['current_page']);
+        $this->assertEquals(15, $data['pagination']['total']);
+        $this->assertEquals(2, $data['pagination']['last_page']);
+        $this->assertCount(10, $data['users']);
+    }
+
+    /**
+     * Test pagination with custom per_page.
+     */
+    public function test_api_pagination_with_custom_per_page(): void
+    {
+        User::factory()->count(30)->create();
+
+        $response = $this->getJson('/users/api?per_page=25');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(25, $data['pagination']['per_page']);
+        $this->assertEquals(2, $data['pagination']['last_page']);
+        $this->assertCount(25, $data['users']);
+    }
+
+    /**
+     * Test pagination respects maximum per_page.
+     */
+    public function test_api_pagination_max_per_page_limit(): void
+    {
+        User::factory()->count(5)->create();
+
+        $response = $this->getJson('/users/api?per_page=999');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(100, $data['pagination']['per_page']);
+    }
+
+    /**
+     * Test pagination respects minimum per_page.
+     */
+    public function test_api_pagination_min_per_page_limit(): void
+    {
+        User::factory()->count(5)->create();
+
+        $response = $this->getJson('/users/api?per_page=0');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(1, $data['pagination']['per_page']);
+    }
+
+    /**
+     * Test pagination second page.
+     */
+    public function test_api_pagination_second_page(): void
+    {
+        User::factory()->count(15)->create();
+
+        $response = $this->getJson('/users/api?page=2&per_page=10');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(2, $data['pagination']['current_page']);
+        $this->assertCount(5, $data['users']);
+    }
+
+    /**
+     * Test search users by name.
+     */
+    public function test_api_search_users_by_name(): void
+    {
+        User::factory()->create(['name' => 'John Doe', 'email' => 'john@example.com']);
+        User::factory()->create(['name' => 'Jane Smith', 'email' => 'jane@example.com']);
+        User::factory()->create(['name' => 'Bob Johnson', 'email' => 'bob@example.com']);
+
+        $response = $this->getJson('/users/api/search?q=John');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(2, $data['pagination']['total']);
+        $this->assertTrue(
+            collect($data['users'])->contains('name', 'John Doe') &&
+            collect($data['users'])->contains('name', 'Bob Johnson')
+        );
+    }
+
+    /**
+     * Test search users by email.
+     */
+    public function test_api_search_users_by_email(): void
+    {
+        User::factory()->create(['name' => 'Test User', 'email' => 'test@example.com']);
+        User::factory()->create(['name' => 'Another User', 'email' => 'another@test.com']);
+        User::factory()->create(['name' => 'Different User', 'email' => 'user@different.com']);
+
+        $response = $this->getJson('/users/api/search?q=test');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(2, $data['pagination']['total']);
+    }
+
+    /**
+     * Test search with no results.
+     */
+    public function test_api_search_users_no_results(): void
+    {
+        User::factory()->count(5)->create();
+
+        $response = $this->getJson('/users/api/search?q=nonexistent');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(0, $data['pagination']['total']);
+        $this->assertCount(0, $data['users']);
+    }
+
+    /**
+     * Test search with pagination.
+     */
+    public function test_api_search_with_pagination(): void
+    {
+        for ($i = 1; $i <= 20; $i++) {
+            User::factory()->create(['name' => "Test User {$i}", 'email' => "test{$i}@example.com"]);
+        }
+
+        $response = $this->getJson('/users/api/search?q=Test&per_page=5&page=2');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(2, $data['pagination']['current_page']);
+        $this->assertEquals(5, $data['pagination']['per_page']);
+        $this->assertEquals(20, $data['pagination']['total']);
+        $this->assertCount(5, $data['users']);
+    }
+
+    /**
+     * Test search is case insensitive.
+     */
+    public function test_api_search_is_case_insensitive(): void
+    {
+        User::factory()->create(['name' => 'John Doe', 'email' => 'john@example.com']);
+
+        $response = $this->getJson('/users/api/search?q=JOHN');
+
+        $response->assertStatus(200);
+        $data = $response->json();
+
+        $this->assertEquals(1, $data['pagination']['total']);
     }
 
     /**

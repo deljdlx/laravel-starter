@@ -69,7 +69,13 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Utilisateurs</h3>
-                                    <div class="ms-auto">
+                                    <div class="ms-auto d-flex align-items-center gap-2">
+                                        <select class="form-select form-select-sm" id="per-page-select" style="width: auto;">
+                                            <option value="10">10 par page</option>
+                                            <option value="25">25 par page</option>
+                                            <option value="50">50 par page</option>
+                                            <option value="100">100 par page</option>
+                                        </select>
                                         <span class="badge bg-blue-lt" id="user-count">0</span>
                                     </div>
                                 </div>
@@ -97,6 +103,10 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                    </div>
+                                    <div id="pagination-container" class="d-flex justify-content-between align-items-center mt-3">
+                                        <div id="pagination-info" class="text-muted"></div>
+                                        <nav id="pagination-nav" aria-label="Page navigation"></nav>
                                     </div>
                                 </div>
                             </div>
@@ -193,6 +203,10 @@
         let users = [];
         let roles = [];
         let currentUser = null;
+        let currentPage = 1;
+        let perPage = 10;
+        let searchQuery = '';
+        let searchTimeout = null;
 
         // CSRF Token
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -267,13 +281,22 @@
         }
 
         // Load Data Functions
-        async function loadUsers() {
+        async function loadUsers(page = 1) {
             try {
-                const response = await fetch(USERS_API);
+                currentPage = page;
+                let url = `${USERS_API}?per_page=${perPage}&page=${page}`;
+                
+                // Use search endpoint if there's a search query
+                if (searchQuery) {
+                    url = `${USERS_API}/search?q=${encodeURIComponent(searchQuery)}&per_page=${perPage}&page=${page}`;
+                }
+
+                const response = await fetch(url);
                 const data = await response.json();
                 users = data.users;
                 displayUsers();
-                document.getElementById('user-count').textContent = `${data.count} utilisateur${data.count !== 1 ? 's' : ''}`;
+                displayPagination(data.pagination);
+                updateUserCount(data.pagination);
             } catch (error) {
                 console.error('Error loading users:', error);
                 showToast('Erreur lors du chargement des utilisateurs', 'danger');
@@ -292,19 +315,15 @@
         }
 
         // Display Functions
-        function displayUsers(filter = '') {
+        function displayUsers() {
             const container = document.getElementById('users-container');
-            const filteredUsers = users.filter(user => 
-                user.name.toLowerCase().includes(filter.toLowerCase()) ||
-                user.email.toLowerCase().includes(filter.toLowerCase())
-            );
 
-            if (filteredUsers.length === 0) {
+            if (users.length === 0) {
                 container.innerHTML = '<tr><td colspan="5" class="text-center text-muted py-4">Aucun utilisateur trouvé</td></tr>';
                 return;
             }
 
-            container.innerHTML = filteredUsers.map(user => `
+            container.innerHTML = users.map(user => `
                 <tr class="user-card" onclick="showEditUserModal('${user.id}')">
                     <td>
                         <div class="d-flex align-items-center">
@@ -334,6 +353,99 @@
                     </td>
                 </tr>
             `).join('');
+        }
+
+        function updateUserCount(pagination) {
+            const total = pagination.total;
+            document.getElementById('user-count').textContent = `${total} utilisateur${total !== 1 ? 's' : ''}`;
+        }
+
+        function displayPagination(pagination) {
+            const infoContainer = document.getElementById('pagination-info');
+            const navContainer = document.getElementById('pagination-nav');
+
+            // Update info text
+            if (pagination.total > 0) {
+                infoContainer.textContent = `Affichage de ${pagination.from} à ${pagination.to} sur ${pagination.total} résultat${pagination.total !== 1 ? 's' : ''}`;
+            } else {
+                infoContainer.textContent = '';
+            }
+
+            // Generate pagination buttons
+            if (pagination.last_page <= 1) {
+                navContainer.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '<ul class="pagination m-0">';
+
+            // Previous button
+            paginationHTML += `
+                <li class="page-item ${pagination.current_page === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="event.preventDefault(); ${pagination.current_page > 1 ? `loadUsers(${pagination.current_page - 1})` : 'return false'}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M15 6l-6 6l6 6"></path>
+                        </svg>
+                        Précédent
+                    </a>
+                </li>
+            `;
+
+            // Page numbers
+            const maxPages = 7;
+            let startPage = Math.max(1, pagination.current_page - Math.floor(maxPages / 2));
+            let endPage = Math.min(pagination.last_page, startPage + maxPages - 1);
+
+            if (endPage - startPage < maxPages - 1) {
+                startPage = Math.max(1, endPage - maxPages + 1);
+            }
+
+            if (startPage > 1) {
+                paginationHTML += `
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="event.preventDefault(); loadUsers(1)">1</a>
+                    </li>
+                `;
+                if (startPage > 2) {
+                    paginationHTML += '<li class="page-item disabled"><span class="page-link">...</span></li>';
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                paginationHTML += `
+                    <li class="page-item ${i === pagination.current_page ? 'active' : ''}">
+                        <a class="page-link" href="#" onclick="event.preventDefault(); loadUsers(${i})">${i}</a>
+                    </li>
+                `;
+            }
+
+            if (endPage < pagination.last_page) {
+                if (endPage < pagination.last_page - 1) {
+                    paginationHTML += '<li class="page-item disabled"><span class="page-link">...</span></li>';
+                }
+                paginationHTML += `
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="event.preventDefault(); loadUsers(${pagination.last_page})">${pagination.last_page}</a>
+                    </li>
+                `;
+            }
+
+            // Next button
+            paginationHTML += `
+                <li class="page-item ${pagination.current_page === pagination.last_page ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="event.preventDefault(); ${pagination.current_page < pagination.last_page ? `loadUsers(${pagination.current_page + 1})` : 'return false'}">
+                        Suivant
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </a>
+                </li>
+            `;
+
+            paginationHTML += '</ul>';
+            navContainer.innerHTML = paginationHTML;
         }
 
         function renderRolesCheckboxList() {
@@ -476,7 +588,25 @@
 
         // Search Functions
         document.getElementById('user-search').addEventListener('input', (e) => {
-            displayUsers(e.target.value);
+            searchQuery = e.target.value.trim();
+            
+            // Clear existing timeout
+            if (searchTimeout) {
+                clearTimeout(searchTimeout);
+            }
+            
+            // Debounce search - wait 300ms after user stops typing
+            searchTimeout = setTimeout(() => {
+                currentPage = 1; // Reset to first page on search
+                loadUsers(1);
+            }, 300);
+        });
+
+        // Per page change handler
+        document.getElementById('per-page-select').addEventListener('change', (e) => {
+            perPage = parseInt(e.target.value);
+            currentPage = 1; // Reset to first page on per-page change
+            loadUsers(1);
         });
 
         // Initialize on page load
