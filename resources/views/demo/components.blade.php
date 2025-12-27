@@ -28,17 +28,29 @@
             <!-- BEGIN PAGE BODY -->
             <div class="page-body">
 
-
-
-                <div class="container-xl">
+                {{-- Section: Form Components --}}
+                <div class="container-xl" id="forms">
+                    <div class="mb-3">
+                        <h2 class="page-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /></svg>
+                            Form Components
+                        </h2>
+                        <p class="text-secondary">Tabler form elements and input styles showcase</p>
+                    </div>
                     @include('form')
                 </div>
 
-                <!-- Mermaid Diagrams Section -->
-                <div class="container-xl">
+                <hr class="my-5">
+
+                {{-- Section: Mermaid Diagrams --}}
+                <div class="container-xl" id="diagrams">
                     <div class="row row-deck row-cards">
                         <div class="col-12">
-                            <h2 class="page-title mb-3">Mermaid Diagram Examples</h2>
+                            <h2 class="page-title mb-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M9 9v6" /><path d="M15 9v6" /><path d="M9 12h6" /></svg>
+                                Mermaid Diagram Examples
+                            </h2>
+                            <p class="text-secondary mb-3">Interactive diagrams using Mermaid.js</p>
                         </div>
                         
                         <!-- Flowchart -->
@@ -197,10 +209,17 @@
                     </div>
                 </div>
 
+                <hr class="my-5">
 
-                <div class="container-xl">
-
-
+                {{-- Section: Charts & Data Tables --}}
+                <div class="container-xl" id="charts">
+                    <div class="mb-3">
+                        <h2 class="page-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /></svg>
+                            Charts & Data Tables
+                        </h2>
+                        <p class="text-secondary">Interactive charts using Echarts and Tabulator data tables</p>
+                    </div>
 
                     <div class="row row-deck row-cards">
                         <div class="col col-12">
@@ -225,8 +244,18 @@
                         </div>
                     </div>
 
+                    <hr class="my-5">
 
-
+                    {{-- Section: Tabler UI Components --}}
+                    <div id="tabler-components">
+                        <div class="mb-3">
+                            <h2 class="page-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
+                                Tabler UI Components
+                            </h2>
+                            <p class="text-secondary">Dashboard widgets, stats cards, and UI elements</p>
+                        </div>
+                    </div>
 
                     <div class="row row-deck row-cards">
                         <div class="col-sm-12 col-lg-6">
