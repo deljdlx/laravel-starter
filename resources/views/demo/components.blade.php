@@ -19,7 +19,7 @@
     <div class="page">
 
         @include('mocks.header')
-        @include('mocks.navbar');
+        @include('mocks.navbar')
 
 
         <div class="page-wrapper">
