@@ -62,6 +62,11 @@ Route::prefix('demo')->name('demo.')->group(function () {
     Route::get('/components/diagrams', function () {
         return view('demo.components.diagrams');
     })->name('components.diagrams');
+    
+    // Charts subpage
+    Route::get('/components/charts', function () {
+        return view('demo.components.charts');
+    })->name('components.charts');
 });
 
 // Developer Tools Routes

@@ -91,39 +91,25 @@
 
                 <hr class="my-5">
 
+
                 {{-- Section: Charts & Data Tables --}}
                 <div class="container-xl" id="charts">
                     <div class="mb-3">
-                        <h2 class="page-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /></svg>
-                            Charts & Data Tables
-                        </h2>
-                        <p class="text-secondary">Interactive charts using Echarts and Tabulator data tables</p>
-                    </div>
-
-                    <div class="row row-deck row-cards">
-                        <div class="col col-12">
-                            <x-card title="Tabulator Example">
-                              @include('mocks.tabulator')
-                            </x-card>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2 class="page-title mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /></svg>
+                                    Charts & Data Tables
+                                </h2>
+                                <p class="text-secondary mb-0">Interactive charts using Echarts and Tabulator data tables</p>
+                            </div>
+                            <a href="{{ route('demo.components.charts') }}" class="btn btn-primary btn-sm">
+                                View Full Page
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                            </a>
                         </div>
                     </div>
-
-
-                    <div class="row row-deck row-cards">
-                        <div class="col col-sm-12 col-lg-6">
-                            <x-card title="Echarts Example 1">
-                                <div id="echarts-example-00" style="height: 400px"></div>
-                            </x-card>
-                        </div>
-
-                        <div class="col col-12 col-lg-6">
-                            <x-card title="Echarts Example 2">
-                                <div id="echarts-example-01" style="height: 400px"></div>
-                            </x-card>
-                        </div>
-                    </div>
-
+                </div>
                     <hr class="my-5">
 
                     {{-- Section: Tabler UI Components --}}
