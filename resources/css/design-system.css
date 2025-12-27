@@ -20,3 +20,6 @@
 
 /* 6. Page Specific (composants spécifiques aux pages) */
 @import './design-system/page-specific.css';
+
+/* 7. Tabulator Dark Mode */
+@import './design-system/tabulator-dark.css';

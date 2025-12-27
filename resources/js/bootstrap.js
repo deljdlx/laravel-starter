@@ -16,7 +16,7 @@ import TomSelect from 'tom-select';
 import 'tom-select/dist/css/tom-select.css';
 import 'tom-select/dist/css/tom-select.bootstrap5.css';
 
-import 'tabulator-tables/dist/css/tabulator_bootstrap5.min.css';
+import 'tabulator-tables/dist/css/tabulator_midnight.min.css';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 
 import ApexCharts from 'apexcharts'

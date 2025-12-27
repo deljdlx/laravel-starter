@@ -28,6 +28,132 @@
             <!-- BEGIN PAGE BODY -->
             <div class="page-body">
 
+                {{-- Section: Alpine.js Interactive Examples --}}
+                <div class="container-xl" id="alpine">
+                    <div class="mb-3">
+                        <h2 class="page-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3z" /></svg>
+                            Alpine.js Interactive Examples
+                        </h2>
+                        <p class="text-secondary">Reactive components using Alpine.js</p>
+                    </div>
+
+                    <div class="row row-deck row-cards">
+                        {{-- Counter Example --}}
+                        <div class="col-lg-4">
+                            <x-card title="Click Counter">
+                                <div x-data="{ count: 0 }">
+                                    <div class="text-center mb-3">
+                                        <div class="display-3 ds-font-bold" x-text="count"></div>
+                                        <p class="text-secondary">clicks</p>
+                                    </div>
+                                    <div class="d-flex gap-2 justify-content-center">
+                                        <button @click="count++" class="ds-btn ds-btn-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                                            Increment
+                                        </button>
+                                        <button @click="count = 0" class="ds-btn ds-btn-secondary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" /></svg>
+                                            Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </x-card>
+                        </div>
+
+                        {{-- Toggle Example --}}
+                        <div class="col-lg-4">
+                            <x-card title="Toggle Visibility">
+                                <div x-data="{ open: false }">
+                                    <button @click="open = !open" class="ds-btn ds-btn-primary mb-3 w-100">
+                                        <span x-show="!open">Show Content</span>
+                                        <span x-show="open">Hide Content</span>
+                                    </button>
+                                    <div x-show="open" x-transition class="ds-card">
+                                        <p class="mb-0">🎉 This content is toggled with Alpine.js!</p>
+                                    </div>
+                                </div>
+                            </x-card>
+                        </div>
+
+                        {{-- Input Binding Example --}}
+                        <div class="col-lg-4">
+                            <x-card title="Two-Way Binding">
+                                <div x-data="{ message: 'Hello Alpine!' }">
+                                    <input 
+                                        type="text" 
+                                        x-model="message" 
+                                        class="form-control mb-3"
+                                        placeholder="Type something..."
+                                    >
+                                    <div class="ds-card">
+                                        <p class="ds-text-sm ds-text-secondary mb-1">You typed:</p>
+                                        <p class="ds-font-bold mb-0" x-text="message"></p>
+                                    </div>
+                                </div>
+                            </x-card>
+                        </div>
+
+                        {{-- Dynamic List Example --}}
+                        <div class="col-lg-6">
+                            <x-card title="Dynamic List">
+                                <div x-data="{ 
+                                    items: ['Alpine.js', 'Laravel', 'Tabler'],
+                                    newItem: ''
+                                }">
+                                    <div class="input-group mb-3">
+                                        <input 
+                                            type="text" 
+                                            x-model="newItem" 
+                                            @keyup.enter="items.push(newItem); newItem = ''"
+                                            class="form-control"
+                                            placeholder="Add item..."
+                                        >
+                                        <button 
+                                            @click="items.push(newItem); newItem = ''" 
+                                            class="btn btn-primary"
+                                            :disabled="!newItem"
+                                        >
+                                            Add
+                                        </button>
+                                    </div>
+                                    <ul class="list-group">
+                                        <template x-for="(item, index) in items" :key="index">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span x-text="item"></span>
+                                                <button @click="items.splice(index, 1)" class="btn btn-sm btn-outline-danger">
+                                                    Remove
+                                                </button>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </x-card>
+                        </div>
+
+                        {{-- Color Picker Example --}}
+                        <div class="col-lg-6">
+                            <x-card title="Color Picker">
+                                <div x-data="{ color: '#a855f7' }">
+                                    <input 
+                                        type="color" 
+                                        x-model="color" 
+                                        class="form-control form-control-color mb-3"
+                                    >
+                                    <div 
+                                        class="p-4 rounded text-center"
+                                        :style="`background-color: ${color}`"
+                                    >
+                                        <code class="text-white" x-text="color"></code>
+                                    </div>
+                                </div>
+                            </x-card>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
                 {{-- Section: Form Components --}}
                 <div class="container-xl" id="forms">
                     <div class="mb-3">
@@ -398,8 +524,7 @@
     </div>
     @include('mocks.modals')
     @include('mocks.settings')
-    @vite('resources/js/app.js')
-    @vite('resources/js/home.js')
+    @vite(['resources/js/app.js', 'resources/js/home.js'])
 
 </body>
 

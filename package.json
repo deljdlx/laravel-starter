@@ -20,6 +20,7 @@
         "@fortawesome/fontawesome-free": "^7.1.0",
         "@tabler/core": "^1.4.0",
         "@tabler/icons": "^3.35.0",
+        "alpinejs": "^3.15.3",
         "apexcharts": "^5.3.5",
         "codemirror": "^5.65.20",
         "drawflow": "^0.0.60",

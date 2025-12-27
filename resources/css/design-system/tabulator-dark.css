@@ -1,0 +1,116 @@
+/**
+ * Tabulator Dark Mode Override
+ * Harmonise Tabulator avec le design system dark
+ */
+
+/* Table principale */
+.tabulator {
+    background-color: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+/* Header */
+.tabulator .tabulator-header {
+    background-color: var(--ds-bg-tertiary);
+    border-bottom: 1px solid var(--ds-bg-hover);
+    color: var(--ds-text-primary);
+}
+
+.tabulator .tabulator-col {
+    background-color: var(--ds-bg-tertiary);
+    border-right: 1px solid var(--ds-bg-hover);
+}
+
+.tabulator .tabulator-col-title {
+    color: var(--ds-text-primary);
+}
+
+/* Rows */
+.tabulator .tabulator-row {
+    background-color: var(--ds-bg-secondary);
+    border-bottom: 1px solid var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.tabulator .tabulator-row:hover {
+    background-color: var(--ds-bg-hover);
+}
+
+.tabulator .tabulator-row.tabulator-selected {
+    background-color: rgba(168, 85, 247, 0.2);
+}
+
+.tabulator .tabulator-row.tabulator-selectable:hover {
+    background-color: var(--ds-bg-hover);
+}
+
+/* Cells */
+.tabulator .tabulator-cell {
+    border-right: 1px solid var(--ds-bg-tertiary);
+}
+
+/* Editors */
+.tabulator-edit-select-list {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+}
+
+.tabulator-edit-select-list .tabulator-edit-select-list-item {
+    color: var(--ds-text-primary);
+}
+
+.tabulator-edit-select-list .tabulator-edit-select-list-item:hover {
+    background: var(--ds-bg-hover);
+}
+
+.tabulator-edit-select-list .tabulator-edit-select-list-item.active {
+    background: var(--ds-accent-purple);
+    color: white;
+}
+
+/* Input editors */
+.tabulator .tabulator-cell input,
+.tabulator .tabulator-cell select {
+    background-color: var(--ds-bg-tertiary);
+    border: 1px solid var(--ds-bg-hover);
+    color: var(--ds-text-primary);
+}
+
+/* Footer */
+.tabulator .tabulator-footer {
+    background-color: var(--ds-bg-tertiary);
+    border-top: 1px solid var(--ds-bg-hover);
+    color: var(--ds-text-primary);
+}
+
+/* Pagination */
+.tabulator .tabulator-paginator {
+    color: var(--ds-text-primary);
+}
+
+.tabulator .tabulator-page {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.tabulator .tabulator-page:hover {
+    background: var(--ds-bg-hover);
+}
+
+.tabulator .tabulator-page.active {
+    background: var(--ds-accent-purple);
+    color: white;
+}
+
+/* Filters */
+.tabulator .tabulator-header-filter input {
+    background-color: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.tabulator .tabulator-header-filter input:focus {
+    border-color: var(--ds-accent-purple);
+}

@@ -1,5 +1,5 @@
 
-import 'tabulator-tables/dist/css/tabulator_bootstrap5.min.css';
+import 'tabulator-tables/dist/css/tabulator_midnight.min.css';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 
 // Jeu de données de démonstration
