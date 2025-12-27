@@ -1,0 +1,71 @@
+/**
+ * Design System - Utilities
+ * Classes utilitaires pour typography, spacing, etc.
+ */
+
+/* Typography */
+.ds-text-primary { color: var(--ds-text-primary); }
+.ds-text-secondary { color: var(--ds-text-secondary); }
+.ds-text-tertiary { color: var(--ds-text-tertiary); }
+.ds-text-muted { color: var(--ds-text-muted); }
+
+.ds-text-xs { font-size: var(--ds-text-xs); }
+.ds-text-sm { font-size: var(--ds-text-sm); }
+.ds-text-base { font-size: var(--ds-text-base); }
+.ds-text-lg { font-size: var(--ds-text-lg); }
+.ds-text-xl { font-size: var(--ds-text-xl); }
+.ds-text-2xl { font-size: var(--ds-text-2xl); }
+.ds-text-3xl { font-size: var(--ds-text-3xl); }
+
+.ds-font-normal { font-weight: var(--ds-font-normal); }
+.ds-font-medium { font-weight: var(--ds-font-medium); }
+.ds-font-semibold { font-weight: var(--ds-font-semibold); }
+.ds-font-bold { font-weight: var(--ds-font-bold); }
+
+.ds-font-mono { font-family: var(--ds-font-mono); }
+
+/* Spacing */
+.ds-mt-xs { margin-top: var(--ds-spacing-xs); }
+.ds-mt-sm { margin-top: var(--ds-spacing-sm); }
+.ds-mt-md { margin-top: var(--ds-spacing-md); }
+.ds-mt-lg { margin-top: var(--ds-spacing-lg); }
+.ds-mt-xl { margin-top: var(--ds-spacing-xl); }
+
+.ds-mb-xs { margin-bottom: var(--ds-spacing-xs); }
+.ds-mb-sm { margin-bottom: var(--ds-spacing-sm); }
+.ds-mb-md { margin-bottom: var(--ds-spacing-md); }
+.ds-mb-lg { margin-bottom: var(--ds-spacing-lg); }
+.ds-mb-xl { margin-bottom: var(--ds-spacing-xl); }
+
+.ds-p-xs { padding: var(--ds-spacing-xs); }
+.ds-p-sm { padding: var(--ds-spacing-sm); }
+.ds-p-md { padding: var(--ds-spacing-md); }
+.ds-p-lg { padding: var(--ds-spacing-lg); }
+.ds-p-xl { padding: var(--ds-spacing-xl); }
+
+/* Misc */
+.ds-link {
+    color: var(--ds-accent-cyan);
+    text-decoration: none;
+    transition: color var(--ds-transition-fast);
+}
+
+.ds-link:hover {
+    color: var(--ds-accent-purple);
+}
+
+.ds-divider {
+    border: none;
+    border-top: 1px solid var(--ds-bg-tertiary);
+    margin: var(--ds-spacing-xl) 0;
+}
+
+.ds-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--ds-spacing-lg);
+}
+
+.ds-section {
+    margin-bottom: var(--ds-spacing-2xl);
+}

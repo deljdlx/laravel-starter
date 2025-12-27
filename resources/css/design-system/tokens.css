@@ -1,0 +1,87 @@
+/**
+ * Design System - Tokens
+ * CSS Variables pour colors, spacing, typography, etc.
+ */
+
+:root {
+    /* Colors - Background */
+    --ds-bg-primary: #0f172a;
+    --ds-bg-secondary: #1e293b;
+    --ds-bg-tertiary: #334155;
+    --ds-bg-hover: #475569;
+    
+    /* Colors - Accent */
+    --ds-accent-cyan: #06b6d4;
+    --ds-accent-cyan-hover: #0891b2;
+    --ds-accent-purple: #a855f7;
+    --ds-accent-purple-hover: #9333ea;
+    --ds-accent-pink: #ec4899;
+    --ds-accent-pink-hover: #db2777;
+    
+    /* Colors - Text */
+    --ds-text-primary: #f1f5f9;
+    --ds-text-secondary: #94a3b8;
+    --ds-text-tertiary: #64748b;
+    --ds-text-muted: #475569;
+    
+    /* Colors - Status */
+    --ds-success: #10b981;
+    --ds-warning: #f59e0b;
+    --ds-error: #ef4444;
+    --ds-info: #3b82f6;
+    
+    /* Spacing */
+    --ds-spacing-xs: 0.25rem;
+    --ds-spacing-sm: 0.5rem;
+    --ds-spacing-md: 1rem;
+    --ds-spacing-lg: 1.5rem;
+    --ds-spacing-xl: 2rem;
+    --ds-spacing-2xl: 3rem;
+    --ds-spacing-3xl: 4rem;
+    
+    /* Border Radius */
+    --ds-radius-sm: 6px;
+    --ds-radius-md: 12px;
+    --ds-radius-lg: 16px;
+    --ds-radius-xl: 24px;
+    --ds-radius-full: 9999px;
+    
+    /* Typography */
+    --ds-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --ds-font-mono: 'JetBrains Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+    
+    --ds-text-xs: 0.75rem;
+    --ds-text-sm: 0.85rem;
+    --ds-text-base: 1rem;
+    --ds-text-lg: 1.125rem;
+    --ds-text-xl: 1.25rem;
+    --ds-text-2xl: 1.5rem;
+    --ds-text-3xl: 2rem;
+    
+    --ds-font-normal: 400;
+    --ds-font-medium: 500;
+    --ds-font-semibold: 600;
+    --ds-font-bold: 700;
+    --ds-font-extrabold: 800;
+    
+    /* Shadows */
+    --ds-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --ds-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --ds-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+    --ds-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+    
+    /* Transitions */
+    --ds-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --ds-transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --ds-transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-Index Scale */
+    --ds-z-base: 0;
+    --ds-z-dropdown: 100;
+    --ds-z-sticky: 200;
+    --ds-z-fixed: 300;
+    --ds-z-modal-backdrop: 400;
+    --ds-z-modal: 500;
+    --ds-z-popover: 600;
+    --ds-z-tooltip: 700;
+}

@@ -1,0 +1,131 @@
+/**
+ * Design System - Page Specific
+ * Composants spécifiques aux pages (users, permissions, routes, etc.)
+ */
+
+/* User/Permission Cards */
+.user-card,
+.role-card {
+    transition: all var(--ds-transition-base);
+    cursor: pointer;
+}
+
+.user-card:hover,
+.role-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ds-shadow-xl);
+    border-color: var(--ds-accent-purple);
+}
+
+.user-card::before,
+.role-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--ds-transition-base);
+}
+
+.user-card:hover::before,
+.role-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Search Box */
+.search-box {
+    margin-bottom: var(--ds-spacing-md);
+}
+
+/* Badge Lists */
+.role-badge,
+.permission-badge {
+    margin: var(--ds-spacing-xs);
+    display: inline-block;
+}
+
+/* Permission/Role Lists */
+.permission-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.permission-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.permission-list::-webkit-scrollbar-track {
+    background: var(--ds-bg-tertiary);
+}
+
+.permission-list::-webkit-scrollbar-thumb {
+    background: var(--ds-accent-purple);
+    border-radius: var(--ds-radius-full);
+}
+
+.permission-list::-webkit-scrollbar-thumb:hover {
+    background: var(--ds-accent-purple-hover);
+}
+
+/* Route Cards */
+.ds-route-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ds-route-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.ds-route-method {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ds-radius-sm);
+    font-size: var(--ds-text-xs);
+    font-weight: var(--ds-font-bold);
+    letter-spacing: 0.5px;
+}
+
+.ds-route-name {
+    color: var(--ds-text-secondary);
+    font-size: var(--ds-text-xs);
+    font-family: var(--ds-font-mono);
+    margin-left: var(--ds-spacing-sm);
+}
+
+.ds-route-uri {
+    font-family: var(--ds-font-mono);
+    font-size: var(--ds-text-base);
+    font-weight: var(--ds-font-semibold);
+    color: var(--ds-text-primary);
+    margin: var(--ds-spacing-md) 0;
+    line-height: 1.6;
+}
+
+.ds-route-action {
+    display: flex;
+    align-items: center;
+    gap: var(--ds-spacing-sm);
+    color: var(--ds-accent-cyan);
+    font-size: var(--ds-text-sm);
+    font-weight: var(--ds-font-medium);
+    margin-top: auto;
+}
+
+.ds-route-icon {
+    transition: transform var(--ds-transition-base);
+}
+
+.ds-route-card:hover .ds-route-icon {
+    transform: translateX(4px);
+}

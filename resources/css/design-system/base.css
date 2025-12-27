@@ -1,0 +1,19 @@
+/**
+ * Design System - Base
+ * Styles de base (html, body) et resets
+ */
+
+html[data-bs-theme="dark"] {
+    background: var(--ds-bg-primary);
+    color: var(--ds-text-primary);
+}
+
+body {
+    background: var(--ds-bg-primary);
+    color: var(--ds-text-primary);
+    font-family: var(--ds-font-sans);
+    font-size: var(--ds-text-base);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,95 @@
+/**
+ * Design System - Tabler Overrides
+ * Harmonisation de Tabler UI avec le design system
+ */
+
+/* Card Overrides */
+.card {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+    border-radius: var(--ds-radius-lg);
+}
+
+.card:hover.ds-card-clickable {
+    transform: translateY(-4px);
+    border-color: var(--ds-accent-purple);
+    box-shadow: var(--ds-shadow-xl);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--ds-bg-tertiary);
+}
+
+/* Page Header */
+.page-header {
+    padding: var(--ds-spacing-xl) 0 var(--ds-spacing-md);
+    border-bottom: 1px solid var(--ds-bg-tertiary);
+    margin-bottom: var(--ds-spacing-2xl);
+}
+
+.page-title {
+    font-size: var(--ds-text-2xl);
+    font-weight: var(--ds-font-bold);
+    color: var(--ds-text-primary);
+}
+
+/* Badge Overrides */
+.badge.badge-ds-primary {
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    color: white;
+}
+
+/* Button Overrides */
+.btn-primary {
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    border: none;
+    transition: all var(--ds-transition-fast);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ds-shadow-lg);
+}
+
+/* Table Dark Mode */
+.table {
+    color: var(--ds-text-primary);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.table > :not(caption) > * > * {
+    border-bottom-color: var(--ds-bg-tertiary);
+}
+
+/* Form Controls */
+.form-control,
+.form-select {
+    background: var(--ds-bg-tertiary);
+    border-color: var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: var(--ds-bg-tertiary);
+    border-color: var(--ds-accent-purple);
+    color: var(--ds-text-primary);
+}
+
+/* Modal Dark Mode */
+.modal-content {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+}
+
+.modal-header {
+    border-bottom-color: var(--ds-bg-tertiary);
+}
+
+.modal-footer {
+    border-top-color: var(--ds-bg-tertiary);
+}
