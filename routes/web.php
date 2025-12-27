@@ -47,6 +47,16 @@ Route::prefix('demo')->name('demo.')->group(function () {
     Route::get('/components', function () {
         return view('demo.components');
     })->name('components');
+    
+    // Alpine subpage
+    Route::get('/components/alpine', function () {
+        return view('demo.components.alpine');
+    })->name('components.alpine');
+    
+    // Forms subpage
+    Route::get('/components/forms', function () {
+        return view('demo.components.forms');
+    })->name('components.forms');
 });
 
 // Developer Tools Routes
