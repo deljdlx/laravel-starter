@@ -91,6 +91,26 @@
 
                 <hr class="my-5">
 
+                {{-- Section: ApexCharts --}}
+                <div class="container-xl" id="apexcharts">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2 class="page-title mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /></svg>
+                                    ApexCharts
+                                </h2>
+                                <p class="text-secondary mb-0">Interactive charts using ApexCharts library (Traffic, Maps, Mini charts)</p>
+                            </div>
+                            <a href="{{ route('demo.components.apexcharts') }}" class="btn btn-primary btn-sm">
+                                View Full Page
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5">
 
                 {{-- Section: Echarts --}}
                 <div class="container-xl" id="echarts">
@@ -130,8 +150,6 @@
                         </div>
                     </div>
                 </div>
-                    <hr class="my-5">
-
                     {{-- Section: Tabler UI Components --}}
                     <div id="tabler-components">
                         <div class="mb-3">
@@ -180,72 +198,6 @@
                     <div class="col-sm-6 col-lg-3">
                         <x-card>
                             @include('mocks.active-subscriptions')
-                        </x-card>
-                    </div>
-                    <div class="col-12">
-                        <div class="row row-cards">
-                            <div class="col-sm-6 col-lg-3">
-                                <x-card class="card-sm">
-                                    @include('mocks.mini-sales')
-                                </x-card>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <x-card class="card-sm">
-                                    @include('mocks.mini-orders')
-                                </x-card>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <x-card class="card-sm">
-                                    @include('mocks.mini-shares')
-                                </x-card>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <x-card class="card-sm">
-                                    @include('mocks.mini-likes')
-                                </x-card>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <x-card>
-                            <h3 class="card-title">"Traffic summary"</h3>
-                            <div id="chart-mentions" class="position-relative chart-lg"></div>
-                        </x-card>
-                    </div>
-                    <div class="col-lg-6">
-
-                        <x-card>
-                            <h3 class="card-title">Locations</h3>
-                            <div class="ratio ratio-21x9">
-                                <div>
-                                    <div id="map-world" class="w-100 h-100"></div>
-                                </div>
-                            </div>
-                        </x-card>
-
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row row-cards">
-                            <div class="col-12">
-                                <x-card>
-                                    @include('mocks.storage')
-                                </x-card>
-                            </div>
-                            <div class="col-12">
-
-
-                                <x-card style="height: 28rem">
-                                    <x-slot name="body" class="card-body-scrollable card-body-scrollable-shadow">
-                                        @include('mocks.events')
-                                    </x-slot>
-                                </x-card>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <x-card title="Development activity">
-                            @include('mocks.development-activity')
                         </x-card>
                     </div>
                     <div class="col-12">

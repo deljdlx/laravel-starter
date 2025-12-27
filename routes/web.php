@@ -72,6 +72,10 @@ Route::prefix('demo')->name('demo.')->group(function () {
     Route::get('/components/tabulator', function () {
         return view('demo.components.tabulator');
     })->name('components.tabulator');
+    
+    // ApexCharts subpage
+    Route::get('/components/apexcharts', [App\Http\Controllers\Demo\ApexChartsController::class, 'index'])
+        ->name('components.apexcharts');
 });
 
 // Developer Tools Routes
