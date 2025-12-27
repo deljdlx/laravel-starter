@@ -86,6 +86,7 @@ Route::prefix('users')->name('users.')->middleware(['web'])->group(function () {
     // API Routes for Users
     Route::prefix('api')->name('api.')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::get('/search', [UserController::class, 'search'])->name('search');
         Route::post('/', [UserController::class, 'store'])->name('store');
         Route::get('/{user}', [UserController::class, 'show'])->name('show');
         Route::put('/{user}', [UserController::class, 'update'])->name('update');
