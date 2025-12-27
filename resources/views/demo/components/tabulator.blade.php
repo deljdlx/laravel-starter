@@ -40,6 +40,6 @@
     </div>
     @include('mocks.modals')
     @include('mocks.settings')
-    @vite(['resources/js/app.js', 'resources/js/home.js'])
+    @vite(['resources/js/app.js', 'resources/js/pages/tabulator.js'])
 </body>
 </html>
