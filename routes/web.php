@@ -63,10 +63,15 @@ Route::prefix('demo')->name('demo.')->group(function () {
         return view('demo.components.diagrams');
     })->name('components.diagrams');
     
-    // Charts subpage
-    Route::get('/components/charts', function () {
-        return view('demo.components.charts');
-    })->name('components.charts');
+    // Echarts subpage
+    Route::get('/components/echarts', function () {
+        return view('demo.components.echarts');
+    })->name('components.echarts');
+    
+    // Tabulator subpage
+    Route::get('/components/tabulator', function () {
+        return view('demo.components.tabulator');
+    })->name('components.tabulator');
 });
 
 // Developer Tools Routes

@@ -92,18 +92,38 @@
                 <hr class="my-5">
 
 
-                {{-- Section: Charts & Data Tables --}}
-                <div class="container-xl" id="charts">
+                {{-- Section: Echarts --}}
+                <div class="container-xl" id="echarts">
                     <div class="mb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h2 class="page-title mb-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /></svg>
-                                    Charts & Data Tables
+                                    Echarts
                                 </h2>
-                                <p class="text-secondary mb-0">Interactive charts using Echarts and Tabulator data tables</p>
+                                <p class="text-secondary mb-0">Interactive charts using Apache Echarts library</p>
                             </div>
-                            <a href="{{ route('demo.components.charts') }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('demo.components.echarts') }}" class="btn btn-primary btn-sm">
+                                View Full Page
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    <hr class="my-5">
+
+                {{-- Section: Tabulator --}}
+                <div class="container-xl" id="tabulator">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2 class="page-title mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" /><path d="M3 10h18" /><path d="M10 3v18" /></svg>
+                                    Tabulator
+                                </h2>
+                                <p class="text-secondary mb-0">Interactive data tables with Tabulator library</p>
+                            </div>
+                            <a href="{{ route('demo.components.tabulator') }}" class="btn btn-primary btn-sm">
                                 View Full Page
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
                             </a>

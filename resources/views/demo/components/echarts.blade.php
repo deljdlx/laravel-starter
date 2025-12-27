@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Charts & Tables - {{ config('app.name') }}</title>
+    <title>Echarts Examples - {{ config('app.name') }}</title>
     <meta name="msapplication-TileColor" content="#0f172a" />
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
@@ -24,15 +24,9 @@
                         </a>
                     </div>
                     
-                    <h2 class="page-title mb-3">Charts & Data Tables</h2>
+                    <h2 class="page-title mb-3">Echarts Examples</h2>
                     
                     <div class="row row-deck row-cards">
-                        <div class="col-12">
-                            <x-card title="Tabulator Example">
-                                @include('mocks.tabulator')
-                            </x-card>
-                        </div>
-
                         <div class="col-sm-12 col-lg-6">
                             <x-card title="Echarts Example 1">
                                 <div id="echarts-example-00" style="height: 400px"></div>
