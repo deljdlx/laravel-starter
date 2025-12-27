@@ -5,13 +5,37 @@ use App\Http\Controllers\Dev\ModelBuilderController;
 use App\Http\Controllers\Dev\SchemaMermaidController;
 use App\Http\Controllers\Dev\SchemaEditorController;
 use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\ReteJsDemoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $routes = collect(Route::getRoutes())
+        ->filter(function ($route) {
+            return in_array('GET', $route->methods()) 
+                && !str_starts_with($route->uri(), 'api/') 
+                && !str_starts_with($route->uri(), 'livewire/')
+                && !str_starts_with($route->uri(), 'storage/')
+                && !in_array($route->uri(), ['up', 'sanctum/csrf-cookie', '/']);
+        })
+        ->map(function ($route) {
+            return [
+                'uri' => '/' . $route->uri(),
+                'name' => $route->getName(),
+                'method' => implode('|', $route->methods()),
+            ];
+        })
+        ->groupBy(function ($route) {
+            $uri = $route['uri'];
+            if (str_starts_with($uri, '/dev/')) return 'Developer Tools';
+            if (str_starts_with($uri, '/demo/')) return 'Demo';
+            if (str_starts_with($uri, '/permissions')) return 'Permissions';
+            if (str_starts_with($uri, '/users')) return 'Users';
+            return 'Other';
+        })
+        ->sortKeys();
+    
+    return view('welcome', compact('routes'));
 });
 
 Route::get('/compteur', function () {
@@ -22,7 +46,12 @@ Route::get('/form', function () {
     return view('form');
 });
 
-Route::get('/retejs-demo', [ReteJsDemoController::class, 'index'])->name('retejs.demo');
+// Demo Routes
+Route::prefix('demo')->name('demo.')->group(function () {
+    Route::get('/components', function () {
+        return view('demo.components');
+    })->name('components');
+});
 
 // Developer Tools Routes
 Route::prefix('dev')->group(function () {
