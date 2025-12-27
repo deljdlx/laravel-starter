@@ -147,3 +147,6 @@ Route::prefix('users')->name('users.')->middleware(['web'])->group(function () {
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
     });
 });
+Route::get('/demo/components/tabler', function () {
+    return view('demo.components.tabler');
+})->name('demo.components.tabler');

@@ -150,83 +150,28 @@
                         </div>
                     </div>
                 </div>
-                    {{-- Section: Tabler UI Components --}}
-                    <div id="tabler-components">
-                        <div class="mb-3">
-                            <h2 class="page-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
-                                Tabler UI Components
-                            </h2>
-                            <p class="text-secondary">Dashboard widgets, stats cards, and UI elements</p>
-                        </div>
-                    </div>
 
-                    <div class="row row-deck row-cards">
-                        <div class="col-sm-12 col-lg-6">
+                <hr class="my-5">
 
-                            <x-card title="Let's get started!">
-                                @include('mocks/welcome-back')
-                            </x-card>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <x-card>
-                            @include('mocks.total-users')
-                        </x-card>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <x-card>
-                            @include('mocks.active-users')
-                        </x-card>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <x-card>
-                            @include('mocks.sales')
-                        </x-card>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <x-card>
-                            @include('mocks.revenue')
-                        </x-card>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <x-card>
-                            @include('mocks.new-clients')
-                        </x-card>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <x-card>
-                            @include('mocks.active-subscriptions')
-                        </x-card>
-                    </div>
-                    <div class="col-12">
-                        @include('mocks.tabler-icons')
-                    </div>
-                    <div class="col-md-12 col-lg-8">
-                        <x-card title="Most visited pages">
-                            @include('mocks.most-visited-pages')
-                        </x-card>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        @include('mocks.help-tabler')
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <x-card title="Social Media Traffic">
-                            @include('mocks.social-media-traffic')
-                        </x-card>
-                    </div>
-                    <div class="col-md-12 col-lg-8">
-                        <x-card title="Tasks">
-                            @include('mocks.tasks')
-                        </x-card>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            @include('mocks.invoices')
+                {{-- Section: Tabler UI Components --}}
+                <div class="container-xl" id="tabler">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2 class="page-title mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
+                                    Tabler UI Components
+                                </h2>
+                                <p class="text-secondary mb-0">Dashboard widgets, stats cards, and UI elements</p>
+                            </div>
+                            <a href="{{ route('demo.components.tabler') }}" class="btn btn-primary btn-sm">
+                                View Full Page
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 
