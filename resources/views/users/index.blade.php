@@ -1,29 +1,19 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-bs-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Gestion des Utilisateurs - Laravel Starter</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>
-        .user-card {
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .user-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-        .search-box {
-            margin-bottom: 1rem;
-        }
-        .role-badge {
-            margin: 2px;
-            display: inline-block;
-        }
-    </style>
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <meta name="theme-color" content="#0f172a" />
+    
+    <title>Gestion des Utilisateurs - {{ config('app.name', 'Laravel') }}</title>
+    
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+    
+    @vite(['resources/css/app.css', 'resources/css/design-system.css', 'resources/js/app.js'])
 </head>
 <body>
     <div class="page">

@@ -1,0 +1,648 @@
+/**
+ * Design System - Dark Modern Theme
+ * Variables, utilities, and components for consistent UI
+ */
+
+/* ==========================================
+   CSS Variables - Design Tokens
+   ========================================== */
+
+:root {
+    /* Colors - Background */
+    --ds-bg-primary: #0f172a;
+    --ds-bg-secondary: #1e293b;
+    --ds-bg-tertiary: #334155;
+    --ds-bg-hover: #475569;
+    
+    /* Colors - Accent */
+    --ds-accent-cyan: #06b6d4;
+    --ds-accent-cyan-hover: #0891b2;
+    --ds-accent-purple: #a855f7;
+    --ds-accent-purple-hover: #9333ea;
+    --ds-accent-pink: #ec4899;
+    --ds-accent-pink-hover: #db2777;
+    
+    /* Colors - Text */
+    --ds-text-primary: #f1f5f9;
+    --ds-text-secondary: #94a3b8;
+    --ds-text-tertiary: #64748b;
+    --ds-text-muted: #475569;
+    
+    /* Colors - Status */
+    --ds-success: #10b981;
+    --ds-warning: #f59e0b;
+    --ds-error: #ef4444;
+    --ds-info: #3b82f6;
+    
+    /* Spacing */
+    --ds-spacing-xs: 0.25rem;
+    --ds-spacing-sm: 0.5rem;
+    --ds-spacing-md: 1rem;
+    --ds-spacing-lg: 1.5rem;
+    --ds-spacing-xl: 2rem;
+    --ds-spacing-2xl: 3rem;
+    --ds-spacing-3xl: 4rem;
+    
+    /* Border Radius */
+    --ds-radius-sm: 6px;
+    --ds-radius-md: 12px;
+    --ds-radius-lg: 16px;
+    --ds-radius-xl: 24px;
+    --ds-radius-full: 9999px;
+    
+    /* Typography */
+    --ds-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --ds-font-mono: 'JetBrains Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+    
+    --ds-text-xs: 0.75rem;
+    --ds-text-sm: 0.85rem;
+    --ds-text-base: 1rem;
+    --ds-text-lg: 1.125rem;
+    --ds-text-xl: 1.25rem;
+    --ds-text-2xl: 1.5rem;
+    --ds-text-3xl: 2rem;
+    
+    --ds-font-normal: 400;
+    --ds-font-medium: 500;
+    --ds-font-semibold: 600;
+    --ds-font-bold: 700;
+    --ds-font-extrabold: 800;
+    
+    /* Shadows */
+    --ds-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --ds-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --ds-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+    --ds-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+    
+    /* Transitions */
+    --ds-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --ds-transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --ds-transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-Index Scale */
+    --ds-z-base: 0;
+    --ds-z-dropdown: 100;
+    --ds-z-sticky: 200;
+    --ds-z-fixed: 300;
+    --ds-z-modal-backdrop: 400;
+    --ds-z-modal: 500;
+    --ds-z-popover: 600;
+    --ds-z-tooltip: 700;
+}
+
+/* ==========================================
+   Base Styles
+   ========================================== */
+
+html[data-bs-theme="dark"] {
+    background: var(--ds-bg-primary);
+    color: var(--ds-text-primary);
+}
+
+body {
+    background: var(--ds-bg-primary);
+    color: var(--ds-text-primary);
+    font-family: var(--ds-font-sans);
+    font-size: var(--ds-text-base);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   Typography Utilities
+   ========================================== */
+
+.ds-text-primary { color: var(--ds-text-primary); }
+.ds-text-secondary { color: var(--ds-text-secondary); }
+.ds-text-tertiary { color: var(--ds-text-tertiary); }
+.ds-text-muted { color: var(--ds-text-muted); }
+
+.ds-text-xs { font-size: var(--ds-text-xs); }
+.ds-text-sm { font-size: var(--ds-text-sm); }
+.ds-text-base { font-size: var(--ds-text-base); }
+.ds-text-lg { font-size: var(--ds-text-lg); }
+.ds-text-xl { font-size: var(--ds-text-xl); }
+.ds-text-2xl { font-size: var(--ds-text-2xl); }
+.ds-text-3xl { font-size: var(--ds-text-3xl); }
+
+.ds-font-normal { font-weight: var(--ds-font-normal); }
+.ds-font-medium { font-weight: var(--ds-font-medium); }
+.ds-font-semibold { font-weight: var(--ds-font-semibold); }
+.ds-font-bold { font-weight: var(--ds-font-bold); }
+
+.ds-font-mono { font-family: var(--ds-font-mono); }
+
+/* ==========================================
+   Layout Components
+   ========================================== */
+
+.ds-header {
+    padding: var(--ds-spacing-xl) 0 var(--ds-spacing-md);
+    border-bottom: 1px solid var(--ds-bg-tertiary);
+    margin-bottom: var(--ds-spacing-2xl);
+}
+
+.ds-header-title {
+    font-size: var(--ds-text-2xl);
+    font-weight: var(--ds-font-bold);
+    color: var(--ds-text-primary);
+    margin: 0;
+}
+
+.ds-header-subtitle {
+    color: var(--ds-text-secondary);
+    font-size: var(--ds-text-sm);
+    margin: var(--ds-spacing-xs) 0 0 0;
+}
+
+/* ==========================================
+   Card Component
+   ========================================== */
+
+.ds-card {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+    border-radius: var(--ds-radius-lg);
+    padding: var(--ds-spacing-lg);
+    transition: all var(--ds-transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.ds-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ds-accent-cyan), var(--ds-accent-purple), var(--ds-accent-pink));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--ds-transition-base);
+}
+
+.ds-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--ds-accent-purple);
+    box-shadow: var(--ds-shadow-xl);
+}
+
+.ds-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ds-card-clickable {
+    cursor: pointer;
+}
+
+/* ==========================================
+   Badge Component
+   ========================================== */
+
+.ds-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--ds-spacing-xs) var(--ds-spacing-md);
+    border-radius: var(--ds-radius-sm);
+    font-size: var(--ds-text-xs);
+    font-weight: var(--ds-font-bold);
+    letter-spacing: 0.5px;
+}
+
+.ds-badge-primary {
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    color: white;
+}
+
+.ds-badge-secondary {
+    background: var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.ds-badge-success {
+    background: var(--ds-success);
+    color: white;
+}
+
+.ds-badge-warning {
+    background: var(--ds-warning);
+    color: white;
+}
+
+.ds-badge-error {
+    background: var(--ds-error);
+    color: white;
+}
+
+.ds-badge-count {
+    background: var(--ds-accent-purple);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--ds-radius-sm);
+    font-size: var(--ds-text-xs);
+    font-weight: var(--ds-font-semibold);
+}
+
+/* ==========================================
+   Button Component
+   ========================================== */
+
+.ds-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ds-spacing-sm);
+    padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
+    border: none;
+    border-radius: var(--ds-radius-md);
+    font-size: var(--ds-text-sm);
+    font-weight: var(--ds-font-semibold);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--ds-transition-fast);
+}
+
+.ds-btn-primary {
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    color: white;
+}
+
+.ds-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ds-shadow-lg);
+}
+
+.ds-btn-secondary {
+    background: var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.ds-btn-secondary:hover {
+    background: var(--ds-bg-hover);
+}
+
+.ds-btn-ghost {
+    background: transparent;
+    color: var(--ds-text-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+}
+
+.ds-btn-ghost:hover {
+    background: var(--ds-bg-secondary);
+    color: var(--ds-text-primary);
+}
+
+/* ==========================================
+   Grid System
+   ========================================== */
+
+.ds-grid {
+    display: grid;
+    gap: var(--ds-spacing-lg);
+}
+
+.ds-grid-1 { grid-template-columns: repeat(1, 1fr); }
+.ds-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.ds-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.ds-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.ds-grid-auto {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+@media (max-width: 768px) {
+    .ds-grid-2,
+    .ds-grid-3,
+    .ds-grid-4,
+    .ds-grid-auto {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   Category Section
+   ========================================== */
+
+.ds-category-section {
+    margin-bottom: var(--ds-spacing-2xl);
+}
+
+.ds-category-header {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ds-spacing-md);
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    background: var(--ds-bg-secondary);
+    border-radius: var(--ds-radius-md);
+    margin-bottom: var(--ds-spacing-lg);
+    border: 1px solid var(--ds-bg-tertiary);
+}
+
+.ds-category-title {
+    font-size: var(--ds-text-xl);
+    font-weight: var(--ds-font-bold);
+    margin: 0;
+    color: var(--ds-text-primary);
+}
+
+/* ==========================================
+   Route Card (Specific Component)
+   ========================================== */
+
+.ds-route-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ds-route-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.ds-route-method {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ds-radius-sm);
+    font-size: var(--ds-text-xs);
+    font-weight: var(--ds-font-bold);
+    letter-spacing: 0.5px;
+}
+
+.ds-route-name {
+    color: var(--ds-text-secondary);
+    font-size: var(--ds-text-xs);
+    font-family: var(--ds-font-mono);
+    margin-left: var(--ds-spacing-sm);
+}
+
+.ds-route-uri {
+    font-family: var(--ds-font-mono);
+    font-size: var(--ds-text-base);
+    font-weight: var(--ds-font-semibold);
+    color: var(--ds-text-primary);
+    margin: var(--ds-spacing-md) 0;
+    line-height: 1.6;
+}
+
+.ds-route-action {
+    display: flex;
+    align-items: center;
+    gap: var(--ds-spacing-sm);
+    color: var(--ds-accent-cyan);
+    font-size: var(--ds-text-sm);
+    font-weight: var(--ds-font-medium);
+    margin-top: auto;
+}
+
+.ds-route-icon {
+    transition: transform var(--ds-transition-base);
+}
+
+.ds-route-card:hover .ds-route-icon {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   Footer Component
+   ========================================== */
+
+.ds-footer {
+    margin-top: var(--ds-spacing-3xl);
+    padding: var(--ds-spacing-xl) 0;
+    border-top: 1px solid var(--ds-bg-tertiary);
+    color: var(--ds-text-secondary);
+    font-size: var(--ds-text-sm);
+}
+
+.ds-footer a {
+    color: var(--ds-accent-cyan);
+    text-decoration: none;
+    transition: color var(--ds-transition-fast);
+}
+
+.ds-footer a:hover {
+    color: var(--ds-accent-purple);
+}
+
+/* ==========================================
+   Utility Classes
+   ========================================== */
+
+.ds-link {
+    color: var(--ds-accent-cyan);
+    text-decoration: none;
+    transition: color var(--ds-transition-fast);
+}
+
+.ds-link:hover {
+    color: var(--ds-accent-purple);
+}
+
+.ds-divider {
+    border: none;
+    border-top: 1px solid var(--ds-bg-tertiary);
+    margin: var(--ds-spacing-xl) 0;
+}
+
+.ds-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--ds-spacing-lg);
+}
+
+.ds-section {
+    margin-bottom: var(--ds-spacing-2xl);
+}
+
+/* Spacing utilities */
+.ds-mt-xs { margin-top: var(--ds-spacing-xs); }
+.ds-mt-sm { margin-top: var(--ds-spacing-sm); }
+.ds-mt-md { margin-top: var(--ds-spacing-md); }
+.ds-mt-lg { margin-top: var(--ds-spacing-lg); }
+.ds-mt-xl { margin-top: var(--ds-spacing-xl); }
+
+.ds-mb-xs { margin-bottom: var(--ds-spacing-xs); }
+.ds-mb-sm { margin-bottom: var(--ds-spacing-sm); }
+.ds-mb-md { margin-bottom: var(--ds-spacing-md); }
+.ds-mb-lg { margin-bottom: var(--ds-spacing-lg); }
+.ds-mb-xl { margin-bottom: var(--ds-spacing-xl); }
+
+.ds-p-xs { padding: var(--ds-spacing-xs); }
+.ds-p-sm { padding: var(--ds-spacing-sm); }
+.ds-p-md { padding: var(--ds-spacing-md); }
+.ds-p-lg { padding: var(--ds-spacing-lg); }
+.ds-p-xl { padding: var(--ds-spacing-xl); }
+
+/* ==========================================
+   Tabler Integration & Overrides
+   ========================================== */
+
+/* Override Tabler card styles to match design system */
+.card {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+    border-radius: var(--ds-radius-lg);
+}
+
+.card:hover.ds-card-clickable {
+    transform: translateY(-4px);
+    border-color: var(--ds-accent-purple);
+    box-shadow: var(--ds-shadow-xl);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--ds-bg-tertiary);
+}
+
+/* Override Tabler page header */
+.page-header {
+    padding: var(--ds-spacing-xl) 0 var(--ds-spacing-md);
+    border-bottom: 1px solid var(--ds-bg-tertiary);
+    margin-bottom: var(--ds-spacing-2xl);
+}
+
+.page-title {
+    font-size: var(--ds-text-2xl);
+    font-weight: var(--ds-font-bold);
+    color: var(--ds-text-primary);
+}
+
+/* Override Tabler badges to match design system */
+.badge.badge-ds-primary {
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    color: white;
+}
+
+/* Override Tabler buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    border: none;
+    transition: all var(--ds-transition-fast);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ds-shadow-lg);
+}
+
+/* Table dark mode improvements */
+.table {
+    color: var(--ds-text-primary);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.table > :not(caption) > * > * {
+    border-bottom-color: var(--ds-bg-tertiary);
+}
+
+/* Form controls dark mode */
+.form-control,
+.form-select {
+    background: var(--ds-bg-tertiary);
+    border-color: var(--ds-bg-tertiary);
+    color: var(--ds-text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: var(--ds-bg-tertiary);
+    border-color: var(--ds-accent-purple);
+    color: var(--ds-text-primary);
+}
+
+/* Modal dark mode */
+.modal-content {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-bg-tertiary);
+}
+
+.modal-header {
+    border-bottom-color: var(--ds-bg-tertiary);
+}
+
+.modal-footer {
+    border-top-color: var(--ds-bg-tertiary);
+}
+
+/* ==========================================
+   Page-Specific Components (Harmonized)
+   ========================================== */
+
+/* User/Permission card hover effects */
+.user-card,
+.role-card {
+    transition: all var(--ds-transition-base);
+    cursor: pointer;
+}
+
+.user-card:hover,
+.role-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ds-shadow-xl);
+    border-color: var(--ds-accent-purple);
+}
+
+.user-card::before,
+.role-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ds-accent-cyan), var(--ds-accent-purple));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--ds-transition-base);
+}
+
+.user-card:hover::before,
+.role-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Search box */
+.search-box {
+    margin-bottom: var(--ds-spacing-md);
+}
+
+/* Badge lists */
+.role-badge,
+.permission-badge {
+    margin: var(--ds-spacing-xs);
+    display: inline-block;
+}
+
+/* Permission/role lists */
+.permission-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.permission-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.permission-list::-webkit-scrollbar-track {
+    background: var(--ds-bg-tertiary);
+}
+
+.permission-list::-webkit-scrollbar-thumb {
+    background: var(--ds-accent-purple);
+    border-radius: var(--ds-radius-full);
+}
+
+.permission-list::-webkit-scrollbar-thumb:hover {
+    background: var(--ds-accent-purple-hover);
+}
+
