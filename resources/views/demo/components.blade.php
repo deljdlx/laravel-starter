@@ -72,167 +72,19 @@
 
                 {{-- Section: Mermaid Diagrams --}}
                 <div class="container-xl" id="diagrams">
-                    <div class="row row-deck row-cards">
-                        <div class="col-12">
-                            <h2 class="page-title mb-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M9 9v6" /><path d="M15 9v6" /><path d="M9 12h6" /></svg>
-                                Mermaid Diagram Examples
-                            </h2>
-                            <p class="text-secondary mb-3">Interactive diagrams using Mermaid.js</p>
-                        </div>
-                        
-                        <!-- Flowchart -->
-                        <div class="col-lg-6">
-                            <x-card title="Flowchart Example">
-                                <div class="mermaid">
-                                    flowchart TD
-                                        A[Start] --> B{Is it working?}
-                                        B -->|Yes| C[Great!]
-                                        B -->|No| D[Debug]
-                                        D --> E[Fix Issue]
-                                        E --> B
-                                        C --> F[Deploy]
-                                        F --> G[End]
-                                </div>
-                            </x-card>
-                        </div>
-
-                        <!-- Sequence Diagram -->
-                        <div class="col-lg-6">
-                            <x-card title="Sequence Diagram Example">
-                                <div class="mermaid">
-                                    sequenceDiagram
-                                        participant User
-                                        participant Browser
-                                        participant Server
-                                        participant Database
-                                        
-                                        User->>Browser: Enter URL
-                                        Browser->>Server: HTTP Request
-                                        Server->>Database: Query Data
-                                        Database-->>Server: Return Data
-                                        Server-->>Browser: HTTP Response
-                                        Browser-->>User: Display Page
-                                </div>
-                            </x-card>
-                        </div>
-
-                        <!-- Class Diagram -->
-                        <div class="col-lg-6">
-                            <x-card title="Class Diagram Example">
-                                <div class="mermaid">
-                                    classDiagram
-                                        class Animal {
-                                            +String name
-                                            +int age
-                                            +makeSound()
-                                            +move()
-                                        }
-                                        class Dog {
-                                            +String breed
-                                            +bark()
-                                            +fetch()
-                                        }
-                                        class Cat {
-                                            +String color
-                                            +meow()
-                                            +scratch()
-                                        }
-                                        Animal <|-- Dog
-                                        Animal <|-- Cat
-                                </div>
-                            </x-card>
-                        </div>
-
-                        <!-- State Diagram -->
-                        <div class="col-lg-6">
-                            <x-card title="State Diagram Example">
-                                <div class="mermaid">
-                                    stateDiagram-v2
-                                        [*] --> Draft
-                                        Draft --> Review: Submit
-                                        Review --> Approved: Accept
-                                        Review --> Draft: Reject
-                                        Approved --> Published: Publish
-                                        Published --> Archived: Archive
-                                        Archived --> [*]
-                                </div>
-                            </x-card>
-                        </div>
-
-                        <!-- Gantt Chart -->
-                        <div class="col-lg-12">
-                            <x-card title="Gantt Chart Example">
-                                <div class="mermaid">
-                                    gantt
-                                        title Project Timeline
-                                        dateFormat  YYYY-MM-DD
-                                        section Planning
-                                        Requirements       :a1, 2024-01-01, 7d
-                                        Design            :a2, after a1, 10d
-                                        section Development
-                                        Backend           :b1, after a2, 14d
-                                        Frontend          :b2, after a2, 14d
-                                        section Testing
-                                        Unit Tests        :c1, after b1, 5d
-                                        Integration Tests :c2, after b2, 5d
-                                        section Deployment
-                                        Deploy to Staging :d1, after c2, 2d
-                                        Deploy to Prod    :d2, after d1, 1d
-                                </div>
-                            </x-card>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-lg-6">
-                            <x-card title="Pie Chart Example">
-                                <div class="mermaid">
-                                    pie title Technology Stack Distribution
-                                        "Laravel" : 35
-                                        "JavaScript" : 25
-                                        "HTML/CSS" : 20
-                                        "Database" : 15
-                                        "DevOps" : 5
-                                </div>
-                            </x-card>
-                        </div>
-
-                        <!-- Entity Relationship Diagram -->
-                        <div class="col-lg-6">
-                            <x-card title="Entity Relationship Diagram">
-                                <div class="mermaid">
-                                    erDiagram
-                                        USER ||--o{ ORDER : places
-                                        ORDER ||--|{ ORDER_ITEM : contains
-                                        PRODUCT ||--o{ ORDER_ITEM : "ordered in"
-                                        
-                                        USER {
-                                            int id PK
-                                            string name
-                                            string email
-                                            datetime created_at
-                                        }
-                                        ORDER {
-                                            int id PK
-                                            int user_id FK
-                                            decimal total
-                                            datetime created_at
-                                        }
-                                        PRODUCT {
-                                            int id PK
-                                            string name
-                                            decimal price
-                                            int stock
-                                        }
-                                        ORDER_ITEM {
-                                            int id PK
-                                            int order_id FK
-                                            int product_id FK
-                                            int quantity
-                                            decimal price
-                                        }
-                                </div>
-                            </x-card>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2 class="page-title mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M9 9v6" /><path d="M15 9v6" /><path d="M9 12h6" /></svg>
+                                    Mermaid Diagram Examples
+                                </h2>
+                                <p class="text-secondary mb-0">Interactive diagrams using Mermaid.js</p>
+                            </div>
+                            <a href="{{ route('demo.components.diagrams') }}" class="btn btn-primary btn-sm">
+                                View Full Page
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
