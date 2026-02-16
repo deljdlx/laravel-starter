@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/bin/php8.3",
+            "args": [
+                "/home/debian/__dev/devenv-php/src/laravel-starter/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

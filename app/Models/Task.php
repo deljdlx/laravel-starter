@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use ApiPlatform\Metadata\ApiResource;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -18,7 +17,6 @@ use Spatie\ModelStatus\HasStatuses;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  */
-#[ApiResource]
 class Task extends Model
 {
     /** @use HasFactory<\Database\Factories\TaskFactory> */

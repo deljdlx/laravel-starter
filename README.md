@@ -8,28 +8,16 @@ This Laravel starter project provides a solid foundation for building modern web
 
 ## Features
 
-- **Latest Laravel Framework** - Built on the latest version of Laravel
+- **Latest Laravel Framework** - Built on Laravel 12
 - **Clean Architecture** - Organized folder structure following Laravel conventions
 - **Development Ready** - Pre-configured for immediate development
-- **Modern Stack** - Includes Vite for asset bundling
+- **Modern Stack** - Includes Vite for asset bundling and Tailwind CSS
 - **Testing Setup** - PHPUnit configured and ready to use
-- **Rete.js Integration** - Visual node-based editor for creating interactive workflows
-
-```mermaid
-
-   erDiagram
-       USERS {
-           int id PK
-           varchar email
-       }
-       POSTS {
-           int id PK
-           int user_id FK
-           text body
-       }
-       USERS ||--o{ POSTS : "has many"
-
-```
+- **UI Components** - Tabler UI integration with ready-to-use components
+- **Charts & Visualization** - ECharts, ApexCharts for data visualization
+- **Interactive Components** - Alpine.js for reactive UI elements
+- **Form Validation** - Pre-configured validation with Laravel FormRequest
+- **User Management** - CRUD example with pagination and search
 
 
 ## Requirements
@@ -90,13 +78,19 @@ npm run dev
 
 ## Demo Pages
 
-### Rete.js Visual Node Editor
+The project includes several demo pages showcasing different features:
 
-Access the Rete.js demo at `/retejs-demo` to see an interactive visual programming interface featuring:
-- Node-based editor for creating workflows
-- Pre-configured example with mathematical operations
-- Drag-and-drop node positioning
-- Interactive connection visualization
+- **Home (`/`)** - Overview with links to all available routes
+- **Users CRUD (`/users`)** - Complete user management with pagination and search
+- **Component Demos (`/demo/components`)** - Interactive showcase of:
+  - **Alpine.js** - Reactive components and interactivity examples
+  - **Forms** - Tabler UI form components and validation
+  - **Diagrams** - Mermaid.js diagram rendering
+  - **ECharts** - Interactive data visualization charts
+  - **ApexCharts** - Modern charting library examples
+  - **Tabulator** - Advanced data table with sorting and filtering
+  - **Tabler UI** - Complete UI component library showcase
+- **Model Builder (`/dev/model-builder`)** - Visual tool for generating Laravel models, migrations, and factories
 
 ## Testing
 

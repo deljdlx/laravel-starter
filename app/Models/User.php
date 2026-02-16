@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use ApiPlatform\Metadata\ApiResource;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,8 +11,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-// Temporarily disabled due to ApiPlatform/ModelMetadata issue
-// #[ApiResource]
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */

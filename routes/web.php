@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Dev\ModelInspectorController;
 use App\Http\Controllers\Dev\ModelBuilderController;
-use App\Http\Controllers\Dev\SchemaMermaidController;
+use App\Http\Controllers\Dev\ModelInspectorController;
 use App\Http\Controllers\Dev\SchemaEditorController;
+use App\Http\Controllers\Dev\SchemaMermaidController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -12,29 +12,38 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $routes = collect(Route::getRoutes())
         ->filter(function ($route) {
-            return in_array('GET', $route->methods()) 
-                && !str_starts_with($route->uri(), 'api/') 
-                && !str_starts_with($route->uri(), 'livewire/')
-                && !str_starts_with($route->uri(), 'storage/')
-                && !in_array($route->uri(), ['up', 'sanctum/csrf-cookie', '/']);
+            return in_array('GET', $route->methods())
+                && ! str_starts_with($route->uri(), 'api/')
+                && ! str_starts_with($route->uri(), 'livewire/')
+                && ! str_starts_with($route->uri(), 'storage/')
+                && ! in_array($route->uri(), ['up', 'sanctum/csrf-cookie', '/']);
         })
         ->map(function ($route) {
             return [
-                'uri' => '/' . $route->uri(),
+                'uri' => '/'.$route->uri(),
                 'name' => $route->getName(),
                 'method' => implode('|', $route->methods()),
             ];
         })
         ->groupBy(function ($route) {
             $uri = $route['uri'];
-            if (str_starts_with($uri, '/dev/')) return 'Developer Tools';
-            if (str_starts_with($uri, '/demo/')) return 'Demo';
-            if (str_starts_with($uri, '/permissions')) return 'Permissions';
-            if (str_starts_with($uri, '/users')) return 'Users';
+            if (str_starts_with($uri, '/dev/')) {
+                return 'Developer Tools';
+            }
+            if (str_starts_with($uri, '/demo/')) {
+                return 'Demo';
+            }
+            if (str_starts_with($uri, '/permissions')) {
+                return 'Permissions';
+            }
+            if (str_starts_with($uri, '/users')) {
+                return 'Users';
+            }
+
             return 'Other';
         })
         ->sortKeys();
-    
+
     return view('welcome', compact('routes'));
 });
 
@@ -47,35 +56,66 @@ Route::prefix('demo')->name('demo.')->group(function () {
     Route::get('/components', function () {
         return view('demo.components');
     })->name('components');
-    
+
     // Alpine subpage
     Route::get('/components/alpine', function () {
         return view('demo.components.alpine');
     })->name('components.alpine');
-    
+
     // Forms subpage
     Route::get('/components/forms', function () {
         return view('demo.components.forms');
     })->name('components.forms');
-    
+
     // Diagrams subpage
     Route::get('/components/diagrams', function () {
         return view('demo.components.diagrams');
     })->name('components.diagrams');
-    
+
     // Echarts subpage
     Route::get('/components/echarts', function () {
         return view('demo.components.echarts');
     })->name('components.echarts');
-    
+
     // Tabulator subpage
     Route::get('/components/tabulator', function () {
         return view('demo.components.tabulator');
     })->name('components.tabulator');
-    
+
     // ApexCharts subpage
     Route::get('/components/apexcharts', [App\Http\Controllers\Demo\ApexChartsController::class, 'index'])
         ->name('components.apexcharts');
+
+    // Layouts demos
+    Route::prefix('layouts')->name('layouts.')->group(function () {
+        Route::get('/', function () {
+            return view('demo.layouts.index');
+        })->name('index');
+
+        Route::get('/single-column', function () {
+            return view('demo.layouts.single-column');
+        })->name('single-column');
+
+        Route::get('/two-columns', function () {
+            return view('demo.layouts.two-columns');
+        })->name('two-columns');
+
+        Route::get('/three-columns', function () {
+            return view('demo.layouts.three-columns');
+        })->name('three-columns');
+
+        Route::get('/grid', function () {
+            return view('demo.layouts.grid');
+        })->name('grid');
+
+        Route::get('/dashboard', function () {
+            return view('demo.layouts.dashboard');
+        })->name('dashboard');
+
+        Route::get('/list-detail', function () {
+            return view('demo.layouts.list-detail');
+        })->name('list-detail');
+    });
 });
 
 // Developer Tools Routes
@@ -88,15 +128,15 @@ Route::prefix('dev')->group(function () {
     // Model Inspector API
     Route::get('/api/models', [ModelInspectorController::class, 'index'])->name('dev.api.models.index');
     Route::get('/api/models/{model}', [ModelInspectorController::class, 'show'])->name('dev.api.models.show');
-    
+
     // Model Builder
     Route::get('/model-builder', [ModelBuilderController::class, 'show'])->name('dev.model-builder.index');
     Route::post('/model-builder/preview', [ModelBuilderController::class, 'preview'])->name('dev.model-builder.preview');
     Route::post('/model-builder', [ModelBuilderController::class, 'store'])->name('dev.model-builder.store');
-    
+
     // Schema Mermaid Diagram
     Route::get('/schema-mermaid', [SchemaMermaidController::class, 'show'])->name('dev.schema-mermaid.index');
-    
+
     // Schema Editor
     Route::get('/schema-editor', [SchemaEditorController::class, 'index'])->name('dev.schema-editor.index');
 });
