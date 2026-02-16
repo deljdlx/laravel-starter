@@ -48,7 +48,7 @@ class ModelInspectorController extends Controller
     {
         $modelClass = $this->findModelClass($modelName);
 
-        if (! $modelClass) {
+        if ($modelClass === null) {
             return response()->json([
                 'error' => "Model '{$modelName}' not found",
             ], 404);
@@ -75,6 +75,8 @@ class ModelInspectorController extends Controller
 
     /**
      * Discover all Eloquent models in the app/Models directory.
+     *
+     * @return array<int, class-string<Model>>
      */
     private function discoverModels(): array
     {
@@ -120,6 +122,8 @@ class ModelInspectorController extends Controller
 
     /**
      * Get basic information about a model.
+     *
+     * @return array<string, mixed>
      */
     private function getModelBasicInfo(Model $model): array
     {
@@ -135,6 +139,8 @@ class ModelInspectorController extends Controller
 
     /**
      * Get model attributes information.
+     *
+     * @return array<string, mixed>
      */
     private function getModelAttributes(Model $model): array
     {
@@ -148,6 +154,8 @@ class ModelInspectorController extends Controller
 
     /**
      * Get model casts with their types.
+     *
+     * @return array<int, array{attribute: string, type: string}>
      */
     private function getModelCasts(Model $model): array
     {
@@ -166,6 +174,8 @@ class ModelInspectorController extends Controller
 
     /**
      * Get model relationships.
+     *
+     * @return array<int, array{name: string, type: string, related_model: string}>
      */
     private function getModelRelationships(Model $model): array
     {
@@ -203,6 +213,8 @@ class ModelInspectorController extends Controller
 
     /**
      * Get database table schema.
+     *
+     * @return array<string, mixed>
      */
     private function getTableSchema(Model $model): array
     {
@@ -217,10 +229,10 @@ class ModelInspectorController extends Controller
             foreach ($columnListing as $column) {
                 $columns[] = [
                     'name' => $column['name'],
-                    'type' => $column['type_name'] ?? $column['type'],
+                    'type' => $column['type_name'],
                     'nullable' => $column['nullable'],
                     'default' => $column['default'],
-                    'auto_increment' => $column['auto_increment'] ?? false,
+                    'auto_increment' => $column['auto_increment'],
                 ];
             }
 

@@ -84,7 +84,9 @@ class PermissionController extends Controller
     {
         // Limit to 100 users to prevent performance issues
         // For a full user management interface, pagination should be implemented
-        $users = User::with(['roles.permissions'])->limit(100)->get();
+        $query = User::query()->with(['roles.permissions']);
+        $query->getQuery()->limit(100);
+        $users = $query->get();
         $totalCount = User::count();
 
         return response()->json([

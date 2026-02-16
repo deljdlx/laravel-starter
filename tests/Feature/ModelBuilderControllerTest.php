@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\File;
+use Tests\TestCase;
 
 class ModelBuilderControllerTest extends TestCase
 {
@@ -13,7 +13,7 @@ class ModelBuilderControllerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         // Clean up any test-generated files before each test
         $this->cleanupGeneratedFiles();
     }
@@ -22,7 +22,7 @@ class ModelBuilderControllerTest extends TestCase
     {
         // Clean up after each test
         $this->cleanupGeneratedFiles();
-        
+
         parent::tearDown();
     }
 
@@ -50,7 +50,7 @@ class ModelBuilderControllerTest extends TestCase
     public function test_model_builder_page_loads(): void
     {
         $response = $this->withoutVite()->get('/dev/model-builder');
-        
+
         $response->assertStatus(200);
         $response->assertViewIs('dev.model-builder.index');
         $response->assertViewHas('models');
@@ -59,11 +59,11 @@ class ModelBuilderControllerTest extends TestCase
     public function test_model_builder_page_lists_available_models(): void
     {
         $response = $this->withoutVite()->get('/dev/model-builder');
-        
+
         $models = $response->viewData('models');
-        
-        $this->assertIsArray($models);
-        $this->assertContains('User', $models);
+
+        static::assertIsArray($models);
+        static::assertContains('User', $models);
     }
 
     public function test_preview_endpoint_returns_generated_code(): void
@@ -94,23 +94,27 @@ class ModelBuilderControllerTest extends TestCase
             'summary',
         ]);
 
+        /** @var array<int, array<string, string>> $operations */
         $operations = $response->json('operations');
-        $this->assertNotEmpty($operations);
-        
+        static::assertNotEmpty($operations);
+
         // Verify model source contains expected elements
+        /** @var array<string, string> $modelOp */
         $modelOp = collect($operations)->firstWhere('type', 'model');
-        $this->assertStringContainsString('class TestProduct extends Model', $modelOp['source']);
-        $this->assertStringContainsString('use HasFactory', $modelOp['source']);
-        $this->assertStringContainsString('HasUlids', $modelOp['source']);
-        
+        static::assertStringContainsString('class TestProduct extends Model', $modelOp['source']);
+        static::assertStringContainsString('use HasFactory', $modelOp['source']);
+        static::assertStringContainsString('HasUlids', $modelOp['source']);
+
         // Verify migration source
+        /** @var array<string, string> $migrationOp */
         $migrationOp = collect($operations)->firstWhere('type', 'migration');
-        $this->assertStringContainsString('Schema::create(\'test_products\'', $migrationOp['source']);
-        $this->assertStringContainsString('$table->ulid(\'id\')->primary()', $migrationOp['source']);
-        
+        static::assertStringContainsString('Schema::create(\'test_products\'', $migrationOp['source']);
+        static::assertStringContainsString('$table->ulid(\'id\')->primary()', $migrationOp['source']);
+
         // Verify factory source
+        /** @var array<string, string> $factoryOp */
         $factoryOp = collect($operations)->firstWhere('type', 'factory');
-        $this->assertStringContainsString('class TestProductFactory extends Factory', $factoryOp['source']);
+        static::assertStringContainsString('class TestProductFactory extends Factory', $factoryOp['source']);
     }
 
     public function test_validation_requires_model_name(): void
@@ -179,13 +183,13 @@ class ModelBuilderControllerTest extends TestCase
         $response->assertJson(['success' => true]);
 
         // Verify model file was created
-        $this->assertFileExists(app_path('Models/TestProduct.php'));
-        
+        static::assertFileExists(app_path('Models/TestProduct.php'));
+
         $modelContent = File::get(app_path('Models/TestProduct.php'));
-        $this->assertStringContainsString('class TestProduct extends Model', $modelContent);
-        $this->assertStringContainsString('use HasFactory, HasUlids', $modelContent);
-        $this->assertStringContainsString('\'name\'', $modelContent);
-        $this->assertStringContainsString('\'price\'', $modelContent);
+        static::assertStringContainsString('class TestProduct extends Model', $modelContent);
+        static::assertStringContainsString('use HasFactory, HasUlids', $modelContent);
+        static::assertStringContainsString('\'name\'', $modelContent);
+        static::assertStringContainsString('\'price\'', $modelContent);
     }
 
     public function test_generates_migration_when_requested(): void
@@ -214,12 +218,12 @@ class ModelBuilderControllerTest extends TestCase
 
         // Verify migration file was created
         $migrations = File::glob(database_path('migrations/*_create_test_products_table.php'));
-        $this->assertCount(1, $migrations);
-        
+        static::assertCount(1, $migrations);
+
         $migrationContent = File::get($migrations[0]);
-        $this->assertStringContainsString('Schema::create(\'test_products\'', $migrationContent);
-        $this->assertStringContainsString('$table->ulid(\'id\')->primary()', $migrationContent);
-        $this->assertStringContainsString('$table->string(\'name\')', $migrationContent);
+        static::assertStringContainsString('Schema::create(\'test_products\'', $migrationContent);
+        static::assertStringContainsString('$table->ulid(\'id\')->primary()', $migrationContent);
+        static::assertStringContainsString('$table->string(\'name\')', $migrationContent);
     }
 
     public function test_generates_factory_when_requested(): void
@@ -247,12 +251,12 @@ class ModelBuilderControllerTest extends TestCase
         $response->assertStatus(200);
 
         // Verify factory file was created
-        $this->assertFileExists(database_path('factories/TestProductFactory.php'));
-        
+        static::assertFileExists(database_path('factories/TestProductFactory.php'));
+
         $factoryContent = File::get(database_path('factories/TestProductFactory.php'));
-        $this->assertStringContainsString('class TestProductFactory extends Factory', $factoryContent);
+        static::assertStringContainsString('class TestProductFactory extends Factory', $factoryContent);
         // Modern Laravel factories use @extends annotation instead of protected $model
-        $this->assertStringContainsString('@extends', $factoryContent);
+        static::assertStringContainsString('@extends', $factoryContent);
     }
 
     public function test_generates_model_with_foreign_key_relationship(): void
@@ -284,17 +288,17 @@ class ModelBuilderControllerTest extends TestCase
         $response->assertStatus(200);
 
         $modelContent = File::get(app_path('Models/TestProduct.php'));
-        
+
         // Verify relationship method is generated
-        $this->assertStringContainsString('public function user(): BelongsTo', $modelContent);
-        $this->assertStringContainsString('return $this->belongsTo(User::class)', $modelContent);
-        
+        static::assertStringContainsString('public function user(): BelongsTo', $modelContent);
+        static::assertStringContainsString('return $this->belongsTo(User::class)', $modelContent);
+
         // Verify migration has foreign key
         $migrations = File::glob(database_path('migrations/*_create_test_products_table.php'));
         $migrationContent = File::get($migrations[0]);
-        $this->assertStringContainsString('$table->foreignUlid(\'user_id\')', $migrationContent);
-        $this->assertStringContainsString('onDelete(\'cascade\')', $migrationContent);
-        $this->assertStringContainsString('onUpdate(\'cascade\')', $migrationContent);
+        static::assertStringContainsString('$table->foreignUlid(\'user_id\')', $migrationContent);
+        static::assertStringContainsString('onDelete(\'cascade\')', $migrationContent);
+        static::assertStringContainsString('onUpdate(\'cascade\')', $migrationContent);
     }
 
     public function test_generates_pivot_migration_for_many_to_many(): void
@@ -327,18 +331,18 @@ class ModelBuilderControllerTest extends TestCase
 
         // Verify belongsToMany relationship in model
         $modelContent = File::get(app_path('Models/TestProduct.php'));
-        $this->assertStringContainsString('public function users(): BelongsToMany', $modelContent);
-        $this->assertStringContainsString('return $this->belongsToMany(User::class)', $modelContent);
+        static::assertStringContainsString('public function users(): BelongsToMany', $modelContent);
+        static::assertStringContainsString('return $this->belongsToMany(User::class)', $modelContent);
 
         // Verify pivot migration was created
         $pivotMigrations = File::glob(database_path('migrations/*_create_test_product_user_table.php'));
-        $this->assertGreaterThanOrEqual(1, count($pivotMigrations), 'Pivot migration should be created');
-        
+        static::assertGreaterThanOrEqual(1, count($pivotMigrations), 'Pivot migration should be created');
+
         $pivotContent = File::get($pivotMigrations[0]);
-        $this->assertStringContainsString('Schema::create(\'test_product_user\'', $pivotContent);
-        $this->assertStringContainsString('$table->foreignUlid(\'test_product_id\')', $pivotContent);
-        $this->assertStringContainsString('$table->foreignUlid(\'user_id\')', $pivotContent);
-        $this->assertStringContainsString('$table->primary([\'test_product_id\', \'user_id\'])', $pivotContent);
+        static::assertStringContainsString('Schema::create(\'test_product_user\'', $pivotContent);
+        static::assertStringContainsString('$table->foreignUlid(\'test_product_id\')', $pivotContent);
+        static::assertStringContainsString('$table->foreignUlid(\'user_id\')', $pivotContent);
+        static::assertStringContainsString('$table->primary([\'test_product_id\', \'user_id\'])', $pivotContent);
     }
 
     public function test_generates_model_with_has_statuses_trait(): void
@@ -366,8 +370,8 @@ class ModelBuilderControllerTest extends TestCase
         $response->assertStatus(200);
 
         $modelContent = File::get(app_path('Models/TestProduct.php'));
-        $this->assertStringContainsString('use Spatie\ModelStatus\HasStatuses', $modelContent);
-        $this->assertStringContainsString('use HasFactory, HasUlids, HasStatuses', $modelContent);
+        static::assertStringContainsString('use Spatie\ModelStatus\HasStatuses', $modelContent);
+        static::assertStringContainsString('use HasFactory, HasUlids, HasStatuses', $modelContent);
     }
 
     public function test_generates_model_with_soft_deletes(): void
@@ -395,13 +399,13 @@ class ModelBuilderControllerTest extends TestCase
         $response->assertStatus(200);
 
         $modelContent = File::get(app_path('Models/TestProduct.php'));
-        $this->assertStringContainsString('use Illuminate\Database\Eloquent\SoftDeletes', $modelContent);
-        $this->assertStringContainsString('use HasFactory, HasUlids, SoftDeletes', $modelContent);
+        static::assertStringContainsString('use Illuminate\Database\Eloquent\SoftDeletes', $modelContent);
+        static::assertStringContainsString('use HasFactory, HasUlids, SoftDeletes', $modelContent);
 
         // Verify migration has softDeletes
         $migrations = File::glob(database_path('migrations/*_create_test_products_table.php'));
         $migrationContent = File::get($migrations[0]);
-        $this->assertStringContainsString('$table->softDeletes()', $migrationContent);
+        static::assertStringContainsString('$table->softDeletes()', $migrationContent);
     }
 
     public function test_prevents_overwriting_existing_model(): void
@@ -424,7 +428,7 @@ class ModelBuilderControllerTest extends TestCase
 
         $response->assertStatus(422);
         // The model already exists, so validation should fail
-        $this->assertTrue($response->status() === 422);
+        static::assertSame(422, $response->baseResponse->getStatusCode());
     }
 
     public function test_validates_attribute_names(): void
@@ -486,9 +490,10 @@ class ModelBuilderControllerTest extends TestCase
             ],
         ]);
 
+        /** @var array<string, string> $files */
         $files = $response->json('files');
-        $this->assertStringContainsString('app/Models/TestProduct.php', $files['model']);
-        $this->assertStringContainsString('database/migrations', $files['migration']);
-        $this->assertStringContainsString('database/factories/TestProductFactory.php', $files['factory']);
+        static::assertStringContainsString('app/Models/TestProduct.php', $files['model']);
+        static::assertStringContainsString('database/migrations', $files['migration']);
+        static::assertStringContainsString('database/factories/TestProductFactory.php', $files['factory']);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -12,8 +11,10 @@ class SelectInput extends Component
 
     public string $name;
 
+    /** @var array<string|int, string> */
     public array $options;
 
+    /** @var string|array<int, string>|null */
     public string|array|null $value;
 
     public ?string $placeholder;
@@ -32,6 +33,9 @@ class SelectInput extends Component
 
     /**
      * Create a new component instance.
+     *
+     * @param  array<string|int, string>  $options
+     * @param  string|array<int, string>|null  $value
      */
     public function __construct(
         string $name,
@@ -69,18 +73,18 @@ class SelectInput extends Component
 
         if ($oldValue !== null) {
             if (is_array($oldValue)) {
-                return in_array($value, $oldValue);
+                return in_array($value, $oldValue, true);
             }
 
-            return (string) $oldValue === (string) $value;
+            return $oldValue === $value;
         }
 
         if ($this->value !== null) {
             if (is_array($this->value)) {
-                return in_array($value, $this->value);
+                return in_array($value, $this->value, true);
             }
 
-            return (string) $this->value === (string) $value;
+            return $this->value === $value;
         }
 
         return false;
@@ -89,7 +93,7 @@ class SelectInput extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(): View|string
     {
         return view('components.select-input');
     }

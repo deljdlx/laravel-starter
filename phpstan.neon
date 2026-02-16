@@ -1,0 +1,26 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+
+parameters:
+    level: 9
+    paths:
+        - app
+        - bootstrap
+        - config
+        - database
+        - routes
+        - tests
+    tmpDir: storage/phpstan
+    checkMissingCallableSignature: true
+    checkUninitializedProperties: true
+    reportUnmatchedIgnoredErrors: true
+    strictRules:
+        allRules: true
+    ignoreErrors: []
+    excludePaths:
+        - bootstrap/cache/*
+        - storage/*
+        - vendor/*
+        - database/migrations/2025_12_02_151604_create_permission_tables.php

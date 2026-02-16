@@ -38,13 +38,15 @@ class ModelInspectorTest extends TestCase
             'count',
         ]);
 
-        // Verify we have at least the User and Task models
+        /** @var array<string, mixed> $data */
         $data = $response->json();
-        $this->assertGreaterThanOrEqual(2, $data['count']);
+        static::assertGreaterThanOrEqual(2, $data['count']);
 
-        $modelNames = array_column($data['models'], 'short_name');
-        $this->assertContains('User', $modelNames);
-        $this->assertContains('Task', $modelNames);
+        /** @var array<int, array<string, mixed>> $models */
+        $models = $data['models'];
+        $modelNames = array_column($models, 'short_name');
+        static::assertContains('User', $modelNames);
+        static::assertContains('Task', $modelNames);
     }
 
     /**
@@ -75,11 +77,12 @@ class ModelInspectorTest extends TestCase
             ],
         ]);
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
-        $this->assertEquals('User', $data['short_name']);
-        $this->assertEquals('App\\Models\\User', $data['class']);
-        $this->assertEquals('users', $data['table']);
-        $this->assertEquals('id', $data['primary_key']);
+        static::assertEquals('User', $data['short_name']);
+        static::assertEquals('App\\Models\\User', $data['class']);
+        static::assertEquals('users', $data['table']);
+        static::assertEquals('id', $data['primary_key']);
     }
 
     /**
@@ -100,20 +103,24 @@ class ModelInspectorTest extends TestCase
     {
         $response = $this->getJson('/dev/api/models/User');
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
 
+        /** @var array<string, mixed> $attributes */
+        $attributes = $data['attributes'];
+
         // Check fillable attributes
-        $this->assertIsArray($data['attributes']['fillable']);
-        $this->assertContains('name', $data['attributes']['fillable']);
-        $this->assertContains('email', $data['attributes']['fillable']);
+        static::assertIsArray($attributes['fillable']);
+        static::assertContains('name', $attributes['fillable']);
+        static::assertContains('email', $attributes['fillable']);
 
         // Check hidden attributes
-        $this->assertIsArray($data['attributes']['hidden']);
-        $this->assertContains('password', $data['attributes']['hidden']);
+        static::assertIsArray($attributes['hidden']);
+        static::assertContains('password', $attributes['hidden']);
 
         // Check casts
-        $this->assertIsArray($data['attributes']['casts']);
-        $this->assertNotEmpty($data['attributes']['casts']);
+        static::assertIsArray($attributes['casts']);
+        static::assertNotEmpty($attributes['casts']);
     }
 
     /**
@@ -123,24 +130,31 @@ class ModelInspectorTest extends TestCase
     {
         $response = $this->getJson('/dev/api/models/User');
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
 
+        /** @var array<string, mixed> $schema */
+        $schema = $data['schema'];
+
         // Check schema structure exists
-        $this->assertArrayHasKey('schema', $data);
-        $this->assertArrayHasKey('columns', $data['schema']);
-        $this->assertArrayHasKey('indexes', $data['schema']);
+        static::assertArrayHasKey('schema', $data);
+        static::assertArrayHasKey('columns', $schema);
+        static::assertArrayHasKey('indexes', $schema);
 
         // Check that columns is an array (may be empty if DB not migrated in test)
-        $this->assertIsArray($data['schema']['columns']);
-        $this->assertIsArray($data['schema']['indexes']);
+        static::assertIsArray($schema['columns']);
+        static::assertIsArray($schema['indexes']);
+
+        /** @var array<int, array<string, mixed>> $columns */
+        $columns = $schema['columns'];
 
         // If columns exist, verify their structure
-        if (! empty($data['schema']['columns'])) {
-            $column = $data['schema']['columns'][0];
-            $this->assertArrayHasKey('name', $column);
-            $this->assertArrayHasKey('type', $column);
-            $this->assertArrayHasKey('nullable', $column);
-            $this->assertArrayHasKey('default', $column);
+        if (count($columns) > 0) {
+            $column = $columns[0];
+            static::assertArrayHasKey('name', $column);
+            static::assertArrayHasKey('type', $column);
+            static::assertArrayHasKey('nullable', $column);
+            static::assertArrayHasKey('default', $column);
         }
     }
 
@@ -151,15 +165,21 @@ class ModelInspectorTest extends TestCase
     {
         $response = $this->getJson('/dev/api/models/User');
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
 
-        $this->assertIsArray($data['relationships']);
-        $this->assertNotEmpty($data['relationships']);
+        $relationships = $data['relationships'];
+
+        static::assertIsArray($relationships);
+        static::assertNotEmpty($relationships);
+
+        /** @var array<int, array<string, mixed>> $typedRelationships */
+        $typedRelationships = $relationships;
 
         // Verify relationship structure
-        $relationship = $data['relationships'][0];
-        $this->assertArrayHasKey('name', $relationship);
-        $this->assertArrayHasKey('type', $relationship);
-        $this->assertArrayHasKey('related_model', $relationship);
+        $relationship = $typedRelationships[0];
+        static::assertArrayHasKey('name', $relationship);
+        static::assertArrayHasKey('type', $relationship);
+        static::assertArrayHasKey('related_model', $relationship);
     }
 }

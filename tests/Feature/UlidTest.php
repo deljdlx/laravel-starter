@@ -23,9 +23,11 @@ class UlidTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->assertIsString($user->id);
-        $this->assertEquals(26, strlen($user->id));
-        $this->assertMatchesRegularExpression(self::ULID_PATTERN, $user->id);
+        /** @var mixed $id */
+        $id = $user->getKey();
+        static::assertIsString($id);
+        static::assertEquals(26, strlen($id));
+        static::assertMatchesRegularExpression(self::ULID_PATTERN, $id);
     }
 
     /**
@@ -35,9 +37,11 @@ class UlidTest extends TestCase
     {
         $task = Task::factory()->create();
 
-        $this->assertIsString($task->id);
-        $this->assertEquals(26, strlen($task->id));
-        $this->assertMatchesRegularExpression(self::ULID_PATTERN, $task->id);
+        /** @var mixed $id */
+        $id = $task->getKey();
+        static::assertIsString($id);
+        static::assertEquals(26, strlen($id));
+        static::assertMatchesRegularExpression(self::ULID_PATTERN, $id);
     }
 
     /**
@@ -48,10 +52,15 @@ class UlidTest extends TestCase
         $user = User::factory()->create();
         $task = Task::factory()->create(['user_id' => $user->id]);
 
-        $this->assertIsString($task->user_id);
-        $this->assertEquals(26, strlen($task->user_id));
-        $this->assertEquals($user->id, $task->user_id);
-        $this->assertEquals($user->id, $task->user->id);
+        /** @var mixed $userId */
+        $userId = $task->getAttribute('user_id');
+        static::assertIsString($userId);
+        static::assertEquals(26, strlen($userId));
+        static::assertEquals($user->id, $task->user_id);
+
+        $taskUser = $task->user;
+        static::assertNotNull($taskUser);
+        static::assertEquals($user->id, $taskUser->id);
     }
 
     /**
@@ -64,7 +73,7 @@ class UlidTest extends TestCase
         $user2 = User::factory()->create();
 
         // ULIDs are designed to be sortable, so the second one should be "greater"
-        $this->assertGreaterThan($user1->id, $user2->id);
+        static::assertGreaterThan($user1->id, $user2->id);
     }
 
     /**
@@ -77,6 +86,6 @@ class UlidTest extends TestCase
         $ids = $users->pluck('id')->toArray();
         $uniqueIds = array_unique($ids);
 
-        $this->assertCount(10, $uniqueIds);
+        static::assertCount(10, $uniqueIds);
     }
 }

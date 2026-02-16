@@ -10,25 +10,29 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $routes = collect(Route::getRoutes())
-        ->filter(function ($route) {
-            return in_array('GET', $route->methods())
+    /** @var array<int, RoutingRoute> $allRoutes */
+    $allRoutes = Route::getRoutes()->getRoutes();
+
+    $routes = collect($allRoutes)
+        ->filter(function (RoutingRoute $route): bool {
+            return in_array('GET', $route->methods(), true)
                 && ! str_starts_with($route->uri(), 'api/')
                 && ! str_starts_with($route->uri(), 'livewire/')
                 && ! str_starts_with($route->uri(), 'storage/')
-                && ! in_array($route->uri(), ['up', 'sanctum/csrf-cookie', '/']);
+                && ! in_array($route->uri(), ['up', 'sanctum/csrf-cookie', '/'], true);
         })
-        ->map(function ($route) {
+        ->map(function (RoutingRoute $route): array {
             return [
                 'uri' => '/'.$route->uri(),
                 'name' => $route->getName(),
                 'method' => implode('|', $route->methods()),
             ];
         })
-        ->groupBy(function ($route) {
+        ->groupBy(function (array $route): string {
             $uri = $route['uri'];
             if (str_starts_with($uri, '/dev/')) {
                 return 'Developer Tools';
@@ -55,7 +59,7 @@ Route::get('/form', function () {
 });
 
 // Demo Routes
-Route::prefix('demo')->name('demo.')->group(function () {
+Route::prefix('demo')->name('demo.')->group(function (): void {
     Route::get('/components', function () {
         return view('demo.components');
     })->name('components');
@@ -90,7 +94,7 @@ Route::prefix('demo')->name('demo.')->group(function () {
         ->name('components.apexcharts');
 
     // Layouts demos
-    Route::prefix('layouts')->name('layouts.')->group(function () {
+    Route::prefix('layouts')->name('layouts.')->group(function (): void {
         Route::get('/', function () {
             return view('demo.layouts.index');
         })->name('index');
@@ -122,7 +126,7 @@ Route::prefix('demo')->name('demo.')->group(function () {
 });
 
 // Developer Tools Routes
-Route::prefix('dev')->group(function () {
+Route::prefix('dev')->group(function (): void {
     // Model Inspector UI
     Route::get('/models', function () {
         return view('dev.models.index');
@@ -144,35 +148,6 @@ Route::prefix('dev')->group(function () {
     Route::get('/schema-editor', [SchemaEditorController::class, 'index'])->name('dev.schema-editor.index');
 });
 
-// Permissions Management Routes
-Route::prefix('permissions')->name('permissions.')->middleware(['web'])->group(function () {
-    // UI
-    Route::get('/', function () {
-        return view('permissions.index');
-    })->name('index');
-
-    // API Routes for Roles
-    Route::prefix('api/roles')->name('api.roles.')->group(function () {
-        Route::get('/', [RoleController::class, 'index'])->name('index');
-        Route::post('/', [RoleController::class, 'store'])->name('store');
-        Route::get('/{role}', [RoleController::class, 'show'])->name('show');
-        Route::put('/{role}', [RoleController::class, 'update'])->name('update');
-        Route::delete('/{role}', [RoleController::class, 'destroy'])->name('destroy');
-    });
-
-    // API Routes for Permissions
-    Route::prefix('api/permissions')->name('api.permissions.')->group(function () {
-        Route::get('/', [PermissionController::class, 'index'])->name('index');
-        Route::post('/', [PermissionController::class, 'store'])->name('store');
-        Route::get('/{permission}', [PermissionController::class, 'show'])->name('show');
-        Route::put('/{permission}', [PermissionController::class, 'update'])->name('update');
-        Route::delete('/{permission}', [PermissionController::class, 'destroy'])->name('destroy');
-    });
-
-    // API Routes for Users
-    Route::get('/api/users', [PermissionController::class, 'users'])->name('api.users.index');
-});
-
 Route::get('/demo/components/tabler', function () {
     return view('demo.components.tabler');
 })->name('demo.components.tabler');
@@ -181,18 +156,20 @@ Route::get('/demo/components/tabler', function () {
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function (): void {
     Route::get('/', [AdminController::class, 'index'])->name('index');
 
     // Users Management Routes within Admin
-    Route::prefix('users')->name('users.')->group(function () {
+    Route::prefix('users')->name('users.')->group(function (): void {
         // UI
         Route::get('/', function () {
             return view('users.index');
         })->name('index');
 
+        Route::get('/{user}', [UserController::class, 'showView'])->name('show');
+
         // API Routes for Users
-        Route::prefix('api')->name('api.')->group(function () {
+        Route::prefix('api')->name('api.')->group(function (): void {
             Route::get('/', [UserController::class, 'index'])->name('index');
             Route::get('/search', [UserController::class, 'search'])->name('search');
             Route::post('/', [UserController::class, 'store'])->name('store');
@@ -201,10 +178,41 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
             Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
         });
     });
+
+    // Permissions Management Routes within Admin
+    Route::prefix('permissions')->name('permissions.')->group(function (): void {
+        // UI
+        Route::get('/', function () {
+            return view('permissions.index');
+        })->name('index');
+
+        // API Routes for Roles
+        Route::prefix('api/roles')->name('api.roles.')->group(function (): void {
+            Route::get('/', [RoleController::class, 'index'])->name('index');
+            Route::post('/', [RoleController::class, 'store'])->name('store');
+            Route::get('/{role}', [RoleController::class, 'show'])->name('show');
+            Route::put('/{role}', [RoleController::class, 'update'])->name('update');
+            Route::delete('/{role}', [RoleController::class, 'destroy'])->name('destroy');
+        });
+
+        // API Routes for Permissions
+        Route::prefix('api/permissions')->name('api.permissions.')->group(function (): void {
+            Route::get('/', [PermissionController::class, 'index'])->name('index');
+            Route::post('/', [PermissionController::class, 'store'])->name('store');
+            Route::get('/{permission}', [PermissionController::class, 'show'])->name('show');
+            Route::put('/{permission}', [PermissionController::class, 'update'])->name('update');
+            Route::delete('/{permission}', [PermissionController::class, 'destroy'])->name('destroy');
+        });
+
+        // API Routes for Users in Permissions
+        Route::prefix('api/users')->name('api.users.')->group(function (): void {
+            Route::get('/', [PermissionController::class, 'users'])->name('index');
+        });
+    });
 });
 
 // Authentication Routes
-Route::middleware('guest')->group(function () {
+Route::middleware('guest')->group(function (): void {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');

@@ -12,63 +12,82 @@ class ModelGeneratorService
     private function loadTemplate(string $name): string
     {
         $path = resource_path("templates/model-builder/{$name}.stub");
-        
+
         if (! file_exists($path)) {
             throw new \Exception("Template file not found: {$path}");
         }
-        
-        return file_get_contents($path);
+
+        $contents = file_get_contents($path);
+
+        if ($contents === false) {
+            throw new \Exception("Failed to read template file: {$path}");
+        }
+
+        return $contents;
     }
-    
+
     /**
      * Replace placeholders in template.
+     *
+     * @param  array<string, string>  $data
      */
     private function renderTemplate(string $template, array $data): string
     {
         foreach ($data as $key => $value) {
             $template = str_replace("{{ {$key} }}", $value, $template);
         }
-        
+
         return $template;
     }
-    
+
     /**
      * Generate model source code using template.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
      */
     public function generateModelSource(string $modelName, array $attributes, bool $timestamps, bool $softDeletes, bool $hasStatuses): string
     {
         $fillable = [];
+        /** @var array<string, string> $casts */
         $casts = [];
         $relations = [];
 
         foreach ($attributes as $attribute) {
-            if (! empty($attribute['name'])) {
-                $fillable[] = $attribute['name'];
+            $nameRaw = $attribute['name'] ?? '';
+            $name = is_string($nameRaw) ? $nameRaw : '';
+            $typeRaw = $attribute['type'] ?? '';
+            $type = is_string($typeRaw) ? $typeRaw : '';
+
+            if ($name !== '') {
+                $fillable[] = $name;
             }
 
             // Add casts for specific types
-            if (! empty($attribute['name']) && in_array($attribute['type'], ['boolean', 'integer', 'float', 'decimal', 'date', 'datetime', 'timestamp', 'json'])) {
-                $castType = $attribute['type'];
+            if ($name !== '' && in_array($type, ['boolean', 'integer', 'float', 'decimal', 'date', 'datetime', 'timestamp', 'json'], true)) {
+                $castType = $type;
                 if ($castType === 'timestamp') {
                     $castType = 'datetime';
                 }
-                $casts[$attribute['name']] = $castType;
+                $casts[$name] = $castType;
             }
 
             // Generate relationships
-            if (isset($attribute['is_foreign_key']) && $attribute['is_foreign_key'] && ! empty($attribute['foreign_model'])) {
+            $isForeignKey = ($attribute['is_foreign_key'] ?? false) === true;
+            $foreignModelRaw = $attribute['foreign_model'] ?? '';
+            $foreignModel = is_string($foreignModelRaw) ? $foreignModelRaw : '';
+            if ($isForeignKey && $foreignModel !== '') {
                 $relations[] = $this->generateRelationMethod($attribute);
             }
         }
 
-        $fillableStr = ! empty($fillable) ? "'".implode("',\n        '", $fillable)."'" : '';
+        $fillableStr = $fillable !== [] ? "'".implode("',\n        '", $fillable)."'" : '';
         $castsStr = $this->formatCastsArray($casts);
         $relationsStr = implode("\n\n", $relations);
 
         $uses = ['use Illuminate\Database\Eloquent\Model'];
         $uses[] = 'use Illuminate\Database\Eloquent\Concerns\HasUlids';
         $uses[] = 'use Illuminate\Database\Eloquent\Factories\HasFactory';
-        if (! empty($relations)) {
+        if ($relations !== []) {
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\BelongsTo';
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasOne';
             $uses[] = 'use Illuminate\Database\Eloquent\Relations\HasMany';
@@ -93,7 +112,7 @@ class ModelGeneratorService
         $timestampsProperty = ! $timestamps ? "\n    public \$timestamps = false;" : '';
 
         $template = $this->loadTemplate('model');
-        
+
         return $this->renderTemplate($template, [
             'modelName' => $modelName,
             'uses' => $usesStr,
@@ -104,9 +123,11 @@ class ModelGeneratorService
             'relations' => $relationsStr,
         ]);
     }
-    
+
     /**
      * Generate migration source code using template.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
      */
     public function generateMigrationSource(string $modelName, array $attributes, bool $timestamps, bool $softDeletes): string
     {
@@ -114,7 +135,7 @@ class ModelGeneratorService
 
         $columns = [];
         foreach ($attributes as $attribute) {
-            if (! empty($attribute['name'])) {
+            if (($attribute['name'] ?? '') !== '') {
                 $column = $this->generateColumnDefinition($attribute);
                 $columns[] = $column;
             }
@@ -125,7 +146,7 @@ class ModelGeneratorService
         $softDeletesStr = $softDeletes ? "\n            \$table->softDeletes();" : '';
 
         $template = $this->loadTemplate('migration');
-        
+
         return $this->renderTemplate($template, [
             'tableName' => $tableName,
             'columns' => $columnsStr,
@@ -133,9 +154,11 @@ class ModelGeneratorService
             'softDeletes' => $softDeletesStr,
         ]);
     }
-    
+
     /**
      * Generate factory source code using template.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
      */
     public function generateFactorySource(string $modelName, array $attributes): string
     {
@@ -143,12 +166,14 @@ class ModelGeneratorService
         $definitions = [];
 
         foreach ($attributes as $attribute) {
-            if (empty($attribute['name'])) {
+            $nameRaw = $attribute['name'] ?? '';
+            $name = is_string($nameRaw) ? $nameRaw : '';
+            if ($name === '') {
                 continue;
             }
 
-            $name = $attribute['name'];
-            $type = $attribute['type'];
+            $typeRaw = $attribute['type'] ?? '';
+            $type = is_string($typeRaw) ? $typeRaw : '';
 
             $faker = match ($type) {
                 'string' => 'fake()->sentence(3)',
@@ -169,14 +194,14 @@ class ModelGeneratorService
         $definitionsStr = implode(",\n", $definitions);
 
         $template = $this->loadTemplate('factory');
-        
+
         return $this->renderTemplate($template, [
             'modelName' => $modelName,
             'factoryName' => $factoryName,
             'definitions' => $definitionsStr,
         ]);
     }
-    
+
     /**
      * Generate pivot migration source code using template.
      */
@@ -188,7 +213,7 @@ class ModelGeneratorService
         $foreignTable = Str::snake(Str::plural($foreignModel));
 
         $template = $this->loadTemplate('pivot-migration');
-        
+
         return $this->renderTemplate($template, [
             'pivotTableName' => $pivotTableName,
             'modelColumn' => $modelColumn,
@@ -197,32 +222,42 @@ class ModelGeneratorService
             'foreignTable' => $foreignTable,
         ]);
     }
-    
+
     /**
      * Generate column definition for migration.
+     *
+     * @param  array<string, mixed>  $attribute
      */
     public function generateColumnDefinition(array $attribute): string
     {
-        $name = $attribute['name'];
-        $type = $attribute['type'];
-        $isForeignKey = $attribute['is_foreign_key'] ?? false;
-        $nullable = $attribute['nullable'] ?? false;
-        $indexType = $attribute['index_type'] ?? 'none';
+        $nameRaw = $attribute['name'] ?? '';
+        $name = is_string($nameRaw) ? $nameRaw : '';
+        $typeRaw = $attribute['type'] ?? '';
+        $type = is_string($typeRaw) ? $typeRaw : '';
+        $isForeignKey = ($attribute['is_foreign_key'] ?? false) === true;
+        $nullable = ($attribute['nullable'] ?? false) === true;
+        $indexTypeRaw = $attribute['index_type'] ?? 'none';
+        $indexType = is_string($indexTypeRaw) ? $indexTypeRaw : 'none';
 
-        $column = "            ";
+        $column = '            ';
 
-        if ($isForeignKey && ($attribute['relation_type'] ?? '') !== 'belongsToMany') {
+        $relationTypeRaw = $attribute['relation_type'] ?? '';
+        $relationType = is_string($relationTypeRaw) ? $relationTypeRaw : '';
+        if ($isForeignKey && $relationType !== 'belongsToMany') {
             // Generate foreign key column with constraints
-            $foreignModel = $attribute['foreign_model'] ?? '';
-            $foreignTable = $foreignModel ? Str::snake(Str::plural($foreignModel)) : '';
-            $onDelete = $attribute['on_delete'] ?? 'cascade';
-            $onUpdate = $attribute['on_update'] ?? 'cascade';
-            
+            $foreignModelRaw = $attribute['foreign_model'] ?? '';
+            $foreignModel = is_string($foreignModelRaw) ? $foreignModelRaw : '';
+            $foreignTable = $foreignModel !== '' ? Str::snake(Str::plural($foreignModel)) : '';
+            $onDeleteRaw = $attribute['on_delete'] ?? 'cascade';
+            $onDelete = is_string($onDeleteRaw) ? $onDeleteRaw : 'cascade';
+            $onUpdateRaw = $attribute['on_update'] ?? 'cascade';
+            $onUpdate = is_string($onUpdateRaw) ? $onUpdateRaw : 'cascade';
+
             $column .= "\$table->foreignUlid('{$name}')";
             if ($nullable) {
                 $column .= '->nullable()';
             }
-            if ($foreignTable) {
+            if ($foreignTable !== '') {
                 $column .= "->constrained('{$foreignTable}')";
                 $column .= "->onDelete('{$onDelete}')";
                 $column .= "->onUpdate('{$onUpdate}')";
@@ -285,14 +320,18 @@ class ModelGeneratorService
 
         return $column;
     }
-    
+
     /**
      * Generate relation method for model.
+     *
+     * @param  array<string, mixed>  $attribute
      */
     public function generateRelationMethod(array $attribute): string
     {
-        $foreignModel = $attribute['foreign_model'];
-        $relationType = $attribute['relation_type'] ?? 'belongsTo';
+        $foreignModelRaw = $attribute['foreign_model'] ?? '';
+        $foreignModel = is_string($foreignModelRaw) ? $foreignModelRaw : '';
+        $relationTypeRaw = $attribute['relation_type'] ?? 'belongsTo';
+        $relationType = is_string($relationTypeRaw) ? $relationTypeRaw : 'belongsTo';
         $methodName = Str::camel($foreignModel);
 
         if ($relationType === 'hasMany' || $relationType === 'belongsToMany') {
@@ -314,13 +353,15 @@ class ModelGeneratorService
             }
         PHP;
     }
-    
+
     /**
      * Format casts array for model.
+     *
+     * @param  array<string, string>  $casts
      */
     public function formatCastsArray(array $casts): string
     {
-        if (empty($casts)) {
+        if ($casts === []) {
             return '';
         }
 

@@ -13,11 +13,21 @@ class PermissionControllerTest extends TestCase
     use RefreshDatabase;
 
     /**
+     * Create an authenticated user for requests.
+     */
+    private function authUser(): User
+    {
+        return User::factory()->create();
+    }
+
+    /**
      * Test that the permissions index page loads successfully.
      */
     public function test_permissions_page_loads(): void
     {
-        $response = $this->get('/permissions');
+        $user = $this->authUser();
+
+        $response = $this->actingAs($user)->get('/admin/permissions');
         $response->assertStatus(200);
         $response->assertViewIs('permissions.index');
     }
@@ -27,6 +37,8 @@ class PermissionControllerTest extends TestCase
      */
     public function test_api_lists_users_with_roles_and_permissions(): void
     {
+        $user = $this->authUser();
+
         // Create permissions
         $viewPosts = Permission::create(['name' => 'view posts']);
         $editPosts = Permission::create(['name' => 'edit posts']);
@@ -46,7 +58,7 @@ class PermissionControllerTest extends TestCase
         $editorUser = User::factory()->create(['name' => 'Editor User']);
         $editorUser->assignRole('editor');
 
-        $response = $this->getJson('/permissions/api/users');
+        $response = $this->actingAs($user)->getJson('/admin/permissions/api/users');
 
         $response->assertStatus(200);
         $response->assertJsonStructure([
@@ -72,20 +84,34 @@ class PermissionControllerTest extends TestCase
             'count',
         ]);
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
-        $this->assertEquals(2, $data['count']);
+        static::assertEquals(3, $data['count']);
+
+        /** @var array<int, array<string, mixed>> $users */
+        $users = $data['users'];
 
         // Verify admin user has correct roles and permissions
-        $adminData = collect($data['users'])->firstWhere('name', 'Admin User');
-        $this->assertCount(1, $adminData['roles']);
-        $this->assertEquals('admin', $adminData['roles'][0]['name']);
-        $this->assertCount(2, $adminData['roles'][0]['permissions']);
+        /** @var array<string, mixed> $adminData */
+        $adminData = collect($users)->firstWhere('name', 'Admin User');
+        /** @var array<int, array<string, mixed>> $adminRoles */
+        $adminRoles = $adminData['roles'];
+        static::assertCount(1, $adminRoles);
+        static::assertEquals('admin', $adminRoles[0]['name']);
+        /** @var array<int, array<string, mixed>> $adminPermissions */
+        $adminPermissions = $adminRoles[0]['permissions'];
+        static::assertCount(2, $adminPermissions);
 
         // Verify editor user has correct roles and permissions
-        $editorData = collect($data['users'])->firstWhere('name', 'Editor User');
-        $this->assertCount(1, $editorData['roles']);
-        $this->assertEquals('editor', $editorData['roles'][0]['name']);
-        $this->assertCount(1, $editorData['roles'][0]['permissions']);
+        /** @var array<string, mixed> $editorData */
+        $editorData = collect($users)->firstWhere('name', 'Editor User');
+        /** @var array<int, array<string, mixed>> $editorRoles */
+        $editorRoles = $editorData['roles'];
+        static::assertCount(1, $editorRoles);
+        static::assertEquals('editor', $editorRoles[0]['name']);
+        /** @var array<int, array<string, mixed>> $editorPermissions */
+        $editorPermissions = $editorRoles[0]['permissions'];
+        static::assertCount(1, $editorPermissions);
     }
 
     /**
@@ -95,17 +121,23 @@ class PermissionControllerTest extends TestCase
     {
         $user = User::factory()->create(['name' => 'Regular User']);
 
-        $response = $this->getJson('/permissions/api/users');
+        $response = $this->actingAs($user)->getJson('/admin/permissions/api/users');
 
         $response->assertStatus(200);
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
-        $this->assertEquals(1, $data['count']);
+        static::assertEquals(1, $data['count']);
 
-        $userData = $data['users'][0];
-        $this->assertEquals('Regular User', $userData['name']);
-        $this->assertArrayHasKey('roles', $userData);
-        $this->assertCount(0, $userData['roles']);
+        /** @var array<int, array<string, mixed>> $users */
+        $users = $data['users'];
+        /** @var array<string, mixed> $userData */
+        $userData = $users[0];
+        static::assertEquals('Regular User', $userData['name']);
+        static::assertArrayHasKey('roles', $userData);
+        /** @var array<int, mixed> $roles */
+        $roles = $userData['roles'];
+        static::assertCount(0, $roles);
     }
 
     /**
@@ -113,11 +145,12 @@ class PermissionControllerTest extends TestCase
      */
     public function test_api_lists_permissions_with_roles(): void
     {
+        $user = $this->authUser();
         $permission = Permission::create(['name' => 'view posts']);
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo($permission);
 
-        $response = $this->getJson('/permissions/api/permissions');
+        $response = $this->actingAs($user)->getJson('/admin/permissions/api/permissions');
 
         $response->assertStatus(200);
         $response->assertJsonStructure([
@@ -138,11 +171,12 @@ class PermissionControllerTest extends TestCase
      */
     public function test_api_lists_roles_with_permissions(): void
     {
+        $user = $this->authUser();
         $permission = Permission::create(['name' => 'view posts']);
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo($permission);
 
-        $response = $this->getJson('/permissions/api/roles');
+        $response = $this->actingAs($user)->getJson('/admin/permissions/api/roles');
 
         $response->assertStatus(200);
         $response->assertJsonStructure([
@@ -163,6 +197,8 @@ class PermissionControllerTest extends TestCase
      */
     public function test_user_with_multiple_roles_shows_all_permissions(): void
     {
+        $authUser = $this->authUser();
+
         // Create permissions
         $viewPosts = Permission::create(['name' => 'view posts']);
         $editPosts = Permission::create(['name' => 'edit posts']);
@@ -179,25 +215,39 @@ class PermissionControllerTest extends TestCase
         $user = User::factory()->create(['name' => 'Multi-Role User']);
         $user->assignRole(['editor', 'moderator']);
 
-        $response = $this->getJson('/permissions/api/users');
+        $response = $this->actingAs($authUser)->getJson('/admin/permissions/api/users');
 
         $response->assertStatus(200);
 
+        /** @var array<string, mixed> $data */
         $data = $response->json();
-        $userData = collect($data['users'])->firstWhere('name', 'Multi-Role User');
 
-        $this->assertCount(2, $userData['roles']);
+        /** @var array<int, array<string, mixed>> $users */
+        $users = $data['users'];
+
+        /** @var array<string, mixed> $userData */
+        $userData = collect($users)->firstWhere('name', 'Multi-Role User');
+
+        /** @var array<int, array<string, mixed>> $userRoles */
+        $userRoles = $userData['roles'];
+        static::assertCount(2, $userRoles);
 
         // Collect all permission names from all roles
-        $allPermissions = collect($userData['roles'])
-            ->flatMap(fn($role) => $role['permissions'])
+        /** @var array<int, string> $allPermissions */
+        $allPermissions = collect($userRoles)
+            ->flatMap(function (array $role): array {
+                /** @var array<int, array<string, mixed>> $permissions */
+                $permissions = $role['permissions'];
+
+                return $permissions;
+            })
             ->pluck('name')
             ->unique()
             ->values()
             ->toArray();
 
-        $this->assertContains('view posts', $allPermissions);
-        $this->assertContains('edit posts', $allPermissions);
-        $this->assertContains('delete posts', $allPermissions);
+        static::assertContains('view posts', $allPermissions);
+        static::assertContains('edit posts', $allPermissions);
+        static::assertContains('delete posts', $allPermissions);
     }
 }

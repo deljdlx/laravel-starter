@@ -23,7 +23,7 @@ class Task extends Model
     use HasFactory, HasStatuses, HasUlids;
 
     /**
-     * @return BelongsTo<User>
+     * @return BelongsTo<User, $this>
      */
     public function user(): BelongsTo
     {

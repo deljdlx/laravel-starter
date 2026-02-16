@@ -1,51 +1,36 @@
-<!doctype html>
-<html lang="fr" data-bs-theme="dark">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="msapplication-TileColor" content="#0f172a" />
-    <meta name="theme-color" content="#0f172a" />
-    
-    <title>Gestion des Permissions - {{ config('app.name', 'Laravel') }}</title>
-    
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
-    
-    @vite(['resources/css/app.css', 'resources/css/design-system.css', 'resources/js/app.js'])
-</head>
-<body>
-    <div class="page">
-        <div class="page-wrapper">
-            <!-- Page header -->
-            <div class="page-header d-print-none">
-                <div class="container-xl">
-                    <div class="row g-2 align-items-center">
-                        <div class="col">
-                            <h2 class="page-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
-                                    <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
-                                    <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
-                                </svg>
-                                Gestion des Permissions
-                            </h2>
-                            <div class="text-secondary mt-1">
-                                Gérer les rôles et permissions de l'application
-                            </div>
+@extends('layouts.admin')
+
+@section('content')
+<div class="page">
+    <div class="page-wrapper">
+        <!-- Page header -->
+        <div class="page-header d-print-none">
+            <div class="container-xl">
+                <div class="row g-2 align-items-center">
+                    <div class="col">
+                        <h2 class="page-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+                                <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                                <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                            </svg>
+                            Gestion des Permissions
+                        </h2>
+                        <div class="text-secondary mt-1">
+                            Gérer les rôles et permissions de l'application
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Page body -->
-            <div class="page-body">
-                <div class="container-xl">
-                    <div class="row row-deck row-cards">
-                        <!-- Roles Section -->
-                        <div class="col-lg-6" id="roles-column">
+        <!-- Page body -->
+        <div class="page-body">
+            <div class="container-xl">
+                <div class="row row-deck row-cards">
+                    <!-- Roles Section -->
+                    <div class="col-lg-6" id="roles-column">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Rôles</h3>
@@ -247,9 +232,9 @@
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         // API Base URLs
-        const ROLES_API = '/permissions/api/roles';
-        const PERMISSIONS_API = '/permissions/api/permissions';
-        const USERS_API = '/permissions/api/users';
+        const ROLES_API = '/admin/permissions/api/roles';
+        const PERMISSIONS_API = '/admin/permissions/api/permissions';
+        const USERS_API = '/admin/permissions/api/users';
 
         // Utility Functions
         function escapeHtml(text) {
@@ -787,5 +772,8 @@
             await Promise.all([loadUsers(), loadRoles(), loadPermissions()]);
         });
     </script>
-</body>
-</html>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

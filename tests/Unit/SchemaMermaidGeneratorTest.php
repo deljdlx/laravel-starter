@@ -15,8 +15,8 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_can_be_instantiated(): void
     {
-        $generator = new SchemaMermaidGenerator();
-        $this->assertInstanceOf(SchemaMermaidGenerator::class, $generator);
+        $generator = new SchemaMermaidGenerator;
+        static::assertInstanceOf(SchemaMermaidGenerator::class, $generator);
     }
 
     /**
@@ -24,14 +24,14 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_produces_valid_mermaid_syntax(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Check that output starts with erDiagram
-        $this->assertStringStartsWith('erDiagram', $mermaid);
-        
+        static::assertStringStartsWith('erDiagram', $mermaid);
+
         // Check that output is not empty
-        $this->assertNotEmpty($mermaid);
+        static::assertNotEmpty($mermaid);
     }
 
     /**
@@ -39,14 +39,14 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_includes_table_definitions(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should include USERS table (from migrations)
-        $this->assertStringContainsString('USERS', $mermaid);
-        
+        static::assertStringContainsString('USERS', $mermaid);
+
         // Should include TASKS table (from migrations)
-        $this->assertStringContainsString('TASKS', $mermaid);
+        static::assertStringContainsString('TASKS', $mermaid);
     }
 
     /**
@@ -54,17 +54,17 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_excludes_ignored_tables(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should NOT include migrations table
-        $this->assertStringNotContainsString('MIGRATIONS', $mermaid);
-        
+        static::assertStringNotContainsString('MIGRATIONS', $mermaid);
+
         // Should NOT include cache table
-        $this->assertStringNotContainsString('CACHE {', $mermaid);
-        
+        static::assertStringNotContainsString('CACHE {', $mermaid);
+
         // Should NOT include jobs table
-        $this->assertStringNotContainsString('JOBS {', $mermaid);
+        static::assertStringNotContainsString('JOBS {', $mermaid);
     }
 
     /**
@@ -72,13 +72,13 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_includes_column_definitions(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should include common column names
-        $this->assertStringContainsString('id', $mermaid);
-        $this->assertStringContainsString('email', $mermaid);
-        $this->assertStringContainsString('name', $mermaid);
+        static::assertStringContainsString('id', $mermaid);
+        static::assertStringContainsString('email', $mermaid);
+        static::assertStringContainsString('name', $mermaid);
     }
 
     /**
@@ -86,11 +86,11 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_marks_primary_keys(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should mark primary keys with PK
-        $this->assertStringContainsString('PK', $mermaid);
+        static::assertStringContainsString('PK', $mermaid);
     }
 
     /**
@@ -98,14 +98,14 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_marks_foreign_keys(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should mark foreign keys with FK
-        $this->assertStringContainsString('FK', $mermaid);
-        
+        static::assertStringContainsString('FK', $mermaid);
+
         // Should include user_id foreign key from tasks table
-        $this->assertStringContainsString('user_id', $mermaid);
+        static::assertStringContainsString('user_id', $mermaid);
     }
 
     /**
@@ -113,14 +113,14 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_includes_relationships(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should include relationship syntax
-        $this->assertStringContainsString('||--o{', $mermaid);
-        
+        static::assertStringContainsString('||--o{', $mermaid);
+
         // Should include cardinality notation
-        $this->assertStringContainsString('(1,1)-(0,n)', $mermaid);
+        static::assertStringContainsString('(1,1)-(0,n)', $mermaid);
     }
 
     /**
@@ -128,11 +128,11 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_includes_users_tasks_relationship(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should show that USERS has many TASKS
-        $this->assertStringContainsString('USERS ||--o{ TASKS', $mermaid);
+        static::assertStringContainsString('USERS ||--o{ TASKS', $mermaid);
     }
 
     /**
@@ -143,12 +143,12 @@ class SchemaMermaidGeneratorTest extends TestCase
         // Create generator with custom ignored tables list
         $generator = new SchemaMermaidGenerator(['migrations', 'users', 'cache', 'jobs']);
         $mermaid = $generator->generate();
-        
+
         // Should NOT include users table since it's in the ignored list
-        $this->assertStringNotContainsString('USERS {', $mermaid);
-        
+        static::assertStringNotContainsString('USERS {', $mermaid);
+
         // Should still include tasks table
-        $this->assertStringContainsString('TASKS', $mermaid);
+        static::assertStringContainsString('TASKS', $mermaid);
     }
 
     /**
@@ -159,12 +159,12 @@ class SchemaMermaidGeneratorTest extends TestCase
         // Use a custom ignored list that excludes all tables with FKs
         $generator = new SchemaMermaidGenerator(['migrations', 'cache', 'jobs', 'tasks', 'statuses']);
         $mermaid = $generator->generate();
-        
+
         // Should still generate valid Mermaid even without relationships
-        $this->assertStringStartsWith('erDiagram', $mermaid);
-        
+        static::assertStringStartsWith('erDiagram', $mermaid);
+
         // Should include at least the users table
-        $this->assertStringContainsString('USERS', $mermaid);
+        static::assertStringContainsString('USERS', $mermaid);
     }
 
     /**
@@ -172,10 +172,10 @@ class SchemaMermaidGeneratorTest extends TestCase
      */
     public function test_generator_simplifies_column_types(): void
     {
-        $generator = new SchemaMermaidGenerator();
+        $generator = new SchemaMermaidGenerator;
         $mermaid = $generator->generate();
-        
+
         // Should use simplified types
-        $this->assertMatchesRegularExpression('/(int|varchar|text|timestamp)/', $mermaid);
+        static::assertMatchesRegularExpression('/(int|varchar|text|timestamp)/', $mermaid);
     }
 }

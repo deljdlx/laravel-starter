@@ -9,6 +9,8 @@ class SchemaMermaidGenerator
 {
     /**
      * Tables to ignore by default
+     *
+     * @var array<int, string>
      */
     protected array $ignoredTables = [
         'migrations',
@@ -24,10 +26,12 @@ class SchemaMermaidGenerator
 
     /**
      * Constructor
+     *
+     * @param  array<int, string>  $ignoredTables
      */
     public function __construct(array $ignoredTables = [])
     {
-        if (!empty($ignoredTables)) {
+        if ($ignoredTables !== []) {
             $this->ignoredTables = $ignoredTables;
         }
     }
@@ -39,32 +43,34 @@ class SchemaMermaidGenerator
     {
         $tables = $this->getTables();
         $foreignKeys = $this->getForeignKeys();
-        
+
         $mermaid = "erDiagram\n";
-        
+
         // Generate table definitions
         foreach ($tables as $tableName) {
             if ($this->shouldIgnoreTable($tableName)) {
                 continue;
             }
-            
+
             $mermaid .= $this->generateTableDefinition($tableName);
         }
-        
+
         // Generate relationships
         $mermaid .= $this->generateRelationships($foreignKeys);
-        
+
         return $mermaid;
     }
 
     /**
      * Get all tables from the database
+     *
+     * @return array<int, string>
      */
     protected function getTables(): array
     {
         $connection = Schema::getConnection();
         $driverName = $connection->getDriverName();
-        
+
         switch ($driverName) {
             case 'mysql':
                 return $this->getMySQLTables();
@@ -79,50 +85,56 @@ class SchemaMermaidGenerator
 
     /**
      * Get tables for MySQL
+     *
+     * @return array<int, string>
      */
     protected function getMySQLTables(): array
     {
         $database = DB::getDatabaseName();
         $tables = DB::select("
-            SELECT TABLE_NAME 
-            FROM INFORMATION_SCHEMA.TABLES 
-            WHERE TABLE_SCHEMA = ? 
+            SELECT TABLE_NAME
+            FROM INFORMATION_SCHEMA.TABLES
+            WHERE TABLE_SCHEMA = ?
             AND TABLE_TYPE = 'BASE TABLE'
             ORDER BY TABLE_NAME
         ", [$database]);
-        
-        return array_map(fn($table) => $table->TABLE_NAME, $tables);
+
+        return array_map(fn ($table) => $table->TABLE_NAME, $tables);
     }
 
     /**
      * Get tables for PostgreSQL
+     *
+     * @return array<int, string>
      */
     protected function getPostgreSQLTables(): array
     {
         $tables = DB::select("
-            SELECT tablename 
-            FROM pg_catalog.pg_tables 
+            SELECT tablename
+            FROM pg_catalog.pg_tables
             WHERE schemaname = 'public'
             ORDER BY tablename
         ");
-        
-        return array_map(fn($table) => $table->tablename, $tables);
+
+        return array_map(fn ($table) => $table->tablename, $tables);
     }
 
     /**
      * Get tables for SQLite
+     *
+     * @return array<int, string>
      */
     protected function getSQLiteTables(): array
     {
         $tables = DB::select("
-            SELECT name 
-            FROM sqlite_master 
-            WHERE type = 'table' 
+            SELECT name
+            FROM sqlite_master
+            WHERE type = 'table'
             AND name NOT LIKE 'sqlite_%'
             ORDER BY name
         ");
-        
-        return array_map(fn($table) => $table->name, $tables);
+
+        return array_map(fn ($table) => $table->name, $tables);
     }
 
     /**
@@ -130,7 +142,7 @@ class SchemaMermaidGenerator
      */
     protected function shouldIgnoreTable(string $tableName): bool
     {
-        return in_array($tableName, $this->ignoredTables);
+        return in_array($tableName, $this->ignoredTables, true);
     }
 
     /**
@@ -140,47 +152,49 @@ class SchemaMermaidGenerator
     {
         $columns = $this->getTableColumns($tableName);
         $indexes = $this->getTableIndexes($tableName);
-        
-        $definition = "    " . strtoupper($tableName) . " {\n";
-        
+
+        $definition = '    '.strtoupper($tableName)." {\n";
+
         foreach ($columns as $column) {
             $type = $this->simplifyColumnType($column['type']);
             $constraints = [];
-            
+
             // Check if column is primary key (from column info or indexes)
-            if (isset($column['is_primary']) && $column['is_primary']) {
+            if ($column['is_primary']) {
                 $constraints[] = 'PK';
             } elseif ($this->isPrimaryKey($column['name'], $indexes)) {
                 $constraints[] = 'PK';
             }
-            
+
             if ($this->isUniqueKey($column['name'], $indexes)) {
                 $constraints[] = 'UK';
             }
-            
+
             if ($this->isForeignKey($tableName, $column['name'])) {
                 $constraints[] = 'FK';
             }
-            
-            $constraintStr = !empty($constraints) ? ' ' . implode(',', $constraints) : '';
+
+            $constraintStr = $constraints !== [] ? ' '.implode(',', $constraints) : '';
             $nullable = $column['nullable'] ? '' : '';
-            
+
             $definition .= "        {$type} {$column['name']}{$constraintStr}\n";
         }
-        
+
         $definition .= "    }\n";
-        
+
         return $definition;
     }
 
     /**
      * Get columns for a table
+     *
+     * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */
     protected function getTableColumns(string $tableName): array
     {
         $connection = Schema::getConnection();
         $driverName = $connection->getDriverName();
-        
+
         switch ($driverName) {
             case 'mysql':
                 return $this->getMySQLColumns($tableName);
@@ -195,23 +209,25 @@ class SchemaMermaidGenerator
 
     /**
      * Get columns for MySQL table
+     *
+     * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */
     protected function getMySQLColumns(string $tableName): array
     {
         $database = DB::getDatabaseName();
-        $columns = DB::select("
-            SELECT 
+        $columns = DB::select('
+            SELECT
                 COLUMN_NAME as name,
                 COLUMN_TYPE as type,
                 IS_NULLABLE as nullable,
                 COLUMN_DEFAULT as default_value,
                 COLUMN_KEY as key_type
-            FROM INFORMATION_SCHEMA.COLUMNS 
-            WHERE TABLE_SCHEMA = ? 
+            FROM INFORMATION_SCHEMA.COLUMNS
+            WHERE TABLE_SCHEMA = ?
             AND TABLE_NAME = ?
             ORDER BY ORDINAL_POSITION
-        ", [$database, $tableName]);
-        
+        ', [$database, $tableName]);
+
         return array_map(function ($column) {
             return [
                 'name' => $column->name,
@@ -225,11 +241,13 @@ class SchemaMermaidGenerator
 
     /**
      * Get columns for PostgreSQL table
+     *
+     * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */
     protected function getPostgreSQLColumns(string $tableName): array
     {
         $columns = DB::select("
-            SELECT 
+            SELECT
                 c.column_name as name,
                 c.data_type as type,
                 c.is_nullable as nullable,
@@ -247,7 +265,7 @@ class SchemaMermaidGenerator
             WHERE c.table_name = ?
             ORDER BY c.ordinal_position
         ", [$tableName, $tableName]);
-        
+
         return array_map(function ($column) {
             return [
                 'name' => $column->name,
@@ -261,16 +279,18 @@ class SchemaMermaidGenerator
 
     /**
      * Get columns for SQLite table
+     *
+     * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */
     protected function getSQLiteColumns(string $tableName): array
     {
         $columns = DB::select("PRAGMA table_info({$tableName})");
-        
+
         return array_map(function ($column) {
             return [
                 'name' => $column->name,
                 'type' => $column->type,
-                'nullable' => $column->notnull == 0,
+                'nullable' => $column->notnull === 0,
                 'default' => $column->dflt_value,
                 'is_primary' => $column->pk > 0,
             ];
@@ -279,12 +299,14 @@ class SchemaMermaidGenerator
 
     /**
      * Get indexes for a table
+     *
+     * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */
     protected function getTableIndexes(string $tableName): array
     {
         $connection = Schema::getConnection();
         $driverName = $connection->getDriverName();
-        
+
         switch ($driverName) {
             case 'mysql':
                 return $this->getMySQLIndexes($tableName);
@@ -299,43 +321,48 @@ class SchemaMermaidGenerator
 
     /**
      * Get indexes for MySQL table
+     *
+     * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */
     protected function getMySQLIndexes(string $tableName): array
     {
         $database = DB::getDatabaseName();
-        $indexes = DB::select("
-            SELECT 
+        $indexes = DB::select('
+            SELECT
                 INDEX_NAME as name,
                 COLUMN_NAME as column_name,
                 NON_UNIQUE as non_unique
-            FROM INFORMATION_SCHEMA.STATISTICS 
-            WHERE TABLE_SCHEMA = ? 
+            FROM INFORMATION_SCHEMA.STATISTICS
+            WHERE TABLE_SCHEMA = ?
             AND TABLE_NAME = ?
             ORDER BY INDEX_NAME, SEQ_IN_INDEX
-        ", [$database, $tableName]);
-        
+        ', [$database, $tableName]);
+
+        /** @var array<string, array{name: string, unique: bool, columns: array<int, string>}> $result */
         $result = [];
         foreach ($indexes as $index) {
             $name = $index->name;
-            if (!isset($result[$name])) {
+            if (! isset($result[$name])) {
                 $result[$name] = [
                     'name' => $name,
-                    'unique' => $index->non_unique == 0,
+                    'unique' => $index->non_unique === 0,
                     'columns' => [],
                 ];
             }
             $result[$name]['columns'][] = $index->column_name;
         }
-        
+
         return array_values($result);
     }
 
     /**
      * Get indexes for PostgreSQL table
+     *
+     * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */
     protected function getPostgreSQLIndexes(string $tableName): array
     {
-        $indexes = DB::select("
+        $indexes = DB::select('
             SELECT
                 i.relname as name,
                 a.attname as column_name,
@@ -346,12 +373,13 @@ class SchemaMermaidGenerator
             JOIN pg_attribute a ON a.attrelid = t.oid AND a.attnum = ANY(ix.indkey)
             WHERE t.relname = ?
             ORDER BY i.relname
-        ", [$tableName]);
-        
+        ', [$tableName]);
+
+        /** @var array<string, array{name: string, unique: bool, columns: array<int, string>}> $result */
         $result = [];
         foreach ($indexes as $index) {
             $name = $index->name;
-            if (!isset($result[$name])) {
+            if (! isset($result[$name])) {
                 $result[$name] = [
                     'name' => $name,
                     'unique' => $index->is_unique,
@@ -360,55 +388,63 @@ class SchemaMermaidGenerator
             }
             $result[$name]['columns'][] = $index->column_name;
         }
-        
+
         return array_values($result);
     }
 
     /**
      * Get indexes for SQLite table
+     *
+     * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */
     protected function getSQLiteIndexes(string $tableName): array
     {
         $indexes = DB::select("PRAGMA index_list({$tableName})");
-        
+
         $result = [];
         foreach ($indexes as $index) {
             $indexInfo = DB::select("PRAGMA index_info({$index->name})");
-            $columns = array_map(fn($info) => $info->name, $indexInfo);
-            
+            $columns = array_map(fn ($info) => $info->name, $indexInfo);
+
             $result[] = [
                 'name' => $index->name,
-                'unique' => $index->unique == 1,
+                'unique' => $index->unique === 1,
                 'columns' => $columns,
             ];
         }
-        
+
         return $result;
     }
 
     /**
      * Check if column is primary key
+     *
+     * @param  array<int, array{name: string, unique: bool, columns: array<int, string>}>  $indexes
      */
     protected function isPrimaryKey(string $columnName, array $indexes): bool
     {
         foreach ($indexes as $index) {
-            if (strtoupper($index['name']) === 'PRIMARY' && in_array($columnName, $index['columns'])) {
+            if (strtoupper($index['name']) === 'PRIMARY' && in_array($columnName, $index['columns'], true)) {
                 return true;
             }
         }
+
         return false;
     }
 
     /**
      * Check if column is unique key
+     *
+     * @param  array<int, array{name: string, unique: bool, columns: array<int, string>}>  $indexes
      */
     protected function isUniqueKey(string $columnName, array $indexes): bool
     {
         foreach ($indexes as $index) {
-            if ($index['unique'] && strtoupper($index['name']) !== 'PRIMARY' && in_array($columnName, $index['columns'])) {
+            if ($index['unique'] && strtoupper($index['name']) !== 'PRIMARY' && in_array($columnName, $index['columns'], true)) {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -418,24 +454,26 @@ class SchemaMermaidGenerator
     protected function isForeignKey(string $tableName, string $columnName): bool
     {
         $foreignKeys = $this->getForeignKeys();
-        
+
         foreach ($foreignKeys as $fk) {
             if ($fk['table'] === $tableName && $fk['column'] === $columnName) {
                 return true;
             }
         }
-        
+
         return false;
     }
 
     /**
      * Get all foreign keys from the database
+     *
+     * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */
     protected function getForeignKeys(): array
     {
         $connection = Schema::getConnection();
         $driverName = $connection->getDriverName();
-        
+
         switch ($driverName) {
             case 'mysql':
                 return $this->getMySQLForeignKeys();
@@ -450,22 +488,24 @@ class SchemaMermaidGenerator
 
     /**
      * Get foreign keys for MySQL
+     *
+     * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */
     protected function getMySQLForeignKeys(): array
     {
         $database = DB::getDatabaseName();
-        $foreignKeys = DB::select("
-            SELECT 
+        $foreignKeys = DB::select('
+            SELECT
                 TABLE_NAME as table_name,
                 COLUMN_NAME as column_name,
                 REFERENCED_TABLE_NAME as referenced_table,
                 REFERENCED_COLUMN_NAME as referenced_column
-            FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
-            WHERE TABLE_SCHEMA = ? 
+            FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+            WHERE TABLE_SCHEMA = ?
             AND REFERENCED_TABLE_NAME IS NOT NULL
             ORDER BY TABLE_NAME, COLUMN_NAME
-        ", [$database]);
-        
+        ', [$database]);
+
         return array_map(function ($fk) {
             return [
                 'table' => $fk->table_name,
@@ -478,6 +518,8 @@ class SchemaMermaidGenerator
 
     /**
      * Get foreign keys for PostgreSQL
+     *
+     * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */
     protected function getPostgreSQLForeignKeys(): array
     {
@@ -495,7 +537,7 @@ class SchemaMermaidGenerator
             WHERE tc.constraint_type = 'FOREIGN KEY'
             ORDER BY tc.table_name, kcu.column_name
         ");
-        
+
         return array_map(function ($fk) {
             return [
                 'table' => $fk->table_name,
@@ -508,19 +550,21 @@ class SchemaMermaidGenerator
 
     /**
      * Get foreign keys for SQLite
+     *
+     * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */
     protected function getSQLiteForeignKeys(): array
     {
         $tables = $this->getSQLiteTables();
         $foreignKeys = [];
-        
+
         foreach ($tables as $table) {
             if ($this->shouldIgnoreTable($table)) {
                 continue;
             }
-            
+
             $tableForeignKeys = DB::select("PRAGMA foreign_key_list({$table})");
-            
+
             foreach ($tableForeignKeys as $fk) {
                 $foreignKeys[] = [
                     'table' => $table,
@@ -530,42 +574,44 @@ class SchemaMermaidGenerator
                 ];
             }
         }
-        
+
         return $foreignKeys;
     }
 
     /**
      * Generate Mermaid relationships from foreign keys
+     *
+     * @param  array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>  $foreignKeys
      */
     protected function generateRelationships(array $foreignKeys): string
     {
         $relationships = '';
         $processedRelationships = [];
-        
+
         foreach ($foreignKeys as $fk) {
             if ($this->shouldIgnoreTable($fk['table']) || $this->shouldIgnoreTable($fk['referenced_table'])) {
                 continue;
             }
-            
-            $relationshipKey = $fk['table'] . '_' . $fk['referenced_table'];
-            
+
+            $relationshipKey = $fk['table'].'_'.$fk['referenced_table'];
+
             // Avoid duplicate relationships
-            if (in_array($relationshipKey, $processedRelationships)) {
+            if (in_array($relationshipKey, $processedRelationships, true)) {
                 continue;
             }
-            
+
             $processedRelationships[] = $relationshipKey;
-            
+
             $fromTable = strtoupper($fk['referenced_table']);
             $toTable = strtoupper($fk['table']);
-            
+
             // One-to-many relationship with cardinality notation
             // ||--o{ means: one (parent) to zero or more (children)
             // (1,1) on parent side: one instance exists
             // (0,n) on child side: zero or more instances can reference the parent
             $relationships .= "    {$fromTable} ||--o{ {$toTable} : \"(1,1)-(0,n)\"\n";
         }
-        
+
         return $relationships;
     }
 
@@ -576,7 +622,7 @@ class SchemaMermaidGenerator
     {
         // Extract base type from full type definition
         $type = strtolower($type);
-        
+
         if (str_contains($type, 'int')) {
             return 'int';
         }
@@ -601,7 +647,7 @@ class SchemaMermaidGenerator
         if (str_contains($type, 'json')) {
             return 'json';
         }
-        
+
         return 'string';
     }
 }

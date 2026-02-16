@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('v1')->name('v1.')->group(function () {
+Route::prefix('v1')->name('v1.')->group(function (): void {
     Route::get('/about', function () {
         return response()->json([
             'app' => 'Laravel Starter API',
@@ -17,7 +18,7 @@ Route::prefix('v1')->name('v1.')->group(function () {
 
     Route::post('/register', function (Request $request) {
         try {
-            $request->validate([
+            $validated = $request::validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required|string',
@@ -26,10 +27,13 @@ Route::prefix('v1')->name('v1.')->group(function () {
             return response()->json(['message' => 'Données de validation invalides', 'errors' => $e->errors()], 422);
         }
 
+        /** @var string $password */
+        $password = $request->input('password');
+
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => \Illuminate\Support\Facades\Hash::make($request->password),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => \Illuminate\Support\Facades\Hash::make($password),
         ]);
 
         $token = $user->createToken('api-token')->plainTextToken;
@@ -44,7 +48,7 @@ Route::prefix('v1')->name('v1.')->group(function () {
     Route::post('/login', function (Request $request) {
 
         try {
-            $request->validate([
+            $validated = $request::validate([
                 'email' => 'required|email',
                 'password' => 'required',
             ]);
@@ -52,14 +56,17 @@ Route::prefix('v1')->name('v1.')->group(function () {
             return response()->json(['message' => 'Données de connexion invalides', 'errors' => $e->errors()], 422);
         }
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->input('email'))->first();
 
-        if (! $user || ! \Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
+        /** @var string $password */
+        $password = $request->input('password');
+
+        if ($user === null || ! \Illuminate\Support\Facades\Hash::check($password, $user->password)) {
             return response()->json(['message' => 'Identifiants invalides'], 401);
         }
 
         // check if api token already exists for this user, if so delete it
-        $user->tokens()->delete();
+        $user->tokens()->toBase()->delete();
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
@@ -73,9 +80,21 @@ Route::prefix('v1')->name('v1.')->group(function () {
     Route::prefix('protected')
         ->name('protected.')
         ->middleware(['auth:sanctum'])
-        ->group(function () {
+        ->group(function (): void {
             Route::get('/me', function (Request $request) {
                 return $request->user();
             })->name('me');
         });
+
+    // ===================================================================================
+
+    // Users API Routes
+    Route::prefix('users')->name('users.')->group(function (): void {
+        Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::get('/search', [UserController::class, 'search'])->name('search');
+        Route::post('/', [UserController::class, 'store'])->name('store');
+        Route::get('/{user}', [UserController::class, 'show'])->name('show');
+        Route::put('/{user}', [UserController::class, 'update'])->name('update');
+        Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
+    });
 });

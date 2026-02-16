@@ -1,103 +1,86 @@
-<!doctype html>
-<html lang="fr" data-bs-theme="dark">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="msapplication-TileColor" content="#0f172a" />
-    <meta name="theme-color" content="#0f172a" />
-    
-    <title>Gestion des Utilisateurs - {{ config('app.name', 'Laravel') }}</title>
-    
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
-    
-    @vite(['resources/css/app.css', 'resources/css/design-system.css', 'resources/js/app.js'])
-</head>
-<body>
-    <div class="page">
-        <div class="page-wrapper">
-            <!-- Page header -->
-            <div class="page-header d-print-none">
-                <div class="container-xl">
-                    <div class="row g-2 align-items-center">
-                        <div class="col">
-                            <h2 class="page-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
-                                </svg>
-                                Gestion des Utilisateurs
-                            </h2>
-                            <div class="text-secondary mt-1">
-                                Gérer les utilisateurs de l'application
-                            </div>
-                        </div>
-                        <div class="col-auto ms-auto">
-                            <button class="btn btn-primary" onclick="showCreateUserModal()">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M12 5l0 14"></path>
-                                    <path d="M5 12l14 0"></path>
-                                </svg>
-                                Créer un utilisateur
-                            </button>
-                        </div>
-                    </div>
+@extends('layouts.admin')
+
+@section('content')
+<!-- Page header -->
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
+                    </svg>
+                    Gestion des Utilisateurs
+                </h2>
+                <div class="text-secondary mt-1">
+                    Gérer les utilisateurs de l'application
                 </div>
             </div>
+            <div class="col-auto ms-auto">
+                <button class="btn btn-primary" onclick="showCreateUserModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 5l0 14"></path>
+                        <path d="M5 12l14 0"></path>
+                    </svg>
+                    Créer un utilisateur
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Page body -->
-            <div class="page-body">
-                <div class="container-xl">
-                    <div class="row row-deck row-cards">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Utilisateurs</h3>
-                                    <div class="ms-auto d-flex align-items-center gap-2">
-                                        <select class="form-select form-select-sm" id="per-page-select" style="width: auto;">
-                                            <option value="10">10 par page</option>
-                                            <option value="25">25 par page</option>
-                                            <option value="50">50 par page</option>
-                                            <option value="100">100 par page</option>
-                                        </select>
-                                        <span class="badge bg-blue-lt" id="user-count">0</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="search-box">
-                                        <input type="text" class="form-control" id="user-search" placeholder="Rechercher un utilisateur par nom ou email...">
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-vcenter card-table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nom</th>
-                                                    <th>Email</th>
-                                                    <th>Rôles</th>
-                                                    <th>Date de création</th>
-                                                    <th class="w-1">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="users-container">
-                                                <tr>
-                                                    <td colspan="5" class="text-center py-4">
-                                                        <div class="spinner-border spinner-border-sm me-2" role="status"></div>
-                                                        Chargement des utilisateurs...
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div id="pagination-container" class="d-flex justify-content-between align-items-center mt-3">
-                                        <div id="pagination-info" class="text-muted"></div>
-                                        <nav id="pagination-nav" aria-label="Page navigation"></nav>
-                                    </div>
+<!-- Page body -->
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row row-deck row-cards">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Utilisateurs</h3>
+                        <div class="ms-auto d-flex align-items-center gap-2">
+                            <select class="form-select form-select-sm" id="per-page-select" style="width: auto;">
+                                <option value="10">10 par page</option>
+                                <option value="25">25 par page</option>
+                                <option value="50">50 par page</option>
+                                <option value="100">100 par page</option>
+                            </select>
+                            <span class="badge bg-blue-lt" id="user-count">0</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="search-box">
+                            <input type="text" class="form-control" id="user-search" placeholder="Rechercher un utilisateur par nom ou email...">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-vcenter card-table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Email</th>
+                                        <th>Rôles</th>
+                                        <th>Date de création</th>
+                                        <th class="w-1">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="users-container">
+                                    <tr>
+                                        <td colspan="5" class="text-center py-4">
+                                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                                            Chargement des utilisateurs...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pagination-container" class="d-flex justify-content-between align-items-center mt-3">
+                            <div id="pagination-info" class="text-muted"></div>
+                            <nav id="pagination-nav" aria-label="Page navigation"></nav>
+                        </div>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +185,7 @@
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
         // API Base URLs
-        const USERS_API = '/users/api';
+        const USERS_API = '/api/v1/users';
         const ROLES_API = '/permissions/api/roles';
 
         // Utility Functions
@@ -314,7 +297,7 @@
             }
 
             container.innerHTML = users.map(user => `
-                <tr class="user-card" onclick="showEditUserModal('${user.id}')">
+                <tr class="user-card" onclick="window.location.href='/admin/users/${user.id}'" style="cursor: pointer;">
                     <td>
                         <div class="d-flex align-items-center">
                             <span class="avatar avatar-sm me-2">${escapeHtml(user.name.charAt(0).toUpperCase())}</span>
@@ -604,5 +587,4 @@
             await Promise.all([loadUsers(), loadRoles()]);
         });
     </script>
-</body>
-</html>
+@endsection

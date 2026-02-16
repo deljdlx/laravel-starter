@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -16,8 +17,8 @@ class UserController extends Controller
      */
     public function index(Request $request): JsonResponse
     {
-        $perPage = $request->input('per_page', 10);
-        $perPage = min(max((int) $perPage, 1), 100); // Between 1 and 100
+        $perPage = $request->integer('per_page', 10);
+        $perPage = min(max($perPage, 1), 100); // Between 1 and 100
 
         $users = User::with('roles')->paginate($perPage);
 
@@ -39,14 +40,14 @@ class UserController extends Controller
      */
     public function search(Request $request): JsonResponse
     {
-        $query = $request->input('q', '');
-        $perPage = $request->input('per_page', 10);
-        $perPage = min(max((int) $perPage, 1), 100); // Between 1 and 100
+        $query = $request->string('q', '')->toString();
+        $perPage = $request->integer('per_page', 10);
+        $perPage = min(max($perPage, 1), 100); // Between 1 and 100
 
         $users = User::with('roles')
             ->where(function ($q) use ($query) {
                 $q->where('name', 'like', "%{$query}%")
-                  ->orWhere('email', 'like', "%{$query}%");
+                    ->orWhere('email', 'like', "%{$query}%");
             })
             ->paginate($perPage);
 
@@ -68,20 +69,34 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request): JsonResponse
     {
+        /** @var string $password */
+        $password = $request->password;
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($password),
         ]);
 
         if ($request->has('roles')) {
-            $user->syncRoles($request->roles);
+            /** @var array<string> $roles */
+            $roles = $request->roles;
+            $user->syncRoles($roles);
         }
 
         return response()->json([
             'message' => 'Utilisateur créé avec succès',
             'user' => $user->load('roles'),
         ], 201);
+    }
+
+    /**
+     * Display the specified user view.
+     */
+    public function showView(User $user): View
+    {
+        $user->load('roles', 'permissions');
+
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -105,13 +120,17 @@ class UserController extends Controller
         ];
 
         if ($request->filled('password')) {
-            $data['password'] = Hash::make($request->password);
+            /** @var string $password */
+            $password = $request->password;
+            $data['password'] = Hash::make($password);
         }
 
         $user->update($data);
 
         if ($request->has('roles')) {
-            $user->syncRoles($request->roles);
+            /** @var array<string> $roles */
+            $roles = $request->roles;
+            $user->syncRoles($roles);
         }
 
         return response()->json([

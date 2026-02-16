@@ -33,7 +33,9 @@ class RoleController extends Controller
         ]);
 
         if ($request->has('permissions')) {
-            $role->syncPermissions($request->permissions);
+            /** @var array<string> $permissions */
+            $permissions = $request->permissions;
+            $role->syncPermissions($permissions);
         }
 
         return response()->json([
@@ -63,7 +65,9 @@ class RoleController extends Controller
         ]);
 
         if ($request->has('permissions')) {
-            $role->syncPermissions($request->permissions);
+            /** @var array<string> $permissions */
+            $permissions = $request->permissions;
+            $role->syncPermissions($permissions);
         }
 
         return response()->json([

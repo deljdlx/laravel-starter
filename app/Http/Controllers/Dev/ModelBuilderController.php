@@ -4,20 +4,23 @@ namespace App\Http\Controllers\Dev;
 
 use App\Http\Controllers\Controller;
 use App\Services\ModelGeneratorService;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class ModelBuilderController extends Controller
 {
     public function __construct(
         private ModelGeneratorService $generator
-    ) {
-    }
+    ) {}
+
     /**
      * Show the model builder page.
      */
-    public function show()
+    public function show(): View
     {
         $models = $this->getAvailableModels();
 
@@ -29,9 +32,9 @@ class ModelBuilderController extends Controller
     /**
      * Preview what will be generated before actual generation.
      */
-    public function preview(Request $request)
+    public function preview(Request $request): JsonResponse
     {
-        $validated = $request->validate([
+        $validated = Validator::validate($request->all(), [
             'model_name' => 'required|string|regex:/^[A-Z][a-zA-Z0-9]*$/',
             'timestamps' => 'boolean',
             'soft_deletes' => 'boolean',
@@ -83,12 +86,12 @@ class ModelBuilderController extends Controller
 
             // Check for pivot tables
             foreach ($attributes as $attribute) {
+                $foreignModel = $attribute['foreign_model'] ?? '';
                 if (isset($attribute['is_foreign_key']) &&
                     $attribute['is_foreign_key'] &&
-                    ! empty($attribute['foreign_model']) &&
+                    $foreignModel !== '' &&
                     ($attribute['relation_type'] ?? '') === 'belongsToMany') {
 
-                    $foreignModel = $attribute['foreign_model'];
                     $tables = [Str::snake($modelName), Str::snake($foreignModel)];
                     sort($tables);
                     $pivotTableName = implode('_', $tables);
@@ -128,16 +131,19 @@ class ModelBuilderController extends Controller
 
     /**
      * Get traits that will be added to the model.
+     *
+     * @param  array<string, mixed>  $validated
+     * @return array<int, string>
      */
     private function getModelTraits(array $validated): array
     {
         $traits = ['HasUlids'];
 
-        if ($validated['soft_deletes'] ?? false) {
+        if (($validated['soft_deletes'] ?? false) === true) {
             $traits[] = 'SoftDeletes';
         }
 
-        if ($validated['has_statuses'] ?? false) {
+        if (($validated['has_statuses'] ?? false) === true) {
             $traits[] = 'HasStatuses (Spatie)';
         }
 
@@ -147,9 +153,9 @@ class ModelBuilderController extends Controller
     /**
      * Generate model, migration, and factory based on form data.
      */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
-        $validated = $request->validate([
+        $validated = Validator::validate($request->all(), [
             'model_name' => 'required|string|regex:/^[A-Z][a-zA-Z0-9]*$/',
             'timestamps' => 'boolean',
             'soft_deletes' => 'boolean',
@@ -195,7 +201,7 @@ class ModelBuilderController extends Controller
 
                 // Generate pivot tables for belongsToMany relationships
                 $pivotMigrations = $this->generatePivotMigrations($modelName, $attributes);
-                if (! empty($pivotMigrations)) {
+                if ($pivotMigrations !== []) {
                     $response['files']['pivot_migrations'] = $pivotMigrations;
                 }
             }
@@ -217,11 +223,13 @@ class ModelBuilderController extends Controller
 
     /**
      * Generate the model file.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
      */
     private function generateModel(string $modelName, array $attributes, bool $timestamps, bool $softDeletes, bool $hasStatuses = false): string
     {
         $modelSource = $this->generator->generateModelSource($modelName, $attributes, $timestamps, $softDeletes, $hasStatuses);
-        
+
         $modelPath = app_path("Models/{$modelName}.php");
         File::ensureDirectoryExists(dirname($modelPath));
         File::put($modelPath, $modelSource);
@@ -231,11 +239,13 @@ class ModelBuilderController extends Controller
 
     /**
      * Generate the migration file.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
      */
     private function generateMigration(string $modelName, array $attributes, bool $timestamps, bool $softDeletes): string
     {
         $migrationSource = $this->generator->generateMigrationSource($modelName, $attributes, $timestamps, $softDeletes);
-        
+
         $tableName = Str::snake(Str::plural($modelName));
         $timestamp = date('Y_m_d_His');
         $migrationName = "{$timestamp}_create_{$tableName}_table.php";
@@ -249,11 +259,13 @@ class ModelBuilderController extends Controller
 
     /**
      * Generate the factory file.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
      */
     private function generateFactory(string $modelName, array $attributes): string
     {
         $factorySource = $this->generator->generateFactorySource($modelName, $attributes);
-        
+
         $factoryName = $modelName.'Factory';
         $factoryPath = database_path("factories/{$factoryName}.php");
 
@@ -265,18 +277,21 @@ class ModelBuilderController extends Controller
 
     /**
      * Generate pivot table migrations for belongsToMany relationships.
+     *
+     * @param  array<int, array<string, mixed>>  $attributes
+     * @return array<int, string>
      */
     private function generatePivotMigrations(string $modelName, array $attributes): array
     {
         $pivotMigrations = [];
 
         foreach ($attributes as $attribute) {
-            if (isset($attribute['is_foreign_key']) &&
-                $attribute['is_foreign_key'] &&
-                ! empty($attribute['foreign_model']) &&
+            $rawForeignModel = $attribute['foreign_model'] ?? '';
+            $foreignModel = is_string($rawForeignModel) ? $rawForeignModel : '';
+            $isForeignKey = (bool) ($attribute['is_foreign_key'] ?? false);
+            if ($isForeignKey &&
+                $foreignModel !== '' &&
                 ($attribute['relation_type'] ?? '') === 'belongsToMany') {
-
-                $foreignModel = $attribute['foreign_model'];
 
                 // Create pivot table name (alphabetically ordered)
                 $tables = [Str::snake($modelName), Str::snake($foreignModel)];
@@ -298,7 +313,7 @@ class ModelBuilderController extends Controller
     private function generatePivotMigration(string $modelName, string $foreignModel, string $pivotTableName): string
     {
         $pivotSource = $this->generator->generatePivotMigrationSource($modelName, $foreignModel, $pivotTableName);
-        
+
         $timestamp = date('Y_m_d_His');
         usleep(10000); // Small delay to ensure unique timestamps
         $fileName = "{$timestamp}_create_{$pivotTableName}_table.php";
@@ -312,6 +327,8 @@ class ModelBuilderController extends Controller
 
     /**
      * Get available models in app/Models directory.
+     *
+     * @return array<int, string>
      */
     private function getAvailableModels(): array
     {
