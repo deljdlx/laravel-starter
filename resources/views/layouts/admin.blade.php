@@ -19,19 +19,19 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
         .admin-container {
             display: flex;
             width: 100%;
-            min-height: 100vh;
+            flex: 1;
         }
         .admin-sidebar {
             width: 25%;
             background-color: #1f2937;
             color: white;
             padding: 1.5rem;
-            min-height: 100vh;
             overflow-y: auto;
         }
         .admin-content {
@@ -42,6 +42,9 @@
     </style>
 </head>
 <body>
+    <!-- Header Component -->
+    <x-header />
+
     <div class="admin-container">
         <!-- Left Menu -->
         <aside class="admin-sidebar">
