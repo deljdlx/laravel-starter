@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dev\ModelBuilderController;
 use App\Http\Controllers\Dev\ModelInspectorController;
 use App\Http\Controllers\Dev\SchemaEditorController;
 use App\Http\Controllers\Dev\SchemaMermaidController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -170,23 +173,42 @@ Route::prefix('permissions')->name('permissions.')->middleware(['web'])->group(f
     Route::get('/api/users', [PermissionController::class, 'users'])->name('api.users.index');
 });
 
-// Users Management Routes
-Route::prefix('users')->name('users.')->middleware(['web'])->group(function () {
-    // UI
-    Route::get('/', function () {
-        return view('users.index');
-    })->name('index');
-
-    // API Routes for Users
-    Route::prefix('api')->name('api.')->group(function () {
-        Route::get('/', [UserController::class, 'index'])->name('index');
-        Route::get('/search', [UserController::class, 'search'])->name('search');
-        Route::post('/', [UserController::class, 'store'])->name('store');
-        Route::get('/{user}', [UserController::class, 'show'])->name('show');
-        Route::put('/{user}', [UserController::class, 'update'])->name('update');
-        Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
-    });
-});
 Route::get('/demo/components/tabler', function () {
     return view('demo.components.tabler');
 })->name('demo.components.tabler');
+
+// Profile
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('index');
+
+    // Users Management Routes within Admin
+    Route::prefix('users')->name('users.')->group(function () {
+        // UI
+        Route::get('/', function () {
+            return view('users.index');
+        })->name('index');
+
+        // API Routes for Users
+        Route::prefix('api')->name('api.')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('index');
+            Route::get('/search', [UserController::class, 'search'])->name('search');
+            Route::post('/', [UserController::class, 'store'])->name('store');
+            Route::get('/{user}', [UserController::class, 'show'])->name('show');
+            Route::put('/{user}', [UserController::class, 'update'])->name('update');
+            Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
+        });
+    });
+});
+
+// Authentication Routes
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+});
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
