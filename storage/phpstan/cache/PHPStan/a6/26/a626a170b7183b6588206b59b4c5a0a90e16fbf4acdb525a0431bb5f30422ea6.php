@@ -82,7 +82,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/app/Providers/AppServiceProvider.php' => '6a854ba835dfb70e49445ab6226431eae90067c9557fa6cc7f1b1eb8e5317343',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/app/Providers/AppServiceProvider.php' => '40bdad92d4c1a0891d8ee3b4f6ca993314d7157b426c7867d5f1fd416bfc76f6',
     ),
   ),
 ));

@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/home/debian/__dev/devenv-php/src/laravel-starter/bootstrap/app.php' => 
     array (
-      0 => 'afd63ade74b2145d497731ac64719333056ddd96f763e39642fc1178e8331502',
+      0 => '26aaf2aea936c48a8aa143c1442172b0a3c5a369c9d08581f645b0b62751d347',
       1 => 
       array (
       ),

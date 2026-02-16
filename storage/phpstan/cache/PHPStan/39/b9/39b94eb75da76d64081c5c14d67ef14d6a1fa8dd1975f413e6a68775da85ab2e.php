@@ -5,40 +5,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
    'variableKey' => 'v1-enums',
    'data' => 
   array (
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Admin/AdminController.php' => 
-    array (
-      0 => 'f86a59abe8a9b8c3eb69ddb2f7db0883e8b4d6c5876929a0b7a4543f3a5b4419',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\admin\\admincontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\admin\\index',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php' => 
-    array (
-      0 => '324f908a79fa96fb98241721872868e56776275fd3052e34d8604893d1831dbe',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\auth\\authcontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\auth\\showlogin',
-        1 => 'app\\http\\controllers\\auth\\login',
-        2 => 'app\\http\\controllers\\auth\\showregister',
-        3 => 'app\\http\\controllers\\auth\\register',
-        4 => 'app\\http\\controllers\\auth\\logout',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Controller.php' => 
     array (
       0 => '25d1c1ef8e6cc8a376553faacfba2b07d9dfaee9bdbb84f14f77517580e9deb1',
@@ -53,351 +19,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Demo/ApexChartsController.php' => 
-    array (
-      0 => '3232a50ccda38775877994390b4bb6ace518b6c881bdb357c7d3b6cd2499d221',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\demo\\apexchartscontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\demo\\index',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php' => 
-    array (
-      0 => 'a15367926d8a96ba54c07abc6f8cb86b8841e662697e5f5d24e392ad3eb7700e',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\modelbuildercontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\__construct',
-        1 => 'app\\http\\controllers\\dev\\show',
-        2 => 'app\\http\\controllers\\dev\\preview',
-        3 => 'app\\http\\controllers\\dev\\getmodeltraits',
-        4 => 'app\\http\\controllers\\dev\\store',
-        5 => 'app\\http\\controllers\\dev\\generatemodel',
-        6 => 'app\\http\\controllers\\dev\\generatemigration',
-        7 => 'app\\http\\controllers\\dev\\generatefactory',
-        8 => 'app\\http\\controllers\\dev\\generatepivotmigrations',
-        9 => 'app\\http\\controllers\\dev\\generatepivotmigration',
-        10 => 'app\\http\\controllers\\dev\\getavailablemodels',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelInspectorController.php' => 
-    array (
-      0 => '5b764dd8452b3a4acf7f59e9a3aafc578112aaed7f89c84965cab245c9e50b94',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\modelinspectorcontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\index',
-        1 => 'app\\http\\controllers\\dev\\show',
-        2 => 'app\\http\\controllers\\dev\\discovermodels',
-        3 => 'app\\http\\controllers\\dev\\findmodelclass',
-        4 => 'app\\http\\controllers\\dev\\getmodelbasicinfo',
-        5 => 'app\\http\\controllers\\dev\\getmodelattributes',
-        6 => 'app\\http\\controllers\\dev\\getmodelcasts',
-        7 => 'app\\http\\controllers\\dev\\getmodelrelationships',
-        8 => 'app\\http\\controllers\\dev\\gettableschema',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaEditorController.php' => 
-    array (
-      0 => '603d93b5337eda7e6f53ada8689e3225b3837d4669a59b8d856a34ad7973336d',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\schemaeditorcontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\index',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php' => 
-    array (
-      0 => 'c7f09dbbcc3d04aab05f5fa89b974794f35ac5fac54849cdd4d981bc3b1f7907',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\schemamermaidcontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\dev\\show',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php' => 
-    array (
-      0 => 'daba53eb23fd7ed25629d5ee901e59bf5a8c52d4a8e8e194bdc7cc15ca9216ee',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\permissioncontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\index',
-        1 => 'app\\http\\controllers\\store',
-        2 => 'app\\http\\controllers\\show',
-        3 => 'app\\http\\controllers\\update',
-        4 => 'app\\http\\controllers\\destroy',
-        5 => 'app\\http\\controllers\\users',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php' => 
-    array (
-      0 => '2f9a79e6a89b148233ab5ec9da4c710239e72d6b3a641fae0385c597cbb75bca',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\profilecontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\show',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php' => 
-    array (
-      0 => '5e822947656ed13e85b83307ae5c6d8b5794684dd155708600ca68e0de1fefb5',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\rolecontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\index',
-        1 => 'app\\http\\controllers\\store',
-        2 => 'app\\http\\controllers\\show',
-        3 => 'app\\http\\controllers\\update',
-        4 => 'app\\http\\controllers\\destroy',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php' => 
-    array (
-      0 => '9ee5bd60ad089c2dd533d9b9d9527ca5e9dca543259ee0b328e1d423c98882c3',
-      1 => 
-      array (
-        0 => 'app\\http\\controllers\\usercontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\controllers\\index',
-        1 => 'app\\http\\controllers\\search',
-        2 => 'app\\http\\controllers\\store',
-        3 => 'app\\http\\controllers\\showview',
-        4 => 'app\\http\\controllers\\show',
-        5 => 'app\\http\\controllers\\update',
-        6 => 'app\\http\\controllers\\destroy',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Livewire/Counter.php' => 
-    array (
-      0 => '42abb5dac603b83d3e11096184b3dffbaae46fa6cce644db21d418dc946b24a9',
-      1 => 
-      array (
-        0 => 'app\\http\\livewire\\counter',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\livewire\\increment',
-        1 => 'app\\http\\livewire\\render',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/LoginRequest.php' => 
-    array (
-      0 => 'ecd05475a71f98189b5bca54468b0dd96ae8712dc65b82008e7882f9d847ea2c',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\auth\\loginrequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\auth\\authorize',
-        1 => 'app\\http\\requests\\auth\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/RegisterRequest.php' => 
-    array (
-      0 => '57d07f2ac255c0d992cd22a9ee95ed9912a07757678db6efe48af7594167217e',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\auth\\registerrequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\auth\\authorize',
-        1 => 'app\\http\\requests\\auth\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StorePermissionRequest.php' => 
-    array (
-      0 => '1c13835b460fbd2687638dc7e29c742aa1c3de28b3ec163bc42120cd13fe0ea0',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\storepermissionrequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\authorize',
-        1 => 'app\\http\\requests\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreRoleRequest.php' => 
-    array (
-      0 => '870fb16423a269750f8ab811764e734797ff3e1c8cfc949d94ace3332491c993',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\storerolerequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\authorize',
-        1 => 'app\\http\\requests\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreUserRequest.php' => 
-    array (
-      0 => '98a83ce3b5b26dd4d72c10d32787627cbcbd196745ccb8f5efbfa5b2adcf5269',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\storeuserrequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\authorize',
-        1 => 'app\\http\\requests\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdatePermissionRequest.php' => 
-    array (
-      0 => 'e645ea16ec1a702af1d7b4ed0c81c54623f1281d0fd6a90f4f7c548800d277f9',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\updatepermissionrequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\authorize',
-        1 => 'app\\http\\requests\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateRoleRequest.php' => 
-    array (
-      0 => '45a84e3fcdb5ab48731ae7c21146ecc1bcdcc7086c229acd25a3c89934114e36',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\updaterolerequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\authorize',
-        1 => 'app\\http\\requests\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateUserRequest.php' => 
-    array (
-      0 => 'fbb4d769136598b1c94377d2f105872d396a5d16e3ec6a11eed89d0166670b44',
-      1 => 
-      array (
-        0 => 'app\\http\\requests\\updateuserrequest',
-      ),
-      2 => 
-      array (
-        0 => 'app\\http\\requests\\authorize',
-        1 => 'app\\http\\requests\\rules',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php' => 
-    array (
-      0 => '777469d3f17e3f57996ee356b75998955a1f3d054533e87eae331d1c35dca00b',
-      1 => 
-      array (
-        0 => 'app\\models\\task',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\user',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/User.php' => 
-    array (
-      0 => '20faa5fe8a64d905b31501e4cfebca9fd5e6f08fb25be4dd61a8d791f12cf0bc',
-      1 => 
-      array (
-        0 => 'app\\models\\user',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\casts',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/app/Providers/AppServiceProvider.php' => 
     array (
-      0 => '6a854ba835dfb70e49445ab6226431eae90067c9557fa6cc7f1b1eb8e5317343',
+      0 => '40bdad92d4c1a0891d8ee3b4f6ca993314d7157b426c7867d5f1fd416bfc76f6',
       1 => 
       array (
         0 => 'app\\providers\\appserviceprovider',
@@ -406,68 +30,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'app\\providers\\register',
         1 => 'app\\providers\\boot',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/ModelGeneratorService.php' => 
-    array (
-      0 => '30f23d4c94aaaebdb374f5b3360eec0ef28d60c7deaeb304fb659bf97ca21ddd',
-      1 => 
-      array (
-        0 => 'app\\services\\modelgeneratorservice',
-      ),
-      2 => 
-      array (
-        0 => 'app\\services\\loadtemplate',
-        1 => 'app\\services\\rendertemplate',
-        2 => 'app\\services\\generatemodelsource',
-        3 => 'app\\services\\generatemigrationsource',
-        4 => 'app\\services\\generatefactorysource',
-        5 => 'app\\services\\generatepivotmigrationsource',
-        6 => 'app\\services\\generatecolumndefinition',
-        7 => 'app\\services\\generaterelationmethod',
-        8 => 'app\\services\\formatcastsarray',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/SchemaMermaidGenerator.php' => 
-    array (
-      0 => 'd7f5336d95036d17cb4b87ba5e4fa3fdc515547b70660ecd27d45e007c2cb671',
-      1 => 
-      array (
-        0 => 'app\\services\\schemamermaidgenerator',
-      ),
-      2 => 
-      array (
-        0 => 'app\\services\\__construct',
-        1 => 'app\\services\\generate',
-        2 => 'app\\services\\gettables',
-        3 => 'app\\services\\getmysqltables',
-        4 => 'app\\services\\getpostgresqltables',
-        5 => 'app\\services\\getsqlitetables',
-        6 => 'app\\services\\shouldignoretable',
-        7 => 'app\\services\\generatetabledefinition',
-        8 => 'app\\services\\gettablecolumns',
-        9 => 'app\\services\\getmysqlcolumns',
-        10 => 'app\\services\\getpostgresqlcolumns',
-        11 => 'app\\services\\getsqlitecolumns',
-        12 => 'app\\services\\gettableindexes',
-        13 => 'app\\services\\getmysqlindexes',
-        14 => 'app\\services\\getpostgresqlindexes',
-        15 => 'app\\services\\getsqliteindexes',
-        16 => 'app\\services\\isprimarykey',
-        17 => 'app\\services\\isuniquekey',
-        18 => 'app\\services\\isforeignkey',
-        19 => 'app\\services\\getforeignkeys',
-        20 => 'app\\services\\getmysqlforeignkeys',
-        21 => 'app\\services\\getpostgresqlforeignkeys',
-        22 => 'app\\services\\getsqliteforeignkeys',
-        23 => 'app\\services\\generaterelationships',
-        24 => 'app\\services\\simplifycolumntype',
       ),
       3 => 
       array (
@@ -554,30 +116,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/AssignRolesToUser.php' => 
-    array (
-      0 => '150efff0722cf2d9a996c3a55a249b5ed2f013e07984d3d503e81e3c76056c5c',
-      1 => 
-      array (
-        0 => 'app\\console\\commands\\assignrolestouser',
-      ),
-      2 => 
-      array (
-        0 => 'app\\console\\commands\\handle',
-        1 => 'app\\console\\commands\\getuser',
-        2 => 'app\\console\\commands\\finduser',
-        3 => 'app\\console\\commands\\getroles',
-        4 => 'app\\console\\commands\\findroles',
-        5 => 'app\\console\\commands\\displaysummary',
-        6 => 'app\\console\\commands\\assignroles',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php' => 
     array (
-      0 => 'fae6f6e2caf22550b63450ec05a2b4228d390f43a8dadb8a379facce19b74f4a',
+      0 => 'c77d073ce752b20d2d037c92e70f3831a220a66080bd7741a679775e1041271c',
       1 => 
       array (
         0 => 'app\\console\\commands\\admin\\assignrolestouser',
@@ -598,7 +139,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php' => 
     array (
-      0 => '698c471f2903c1dcfc4db164fa78a66784340fa1e47f932e7be93732ec23aea6',
+      0 => 'df411618bde71adaddacc158ca1d0fce7dbdca601320dababacf1bdc50ed0a02',
       1 => 
       array (
         0 => 'app\\console\\commands\\admin\\createadminuser',
@@ -616,21 +157,493 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/CreateAdminUser.php' => 
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/AdminController.php' => 
     array (
-      0 => '69b3a77bd995046b2714aca866e49940e768143f54f124a4910d226db132ea62',
+      0 => 'e6649423c4376fb8fb262811e10713163c5e81e015ecd0d48869b89615219b1c',
       1 => 
       array (
-        0 => 'app\\console\\commands\\createadminuser',
+        0 => 'app\\domain\\administration\\http\\controllers\\admincontroller',
       ),
       2 => 
       array (
-        0 => 'app\\console\\commands\\handle',
-        1 => 'app\\console\\commands\\interactivemode',
-        2 => 'app\\console\\commands\\getnameinput',
-        3 => 'app\\console\\commands\\getemailinput',
-        4 => 'app\\console\\commands\\getpasswordinput',
-        5 => 'app\\console\\commands\\createuser',
+        0 => 'app\\domain\\administration\\http\\controllers\\index',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php' => 
+    array (
+      0 => '04c2c54ddf5eeae712274b30d3c94733536fca40f0dc7904b7f130ef17cc3ac7',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\controllers\\permissioncontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\controllers\\index',
+        1 => 'app\\domain\\administration\\http\\controllers\\store',
+        2 => 'app\\domain\\administration\\http\\controllers\\show',
+        3 => 'app\\domain\\administration\\http\\controllers\\update',
+        4 => 'app\\domain\\administration\\http\\controllers\\destroy',
+        5 => 'app\\domain\\administration\\http\\controllers\\users',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/RoleController.php' => 
+    array (
+      0 => '991a1f26977c272a6adf18a93d2bc79d89d8fdc6a9724440271665ed4cef0082',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\controllers\\rolecontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\controllers\\index',
+        1 => 'app\\domain\\administration\\http\\controllers\\store',
+        2 => 'app\\domain\\administration\\http\\controllers\\show',
+        3 => 'app\\domain\\administration\\http\\controllers\\update',
+        4 => 'app\\domain\\administration\\http\\controllers\\destroy',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php' => 
+    array (
+      0 => '71669417582678096d1474e2a5f3b53982a443224eb2156ed83b93cb8ae4ab0e',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\controllers\\usercontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\controllers\\index',
+        1 => 'app\\domain\\administration\\http\\controllers\\search',
+        2 => 'app\\domain\\administration\\http\\controllers\\store',
+        3 => 'app\\domain\\administration\\http\\controllers\\showview',
+        4 => 'app\\domain\\administration\\http\\controllers\\show',
+        5 => 'app\\domain\\administration\\http\\controllers\\update',
+        6 => 'app\\domain\\administration\\http\\controllers\\destroy',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StorePermissionRequest.php' => 
+    array (
+      0 => 'ecbb4f1748c9f6b39886b1e3fd5cce7111a6499ccfe5b6ba03b22381f53023bb',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\storepermissionrequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\authorize',
+        1 => 'app\\domain\\administration\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreRoleRequest.php' => 
+    array (
+      0 => 'd1903ae63fcde5a82a4eaabdfd9cb6a10a5ca3f80ef2272051ed38fd630c040e',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\storerolerequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\authorize',
+        1 => 'app\\domain\\administration\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreUserRequest.php' => 
+    array (
+      0 => 'd3e699dcc4ff7ad423401f934f64aef8b4c61fb5560a0fa6af67d141cf98460e',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\storeuserrequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\authorize',
+        1 => 'app\\domain\\administration\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdatePermissionRequest.php' => 
+    array (
+      0 => '5a2f182d70c44eff40b9ab9a533bec2a2178369568b1c143ecbb1d67cb08f3c4',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\updatepermissionrequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\authorize',
+        1 => 'app\\domain\\administration\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateRoleRequest.php' => 
+    array (
+      0 => 'afbd0ecd2af54ee52611485d08bb8e0a38fcaf833dfd349e001c2d78abfa0a4c',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\updaterolerequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\authorize',
+        1 => 'app\\domain\\administration\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateUserRequest.php' => 
+    array (
+      0 => '90315966cd5663f55ada06f755300090de1de7ce2b2582d9d1e5353f5c07fb98',
+      1 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\updateuserrequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\administration\\http\\requests\\authorize',
+        1 => 'app\\domain\\administration\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php' => 
+    array (
+      0 => '4039cf47430d48d48c4db80b78b39091b2a664dfe6f47b491ac056a4f2ecd989',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php' => 
+    array (
+      0 => '77086ee3a7d25044a36a44254e387b8a304124f5e4e64cb14c20fdfbddf823da',
+      1 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\controllers\\authcontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\controllers\\showlogin',
+        1 => 'app\\domain\\identity\\http\\controllers\\login',
+        2 => 'app\\domain\\identity\\http\\controllers\\showregister',
+        3 => 'app\\domain\\identity\\http\\controllers\\register',
+        4 => 'app\\domain\\identity\\http\\controllers\\logout',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/ProfileController.php' => 
+    array (
+      0 => 'e363954782ab41982fd75b26762eb43a92004c7eeb58225aeb515bb976f7ccea',
+      1 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\controllers\\profilecontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\controllers\\show',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/LoginRequest.php' => 
+    array (
+      0 => 'ca0d7e2327c18776855b60410629593b6c482d952df8dceaf042e86ff49583fd',
+      1 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\requests\\loginrequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\requests\\authorize',
+        1 => 'app\\domain\\identity\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/RegisterRequest.php' => 
+    array (
+      0 => 'd00680756947e4c2dc9930dc881c36393ad7619321754fdf229f6f4a1b01c576',
+      1 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\requests\\registerrequest',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\identity\\http\\requests\\authorize',
+        1 => 'app\\domain\\identity\\http\\requests\\rules',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Models/User.php' => 
+    array (
+      0 => 'e72f486e79bf4bca08e574b64a6c6c7b2e0698dd2d3c6038ee1320daec60d6af',
+      1 => 
+      array (
+        0 => 'app\\domain\\identity\\models\\user',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\identity\\models\\newfactory',
+        1 => 'app\\domain\\identity\\models\\casts',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/routes.php' => 
+    array (
+      0 => '9653f700a14e691da460505efb354cad5f316d912cacd088bcc7f4f80bd0b070',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/TaskManagement/Models/Task.php' => 
+    array (
+      0 => 'dbb7a753b33eea64a419a040a9412611dd8ebe1f0bd5b438ce1a7f61fd8275ad',
+      1 => 
+      array (
+        0 => 'app\\domain\\taskmanagement\\models\\task',
+      ),
+      2 => 
+      array (
+        0 => 'app\\domain\\taskmanagement\\models\\newfactory',
+        1 => 'app\\domain\\taskmanagement\\models\\user',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Livewire/Counter.php' => 
+    array (
+      0 => '90e78536e5f145172db33a53660447f7733e8cae05c0eb84300068733ec451a4',
+      1 => 
+      array (
+        0 => 'app\\livewire\\counter',
+      ),
+      2 => 
+      array (
+        0 => 'app\\livewire\\increment',
+        1 => 'app\\livewire\\render',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/Http/Controllers/ApexChartsController.php' => 
+    array (
+      0 => '1b78220c551e48225d21ccb26e1c725e60b79a8318e27a2ffdb37c30081bbb27',
+      1 => 
+      array (
+        0 => 'app\\support\\demo\\http\\controllers\\apexchartscontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\demo\\http\\controllers\\index',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/routes.php' => 
+    array (
+      0 => 'b5d19ae30aafbc815a0e90132db48029f8305ab68259aeb4067252b7a132bdd0',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelBuilderController.php' => 
+    array (
+      0 => '4913c821931a93958ea2b4f05936a0cbe0b82103fe958f1138eec1cc5fd764ff',
+      1 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\modelbuildercontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\__construct',
+        1 => 'app\\support\\devtools\\http\\controllers\\show',
+        2 => 'app\\support\\devtools\\http\\controllers\\preview',
+        3 => 'app\\support\\devtools\\http\\controllers\\getmodeltraits',
+        4 => 'app\\support\\devtools\\http\\controllers\\store',
+        5 => 'app\\support\\devtools\\http\\controllers\\generatemodel',
+        6 => 'app\\support\\devtools\\http\\controllers\\generatemigration',
+        7 => 'app\\support\\devtools\\http\\controllers\\generatefactory',
+        8 => 'app\\support\\devtools\\http\\controllers\\generatepivotmigrations',
+        9 => 'app\\support\\devtools\\http\\controllers\\generatepivotmigration',
+        10 => 'app\\support\\devtools\\http\\controllers\\getavailablemodels',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelInspectorController.php' => 
+    array (
+      0 => '7dfd8620b192fbd8ffef46bd956380d829609f89571a301d8ad77a73bf52589f',
+      1 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\modelinspectorcontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\index',
+        1 => 'app\\support\\devtools\\http\\controllers\\show',
+        2 => 'app\\support\\devtools\\http\\controllers\\discovermodels',
+        3 => 'app\\support\\devtools\\http\\controllers\\findmodelclass',
+        4 => 'app\\support\\devtools\\http\\controllers\\getmodelbasicinfo',
+        5 => 'app\\support\\devtools\\http\\controllers\\getmodelattributes',
+        6 => 'app\\support\\devtools\\http\\controllers\\getmodelcasts',
+        7 => 'app\\support\\devtools\\http\\controllers\\getmodelrelationships',
+        8 => 'app\\support\\devtools\\http\\controllers\\gettableschema',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaEditorController.php' => 
+    array (
+      0 => '865fe084f71080ed70df5105ab923df9d9595f3bc029197cbdb316d26911cc36',
+      1 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\schemaeditorcontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\index',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaMermaidController.php' => 
+    array (
+      0 => '0920db655dfc7041257523208a6b35be7e629671562a4f3f904ac4f99c273a0a',
+      1 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\schemamermaidcontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\devtools\\http\\controllers\\show',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/ModelGeneratorService.php' => 
+    array (
+      0 => 'bae28a0c31f28ecfe19b078775cb8f67582471474955dc5a2c4284b8d00dd470',
+      1 => 
+      array (
+        0 => 'app\\support\\devtools\\services\\modelgeneratorservice',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\devtools\\services\\loadtemplate',
+        1 => 'app\\support\\devtools\\services\\rendertemplate',
+        2 => 'app\\support\\devtools\\services\\generatemodelsource',
+        3 => 'app\\support\\devtools\\services\\generatemigrationsource',
+        4 => 'app\\support\\devtools\\services\\generatefactorysource',
+        5 => 'app\\support\\devtools\\services\\generatepivotmigrationsource',
+        6 => 'app\\support\\devtools\\services\\generatecolumndefinition',
+        7 => 'app\\support\\devtools\\services\\generaterelationmethod',
+        8 => 'app\\support\\devtools\\services\\formatcastsarray',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/SchemaMermaidGenerator.php' => 
+    array (
+      0 => '9b1cb14513f726ce0706fb1aff7d6b5c371d34bf1be7f0a58fb00dccf5520c61',
+      1 => 
+      array (
+        0 => 'app\\support\\devtools\\services\\schemamermaidgenerator',
+      ),
+      2 => 
+      array (
+        0 => 'app\\support\\devtools\\services\\__construct',
+        1 => 'app\\support\\devtools\\services\\generate',
+        2 => 'app\\support\\devtools\\services\\gettables',
+        3 => 'app\\support\\devtools\\services\\getmysqltables',
+        4 => 'app\\support\\devtools\\services\\getpostgresqltables',
+        5 => 'app\\support\\devtools\\services\\getsqlitetables',
+        6 => 'app\\support\\devtools\\services\\shouldignoretable',
+        7 => 'app\\support\\devtools\\services\\generatetabledefinition',
+        8 => 'app\\support\\devtools\\services\\gettablecolumns',
+        9 => 'app\\support\\devtools\\services\\getmysqlcolumns',
+        10 => 'app\\support\\devtools\\services\\getpostgresqlcolumns',
+        11 => 'app\\support\\devtools\\services\\getsqlitecolumns',
+        12 => 'app\\support\\devtools\\services\\gettableindexes',
+        13 => 'app\\support\\devtools\\services\\getmysqlindexes',
+        14 => 'app\\support\\devtools\\services\\getpostgresqlindexes',
+        15 => 'app\\support\\devtools\\services\\getsqliteindexes',
+        16 => 'app\\support\\devtools\\services\\isprimarykey',
+        17 => 'app\\support\\devtools\\services\\isuniquekey',
+        18 => 'app\\support\\devtools\\services\\isforeignkey',
+        19 => 'app\\support\\devtools\\services\\getforeignkeys',
+        20 => 'app\\support\\devtools\\services\\getmysqlforeignkeys',
+        21 => 'app\\support\\devtools\\services\\getpostgresqlforeignkeys',
+        22 => 'app\\support\\devtools\\services\\getsqliteforeignkeys',
+        23 => 'app\\support\\devtools\\services\\generaterelationships',
+        24 => 'app\\support\\devtools\\services\\simplifycolumntype',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php' => 
+    array (
+      0 => 'd2a99c2eba67fba00f76915cbb4af2f4824520a829d4da9c1b57ab0905fd4bfe',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
       ),
       3 => 
       array (

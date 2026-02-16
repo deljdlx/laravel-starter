@@ -78,7 +78,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php' => '01a22fbf59afb7950c5ad9a55c2f6ec9053d3c0f8948969e7d76f2c80f90116b',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php' => '45a62c5b8a9ca57c5d111bbb594213c3f4ed6fb9aabcc3e805cab7623514cf92',
     ),
   ),
 ));

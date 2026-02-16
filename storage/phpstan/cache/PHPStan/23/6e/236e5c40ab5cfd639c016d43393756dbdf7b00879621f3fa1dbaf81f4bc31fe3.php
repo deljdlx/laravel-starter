@@ -12,8 +12,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Database\\Seeders',
          'uses' => 
         array (
-          'task' => 'App\\Models\\Task',
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
+          'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
           'withoutmodelevents' => 'Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents',
           'seeder' => 'Illuminate\\Database\\Seeder',
         ),
@@ -98,8 +98,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Database\\Seeders',
          'uses' => 
         array (
-          'task' => 'App\\Models\\Task',
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
+          'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
           'withoutmodelevents' => 'Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents',
           'seeder' => 'Illuminate\\Database\\Seeder',
         ),
@@ -122,7 +122,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php' => 'e909dd0e4caebfdc51ea9bebaa78181dd9e2cd64dcc6df1b5804e44b66bb27d0',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php' => '4c97a87f34a01dbcd12d74cb4ba4f6368fb72f0e9cd8230b0e7909e83f1bb87b',
       '/home/debian/__dev/devenv-php/src/laravel-starter/vendor/composer/../laravel/framework/src/Illuminate/Database/Console/Seeds/WithoutModelEvents.php' => 'b546128633d71f88c7834595917a65683bf5415a5add0eeba398571c2f63ccc0',
     ),
   ),

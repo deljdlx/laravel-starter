@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use App\Models\User;
+use App\Domain\Administration\Http\Controllers\UserController;
+use App\Domain\Identity\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

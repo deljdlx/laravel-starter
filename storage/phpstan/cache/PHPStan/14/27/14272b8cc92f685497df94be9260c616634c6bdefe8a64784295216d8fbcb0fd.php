@@ -12,7 +12,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -38,7 +38,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -64,7 +64,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -90,7 +90,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -116,7 +116,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -142,7 +142,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -168,7 +168,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'hash' => 'Illuminate\\Support\\Facades\\Hash',
           'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -192,7 +192,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php' => '698c471f2903c1dcfc4db164fa78a66784340fa1e47f932e7be93732ec23aea6',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php' => 'df411618bde71adaddacc158ca1d0fce7dbdca601320dababacf1bdc50ed0a02',
     ),
   ),
 ));

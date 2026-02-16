@@ -20,7 +20,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/config/auth.php' => 
     array (
-      0 => 'fecc9b129050f5f416060971fa4a9582aea28462815324a446c0b2a66b48dd7e',
+      0 => '027e6aeaa6344bba88e315c610031ffbfe5167c7ac816427a9ceb6fd54013e88',
       1 => 
       array (
       ),

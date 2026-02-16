@@ -2114,7 +2114,7 @@ return [
   array (
     0 => 
     \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Dynamic call to static method Illuminate\\Database\\Eloquent\\Builder<App\\Models\\User>::limit().',
+       'message' => 'Dynamic call to static method Illuminate\\Database\\Eloquent\\Builder<App\\Domain\\Identity\\Models\\User>::limit().',
        'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php',
        'line' => 84,
        'canBeIgnored' => true,
@@ -2130,15 +2130,15 @@ return [
        'fixedErrorDiff' => NULL,
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php' => 
   array (
     0 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'line' => 32,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 32,
@@ -2152,10 +2152,10 @@ return [
     1 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'line' => 51,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 51,
@@ -2169,10 +2169,10 @@ return [
     2 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'line' => 71,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 71,
@@ -2186,10 +2186,10 @@ return [
     3 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'line' => 91,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 91,
@@ -2203,10 +2203,10 @@ return [
     4 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'line' => 112,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 112,
@@ -2218,15 +2218,15 @@ return [
        'fixedErrorDiff' => NULL,
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php' => 
   array (
     0 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'line' => 27,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 27,
@@ -2240,10 +2240,10 @@ return [
     1 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'line' => 53,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 53,
@@ -2257,10 +2257,10 @@ return [
     2 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'line' => 70,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 70,
@@ -2274,10 +2274,10 @@ return [
     3 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'line' => 88,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 88,
@@ -2291,10 +2291,10 @@ return [
     4 => 
     \PHPStan\Analyser\Error::__set_state(array(
        'message' => 'Cannot call method expectsQuestion() on Illuminate\\Testing\\PendingCommand|int.',
-       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'file' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'line' => 107,
        'canBeIgnored' => true,
-       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+       'filePath' => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
        'traitFilePath' => NULL,
        'tip' => NULL,
        'nodeLine' => 107,
@@ -2315,9 +2315,9 @@ return [
       84 => NULL,
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php' => 
   array (
-    '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php' => 
+    '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php' => 
     array (
       32 => NULL,
       51 => NULL,
@@ -2326,9 +2326,9 @@ return [
       112 => NULL,
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php' => 
   array (
-    '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php' => 
+    '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php' => 
     array (
       27 => NULL,
       53 => NULL,
@@ -2341,26 +2341,119 @@ return [
 	'unmatchedLineIgnores' => array (
 ),
 	'collectedDataCallback' => static function (): array { return array (
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/CreateAdminUser.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Spatie\\Permission\\Models\\Role',
-        1 => 'findOrCreate',
-        2 => 202,
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Admin/AdminController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/AdminController.php' => 
   array (
     'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
     array (
       0 => 'admin.index',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php' => 
+  array (
+    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
+    array (
+      0 => 'users.show',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StorePermissionRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+      ),
+      1 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+        1 => 'rules',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreRoleRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+      ),
+      1 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+        1 => 'rules',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreUserRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+      ),
+      1 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+        1 => 'rules',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdatePermissionRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateRoleRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateUserRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php' => 
+  array (
+    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
+    array (
+      0 => 'users.index',
+      1 => 'permissions.index',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php' => 
   array (
     'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
     array (
@@ -2368,14 +2461,137 @@ return [
       1 => 'auth.register',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Demo/ApexChartsController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/ProfileController.php' => 
+  array (
+    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
+    array (
+      0 => 'profile.show',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/LoginRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+      ),
+      1 => 
+      array (
+        0 => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+        1 => 'rules',
+        2 => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/RegisterRequest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+        1 => 'authorize',
+        2 => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+      ),
+      1 => 
+      array (
+        0 => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+        1 => 'rules',
+        2 => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Models/User.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Domain\\Identity\\Models\\User',
+        1 => 'casts',
+        2 => 'App\\Domain\\Identity\\Models\\User',
+      ),
+    ),
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Laravel\\Sanctum\\HasApiTokens',
+        1 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+        2 => 'Spatie\\Permission\\Traits\\HasRoles',
+        3 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+        4 => 'Illuminate\\Notifications\\Notifiable',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/routes.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\Route',
+        1 => 'post',
+        2 => 13,
+      ),
+      1 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\Route',
+        1 => 'post',
+        2 => 15,
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/TaskManagement/Models/Task.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+        1 => 'Spatie\\ModelStatus\\HasStatuses',
+        2 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Livewire/Counter.php' => 
+  array (
+    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
+    array (
+      0 => 'livewire.counter',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/Http/Controllers/ApexChartsController.php' => 
   array (
     'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
     array (
       0 => 'demo.apexcharts',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/routes.php' => 
+  array (
+    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
+    array (
+      0 => 'demo.components',
+      1 => 'demo.components.alpine',
+      2 => 'demo.components.forms',
+      3 => 'demo.components.diagrams',
+      4 => 'demo.components.echarts',
+      5 => 'demo.components.tabulator',
+      6 => 'demo.layouts.index',
+      7 => 'demo.layouts.single-column',
+      8 => 'demo.layouts.two-columns',
+      9 => 'demo.layouts.three-columns',
+      10 => 'demo.layouts.grid',
+      11 => 'demo.layouts.dashboard',
+      12 => 'demo.layouts.list-detail',
+      13 => 'demo.components.tabler',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelBuilderController.php' => 
   array (
     'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
     array (
@@ -2383,15 +2599,15 @@ return [
     ),
     'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
     array (
-      0 => 'App\\Http\\Controllers\\Dev\\ModelBuilderController',
+      0 => 'App\\Support\\DevTools\\Http\\Controllers\\ModelBuilderController',
     ),
     'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
     array (
       0 => 
       array (
-        0 => 'App\\Http\\Controllers\\Dev\\ModelBuilderController',
+        0 => 'App\\Support\\DevTools\\Http\\Controllers\\ModelBuilderController',
         1 => 'getModelTraits',
-        2 => 'App\\Http\\Controllers\\Dev\\ModelBuilderController',
+        2 => 'App\\Support\\DevTools\\Http\\Controllers\\ModelBuilderController',
       ),
     ),
     'PHPStan\\Rules\\DeadCode\\PossiblyPureFuncCallCollector' => 
@@ -2435,200 +2651,32 @@ return [
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaEditorController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaEditorController.php' => 
   array (
     'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
     array (
       0 => 'dev.schema-editor.index',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaMermaidController.php' => 
   array (
     'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
     array (
       0 => 'dev.schema-mermaid.index',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php' => 
-  array (
-    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
-    array (
-      0 => 'profile.show',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Livewire/Counter.php' => 
-  array (
-    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
-    array (
-      0 => 'livewire.counter',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/LoginRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\Auth\\LoginRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\Auth\\LoginRequest',
-      ),
-      1 => 
-      array (
-        0 => 'App\\Http\\Requests\\Auth\\LoginRequest',
-        1 => 'rules',
-        2 => 'App\\Http\\Requests\\Auth\\LoginRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/RegisterRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-      ),
-      1 => 
-      array (
-        0 => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-        1 => 'rules',
-        2 => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StorePermissionRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\StorePermissionRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\StorePermissionRequest',
-      ),
-      1 => 
-      array (
-        0 => 'App\\Http\\Requests\\StorePermissionRequest',
-        1 => 'rules',
-        2 => 'App\\Http\\Requests\\StorePermissionRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreRoleRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\StoreRoleRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\StoreRoleRequest',
-      ),
-      1 => 
-      array (
-        0 => 'App\\Http\\Requests\\StoreRoleRequest',
-        1 => 'rules',
-        2 => 'App\\Http\\Requests\\StoreRoleRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreUserRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\StoreUserRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\StoreUserRequest',
-      ),
-      1 => 
-      array (
-        0 => 'App\\Http\\Requests\\StoreUserRequest',
-        1 => 'rules',
-        2 => 'App\\Http\\Requests\\StoreUserRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdatePermissionRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\UpdatePermissionRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\UpdatePermissionRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateRoleRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\UpdateRoleRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\UpdateRoleRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateUserRequest.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Http\\Requests\\UpdateUserRequest',
-        1 => 'authorize',
-        2 => 'App\\Http\\Requests\\UpdateUserRequest',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-        1 => 'Spatie\\ModelStatus\\HasStatuses',
-        2 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/User.php' => 
-  array (
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'App\\Models\\User',
-        1 => 'casts',
-        2 => 'App\\Models\\User',
-      ),
-    ),
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Laravel\\Sanctum\\HasApiTokens',
-        1 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-        2 => 'Spatie\\Permission\\Traits\\HasRoles',
-        3 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-        4 => 'Illuminate\\Notifications\\Notifiable',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/SchemaMermaidGenerator.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/SchemaMermaidGenerator.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
     array (
-      0 => 'App\\Services\\SchemaMermaidGenerator',
+      0 => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php' => 
+  array (
+    'Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector' => 
+    array (
+      0 => 'dev.models.index',
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/app/View/Components/Card.php' => 
@@ -2722,23 +2770,6 @@ return [
     array (
       0 => 'welcome',
       1 => 'form',
-      2 => 'demo.components',
-      3 => 'demo.components.alpine',
-      4 => 'demo.components.forms',
-      5 => 'demo.components.diagrams',
-      6 => 'demo.components.echarts',
-      7 => 'demo.components.tabulator',
-      8 => 'demo.layouts.index',
-      9 => 'demo.layouts.single-column',
-      10 => 'demo.layouts.two-columns',
-      11 => 'demo.layouts.three-columns',
-      12 => 'demo.layouts.grid',
-      13 => 'demo.layouts.dashboard',
-      14 => 'demo.layouts.list-detail',
-      15 => 'dev.models.index',
-      16 => 'demo.components.tabler',
-      17 => 'users.index',
-      18 => 'permissions.index',
     ),
     'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
     array (
@@ -2746,29 +2777,17 @@ return [
       array (
         0 => 'Illuminate\\Support\\Facades\\Route',
         1 => 'get',
-        2 => 16,
+        2 => 6,
       ),
       1 => 
       array (
         0 => 'Illuminate\\Support\\Facades\\Route',
         1 => 'get',
-        2 => 57,
-      ),
-      2 => 
-      array (
-        0 => 'Illuminate\\Support\\Facades\\Route',
-        1 => 'post',
-        2 => 215,
-      ),
-      3 => 
-      array (
-        0 => 'Illuminate\\Support\\Facades\\Route',
-        1 => 'post',
-        2 => 217,
+        2 => 47,
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/AdminTest.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
@@ -2778,17 +2797,7 @@ return [
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
     array (
@@ -2819,7 +2828,7 @@ return [
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
     array (
@@ -2838,7 +2847,100 @@ return [
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelBuilderControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/PermissionControllerTest.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserControllerTest.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserShowPageTest.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Spatie\\Permission\\Models\\Role',
+        1 => 'create',
+        2 => 16,
+      ),
+      1 => 
+      array (
+        0 => 'Spatie\\Permission\\Models\\Role',
+        1 => 'create',
+        2 => 35,
+      ),
+      2 => 
+      array (
+        0 => 'Spatie\\Permission\\Models\\Role',
+        1 => 'create',
+        2 => 36,
+      ),
+      3 => 
+      array (
+        0 => 'Spatie\\Permission\\Models\\Role',
+        1 => 'create',
+        2 => 61,
+      ),
+      4 => 
+      array (
+        0 => 'Spatie\\Permission\\Models\\Role',
+        1 => 'create',
+        2 => 77,
+      ),
+    ),
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/AuthTest.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/ProfileTest.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelBuilderControllerTest.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
     array (
@@ -2869,7 +2971,7 @@ return [
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/SchemaMermaidControllerTest.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
@@ -2879,47 +2981,7 @@ return [
       ),
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SchemaMermaidControllerTest.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/SchemaMermaidGeneratorTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/Support/SchemaMermaidGeneratorTest.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
@@ -2933,46 +2995,182 @@ return [
 	'dependencies' => array (
   '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php' => 
   array (
-    'fileHash' => 'fae6f6e2caf22550b63450ec05a2b4228d390f43a8dadb8a379facce19b74f4a',
+    'fileHash' => 'c77d073ce752b20d2d037c92e70f3831a220a66080bd7741a679775e1041271c',
     'dependentFiles' => 
     array (
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php' => 
   array (
-    'fileHash' => '698c471f2903c1dcfc4db164fa78a66784340fa1e47f932e7be93732ec23aea6',
+    'fileHash' => 'df411618bde71adaddacc158ca1d0fce7dbdca601320dababacf1bdc50ed0a02',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/AssignRolesToUser.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/AdminController.php' => 
   array (
-    'fileHash' => '150efff0722cf2d9a996c3a55a249b5ed2f013e07984d3d503e81e3c76056c5c',
+    'fileHash' => 'e6649423c4376fb8fb262811e10713163c5e81e015ecd0d48869b89615219b1c',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php' => 
+  array (
+    'fileHash' => '04c2c54ddf5eeae712274b30d3c94733536fca40f0dc7904b7f130ef17cc3ac7',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/RoleController.php' => 
+  array (
+    'fileHash' => '991a1f26977c272a6adf18a93d2bc79d89d8fdc6a9724440271665ed4cef0082',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php' => 
+  array (
+    'fileHash' => '71669417582678096d1474e2a5f3b53982a443224eb2156ed83b93cb8ae4ab0e',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StorePermissionRequest.php' => 
+  array (
+    'fileHash' => 'ecbb4f1748c9f6b39886b1e3fd5cce7111a6499ccfe5b6ba03b22381f53023bb',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreRoleRequest.php' => 
+  array (
+    'fileHash' => 'd1903ae63fcde5a82a4eaabdfd9cb6a10a5ca3f80ef2272051ed38fd630c040e',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/RoleController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreUserRequest.php' => 
+  array (
+    'fileHash' => 'd3e699dcc4ff7ad423401f934f64aef8b4c61fb5560a0fa6af67d141cf98460e',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdatePermissionRequest.php' => 
+  array (
+    'fileHash' => '5a2f182d70c44eff40b9ab9a533bec2a2178369568b1c143ecbb1d67cb08f3c4',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateRoleRequest.php' => 
+  array (
+    'fileHash' => 'afbd0ecd2af54ee52611485d08bb8e0a38fcaf833dfd349e001c2d78abfa0a4c',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/RoleController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateUserRequest.php' => 
+  array (
+    'fileHash' => '90315966cd5663f55ada06f755300090de1de7ce2b2582d9d1e5353f5c07fb98',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php' => 
+  array (
+    'fileHash' => '4039cf47430d48d48c4db80b78b39091b2a664dfe6f47b491ac056a4f2ecd989',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/CreateAdminUser.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php' => 
   array (
-    'fileHash' => '69b3a77bd995046b2714aca866e49940e768143f54f124a4910d226db132ea62',
+    'fileHash' => '77086ee3a7d25044a36a44254e387b8a304124f5e4e64cb14c20fdfbddf823da',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/ProfileController.php' => 
+  array (
+    'fileHash' => 'e363954782ab41982fd75b26762eb43a92004c7eeb58225aeb515bb976f7ccea',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/LoginRequest.php' => 
+  array (
+    'fileHash' => 'ca0d7e2327c18776855b60410629593b6c482d952df8dceaf042e86ff49583fd',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/RegisterRequest.php' => 
+  array (
+    'fileHash' => 'd00680756947e4c2dc9930dc881c36393ad7619321754fdf229f6f4a1b01c576',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Models/User.php' => 
+  array (
+    'fileHash' => 'e72f486e79bf4bca08e574b64a6c6c7b2e0698dd2d3c6038ee1320daec60d6af',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php',
+      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php',
+      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php',
+      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php',
+      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/ProfileController.php',
+      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/TaskManagement/Models/Task.php',
+      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/config/auth.php',
+      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php',
+      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/UserFactory.php',
+      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
+      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php',
+      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/AdminTest.php',
+      13 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
+      14 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
+      15 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/PermissionControllerTest.php',
+      16 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserControllerTest.php',
+      17 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserShowPageTest.php',
+      18 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/AuthTest.php',
+      19 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/ProfileTest.php',
+      20 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/routes.php' => 
+  array (
+    'fileHash' => '9653f700a14e691da460505efb354cad5f316d912cacd088bcc7f4f80bd0b070',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Admin/AdminController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/TaskManagement/Models/Task.php' => 
   array (
-    'fileHash' => 'f86a59abe8a9b8c3eb69ddb2f7db0883e8b4d6c5876929a0b7a4543f3a5b4419',
+    'fileHash' => 'dbb7a753b33eea64a419a040a9412611dd8ebe1f0bd5b438ce1a7f61fd8275ad',
     'dependentFiles' => 
     array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php' => 
-  array (
-    'fileHash' => '324f908a79fa96fb98241721872868e56776275fd3052e34d8604893d1831dbe',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
+      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php',
+      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php',
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Controller.php' => 
@@ -2980,229 +3178,120 @@ return [
     'fileHash' => '25d1c1ef8e6cc8a376553faacfba2b07d9dfaee9bdbb84f14f77517580e9deb1',
     'dependentFiles' => 
     array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Admin/AdminController.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php',
-      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Demo/ApexChartsController.php',
-      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php',
-      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelInspectorController.php',
-      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaEditorController.php',
-      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php',
-      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php',
-      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php',
-      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php',
-      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php',
-      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php',
-      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/AdminController.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php',
+      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/RoleController.php',
+      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php',
+      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/routes.php',
+      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php',
+      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/ProfileController.php',
+      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/routes.php',
+      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Admin/AdminController.php',
+      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php',
+      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Demo/ApexChartsController.php',
+      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php',
+      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelInspectorController.php',
+      13 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaEditorController.php',
+      14 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php',
+      15 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php',
+      16 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php',
+      17 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php',
+      18 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php',
+      19 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/Http/Controllers/ApexChartsController.php',
+      20 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/routes.php',
+      21 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelBuilderController.php',
+      22 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelInspectorController.php',
+      23 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaEditorController.php',
+      24 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaMermaidController.php',
+      25 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php',
+      26 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Demo/ApexChartsController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Livewire/Counter.php' => 
   array (
-    'fileHash' => '3232a50ccda38775877994390b4bb6ace518b6c881bdb357c7d3b6cd2499d221',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php' => 
-  array (
-    'fileHash' => 'a15367926d8a96ba54c07abc6f8cb86b8841e662697e5f5d24e392ad3eb7700e',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelInspectorController.php' => 
-  array (
-    'fileHash' => '5b764dd8452b3a4acf7f59e9a3aafc578112aaed7f89c84965cab245c9e50b94',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaEditorController.php' => 
-  array (
-    'fileHash' => '603d93b5337eda7e6f53ada8689e3225b3837d4669a59b8d856a34ad7973336d',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php' => 
-  array (
-    'fileHash' => 'c7f09dbbcc3d04aab05f5fa89b974794f35ac5fac54849cdd4d981bc3b1f7907',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php' => 
-  array (
-    'fileHash' => 'daba53eb23fd7ed25629d5ee901e59bf5a8c52d4a8e8e194bdc7cc15ca9216ee',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php' => 
-  array (
-    'fileHash' => '2f9a79e6a89b148233ab5ec9da4c710239e72d6b3a641fae0385c597cbb75bca',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php' => 
-  array (
-    'fileHash' => '5e822947656ed13e85b83307ae5c6d8b5794684dd155708600ca68e0de1fefb5',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php' => 
-  array (
-    'fileHash' => '8feb1b19bcbcca58fd1f1b87e82bef42d459cb04366bd86d0c34464ddd3ca451',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Livewire/Counter.php' => 
-  array (
-    'fileHash' => '42abb5dac603b83d3e11096184b3dffbaae46fa6cce644db21d418dc946b24a9',
+    'fileHash' => '90e78536e5f145172db33a53660447f7733e8cae05c0eb84300068733ec451a4',
     'dependentFiles' => 
     array (
       0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Providers/AppServiceProvider.php',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/LoginRequest.php' => 
-  array (
-    'fileHash' => 'ecd05475a71f98189b5bca54468b0dd96ae8712dc65b82008e7882f9d847ea2c',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/RegisterRequest.php' => 
-  array (
-    'fileHash' => '57d07f2ac255c0d992cd22a9ee95ed9912a07757678db6efe48af7594167217e',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StorePermissionRequest.php' => 
-  array (
-    'fileHash' => '1c13835b460fbd2687638dc7e29c742aa1c3de28b3ec163bc42120cd13fe0ea0',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreRoleRequest.php' => 
-  array (
-    'fileHash' => '870fb16423a269750f8ab811764e734797ff3e1c8cfc949d94ace3332491c993',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreUserRequest.php' => 
-  array (
-    'fileHash' => '98a83ce3b5b26dd4d72c10d32787627cbcbd196745ccb8f5efbfa5b2adcf5269',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdatePermissionRequest.php' => 
-  array (
-    'fileHash' => 'e645ea16ec1a702af1d7b4ed0c81c54623f1281d0fd6a90f4f7c548800d277f9',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateRoleRequest.php' => 
-  array (
-    'fileHash' => '45a84e3fcdb5ab48731ae7c21146ecc1bcdcc7086c229acd25a3c89934114e36',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateUserRequest.php' => 
-  array (
-    'fileHash' => 'fbb4d769136598b1c94377d2f105872d396a5d16e3ec6a11eed89d0166670b44',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php' => 
-  array (
-    'fileHash' => '777469d3f17e3f57996ee356b75998955a1f3d054533e87eae331d1c35dca00b',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
-      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php',
-      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/User.php' => 
-  array (
-    'fileHash' => '20faa5fe8a64d905b31501e4cfebca9fd5e6f08fb25be4dd61a8d791f12cf0bc',
-    'dependentFiles' => 
-    array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php',
-      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/AssignRolesToUser.php',
-      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/CreateAdminUser.php',
-      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php',
-      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php',
-      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php',
-      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php',
-      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php',
-      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/config/auth.php',
-      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php',
-      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/UserFactory.php',
-      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
-      13 => '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php',
-      14 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php',
-      15 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php',
-      16 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
-      17 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
-      18 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php',
-      19 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php',
-      20 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
-      21 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php',
-    ),
-  ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/app/Providers/AppServiceProvider.php' => 
   array (
-    'fileHash' => '6a854ba835dfb70e49445ab6226431eae90067c9557fa6cc7f1b1eb8e5317343',
+    'fileHash' => '40bdad92d4c1a0891d8ee3b4f6ca993314d7157b426c7867d5f1fd416bfc76f6',
     'dependentFiles' => 
     array (
       0 => '/home/debian/__dev/devenv-php/src/laravel-starter/bootstrap/providers.php',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/ModelGeneratorService.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/Http/Controllers/ApexChartsController.php' => 
   array (
-    'fileHash' => '30f23d4c94aaaebdb374f5b3360eec0ef28d60c7deaeb304fb659bf97ca21ddd',
+    'fileHash' => '1b78220c551e48225d21ccb26e1c725e60b79a8318e27a2ffdb37c30081bbb27',
     'dependentFiles' => 
     array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php',
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/routes.php',
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/SchemaMermaidGenerator.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/routes.php' => 
   array (
-    'fileHash' => 'd7f5336d95036d17cb4b87ba5e4fa3fdc515547b70660ecd27d45e007c2cb671',
+    'fileHash' => 'b5d19ae30aafbc815a0e90132db48029f8305ab68259aeb4067252b7a132bdd0',
     'dependentFiles' => 
     array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/SchemaMermaidGeneratorTest.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelBuilderController.php' => 
+  array (
+    'fileHash' => '4913c821931a93958ea2b4f05936a0cbe0b82103fe958f1138eec1cc5fd764ff',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelInspectorController.php' => 
+  array (
+    'fileHash' => '7dfd8620b192fbd8ffef46bd956380d829609f89571a301d8ad77a73bf52589f',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaEditorController.php' => 
+  array (
+    'fileHash' => '865fe084f71080ed70df5105ab923df9d9595f3bc029197cbdb316d26911cc36',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaMermaidController.php' => 
+  array (
+    'fileHash' => '0920db655dfc7041257523208a6b35be7e629671562a4f3f904ac4f99c273a0a',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/ModelGeneratorService.php' => 
+  array (
+    'fileHash' => 'bae28a0c31f28ecfe19b078775cb8f67582471474955dc5a2c4284b8d00dd470',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelBuilderController.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/SchemaMermaidGenerator.php' => 
+  array (
+    'fileHash' => '9b1cb14513f726ce0706fb1aff7d6b5c371d34bf1be7f0a58fb00dccf5520c61',
+    'dependentFiles' => 
+    array (
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaMermaidController.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/Support/SchemaMermaidGeneratorTest.php',
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/routes.php' => 
+  array (
+    'fileHash' => 'd2a99c2eba67fba00f76915cbb4af2f4824520a829d4da9c1b57ab0905fd4bfe',
+    'dependentFiles' => 
+    array (
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/app/View/Components/Card.php' => 
@@ -3242,7 +3331,7 @@ return [
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/bootstrap/app.php' => 
   array (
-    'fileHash' => 'afd63ade74b2145d497731ac64719333056ddd96f763e39642fc1178e8331502',
+    'fileHash' => '26aaf2aea936c48a8aa143c1442172b0a3c5a369c9d08581f645b0b62751d347',
     'dependentFiles' => 
     array (
     ),
@@ -3263,7 +3352,7 @@ return [
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/config/auth.php' => 
   array (
-    'fileHash' => 'fecc9b129050f5f416060971fa4a9582aea28462815324a446c0b2a66b48dd7e',
+    'fileHash' => '027e6aeaa6344bba88e315c610031ffbfe5167c7ac816427a9ceb6fd54013e88',
     'dependentFiles' => 
     array (
     ),
@@ -3340,31 +3429,43 @@ return [
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php' => 
   array (
-    'fileHash' => '01a22fbf59afb7950c5ad9a55c2f6ec9053d3c0f8948969e7d76f2c80f90116b',
+    'fileHash' => '45a62c5b8a9ca57c5d111bbb594213c3f4ed6fb9aabcc3e805cab7623514cf92',
     'dependentFiles' => 
     array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
-      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php',
-      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/TaskManagement/Models/Task.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php',
+      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
+      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php',
+      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php',
+      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/UserFactory.php' => 
   array (
-    'fileHash' => 'b8c21631437b00ffb6ce008248abd55f19027b8273e7db4dfeab099b2bc0c573',
+    'fileHash' => '876e6ec05a4675e1b496c7c38cfadb98d819c314bdc6c8de520220d535c8ae61',
     'dependentFiles' => 
     array (
-      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/User.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php',
-      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
-      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php',
-      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php',
-      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
-      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
-      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php',
-      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php',
-      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
-      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php',
+      0 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Models/User.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/User.php',
+      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php',
+      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php',
+      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php',
+      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/AdminTest.php',
+      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
+      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
+      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/PermissionControllerTest.php',
+      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserControllerTest.php',
+      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserShowPageTest.php',
+      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php',
+      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+      13 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+      14 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/AuthTest.php',
+      15 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/ProfileTest.php',
+      16 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php',
+      17 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php',
+      18 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php',
+      19 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
+      20 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php',
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/database/migrations/0001_01_01_000000_create_users_table.php' => 
@@ -3411,21 +3512,21 @@ return [
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php' => 
   array (
-    'fileHash' => 'e909dd0e4caebfdc51ea9bebaa78181dd9e2cd64dcc6df1b5804e44b66bb27d0',
+    'fileHash' => '4c97a87f34a01dbcd12d74cb4ba4f6368fb72f0e9cd8230b0e7909e83f1bb87b',
     'dependentFiles' => 
     array (
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php' => 
   array (
-    'fileHash' => '2e5d369add5d1c153075516f1359bd733a7e39051ad780bebece23acf6208f40',
+    'fileHash' => 'a20587ba8b0ecb70f2ee075e3022c1d4fa37b4f7eb4efd423ddab15657e406a9',
     'dependentFiles' => 
     array (
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php' => 
   array (
-    'fileHash' => 'd406b34de1dc6c5b4a83b8f575b5abdb4e9db2f635c67f83e1aec281c40127a8',
+    'fileHash' => '652955edb6c6c007373cdb45e959d64ad70173cf5062d5a50c62bff66f4b38bc',
     'dependentFiles' => 
     array (
     ),
@@ -3439,42 +3540,77 @@ return [
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php' => 
   array (
-    'fileHash' => 'a805d3d80f50304680763096e162036e1627d1333c4bcf9fb681176462d04809',
+    'fileHash' => 'aff5993cb5315e9379e6ab7f06ca5906a86eb3178782b7d6f10074a31a60f4c8',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/AdminTest.php' => 
   array (
-    'fileHash' => '70ee0667a2406ce4168e78de64123f28751367e163b4b291eed012106229a509',
+    'fileHash' => '1468e3d467defbc388b9491758e62d1c9dae2c34adb683f5b4a3e3286dc786f6',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php' => 
   array (
-    'fileHash' => 'f7dd92cf9e00047c47f5b64b0ea1efeec72d21cc5758639e8e1b9c6931b87ab5',
+    'fileHash' => '340295299025184f44e617e554e569ef111e4a51f8241c08ed475deebdaa2baa',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/CheckboxInputComponentTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php' => 
   array (
-    'fileHash' => '0d3457acdd4eadff2b2c4a164d7e8db86bc0a2ee0910de92cd9a2ac60f1ae55f',
+    'fileHash' => 'bdd417e6b11007d69cedbadabf1b14bc5709e6f977d378f04c175dffbef5b15c',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/PermissionControllerTest.php' => 
   array (
-    'fileHash' => 'a7eac7fbdba944cd2327957cb3bd3ac4543ac52868f3d2e4c9237b46d167fba2',
+    'fileHash' => 'ab1635847eef36e2447e18f9d55abefe94e44ff85f1e9fb341d972fa6219a14d',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserControllerTest.php' => 
   array (
-    'fileHash' => 'bab10870e82af8a942aeeed30b83d9278a344bfea2db5b91ed43ad91505659d6',
+    'fileHash' => '97978f0af7a3102e0280f764e63951dbf7efa29f5e2e8f7016942540cf375058',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserShowPageTest.php' => 
+  array (
+    'fileHash' => '7d31695fc083babf080b0d639cb97c07c5627313e59eb020b47983af3d472f6d',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/CheckboxInputComponentTest.php' => 
+  array (
+    'fileHash' => 'd49e2143f0b25640675bcb67fac7ea16ee5026c14aa92cd10aa3a43ec3b6e551',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/RadioInputComponentTest.php' => 
+  array (
+    'fileHash' => 'b463abbecd901ae8dc9ca71fbb3c13d9f8c705c279306ea52b8a8fad87b52677',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/SelectInputComponentTest.php' => 
+  array (
+    'fileHash' => '4bfc816773b5c1bcf5c231619e623b2301be8b876be3a1acced489e3be0ab8ca',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/TextInputComponentTest.php' => 
+  array (
+    'fileHash' => '1c5b63ae5b71701091e3a5b433d0766c5fe4fdc9d7030d00f180c1e81d1ed332',
     'dependentFiles' => 
     array (
     ),
@@ -3486,72 +3622,44 @@ return [
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelBuilderControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/AuthTest.php' => 
   array (
-    'fileHash' => '0ed736b4fe73298e29b8d98c6bc51768666ee1c75e6562dc450f9c40faf59201',
+    'fileHash' => 'c8a7616570b0abedf6f7bdfe8b7803336d8c7424d1c5633e83b1dab3c501f0ef',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelInspectorTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/ProfileTest.php' => 
   array (
-    'fileHash' => '31fb88fbee10bff3c31a6d65013afe684652e9aa0ad1c51ffb2d418bd9894a3c',
+    'fileHash' => 'ce41b015b0f0bcf6534a173105537858123f5f1e2e546dc6457a179cdc2c3e6d',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php' => 
   array (
-    'fileHash' => '46cc61c465105a3e2fff8d5002c6da785f6005cf830e966f09993b072f9e2e07',
+    'fileHash' => '3cd1bd888c7bc974ba9944a532861b893b46fefa7f884863c3a574e6b41533fd',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelBuilderControllerTest.php' => 
   array (
-    'fileHash' => '63085ea14e658372dc3a74668273d8cc4abacf9132ab7a8cc003ef5d5c37e908',
+    'fileHash' => '4ff4d06bcb00b9f6851c06c001702e78fd42adf2e880730ebc7494a9c52b18d0',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/RadioInputComponentTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelInspectorTest.php' => 
   array (
-    'fileHash' => '06ed6744e71572459a34f425e76c7abdd054390ba837b6bd46b991326b87c5b2',
+    'fileHash' => '079027905a7d5c2fbc4fc89847e89f1626cfed2690915792422432453dbcaaa0',
     'dependentFiles' => 
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SchemaMermaidControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/SchemaMermaidControllerTest.php' => 
   array (
-    'fileHash' => '5dc9ff1b206297ba51704ebfbabfa6f477f451dc4d190419c2726eb40415540d',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SelectInputComponentTest.php' => 
-  array (
-    'fileHash' => 'fc0d7b01efe3cc95a4ea3fd54dab331c31d646ede0142f5193d1fc7ce4cbf2f4',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/TextInputComponentTest.php' => 
-  array (
-    'fileHash' => '64032474c4492ca3a67ce7add2a2682eddddca157e2534262da52896f049a836',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php' => 
-  array (
-    'fileHash' => 'bc430529e251c775d7fc452bcfa856be0215f966977a0c0937c03c15117e5a86',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php' => 
-  array (
-    'fileHash' => '82d6258c85391dba00ab9d6d23aea4b6d468e39b8c79789507eb148299c2ca02',
+    'fileHash' => '8659145edbf1d60d08607f5ff32b4baef0e39d473f3c32ce6efc662521e59ad0',
     'dependentFiles' => 
     array (
     ),
@@ -3562,22 +3670,39 @@ return [
     'dependentFiles' => 
     array (
       0 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php',
-      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php',
-      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/CheckboxInputComponentTest.php',
-      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
-      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
-      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ExampleTest.php',
-      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelBuilderControllerTest.php',
-      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelInspectorTest.php',
-      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php',
-      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php',
-      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/RadioInputComponentTest.php',
-      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SchemaMermaidControllerTest.php',
-      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SelectInputComponentTest.php',
-      13 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/TextInputComponentTest.php',
-      14 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
-      15 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php',
-      16 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/SchemaMermaidGeneratorTest.php',
+      1 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/AdminTest.php',
+      2 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php',
+      3 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php',
+      4 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/PermissionControllerTest.php',
+      5 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserControllerTest.php',
+      6 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserShowPageTest.php',
+      7 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php',
+      8 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/CheckboxInputComponentTest.php',
+      9 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php',
+      10 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php',
+      11 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/CheckboxInputComponentTest.php',
+      12 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/RadioInputComponentTest.php',
+      13 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/SelectInputComponentTest.php',
+      14 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/TextInputComponentTest.php',
+      15 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ExampleTest.php',
+      16 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/AuthTest.php',
+      17 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/ProfileTest.php',
+      18 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php',
+      19 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelBuilderControllerTest.php',
+      20 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelInspectorTest.php',
+      21 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php',
+      22 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php',
+      23 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/RadioInputComponentTest.php',
+      24 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SchemaMermaidControllerTest.php',
+      25 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SelectInputComponentTest.php',
+      26 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelBuilderControllerTest.php',
+      27 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelInspectorTest.php',
+      28 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/SchemaMermaidControllerTest.php',
+      29 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/TextInputComponentTest.php',
+      30 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php',
+      31 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php',
+      32 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/SchemaMermaidGeneratorTest.php',
+      33 => '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/Support/SchemaMermaidGeneratorTest.php',
     ),
   ),
   '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/ExampleTest.php' => 
@@ -3587,9 +3712,9 @@ return [
     array (
     ),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/SchemaMermaidGeneratorTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/Support/SchemaMermaidGeneratorTest.php' => 
   array (
-    'fileHash' => 'ed057ca42a022a65eafc22a376f7c8ac11cddc2a1993eaa66f820c5ab341b5b6',
+    'fileHash' => '88c2245f85253d6c0d0192a6b0e19cc700ef4187e73161617cf003225e782e5b',
     'dependentFiles' => 
     array (
     ),
@@ -3632,7 +3757,7 @@ return [
              'namespace' => 'App\\Console\\Commands\\Admin',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'command' => 'Illuminate\\Console\\Command',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -3674,7 +3799,7 @@ return [
              'namespace' => 'App\\Console\\Commands\\Admin',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'command' => 'Illuminate\\Console\\Command',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -3711,7 +3836,7 @@ return [
              'namespace' => 'App\\Console\\Commands\\Admin',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'command' => 'Illuminate\\Console\\Command',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -3775,7 +3900,7 @@ return [
              'namespace' => 'App\\Console\\Commands\\Admin',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'command' => 'Illuminate\\Console\\Command',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
               'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -3818,7 +3943,7 @@ return [
              'namespace' => 'App\\Console\\Commands\\Admin',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'command' => 'Illuminate\\Console\\Command',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
               'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -3856,7 +3981,7 @@ return [
              'namespace' => 'App\\Console\\Commands\\Admin',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'command' => 'Illuminate\\Console\\Command',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
               'validator' => 'Illuminate\\Support\\Facades\\Validator',
@@ -3885,303 +4010,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/AssignRolesToUser.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/AdminController.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Console\\Commands\\AssignRolesToUser',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Console\\Command',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'signature',
-          ),
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */',
-             'namespace' => 'App\\Console\\Commands',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'command' => 'Illuminate\\Console\\Command',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'type' => NULL,
-           'public' => false,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'abstract' => false,
-           'final' => false,
-           'publicSet' => false,
-           'protectedSet' => false,
-           'privateSet' => false,
-           'virtual' => false,
-           'attributes' => 
-          array (
-          ),
-           'hooks' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'description',
-          ),
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * The console command description.
-     *
-     * @var string
-     */',
-             'namespace' => 'App\\Console\\Commands',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'command' => 'Illuminate\\Console\\Command',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'type' => NULL,
-           'public' => false,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'abstract' => false,
-           'final' => false,
-           'publicSet' => false,
-           'protectedSet' => false,
-           'privateSet' => false,
-           'virtual' => false,
-           'attributes' => 
-          array (
-          ),
-           'hooks' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'handle',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Execute the console command.
-     */',
-             'namespace' => 'App\\Console\\Commands',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'command' => 'Illuminate\\Console\\Command',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/CreateAdminUser.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Console\\Commands\\CreateAdminUser',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Console\\Command',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'signature',
-          ),
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */',
-             'namespace' => 'App\\Console\\Commands',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'command' => 'Illuminate\\Console\\Command',
-              'hash' => 'Illuminate\\Support\\Facades\\Hash',
-              'validator' => 'Illuminate\\Support\\Facades\\Validator',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'type' => NULL,
-           'public' => false,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'abstract' => false,
-           'final' => false,
-           'publicSet' => false,
-           'protectedSet' => false,
-           'privateSet' => false,
-           'virtual' => false,
-           'attributes' => 
-          array (
-          ),
-           'hooks' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'description',
-          ),
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * The console command description.
-     *
-     * @var string
-     */',
-             'namespace' => 'App\\Console\\Commands',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'command' => 'Illuminate\\Console\\Command',
-              'hash' => 'Illuminate\\Support\\Facades\\Hash',
-              'validator' => 'Illuminate\\Support\\Facades\\Validator',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'type' => NULL,
-           'public' => false,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'abstract' => false,
-           'final' => false,
-           'publicSet' => false,
-           'protectedSet' => false,
-           'privateSet' => false,
-           'virtual' => false,
-           'attributes' => 
-          array (
-          ),
-           'hooks' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'handle',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Execute the console command.
-     */',
-             'namespace' => 'App\\Console\\Commands',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'command' => 'Illuminate\\Console\\Command',
-              'hash' => 'Illuminate\\Support\\Facades\\Hash',
-              'validator' => 'Illuminate\\Support\\Facades\\Validator',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'int',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Admin/AdminController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Admin\\AdminController',
+       'name' => 'App\\Domain\\Administration\\Http\\Controllers\\AdminController',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -4205,7 +4038,7 @@ return [
              'phpDocString' => '/**
      * Affiche le tableau de bord admin.
      */',
-             'namespace' => 'App\\Http\\Controllers\\Admin',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
               'controller' => 'App\\Http\\Controllers\\Controller',
@@ -4235,739 +4068,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Auth/AuthController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/PermissionController.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Auth\\AuthController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'showLogin',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Affiche le formulaire de connexion.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Auth',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'loginrequest' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-              'registerrequest' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-              'user' => 'App\\Models\\User',
-              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
-              'auth' => 'Illuminate\\Support\\Facades\\Auth',
-              'view' => 'Illuminate\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\View\\View',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'login',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Authentifie l\'utilisateur.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Auth',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'loginrequest' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-              'registerrequest' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-              'user' => 'App\\Models\\User',
-              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
-              'auth' => 'Illuminate\\Support\\Facades\\Auth',
-              'view' => 'Illuminate\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Http\\RedirectResponse',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'request',
-               'type' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'showRegister',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Affiche le formulaire d\'inscription.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Auth',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'loginrequest' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-              'registerrequest' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-              'user' => 'App\\Models\\User',
-              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
-              'auth' => 'Illuminate\\Support\\Facades\\Auth',
-              'view' => 'Illuminate\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\View\\View',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'register',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Crée un nouvel utilisateur et l\'authentifie.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Auth',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'loginrequest' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-              'registerrequest' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-              'user' => 'App\\Models\\User',
-              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
-              'auth' => 'Illuminate\\Support\\Facades\\Auth',
-              'view' => 'Illuminate\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Http\\RedirectResponse',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'request',
-               'type' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'logout',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Déconnecte l\'utilisateur.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Auth',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'loginrequest' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-              'registerrequest' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-              'user' => 'App\\Models\\User',
-              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
-              'auth' => 'Illuminate\\Support\\Facades\\Auth',
-              'view' => 'Illuminate\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Http\\RedirectResponse',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Controller.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Controller',
-       'phpDoc' => NULL,
-       'abstract' => true,
-       'final' => false,
-       'extends' => NULL,
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Demo/ApexChartsController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Demo\\ApexChartsController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'index',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Contracts\\View\\View',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelBuilderController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Dev\\ModelBuilderController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => '__construct',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => NULL,
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'generator',
-               'type' => 'App\\Services\\ModelGeneratorService',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'show',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Show the model builder page.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'modelgeneratorservice' => 'App\\Services\\ModelGeneratorService',
-              'view' => 'Illuminate\\Contracts\\View\\View',
-              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
-              'request' => 'Illuminate\\Http\\Request',
-              'file' => 'Illuminate\\Support\\Facades\\File',
-              'validator' => 'Illuminate\\Support\\Facades\\Validator',
-              'str' => 'Illuminate\\Support\\Str',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Contracts\\View\\View',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'preview',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Preview what will be generated before actual generation.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'modelgeneratorservice' => 'App\\Services\\ModelGeneratorService',
-              'view' => 'Illuminate\\Contracts\\View\\View',
-              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
-              'request' => 'Illuminate\\Http\\Request',
-              'file' => 'Illuminate\\Support\\Facades\\File',
-              'validator' => 'Illuminate\\Support\\Facades\\Validator',
-              'str' => 'Illuminate\\Support\\Str',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Http\\JsonResponse',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'request',
-               'type' => 'Illuminate\\Http\\Request',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'store',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Generate model, migration, and factory based on form data.
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'modelgeneratorservice' => 'App\\Services\\ModelGeneratorService',
-              'view' => 'Illuminate\\Contracts\\View\\View',
-              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
-              'request' => 'Illuminate\\Http\\Request',
-              'file' => 'Illuminate\\Support\\Facades\\File',
-              'validator' => 'Illuminate\\Support\\Facades\\Validator',
-              'str' => 'Illuminate\\Support\\Str',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Http\\JsonResponse',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'request',
-               'type' => 'Illuminate\\Http\\Request',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/ModelInspectorController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Dev\\ModelInspectorController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'index',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * List all Eloquent models in the application.
-     *
-     * @return \\Illuminate\\Http\\JsonResponse
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'model' => 'Illuminate\\Database\\Eloquent\\Model',
-              'relation' => 'Illuminate\\Database\\Eloquent\\Relations\\Relation',
-              'file' => 'Illuminate\\Support\\Facades\\File',
-              'str' => 'Illuminate\\Support\\Str',
-              'reflectionclass' => 'ReflectionClass',
-              'reflectionmethod' => 'ReflectionMethod',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => NULL,
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'show',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get detailed information about a specific model.
-     *
-     * @param  string  $modelName  Short class name (e.g., "User")
-     * @return \\Illuminate\\Http\\JsonResponse
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'model' => 'Illuminate\\Database\\Eloquent\\Model',
-              'relation' => 'Illuminate\\Database\\Eloquent\\Relations\\Relation',
-              'file' => 'Illuminate\\Support\\Facades\\File',
-              'str' => 'Illuminate\\Support\\Str',
-              'reflectionclass' => 'ReflectionClass',
-              'reflectionmethod' => 'ReflectionMethod',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => NULL,
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'modelName',
-               'type' => NULL,
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaEditorController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Dev\\SchemaEditorController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'index',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Display the schema editor page.
-     *
-     * @return \\Illuminate\\View\\View
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => NULL,
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Dev/SchemaMermaidController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\Dev\\SchemaMermaidController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'show',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Display the database schema as Mermaid diagram
-     */',
-             'namespace' => 'App\\Http\\Controllers\\Dev',
-             'uses' => 
-            array (
-              'controller' => 'App\\Http\\Controllers\\Controller',
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
-              'view' => 'Illuminate\\Contracts\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Contracts\\View\\View',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/PermissionController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\PermissionController',
+       'name' => 'App\\Domain\\Administration\\Http\\Controllers\\PermissionController',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -4991,12 +4096,13 @@ return [
              'phpDocString' => '/**
      * Display a listing of the permissions.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storepermissionrequest' => 'App\\Http\\Requests\\StorePermissionRequest',
-              'updatepermissionrequest' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-              'user' => 'App\\Models\\User',
+              'storepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+              'updatepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'permission' => 'Spatie\\Permission\\Models\\Permission',
             ),
@@ -5026,12 +4132,13 @@ return [
              'phpDocString' => '/**
      * Store a newly created permission in storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storepermissionrequest' => 'App\\Http\\Requests\\StorePermissionRequest',
-              'updatepermissionrequest' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-              'user' => 'App\\Models\\User',
+              'storepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+              'updatepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'permission' => 'Spatie\\Permission\\Models\\Permission',
             ),
@@ -5051,7 +4158,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
-               'type' => 'App\\Http\\Requests\\StorePermissionRequest',
+               'type' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5072,12 +4179,13 @@ return [
              'phpDocString' => '/**
      * Display the specified permission.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storepermissionrequest' => 'App\\Http\\Requests\\StorePermissionRequest',
-              'updatepermissionrequest' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-              'user' => 'App\\Models\\User',
+              'storepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+              'updatepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'permission' => 'Spatie\\Permission\\Models\\Permission',
             ),
@@ -5118,12 +4226,13 @@ return [
              'phpDocString' => '/**
      * Update the specified permission in storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storepermissionrequest' => 'App\\Http\\Requests\\StorePermissionRequest',
-              'updatepermissionrequest' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-              'user' => 'App\\Models\\User',
+              'storepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+              'updatepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'permission' => 'Spatie\\Permission\\Models\\Permission',
             ),
@@ -5143,7 +4252,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
-               'type' => 'App\\Http\\Requests\\UpdatePermissionRequest',
+               'type' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5175,12 +4284,13 @@ return [
              'phpDocString' => '/**
      * Remove the specified permission from storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storepermissionrequest' => 'App\\Http\\Requests\\StorePermissionRequest',
-              'updatepermissionrequest' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-              'user' => 'App\\Models\\User',
+              'storepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+              'updatepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'permission' => 'Spatie\\Permission\\Models\\Permission',
             ),
@@ -5221,12 +4331,13 @@ return [
              'phpDocString' => '/**
      * Display a listing of users with their roles and permissions.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storepermissionrequest' => 'App\\Http\\Requests\\StorePermissionRequest',
-              'updatepermissionrequest' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-              'user' => 'App\\Models\\User',
+              'storepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+              'updatepermissionrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'permission' => 'Spatie\\Permission\\Models\\Permission',
             ),
@@ -5254,80 +4365,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/ProfileController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/RoleController.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\ProfileController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'App\\Http\\Controllers\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'show',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Affiche la page de profil de l\'utilisateur connecté.
-     */',
-             'namespace' => 'App\\Http\\Controllers',
-             'uses' => 
-            array (
-              'request' => 'Illuminate\\Http\\Request',
-              'view' => 'Illuminate\\View\\View',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\View\\View',
-           'parameters' => 
-          array (
-            0 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'request',
-               'type' => 'Illuminate\\Http\\Request',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/RoleController.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\RoleController',
+       'name' => 'App\\Domain\\Administration\\Http\\Controllers\\RoleController',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -5351,11 +4393,12 @@ return [
              'phpDocString' => '/**
      * Display a listing of the roles.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storerolerequest' => 'App\\Http\\Requests\\StoreRoleRequest',
-              'updaterolerequest' => 'App\\Http\\Requests\\UpdateRoleRequest',
+              'storerolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+              'updaterolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -5385,11 +4428,12 @@ return [
              'phpDocString' => '/**
      * Store a newly created role in storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storerolerequest' => 'App\\Http\\Requests\\StoreRoleRequest',
-              'updaterolerequest' => 'App\\Http\\Requests\\UpdateRoleRequest',
+              'storerolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+              'updaterolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -5409,7 +4453,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
-               'type' => 'App\\Http\\Requests\\StoreRoleRequest',
+               'type' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5430,11 +4474,12 @@ return [
              'phpDocString' => '/**
      * Display the specified role.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storerolerequest' => 'App\\Http\\Requests\\StoreRoleRequest',
-              'updaterolerequest' => 'App\\Http\\Requests\\UpdateRoleRequest',
+              'storerolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+              'updaterolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -5475,11 +4520,12 @@ return [
              'phpDocString' => '/**
      * Update the specified role in storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storerolerequest' => 'App\\Http\\Requests\\StoreRoleRequest',
-              'updaterolerequest' => 'App\\Http\\Requests\\UpdateRoleRequest',
+              'storerolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+              'updaterolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -5499,7 +4545,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
-               'type' => 'App\\Http\\Requests\\UpdateRoleRequest',
+               'type' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5531,11 +4577,12 @@ return [
              'phpDocString' => '/**
      * Remove the specified role from storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storerolerequest' => 'App\\Http\\Requests\\StoreRoleRequest',
-              'updaterolerequest' => 'App\\Http\\Requests\\UpdateRoleRequest',
+              'storerolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+              'updaterolerequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'role' => 'Spatie\\Permission\\Models\\Role',
             ),
@@ -5574,11 +4621,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/UserController.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Controllers/UserController.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Controllers\\UserController',
+       'name' => 'App\\Domain\\Administration\\Http\\Controllers\\UserController',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -5602,15 +4649,17 @@ return [
              'phpDocString' => '/**
      * Display a listing of the users with pagination.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storeuserrequest' => 'App\\Http\\Requests\\StoreUserRequest',
-              'updateuserrequest' => 'App\\Http\\Requests\\UpdateUserRequest',
-              'user' => 'App\\Models\\User',
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'request' => 'Illuminate\\Http\\Request',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
             ),
              'constUses' => 
             array (
@@ -5649,15 +4698,17 @@ return [
              'phpDocString' => '/**
      * Search users by name or email.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storeuserrequest' => 'App\\Http\\Requests\\StoreUserRequest',
-              'updateuserrequest' => 'App\\Http\\Requests\\UpdateUserRequest',
-              'user' => 'App\\Models\\User',
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'request' => 'Illuminate\\Http\\Request',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
             ),
              'constUses' => 
             array (
@@ -5696,15 +4747,17 @@ return [
              'phpDocString' => '/**
      * Store a newly created user in storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storeuserrequest' => 'App\\Http\\Requests\\StoreUserRequest',
-              'updateuserrequest' => 'App\\Http\\Requests\\UpdateUserRequest',
-              'user' => 'App\\Models\\User',
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'request' => 'Illuminate\\Http\\Request',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
             ),
              'constUses' => 
             array (
@@ -5722,7 +4775,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
-               'type' => 'App\\Http\\Requests\\StoreUserRequest',
+               'type' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5737,21 +4790,72 @@ return [
         )),
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'showView',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Display the specified user view.
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
+             'uses' => 
+            array (
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
+              'request' => 'Illuminate\\Http\\Request',
+              'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\View\\View',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'user',
+               'type' => 'App\\Domain\\Identity\\Models\\User',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'show',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Display the specified user.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storeuserrequest' => 'App\\Http\\Requests\\StoreUserRequest',
-              'updateuserrequest' => 'App\\Http\\Requests\\UpdateUserRequest',
-              'user' => 'App\\Models\\User',
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'request' => 'Illuminate\\Http\\Request',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
             ),
              'constUses' => 
             array (
@@ -5769,7 +4873,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'user',
-               'type' => 'App\\Models\\User',
+               'type' => 'App\\Domain\\Identity\\Models\\User',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5782,7 +4886,7 @@ return [
           array (
           ),
         )),
-        4 => 
+        5 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'update',
            'phpDoc' => 
@@ -5790,15 +4894,17 @@ return [
              'phpDocString' => '/**
      * Update the specified user in storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storeuserrequest' => 'App\\Http\\Requests\\StoreUserRequest',
-              'updateuserrequest' => 'App\\Http\\Requests\\UpdateUserRequest',
-              'user' => 'App\\Models\\User',
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'request' => 'Illuminate\\Http\\Request',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
             ),
              'constUses' => 
             array (
@@ -5816,7 +4922,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'request',
-               'type' => 'App\\Http\\Requests\\UpdateUserRequest',
+               'type' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5827,7 +4933,7 @@ return [
             1 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'user',
-               'type' => 'App\\Models\\User',
+               'type' => 'App\\Domain\\Identity\\Models\\User',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5840,7 +4946,7 @@ return [
           array (
           ),
         )),
-        5 => 
+        6 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'destroy',
            'phpDoc' => 
@@ -5848,15 +4954,17 @@ return [
              'phpDocString' => '/**
      * Remove the specified user from storage.
      */',
-             'namespace' => 'App\\Http\\Controllers',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Controllers',
              'uses' => 
             array (
-              'storeuserrequest' => 'App\\Http\\Requests\\StoreUserRequest',
-              'updateuserrequest' => 'App\\Http\\Requests\\UpdateUserRequest',
-              'user' => 'App\\Models\\User',
+              'storeuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+              'updateuserrequest' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
               'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
               'request' => 'Illuminate\\Http\\Request',
               'hash' => 'Illuminate\\Support\\Facades\\Hash',
+              'view' => 'Illuminate\\View\\View',
             ),
              'constUses' => 
             array (
@@ -5874,7 +4982,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'user',
-               'type' => 'App\\Models\\User',
+               'type' => 'App\\Domain\\Identity\\Models\\User',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -5893,11 +5001,1403 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Livewire/Counter.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StorePermissionRequest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Livewire\\Counter',
+       'name' => 'App\\Domain\\Administration\\Http\\Requests\\StorePermissionRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     *
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can(\'create-permissions\');
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreRoleRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Administration\\Http\\Requests\\StoreRoleRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     *
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can(\'create-roles\');
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/StoreUserRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Administration\\Http\\Requests\\StoreUserRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     *
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can(\'create-users\');
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdatePermissionRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Administration\\Http\\Requests\\UpdatePermissionRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     *
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can(\'update-permissions\');
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+              'rule' => 'Illuminate\\Validation\\Rule',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+              'rule' => 'Illuminate\\Validation\\Rule',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateRoleRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateRoleRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     *
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can(\'update-roles\');
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+              'rule' => 'Illuminate\\Validation\\Rule',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+              'rule' => 'Illuminate\\Validation\\Rule',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Administration/Http/Requests/UpdateUserRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Administration\\Http\\Requests\\UpdateUserRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     *
+     * TODO: Implement proper authorization logic based on roles/permissions
+     * Example: return $request->user()?->can(\'update-users\');
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+              'rule' => 'Illuminate\\Validation\\Rule',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Administration\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+              'rule' => 'Illuminate\\Validation\\Rule',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/AuthController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Identity\\Http\\Controllers\\AuthController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'showLogin',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Affiche le formulaire de connexion.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Controllers',
+             'uses' => 
+            array (
+              'loginrequest' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+              'registerrequest' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
+              'auth' => 'Illuminate\\Support\\Facades\\Auth',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\View\\View',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'login',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Authentifie l\'utilisateur.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Controllers',
+             'uses' => 
+            array (
+              'loginrequest' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+              'registerrequest' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
+              'auth' => 'Illuminate\\Support\\Facades\\Auth',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\RedirectResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'showRegister',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Affiche le formulaire d\'inscription.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Controllers',
+             'uses' => 
+            array (
+              'loginrequest' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+              'registerrequest' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
+              'auth' => 'Illuminate\\Support\\Facades\\Auth',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\View\\View',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'register',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Crée un nouvel utilisateur et l\'authentifie.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Controllers',
+             'uses' => 
+            array (
+              'loginrequest' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+              'registerrequest' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
+              'auth' => 'Illuminate\\Support\\Facades\\Auth',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\RedirectResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'logout',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Déconnecte l\'utilisateur.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Controllers',
+             'uses' => 
+            array (
+              'loginrequest' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+              'registerrequest' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'redirectresponse' => 'Illuminate\\Http\\RedirectResponse',
+              'auth' => 'Illuminate\\Support\\Facades\\Auth',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\RedirectResponse',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Controllers/ProfileController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Identity\\Http\\Controllers\\ProfileController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'show',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Affiche la page de profil de l\'utilisateur connecté.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'request' => 'Illuminate\\Http\\Request',
+              'view' => 'Illuminate\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\View\\View',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'Illuminate\\Http\\Request',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/LoginRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Identity\\Http\\Requests\\LoginRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Http/Requests/RegisterRequest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Identity\\Http\\Requests\\RegisterRequest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'authorize',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Determine if the user is authorized to make this request.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'rules',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Http\\Requests',
+             'uses' => 
+            array (
+              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/Identity/Models/User.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\Identity\\Models\\User',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Foundation\\Auth\\User',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Laravel\\Sanctum\\HasApiTokens',
+        1 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+        2 => 'Spatie\\Permission\\Traits\\HasRoles',
+        3 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+        4 => 'Illuminate\\Notifications\\Notifiable',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
+           'names' => 
+          array (
+            0 => 'fillable',
+          ),
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Models',
+             'uses' => 
+            array (
+              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
+              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
+              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
+              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'type' => NULL,
+           'public' => false,
+           'private' => false,
+           'static' => false,
+           'readonly' => false,
+           'abstract' => false,
+           'final' => false,
+           'publicSet' => false,
+           'protectedSet' => false,
+           'privateSet' => false,
+           'virtual' => false,
+           'attributes' => 
+          array (
+          ),
+           'hooks' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
+           'names' => 
+          array (
+            0 => 'hidden',
+          ),
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Models',
+             'uses' => 
+            array (
+              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
+              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
+              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
+              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'type' => NULL,
+           'public' => false,
+           'private' => false,
+           'static' => false,
+           'readonly' => false,
+           'abstract' => false,
+           'final' => false,
+           'publicSet' => false,
+           'protectedSet' => false,
+           'privateSet' => false,
+           'virtual' => false,
+           'attributes' => 
+          array (
+          ),
+           'hooks' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'newFactory',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Create a new factory instance for the model.
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Models',
+             'uses' => 
+            array (
+              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
+              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
+              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
+              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => false,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => true,
+           'returnType' => 'Database\\Factories\\UserFactory',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'casts',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */',
+             'namespace' => 'App\\Domain\\Identity\\Models',
+             'uses' => 
+            array (
+              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
+              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
+              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
+              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => false,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Domain/TaskManagement/Models/Task.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Domain\\TaskManagement\\Models\\Task',
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * @property ?string $id
+ * @property string $title
+ * @property ?string $description
+ * @property string $user_id
+ * @property \\Illuminate\\Support\\Carbon|null $created_at
+ * @property \\Illuminate\\Support\\Carbon|null $updated_at
+ */',
+         'namespace' => 'App\\Domain\\TaskManagement\\Models',
+         'uses' => 
+        array (
+          'user' => 'App\\Domain\\Identity\\Models\\User',
+          'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+          'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+          'model' => 'Illuminate\\Database\\Eloquent\\Model',
+          'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+          'hasstatuses' => 'Spatie\\ModelStatus\\HasStatuses',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Illuminate\\Database\\Eloquent\\Model',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+        1 => 'Spatie\\ModelStatus\\HasStatuses',
+        2 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'newFactory',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Create a new factory instance for the model.
+     */',
+             'namespace' => 'App\\Domain\\TaskManagement\\Models',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'hasstatuses' => 'Spatie\\ModelStatus\\HasStatuses',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => false,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => true,
+           'returnType' => 'Database\\Factories\\TaskFactory',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'user',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return BelongsTo<User, $this>
+     */',
+             'namespace' => 'App\\Domain\\TaskManagement\\Models',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
+              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+              'hasstatuses' => 'Spatie\\ModelStatus\\HasStatuses',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Controllers/Controller.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Http\\Controllers\\Controller',
+       'phpDoc' => NULL,
+       'abstract' => true,
+       'final' => false,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Livewire/Counter.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Livewire\\Counter',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -5967,995 +6467,6 @@ return [
            'final' => false,
            'static' => false,
            'returnType' => 'Illuminate\\Contracts\\View\\View',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/LoginRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\Auth\\LoginRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     */',
-             'namespace' => 'App\\Http\\Requests\\Auth',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests\\Auth',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/Auth/RegisterRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\Auth\\RegisterRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     */',
-             'namespace' => 'App\\Http\\Requests\\Auth',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests\\Auth',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StorePermissionRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\StorePermissionRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * TODO: Implement proper authorization logic based on roles/permissions
-     * Example: return $request->user()?->can(\'create-permissions\');
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreRoleRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\StoreRoleRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * TODO: Implement proper authorization logic based on roles/permissions
-     * Example: return $request->user()?->can(\'create-roles\');
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/StoreUserRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\StoreUserRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * TODO: Implement proper authorization logic based on roles/permissions
-     * Example: return $request->user()?->can(\'create-users\');
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdatePermissionRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\UpdatePermissionRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * TODO: Implement proper authorization logic based on roles/permissions
-     * Example: return $request->user()?->can(\'update-permissions\');
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-              'rule' => 'Illuminate\\Validation\\Rule',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-              'rule' => 'Illuminate\\Validation\\Rule',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateRoleRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\UpdateRoleRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * TODO: Implement proper authorization logic based on roles/permissions
-     * Example: return $request->user()?->can(\'update-roles\');
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-              'rule' => 'Illuminate\\Validation\\Rule',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-              'rule' => 'Illuminate\\Validation\\Rule',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Http/Requests/UpdateUserRequest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Http\\Requests\\UpdateUserRequest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Http\\FormRequest',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'authorize',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * TODO: Implement proper authorization logic based on roles/permissions
-     * Example: return $request->user()?->can(\'update-users\');
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-              'rule' => 'Illuminate\\Validation\\Rule',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'bool',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'rules',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \\Illuminate\\Contracts\\Validation\\ValidationRule|array<mixed>|string>
-     */',
-             'namespace' => 'App\\Http\\Requests',
-             'uses' => 
-            array (
-              'formrequest' => 'Illuminate\\Foundation\\Http\\FormRequest',
-              'rule' => 'Illuminate\\Validation\\Rule',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/Task.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\Task',
-       'phpDoc' => 
-      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-         'phpDocString' => '/**
- * @property ?string $id
- * @property string $title
- * @property ?string $description
- * @property string $user_id
- * @property \\Illuminate\\Support\\Carbon|null $created_at
- * @property \\Illuminate\\Support\\Carbon|null $updated_at
- */',
-         'namespace' => 'App\\Models',
-         'uses' => 
-        array (
-          'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-          'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-          'model' => 'Illuminate\\Database\\Eloquent\\Model',
-          'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
-          'hasstatuses' => 'Spatie\\ModelStatus\\HasStatuses',
-        ),
-         'constUses' => 
-        array (
-        ),
-      )),
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Database\\Eloquent\\Model',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-        1 => 'Spatie\\ModelStatus\\HasStatuses',
-        2 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'user',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * @return BelongsTo<User, $this>
-     */',
-             'namespace' => 'App\\Models',
-             'uses' => 
-            array (
-              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-              'model' => 'Illuminate\\Database\\Eloquent\\Model',
-              'belongsto' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
-              'hasstatuses' => 'Spatie\\ModelStatus\\HasStatuses',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Models/User.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\User',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Auth\\User',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Laravel\\Sanctum\\HasApiTokens',
-        1 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-        2 => 'Spatie\\Permission\\Traits\\HasRoles',
-        3 => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-        4 => 'Illuminate\\Notifications\\Notifiable',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'fillable',
-          ),
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */',
-             'namespace' => 'App\\Models',
-             'uses' => 
-            array (
-              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
-              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
-              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
-              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'type' => NULL,
-           'public' => false,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'abstract' => false,
-           'final' => false,
-           'publicSet' => false,
-           'protectedSet' => false,
-           'privateSet' => false,
-           'virtual' => false,
-           'attributes' => 
-          array (
-          ),
-           'hooks' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
-           'names' => 
-          array (
-            0 => 'hidden',
-          ),
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */',
-             'namespace' => 'App\\Models',
-             'uses' => 
-            array (
-              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
-              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
-              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
-              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'type' => NULL,
-           'public' => false,
-           'private' => false,
-           'static' => false,
-           'readonly' => false,
-           'abstract' => false,
-           'final' => false,
-           'publicSet' => false,
-           'protectedSet' => false,
-           'privateSet' => false,
-           'virtual' => false,
-           'attributes' => 
-          array (
-          ),
-           'hooks' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'casts',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */',
-             'namespace' => 'App\\Models',
-             'uses' => 
-            array (
-              'hasulids' => 'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids',
-              'hasfactory' => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-              'authenticatable' => 'Illuminate\\Foundation\\Auth\\User',
-              'notifiable' => 'Illuminate\\Notifications\\Notifiable',
-              'hasapitokens' => 'Laravel\\Sanctum\\HasApiTokens',
-              'hasroles' => 'Spatie\\Permission\\Traits\\HasRoles',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => false,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'array',
            'parameters' => 
           array (
           ),
@@ -7059,11 +6570,480 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/ModelGeneratorService.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/Demo/Http/Controllers/ApexChartsController.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Services\\ModelGeneratorService',
+       'name' => 'App\\Support\\Demo\\Http\\Controllers\\ApexChartsController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'index',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Contracts\\View\\View',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelBuilderController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Support\\DevTools\\Http\\Controllers\\ModelBuilderController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'generator',
+               'type' => 'App\\Support\\DevTools\\Services\\ModelGeneratorService',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'show',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Show the model builder page.
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'modelgeneratorservice' => 'App\\Support\\DevTools\\Services\\ModelGeneratorService',
+              'view' => 'Illuminate\\Contracts\\View\\View',
+              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
+              'request' => 'Illuminate\\Http\\Request',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'validator' => 'Illuminate\\Support\\Facades\\Validator',
+              'str' => 'Illuminate\\Support\\Str',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Contracts\\View\\View',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'preview',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Preview what will be generated before actual generation.
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'modelgeneratorservice' => 'App\\Support\\DevTools\\Services\\ModelGeneratorService',
+              'view' => 'Illuminate\\Contracts\\View\\View',
+              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
+              'request' => 'Illuminate\\Http\\Request',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'validator' => 'Illuminate\\Support\\Facades\\Validator',
+              'str' => 'Illuminate\\Support\\Str',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'Illuminate\\Http\\Request',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'store',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Generate model, migration, and factory based on form data.
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'modelgeneratorservice' => 'App\\Support\\DevTools\\Services\\ModelGeneratorService',
+              'view' => 'Illuminate\\Contracts\\View\\View',
+              'jsonresponse' => 'Illuminate\\Http\\JsonResponse',
+              'request' => 'Illuminate\\Http\\Request',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'validator' => 'Illuminate\\Support\\Facades\\Validator',
+              'str' => 'Illuminate\\Support\\Str',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Http\\JsonResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'request',
+               'type' => 'Illuminate\\Http\\Request',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/ModelInspectorController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Support\\DevTools\\Http\\Controllers\\ModelInspectorController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'index',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * List all Eloquent models in the application.
+     *
+     * @return \\Illuminate\\Http\\JsonResponse
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'relation' => 'Illuminate\\Database\\Eloquent\\Relations\\Relation',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'str' => 'Illuminate\\Support\\Str',
+              'reflectionclass' => 'ReflectionClass',
+              'reflectionmethod' => 'ReflectionMethod',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'show',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get detailed information about a specific model.
+     *
+     * @param  string  $modelName  Short class name (e.g., "User")
+     * @return \\Illuminate\\Http\\JsonResponse
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+              'relation' => 'Illuminate\\Database\\Eloquent\\Relations\\Relation',
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'str' => 'Illuminate\\Support\\Str',
+              'reflectionclass' => 'ReflectionClass',
+              'reflectionmethod' => 'ReflectionMethod',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'modelName',
+               'type' => NULL,
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaEditorController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Support\\DevTools\\Http\\Controllers\\SchemaEditorController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'index',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Display the schema editor page.
+     *
+     * @return \\Illuminate\\View\\View
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Http/Controllers/SchemaMermaidController.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Support\\DevTools\\Http\\Controllers\\SchemaMermaidController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'App\\Http\\Controllers\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'show',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Display the database schema as Mermaid diagram
+     */',
+             'namespace' => 'App\\Support\\DevTools\\Http\\Controllers',
+             'uses' => 
+            array (
+              'controller' => 'App\\Http\\Controllers\\Controller',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
+              'view' => 'Illuminate\\Contracts\\View\\View',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Illuminate\\Contracts\\View\\View',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/ModelGeneratorService.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Support\\DevTools\\Services\\ModelGeneratorService',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -7089,7 +7069,7 @@ return [
      *
      * @param  array<int, array<string, mixed>>  $attributes
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7177,7 +7157,7 @@ return [
      *
      * @param  array<int, array<string, mixed>>  $attributes
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7254,7 +7234,7 @@ return [
      *
      * @param  array<int, array<string, mixed>>  $attributes
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7307,7 +7287,7 @@ return [
              'phpDocString' => '/**
      * Generate pivot migration source code using template.
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7373,7 +7353,7 @@ return [
      *
      * @param  array<string, mixed>  $attribute
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7417,7 +7397,7 @@ return [
      *
      * @param  array<string, mixed>  $attribute
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7461,7 +7441,7 @@ return [
      *
      * @param  array<string, string>  $casts
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'str' => 'Illuminate\\Support\\Str',
@@ -7501,11 +7481,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Services/SchemaMermaidGenerator.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/app/Support/DevTools/Services/SchemaMermaidGenerator.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Services\\SchemaMermaidGenerator',
+       'name' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -7534,7 +7514,7 @@ return [
      *
      * @var array<int, string>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7572,7 +7552,7 @@ return [
      *
      * @param  array<int, string>  $ignoredTables
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7615,7 +7595,7 @@ return [
              'phpDocString' => '/**
      * Generate Mermaid ER diagram from database schema
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7649,7 +7629,7 @@ return [
      *
      * @return array<int, string>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7683,7 +7663,7 @@ return [
      *
      * @return array<int, string>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7717,7 +7697,7 @@ return [
      *
      * @return array<int, string>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7751,7 +7731,7 @@ return [
      *
      * @return array<int, string>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7783,7 +7763,7 @@ return [
              'phpDocString' => '/**
      * Check if table should be ignored
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7826,7 +7806,7 @@ return [
              'phpDocString' => '/**
      * Generate Mermaid definition for a table
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7871,7 +7851,7 @@ return [
      *
      * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7916,7 +7896,7 @@ return [
      *
      * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -7961,7 +7941,7 @@ return [
      *
      * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8006,7 +7986,7 @@ return [
      *
      * @return array<int, array{name: string, type: string, nullable: bool, default: mixed, is_primary: bool}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8051,7 +8031,7 @@ return [
      *
      * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8096,7 +8076,7 @@ return [
      *
      * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8141,7 +8121,7 @@ return [
      *
      * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8186,7 +8166,7 @@ return [
      *
      * @return array<int, array{name: string, unique: bool, columns: array<int, string>}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8231,7 +8211,7 @@ return [
      *
      * @param  array<int, array{name: string, unique: bool, columns: array<int, string>}>  $indexes
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8287,7 +8267,7 @@ return [
      *
      * @param  array<int, array{name: string, unique: bool, columns: array<int, string>}>  $indexes
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8341,7 +8321,7 @@ return [
              'phpDocString' => '/**
      * Check if column is foreign key
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8397,7 +8377,7 @@ return [
      *
      * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8431,7 +8411,7 @@ return [
      *
      * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8465,7 +8445,7 @@ return [
      *
      * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8499,7 +8479,7 @@ return [
      *
      * @return array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8533,7 +8513,7 @@ return [
      *
      * @param  array<int, array{table: string, column: string, referenced_table: string, referenced_column: string}>  $foreignKeys
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -8576,7 +8556,7 @@ return [
              'phpDocString' => '/**
      * Simplify column type for Mermaid display
      */',
-             'namespace' => 'App\\Services',
+             'namespace' => 'App\\Support\\DevTools\\Services',
              'uses' => 
             array (
               'db' => 'Illuminate\\Support\\Facades\\DB',
@@ -10474,7 +10454,7 @@ return [
        'phpDoc' => 
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
- * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Task>
+ * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Domain\\TaskManagement\\Models\\Task>
  */',
          'namespace' => 'Database\\Factories',
          'uses' => 
@@ -10500,6 +10480,31 @@ return [
        'statements' => 
       array (
         0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
+           'names' => 
+          array (
+            0 => 'model',
+          ),
+           'phpDoc' => NULL,
+           'type' => NULL,
+           'public' => false,
+           'private' => false,
+           'static' => false,
+           'readonly' => false,
+           'abstract' => false,
+           'final' => false,
+           'publicSet' => false,
+           'protectedSet' => false,
+           'privateSet' => false,
+           'virtual' => false,
+           'attributes' => 
+          array (
+          ),
+           'hooks' => 
+          array (
+          ),
+        )),
+        1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'definition',
            'phpDoc' => 
@@ -10546,7 +10551,7 @@ return [
        'phpDoc' => 
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
- * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\User>
+ * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Domain\\Identity\\Models\\User>
  */',
          'namespace' => 'Database\\Factories',
          'uses' => 
@@ -10574,6 +10579,31 @@ return [
        'statements' => 
       array (
         0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
+           'names' => 
+          array (
+            0 => 'model',
+          ),
+           'phpDoc' => NULL,
+           'type' => NULL,
+           'public' => false,
+           'private' => false,
+           'static' => false,
+           'readonly' => false,
+           'abstract' => false,
+           'final' => false,
+           'publicSet' => false,
+           'protectedSet' => false,
+           'privateSet' => false,
+           'virtual' => false,
+           'attributes' => 
+          array (
+          ),
+           'hooks' => 
+          array (
+          ),
+        )),
+        1 => 
         \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
            'names' => 
           array (
@@ -10613,7 +10643,7 @@ return [
           array (
           ),
         )),
-        1 => 
+        2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'definition',
            'phpDoc' => 
@@ -10648,7 +10678,7 @@ return [
           array (
           ),
         )),
-        2 => 
+        3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'unverified',
            'phpDoc' => 
@@ -10781,8 +10811,8 @@ return [
              'namespace' => 'Database\\Seeders',
              'uses' => 
             array (
-              'task' => 'App\\Models\\Task',
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
               'withoutmodelevents' => 'Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents',
               'seeder' => 'Illuminate\\Database\\Seeder',
             ),
@@ -10841,7 +10871,7 @@ return [
              'namespace' => 'Database\\Seeders',
              'uses' => 
             array (
-              'task' => 'App\\Models\\Task',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
               'seeder' => 'Illuminate\\Database\\Seeder',
             ),
              'constUses' => 
@@ -10868,11 +10898,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AdminTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/AdminTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\AdminTest',
+       'name' => 'Tests\\Feature\\Administration\\AdminTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -10897,10 +10927,10 @@ return [
              'phpDocString' => '/**
      * Test that guests are redirected to login.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Administration',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -10930,10 +10960,10 @@ return [
              'phpDocString' => '/**
      * Test that authenticated user can access admin index.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Administration',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -10961,741 +10991,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/AuthTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/AssignRolesToUserTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\AuthTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_login_page_loads',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the login page loads successfully.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_register_page_loads',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the register page loads successfully.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_user_can_register',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that a user can register with valid data.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_register_validates_required_fields',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that register validates required fields.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_register_validates_email_uniqueness',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that register validates email uniqueness.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_register_validates_password_confirmation',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that register validates password confirmation.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        6 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_register_validates_password_min_length',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that register validates password minimum length.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        7 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_user_can_login',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that a user can login with valid credentials.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        8 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_login_fails_with_bad_credentials',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that login fails with invalid credentials.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        9 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_login_validates_required_fields',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that login validates required fields.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        10 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_authenticated_user_can_logout',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that an authenticated user can logout.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        11 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_guest_middleware_redirects_authenticated_user_from_login',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that guest middleware redirects authenticated users away from login.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        12 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_guest_middleware_redirects_authenticated_user_from_register',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that guest middleware redirects authenticated users away from register.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/CheckboxInputComponentTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\CheckboxInputComponentTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_renders',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders correctly
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_with_checked',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders with checked state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_with_disabled',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders with disabled state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_with_value',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders with value
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_inline',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders inline
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_with_description',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders with description
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        6 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_without_label',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders without label
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        7 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_checkbox_input_component_checked_and_disabled',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the CheckboxInput component renders both checked and disabled
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/AssignRolesToUserTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\Commands\\AssignRolesToUserTest',
+       'name' => 'Tests\\Feature\\Administration\\Commands\\AssignRolesToUserTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -11738,10 +11038,10 @@ return [
              'phpDocString' => '/**
      * Test assigning role to user in interactive mode.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -11772,10 +11072,10 @@ return [
              'phpDocString' => '/**
      * Test assigning multiple roles to user.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -11806,10 +11106,10 @@ return [
              'phpDocString' => '/**
      * Test that role assignment can be cancelled.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -11840,10 +11140,10 @@ return [
              'phpDocString' => '/**
      * Test that existing roles are replaced (sync, not attach).
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -11874,10 +11174,10 @@ return [
              'phpDocString' => '/**
      * Test that user search by name works.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -11906,11 +11206,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Commands/CreateAdminUserTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/Commands/CreateAdminUserTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\Commands\\CreateAdminUserTest',
+       'name' => 'Tests\\Feature\\Administration\\Commands\\CreateAdminUserTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -11953,10 +11253,10 @@ return [
              'phpDocString' => '/**
      * Test creating an admin user with all required options succeeds.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -11987,10 +11287,10 @@ return [
              'phpDocString' => '/**
      * Test that duplicate email is rejected.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -12021,10 +11321,10 @@ return [
              'phpDocString' => '/**
      * Test that password mismatch is caught.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -12055,10 +11355,10 @@ return [
              'phpDocString' => '/**
      * Test that user creation can be cancelled.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
@@ -12089,12 +11389,2435 @@ return [
              'phpDocString' => '/**
      * Test that admin user is created with admin role.
      */',
-             'namespace' => 'Tests\\Feature\\Commands',
+             'namespace' => 'Tests\\Feature\\Administration\\Commands',
              'uses' => 
             array (
-              'user' => 'App\\Models\\User',
+              'user' => 'App\\Domain\\Identity\\Models\\User',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/PermissionControllerTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Administration\\PermissionControllerTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_permissions_page_loads',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the permissions index page loads successfully.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'permission' => 'Spatie\\Permission\\Models\\Permission',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_lists_users_with_roles_and_permissions',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the users API endpoint lists all users with roles and permissions.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'permission' => 'Spatie\\Permission\\Models\\Permission',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_includes_users_without_roles',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that users without roles are included in the response.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'permission' => 'Spatie\\Permission\\Models\\Permission',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_lists_permissions_with_roles',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the permissions API lists all permissions with roles.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'permission' => 'Spatie\\Permission\\Models\\Permission',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_lists_roles_with_permissions',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the roles API lists all roles with permissions.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'permission' => 'Spatie\\Permission\\Models\\Permission',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_with_multiple_roles_shows_all_permissions',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that a user with multiple roles shows all permissions correctly.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'permission' => 'Spatie\\Permission\\Models\\Permission',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserControllerTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Administration\\UserControllerTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_users_page_loads',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the users index page loads successfully.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_lists_all_users',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the API endpoint lists all users.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_pagination_with_default_per_page',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test pagination with default per_page.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_pagination_with_custom_per_page',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test pagination with custom per_page.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_pagination_max_per_page_limit',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test pagination respects maximum per_page.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_pagination_min_per_page_limit',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test pagination respects minimum per_page.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_pagination_second_page',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test pagination second page.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_search_users_by_name',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test search users by name.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        8 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_search_users_by_email',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test search users by email.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        9 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_search_users_no_results',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test search with no results.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        10 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_search_with_pagination',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test search with pagination.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        11 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_search_is_case_insensitive',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test search is case insensitive.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        12 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_creates_user',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test creating a new user via API.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        13 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_creates_user_with_roles',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test creating a user with roles.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        14 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_validates_required_fields_on_create',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that user creation validates required fields.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        15 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_validates_email_uniqueness_on_create',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that user creation validates email uniqueness.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        16 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_shows_user',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test showing a specific user.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        17 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_updates_user',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test updating a user.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        18 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_updates_user_password',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test updating a user\'s password.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        19 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_updates_user_without_password',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test updating a user without changing password.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        20 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_updates_user_roles',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test updating user roles.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        21 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_validates_email_uniqueness_on_update',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that email uniqueness is validated during update.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        22 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_allows_same_email_on_update',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that a user can be updated with the same email.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        23 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_deletes_user',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test deleting a user.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        24 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_returns_proper_validation_errors',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that validation errors are properly formatted.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        25 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_api_loads_users_with_roles',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that users are loaded with their roles relationship.
+     */',
+             'namespace' => 'Tests\\Feature\\Administration',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'role' => 'Spatie\\Permission\\Models\\Role',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Administration/UserShowPageTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Administration\\UserShowPageTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_show_page_displays_user_details',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_show_page_displays_roles',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_show_page_requires_authentication',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_show_page_has_back_link',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_show_page_has_edit_button',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/CheckboxInputComponentTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Components\\CheckboxInputComponentTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_renders',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders correctly
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_with_checked',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders with checked state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_with_disabled',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders with disabled state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_with_value',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders with value
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_inline',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders inline
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_with_description',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders with description
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_without_label',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders without label
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_checkbox_input_component_checked_and_disabled',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the CheckboxInput component renders both checked and disabled
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/RadioInputComponentTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Components\\RadioInputComponentTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_renders',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders correctly
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_with_checked',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders with checked state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_with_disabled',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders with disabled state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_inline',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders inline
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_with_description',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders with description
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_without_label',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders without label
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_radio_input_component_checked_and_disabled',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the RadioInput component renders both checked and disabled
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_multiple_radio_buttons_same_name',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that multiple radio buttons with same name work correctly
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/SelectInputComponentTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Components\\SelectInputComponentTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_renders',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders correctly
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_selected',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with selected value
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_placeholder',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with placeholder
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_required',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with required attribute
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_disabled',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with disabled state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_multiple',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with multiple attribute
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_multiple_selected',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with multiple selected values
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_description',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with description
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        8 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_without_label',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders without label
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        9 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_no_placeholder_for_multiple',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component does not show placeholder for multiple select
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        10 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_with_empty_options',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the SelectInput component renders with empty options array
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        11 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_select_input_component_placeholder_not_selected_when_value_selected',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that placeholder is not selected when a value is selected
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Components/TextInputComponentTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Components\\TextInputComponentTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_text_input_component_renders',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the TextInput component renders correctly
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_text_input_component_with_required',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the TextInput component renders with required attribute
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_text_input_component_with_disabled',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the TextInput component renders with disabled state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_text_input_component_with_readonly',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the TextInput component renders with readonly state
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_text_input_component_with_description',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the TextInput component renders with description
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_text_input_component_without_label',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the TextInput component renders without label
+     */',
+             'namespace' => 'Tests\\Feature\\Components',
+             'uses' => 
+            array (
               'testcase' => 'Tests\\TestCase',
             ),
              'constUses' => 
@@ -12178,11 +13901,790 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelBuilderControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/AuthTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\ModelBuilderControllerTest',
+       'name' => 'Tests\\Feature\\Identity\\AuthTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_login_page_loads',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the login page loads successfully.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_register_page_loads',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that the register page loads successfully.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_can_register',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that a user can register with valid data.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_register_validates_required_fields',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that register validates required fields.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_register_validates_email_uniqueness',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that register validates email uniqueness.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_register_validates_password_confirmation',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that register validates password confirmation.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_register_validates_password_min_length',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that register validates password minimum length.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_can_login',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that a user can login with valid credentials.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        8 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_login_fails_with_bad_credentials',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that login fails with invalid credentials.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        9 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_login_validates_required_fields',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that login validates required fields.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        10 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_authenticated_user_can_logout',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that an authenticated user can logout.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        11 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_guest_middleware_redirects_authenticated_user_from_login',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that guest middleware redirects authenticated users away from login.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        12 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_guest_middleware_redirects_authenticated_user_from_register',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that guest middleware redirects authenticated users away from register.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/ProfileTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Identity\\ProfileTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_guest_is_redirected_to_login',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that guests are redirected to login.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_authenticated_user_can_access_profile',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that authenticated user can access profile page.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_header_contains_profile_link_when_authenticated',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that header contains link to profile for authenticated user.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Identity/UlidTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Identity\\UlidTest',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => 'Tests\\TestCase',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_user_model_uses_ulid',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that User model uses ULID.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_task_model_uses_ulid',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that Task model uses ULID.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_task_user_relationship_uses_ulid',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that Task\'s user_id foreign key uses ULID.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_ulids_are_sortable',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that ULIDs are lexicographically sortable.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'test_ulids_are_unique',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Test that ULIDs are unique.
+     */',
+             'namespace' => 'Tests\\Feature\\Identity',
+             'uses' => 
+            array (
+              'user' => 'App\\Domain\\Identity\\Models\\User',
+              'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
+              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
+              'testcase' => 'Tests\\TestCase',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelBuilderControllerTest.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Tests\\Feature\\Support\\ModelBuilderControllerTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -12529,11 +15031,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ModelInspectorTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/ModelInspectorTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\ModelInspectorTest',
+       'name' => 'Tests\\Feature\\Support\\ModelInspectorTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -12557,7 +15059,7 @@ return [
              'phpDocString' => '/**
      * Test that the model inspector index page loads successfully.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12588,7 +15090,7 @@ return [
              'phpDocString' => '/**
      * Test that the API endpoint lists all models.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12619,7 +15121,7 @@ return [
              'phpDocString' => '/**
      * Test that the API endpoint returns detailed information for a specific model.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12650,7 +15152,7 @@ return [
              'phpDocString' => '/**
      * Test that the API returns 404 for a non-existent model.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12681,7 +15183,7 @@ return [
              'phpDocString' => '/**
      * Test that model attributes are correctly retrieved.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12712,7 +15214,7 @@ return [
              'phpDocString' => '/**
      * Test that database schema is correctly retrieved.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12743,7 +15245,7 @@ return [
              'phpDocString' => '/**
      * Test that relationships are correctly detected.
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'testcase' => 'Tests\\TestCase',
@@ -12772,648 +15274,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/PermissionControllerTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/Support/SchemaMermaidControllerTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\PermissionControllerTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_permissions_page_loads',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the permissions index page loads successfully.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'permission' => 'Spatie\\Permission\\Models\\Permission',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_lists_users_with_roles_and_permissions',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the users API endpoint lists all users with roles and permissions.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'permission' => 'Spatie\\Permission\\Models\\Permission',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_includes_users_without_roles',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that users without roles are included in the response.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'permission' => 'Spatie\\Permission\\Models\\Permission',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_lists_permissions_with_roles',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the permissions API lists all permissions with roles.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'permission' => 'Spatie\\Permission\\Models\\Permission',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_lists_roles_with_permissions',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the roles API lists all roles with permissions.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'permission' => 'Spatie\\Permission\\Models\\Permission',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_user_with_multiple_roles_shows_all_permissions',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that a user with multiple roles shows all permissions correctly.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'permission' => 'Spatie\\Permission\\Models\\Permission',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/ProfileTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\ProfileTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_guest_is_redirected_to_login',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that guests are redirected to login.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_authenticated_user_can_access_profile',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that authenticated user can access profile page.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_header_contains_profile_link_when_authenticated',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that header contains link to profile for authenticated user.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/RadioInputComponentTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\RadioInputComponentTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_renders',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders correctly
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_with_checked',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders with checked state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_with_disabled',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders with disabled state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_inline',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders inline
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_with_description',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders with description
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_without_label',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders without label
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        6 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_radio_input_component_checked_and_disabled',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the RadioInput component renders both checked and disabled
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        7 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_multiple_radio_buttons_same_name',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that multiple radio buttons with same name work correctly
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SchemaMermaidControllerTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\SchemaMermaidControllerTest',
+       'name' => 'Tests\\Feature\\Support\\SchemaMermaidControllerTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -13438,7 +15303,7 @@ return [
              'phpDocString' => '/**
      * Test that the schema mermaid page loads successfully
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
@@ -13470,7 +15335,7 @@ return [
              'phpDocString' => '/**
      * Test that the page contains Mermaid code
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
@@ -13502,7 +15367,7 @@ return [
              'phpDocString' => '/**
      * Test that the page contains table definitions
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
@@ -13534,7 +15399,7 @@ return [
              'phpDocString' => '/**
      * Test that the page contains relationships
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
@@ -13566,1728 +15431,10 @@ return [
              'phpDocString' => '/**
      * Test that the page contains key markers
      */',
-             'namespace' => 'Tests\\Feature',
+             'namespace' => 'Tests\\Feature\\Support',
              'uses' => 
             array (
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/SelectInputComponentTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\SelectInputComponentTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_renders',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders correctly
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_selected',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with selected value
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_placeholder',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with placeholder
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_required',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with required attribute
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_disabled',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with disabled state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_multiple',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with multiple attribute
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        6 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_multiple_selected',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with multiple selected values
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        7 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_description',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with description
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        8 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_without_label',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders without label
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        9 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_no_placeholder_for_multiple',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component does not show placeholder for multiple select
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        10 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_with_empty_options',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the SelectInput component renders with empty options array
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        11 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_select_input_component_placeholder_not_selected_when_value_selected',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that placeholder is not selected when a value is selected
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/TextInputComponentTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\TextInputComponentTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_text_input_component_renders',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the TextInput component renders correctly
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_text_input_component_with_required',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the TextInput component renders with required attribute
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_text_input_component_with_disabled',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the TextInput component renders with disabled state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_text_input_component_with_readonly',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the TextInput component renders with readonly state
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_text_input_component_with_description',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the TextInput component renders with description
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_text_input_component_without_label',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the TextInput component renders without label
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UlidTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\UlidTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_user_model_uses_ulid',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that User model uses ULID.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'task' => 'App\\Models\\Task',
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_task_model_uses_ulid',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that Task model uses ULID.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'task' => 'App\\Models\\Task',
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_task_user_relationship_uses_ulid',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that Task\'s user_id foreign key uses ULID.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'task' => 'App\\Models\\Task',
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_ulids_are_sortable',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that ULIDs are lexicographically sortable.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'task' => 'App\\Models\\Task',
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_ulids_are_unique',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that ULIDs are unique.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'task' => 'App\\Models\\Task',
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Feature/UserControllerTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Feature\\UserControllerTest',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => 'Tests\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-        0 => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_users_page_loads',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the users index page loads successfully.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_lists_all_users',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that the API endpoint lists all users.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_pagination_with_default_per_page',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test pagination with default per_page.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        3 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_pagination_with_custom_per_page',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test pagination with custom per_page.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        4 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_pagination_max_per_page_limit',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test pagination respects maximum per_page.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        5 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_pagination_min_per_page_limit',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test pagination respects minimum per_page.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        6 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_pagination_second_page',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test pagination second page.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        7 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_search_users_by_name',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test search users by name.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        8 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_search_users_by_email',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test search users by email.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        9 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_search_users_no_results',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test search with no results.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        10 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_search_with_pagination',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test search with pagination.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        11 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_search_is_case_insensitive',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test search is case insensitive.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        12 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_creates_user',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test creating a new user via API.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        13 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_creates_user_with_roles',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test creating a user with roles.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        14 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_validates_required_fields_on_create',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that user creation validates required fields.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        15 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_validates_email_uniqueness_on_create',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that user creation validates email uniqueness.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        16 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_shows_user',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test showing a specific user.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        17 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_updates_user',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test updating a user.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        18 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_updates_user_password',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test updating a user\'s password.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        19 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_updates_user_without_password',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test updating a user without changing password.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        20 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_updates_user_roles',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test updating user roles.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        21 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_validates_email_uniqueness_on_update',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that email uniqueness is validated during update.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        22 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_allows_same_email_on_update',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that a user can be updated with the same email.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        23 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_deletes_user',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test deleting a user.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        24 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_returns_proper_validation_errors',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that validation errors are properly formatted.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
-              'testcase' => 'Tests\\TestCase',
-            ),
-             'constUses' => 
-            array (
-            ),
-          )),
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        25 => 
-        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'test_api_loads_users_with_roles',
-           'phpDoc' => 
-          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
-             'phpDocString' => '/**
-     * Test that users are loaded with their roles relationship.
-     */',
-             'namespace' => 'Tests\\Feature',
-             'uses' => 
-            array (
-              'user' => 'App\\Models\\User',
-              'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
-              'role' => 'Spatie\\Permission\\Models\\Role',
               'testcase' => 'Tests\\TestCase',
             ),
              'constUses' => 
@@ -15397,11 +15544,11 @@ return [
       ),
     )),
   ),
-  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/SchemaMermaidGeneratorTest.php' => 
+  '/home/debian/__dev/devenv-php/src/laravel-starter/tests/Unit/Support/SchemaMermaidGeneratorTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\Unit\\SchemaMermaidGeneratorTest',
+       'name' => 'Tests\\Unit\\Support\\SchemaMermaidGeneratorTest',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -15426,10 +15573,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator can be instantiated
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15459,10 +15606,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator produces valid Mermaid syntax
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15492,10 +15639,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator includes table definitions
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15525,10 +15672,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator excludes ignored tables
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15558,10 +15705,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator includes column definitions
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15591,10 +15738,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator marks primary keys
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15624,10 +15771,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator marks foreign keys
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15657,10 +15804,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator includes relationships
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15690,10 +15837,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator includes users-tasks relationship
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15723,10 +15870,10 @@ return [
              'phpDocString' => '/**
      * Test custom ignored tables
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15756,10 +15903,10 @@ return [
              'phpDocString' => '/**
      * Test that generator handles database with no foreign keys gracefully
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),
@@ -15789,10 +15936,10 @@ return [
              'phpDocString' => '/**
      * Test that the generator simplifies column types correctly
      */',
-             'namespace' => 'Tests\\Unit',
+             'namespace' => 'Tests\\Unit\\Support',
              'uses' => 
             array (
-              'schemamermaidgenerator' => 'App\\Services\\SchemaMermaidGenerator',
+              'schemamermaidgenerator' => 'App\\Support\\DevTools\\Services\\SchemaMermaidGenerator',
               'refreshdatabase' => 'Illuminate\\Foundation\\Testing\\RefreshDatabase',
               'testcase' => 'Tests\\TestCase',
             ),

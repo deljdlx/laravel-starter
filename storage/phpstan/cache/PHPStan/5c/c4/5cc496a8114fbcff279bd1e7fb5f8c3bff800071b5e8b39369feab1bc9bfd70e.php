@@ -12,16 +12,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => NULL,
          'uses' => 
         array (
-          'admincontroller' => 'App\\Http\\Controllers\\Admin\\AdminController',
-          'authcontroller' => 'App\\Http\\Controllers\\Auth\\AuthController',
-          'modelbuildercontroller' => 'App\\Http\\Controllers\\Dev\\ModelBuilderController',
-          'modelinspectorcontroller' => 'App\\Http\\Controllers\\Dev\\ModelInspectorController',
-          'schemaeditorcontroller' => 'App\\Http\\Controllers\\Dev\\SchemaEditorController',
-          'schemamermaidcontroller' => 'App\\Http\\Controllers\\Dev\\SchemaMermaidController',
-          'permissioncontroller' => 'App\\Http\\Controllers\\PermissionController',
-          'profilecontroller' => 'App\\Http\\Controllers\\ProfileController',
-          'rolecontroller' => 'App\\Http\\Controllers\\RoleController',
-          'usercontroller' => 'App\\Http\\Controllers\\UserController',
           'routingroute' => 'Illuminate\\Routing\\Route',
           'route' => 'Illuminate\\Support\\Facades\\Route',
         ),
@@ -44,7 +34,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php' => '82c677e934e98bed9737cb8161f298b63281dc0ed4a3eab97dac93bc49eda23a',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php' => 'aff5993cb5315e9379e6ab7f06ca5906a86eb3178782b7d6f10074a31a60f4c8',
     ),
   ),
 ));

@@ -12,8 +12,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => NULL,
          'uses' => 
         array (
-          'usercontroller' => 'App\\Http\\Controllers\\UserController',
-          'user' => 'App\\Models\\User',
+          'usercontroller' => 'App\\Domain\\Administration\\Http\\Controllers\\UserController',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'request' => 'Illuminate\\Http\\Request',
           'route' => 'Illuminate\\Support\\Facades\\Route',
         ),
@@ -36,7 +36,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php' => 'd406b34de1dc6c5b4a83b8f575b5abdb4e9db2f635c67f83e1aec281c40127a8',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php' => '652955edb6c6c007373cdb45e959d64ad70173cf5062d5a50c62bff66f4b38bc',
     ),
   ),
 ));

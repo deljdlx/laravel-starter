@@ -2,7 +2,7 @@
 
 // odsl-/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/UserFactory.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Database\Factories\UserFactory
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.3.28-b8c21631437b00ffb6ce008248abd55f19027b8273e7db4dfeab099b2bc0c573',
+   'variableKey' => 'v2-6.65.0.9-8.3.28-876e6ec05a4675e1b496c7c38cfadb98d819c314bdc6c8de520220d535c8ae61',
    'data' => 
   array (
     'locatedSource' => 
@@ -23,13 +23,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isBackedEnum' => false,
     'modifiers' => 0,
     'docComment' => '/**
- * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\User>
+ * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Domain\\Identity\\Models\\User>
  */',
     'attributes' => 
     array (
     ),
     'startLine' => 12,
-    'endLine' => 44,
+    'endLine' => 46,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Factories\\Factory',
@@ -44,6 +44,41 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
+      'model' => 
+      array (
+        'declaringClassName' => 'Database\\Factories\\UserFactory',
+        'implementingClassName' => 'Database\\Factories\\UserFactory',
+        'name' => 'model',
+        'modifiers' => 2,
+        'type' => NULL,
+        'default' => 
+        array (
+          'code' => '\\App\\Domain\\Identity\\Models\\User::class',
+          'attributes' => 
+          array (
+            'startLine' => 14,
+            'endLine' => 14,
+            'startTokenPos' => 40,
+            'startFilePos' => 317,
+            'endTokenPos' => 42,
+            'endFilePos' => 355,
+          ),
+        ),
+        'docComment' => NULL,
+        'attributes' => 
+        array (
+        ),
+        'startLine' => 14,
+        'endLine' => 14,
+        'startColumn' => 5,
+        'endColumn' => 63,
+        'isPromoted' => false,
+        'declaredAtCompileTime' => true,
+        'immediateVirtual' => false,
+        'immediateHooks' => 
+        array (
+        ),
+      ),
       'password' => 
       array (
         'declaringClassName' => 'Database\\Factories\\UserFactory',
@@ -83,12 +118,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '\'aaaa\'',
           'attributes' => 
           array (
-            'startLine' => 17,
-            'endLine' => 17,
-            'startTokenPos' => 47,
-            'startFilePos' => 390,
-            'endTokenPos' => 47,
-            'endFilePos' => 395,
+            'startLine' => 19,
+            'endLine' => 19,
+            'startTokenPos' => 58,
+            'startFilePos' => 471,
+            'endTokenPos' => 58,
+            'endFilePos' => 476,
           ),
         ),
         'docComment' => '/**
@@ -97,8 +132,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 17,
-        'endLine' => 17,
+        'startLine' => 19,
+        'endLine' => 19,
         'startColumn' => 5,
         'endColumn' => 48,
         'isPromoted' => false,
@@ -135,8 +170,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array<string, mixed>
  */',
-        'startLine' => 24,
-        'endLine' => 33,
+        'startLine' => 26,
+        'endLine' => 35,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -172,8 +207,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'docComment' => '/**
  * Indicate that the model\'s email address should be unverified.
  */',
-        'startLine' => 38,
-        'endLine' => 43,
+        'startLine' => 40,
+        'endLine' => 45,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

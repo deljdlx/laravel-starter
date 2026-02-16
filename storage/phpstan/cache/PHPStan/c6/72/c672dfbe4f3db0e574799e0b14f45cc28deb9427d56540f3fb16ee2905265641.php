@@ -2,7 +2,7 @@
 
 // odsl-/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Database\Factories\TaskFactory
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.3.28-01a22fbf59afb7950c5ad9a55c2f6ec9053d3c0f8948969e7d76f2c80f90116b',
+   'variableKey' => 'v2-6.65.0.9-8.3.28-45a62c5b8a9ca57c5d111bbb594213c3f4ed6fb9aabcc3e805cab7623514cf92',
    'data' => 
   array (
     'locatedSource' => 
@@ -23,13 +23,13 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isBackedEnum' => false,
     'modifiers' => 0,
     'docComment' => '/**
- * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Task>
+ * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Domain\\TaskManagement\\Models\\Task>
  */',
     'attributes' => 
     array (
     ),
     'startLine' => 10,
-    'endLine' => 25,
+    'endLine' => 27,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Factories\\Factory',
@@ -44,6 +44,41 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'immediateProperties' => 
     array (
+      'model' => 
+      array (
+        'declaringClassName' => 'Database\\Factories\\TaskFactory',
+        'implementingClassName' => 'Database\\Factories\\TaskFactory',
+        'name' => 'model',
+        'modifiers' => 2,
+        'type' => NULL,
+        'default' => 
+        array (
+          'code' => '\\App\\Domain\\TaskManagement\\Models\\Task::class',
+          'attributes' => 
+          array (
+            'startLine' => 12,
+            'endLine' => 12,
+            'startTokenPos' => 30,
+            'startFilePos' => 258,
+            'endTokenPos' => 32,
+            'endFilePos' => 302,
+          ),
+        ),
+        'docComment' => NULL,
+        'attributes' => 
+        array (
+        ),
+        'startLine' => 12,
+        'endLine' => 12,
+        'startColumn' => 5,
+        'endColumn' => 69,
+        'isPromoted' => false,
+        'declaredAtCompileTime' => true,
+        'immediateVirtual' => false,
+        'immediateHooks' => 
+        array (
+        ),
+      ),
     ),
     'immediateMethods' => 
     array (
@@ -71,8 +106,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array<string, mixed>
  */',
-        'startLine' => 17,
-        'endLine' => 24,
+        'startLine' => 19,
+        'endLine' => 26,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

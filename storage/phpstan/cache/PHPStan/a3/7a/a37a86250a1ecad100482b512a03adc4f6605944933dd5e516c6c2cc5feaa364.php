@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/home/debian/__dev/devenv-php/src/laravel-starter/routes/api.php' => 
     array (
-      0 => 'd406b34de1dc6c5b4a83b8f575b5abdb4e9db2f635c67f83e1aec281c40127a8',
+      0 => '652955edb6c6c007373cdb45e959d64ad70173cf5062d5a50c62bff66f4b38bc',
       1 => 
       array (
       ),
@@ -33,7 +33,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/routes/web.php' => 
     array (
-      0 => '82c677e934e98bed9737cb8161f298b63281dc0ed4a3eab97dac93bc49eda23a',
+      0 => 'aff5993cb5315e9379e6ab7f06ca5906a86eb3178782b7d6f10074a31a60f4c8',
       1 => 
       array (
       ),

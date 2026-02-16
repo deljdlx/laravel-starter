@@ -2,7 +2,7 @@
 
 // odsl-/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Database\Seeders\DatabaseSeeder
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.3.28-e909dd0e4caebfdc51ea9bebaa78181dd9e2cd64dcc6df1b5804e44b66bb27d0',
+   'variableKey' => 'v2-6.65.0.9-8.3.28-4c97a87f34a01dbcd12d74cb4ba4f6368fb72f0e9cd8230b0e7909e83f1bb87b',
    'data' => 
   array (
     'locatedSource' => 

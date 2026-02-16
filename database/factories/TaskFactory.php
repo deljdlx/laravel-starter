@@ -5,10 +5,12 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Task>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domain\TaskManagement\Models\Task>
  */
 class TaskFactory extends Factory
 {
+    protected $model = \App\Domain\TaskManagement\Models\Task::class;
+
     /**
      * Define the model's default state.
      *
@@ -19,7 +21,7 @@ class TaskFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
-            'user_id' => \App\Models\User::factory(),
+            'user_id' => \App\Domain\Identity\Models\User::factory(),
         ];
     }
 }

@@ -12,7 +12,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -37,7 +37,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -62,7 +62,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -87,7 +87,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -112,7 +112,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -137,7 +137,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -162,7 +162,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -187,7 +187,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'App\\Console\\Commands\\Admin',
          'uses' => 
         array (
-          'user' => 'App\\Models\\User',
+          'user' => 'App\\Domain\\Identity\\Models\\User',
           'command' => 'Illuminate\\Console\\Command',
           'role' => 'Spatie\\Permission\\Models\\Role',
         ),
@@ -210,7 +210,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php' => 'fae6f6e2caf22550b63450ec05a2b4228d390f43a8dadb8a379facce19b74f4a',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php' => 'c77d073ce752b20d2d037c92e70f3831a220a66080bd7741a679775e1041271c',
     ),
   ),
 ));

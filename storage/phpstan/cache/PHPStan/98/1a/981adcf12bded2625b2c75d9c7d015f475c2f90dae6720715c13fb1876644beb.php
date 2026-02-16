@@ -12,7 +12,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Database\\Seeders',
          'uses' => 
         array (
-          'task' => 'App\\Models\\Task',
+          'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
           'seeder' => 'Illuminate\\Database\\Seeder',
         ),
          'className' => 'Database\\Seeders\\TaskSeeder',
@@ -36,7 +36,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'namespace' => 'Database\\Seeders',
          'uses' => 
         array (
-          'task' => 'App\\Models\\Task',
+          'task' => 'App\\Domain\\TaskManagement\\Models\\Task',
           'seeder' => 'Illuminate\\Database\\Seeder',
         ),
          'className' => 'Database\\Seeders\\TaskSeeder',
@@ -58,7 +58,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php' => '2e5d369add5d1c153075516f1359bd733a7e39051ad780bebece23acf6208f40',
+      '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php' => 'a20587ba8b0ecb70f2ee075e3022c1d4fa37b4f7eb4efd423ddab15657e406a9',
     ),
   ),
 ));

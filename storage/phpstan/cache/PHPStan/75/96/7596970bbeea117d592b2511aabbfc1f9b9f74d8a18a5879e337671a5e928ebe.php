@@ -2,7 +2,7 @@
 
 // odsl-/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/CreateAdminUser.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Console\Commands\Admin\CreateAdminUser
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.3.28-698c471f2903c1dcfc4db164fa78a66784340fa1e47f932e7be93732ec23aea6',
+   'variableKey' => 'v2-6.65.0.9-8.3.28-df411618bde71adaddacc158ca1d0fce7dbdca601320dababacf1bdc50ed0a02',
    'data' => 
   array (
     'locatedSource' => 
@@ -61,9 +61,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 17,
             'endLine' => 21,
             'startTokenPos' => 45,
-            'startFilePos' => 342,
+            'startFilePos' => 358,
             'endTokenPos' => 45,
-            'endFilePos' => 663,
+            'endFilePos' => 679,
           ),
         ),
         'docComment' => '/**
@@ -100,9 +100,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 28,
             'endLine' => 28,
             'startTokenPos' => 56,
-            'startFilePos' => 778,
+            'startFilePos' => 794,
             'endTokenPos' => 56,
-            'endFilePos' => 836,
+            'endFilePos' => 852,
           ),
         ),
         'docComment' => '/**

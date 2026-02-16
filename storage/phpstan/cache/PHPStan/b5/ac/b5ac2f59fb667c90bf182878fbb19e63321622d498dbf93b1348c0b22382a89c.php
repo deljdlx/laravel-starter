@@ -7,7 +7,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
   array (
     '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/TaskFactory.php' => 
     array (
-      0 => '01a22fbf59afb7950c5ad9a55c2f6ec9053d3c0f8948969e7d76f2c80f90116b',
+      0 => '45a62c5b8a9ca57c5d111bbb594213c3f4ed6fb9aabcc3e805cab7623514cf92',
       1 => 
       array (
         0 => 'database\\factories\\taskfactory',
@@ -22,7 +22,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/database/factories/UserFactory.php' => 
     array (
-      0 => 'b8c21631437b00ffb6ce008248abd55f19027b8273e7db4dfeab099b2bc0c573',
+      0 => '876e6ec05a4675e1b496c7c38cfadb98d819c314bdc6c8de520220d535c8ae61',
       1 => 
       array (
         0 => 'database\\factories\\userfactory',
@@ -129,7 +129,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/DatabaseSeeder.php' => 
     array (
-      0 => 'e909dd0e4caebfdc51ea9bebaa78181dd9e2cd64dcc6df1b5804e44b66bb27d0',
+      0 => '4c97a87f34a01dbcd12d74cb4ba4f6368fb72f0e9cd8230b0e7909e83f1bb87b',
       1 => 
       array (
         0 => 'database\\seeders\\databaseseeder',
@@ -144,7 +144,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     '/home/debian/__dev/devenv-php/src/laravel-starter/database/seeders/TaskSeeder.php' => 
     array (
-      0 => '2e5d369add5d1c153075516f1359bd733a7e39051ad780bebece23acf6208f40',
+      0 => 'a20587ba8b0ecb70f2ee075e3022c1d4fa37b4f7eb4efd423ddab15657e406a9',
       1 => 
       array (
         0 => 'database\\seeders\\taskseeder',

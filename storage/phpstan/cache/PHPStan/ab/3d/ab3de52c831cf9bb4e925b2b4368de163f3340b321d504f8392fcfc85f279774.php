@@ -2,7 +2,7 @@
 
 // odsl-/home/debian/__dev/devenv-php/src/laravel-starter/app/Providers/AppServiceProvider.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Providers\AppServiceProvider
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.3.28-6a854ba835dfb70e49445ab6226431eae90067c9557fa6cc7f1b1eb8e5317343',
+   'variableKey' => 'v2-6.65.0.9-8.3.28-40bdad92d4c1a0891d8ee3b4f6ca993314d7157b426c7867d5f1fd416bfc76f6',
    'data' => 
   array (
     'locatedSource' => 

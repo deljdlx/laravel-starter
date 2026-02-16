@@ -2,7 +2,7 @@
 
 // odsl-/home/debian/__dev/devenv-php/src/laravel-starter/app/Console/Commands/Admin/AssignRolesToUser.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Console\Commands\Admin\AssignRolesToUser
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.3.28-fae6f6e2caf22550b63450ec05a2b4228d390f43a8dadb8a379facce19b74f4a',
+   'variableKey' => 'v2-6.65.0.9-8.3.28-c77d073ce752b20d2d037c92e70f3831a220a66080bd7741a679775e1041271c',
    'data' => 
   array (
     'locatedSource' => 
@@ -59,9 +59,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 16,
             'endLine' => 18,
             'startTokenPos' => 40,
-            'startFilePos' => 300,
+            'startFilePos' => 316,
             'endTokenPos' => 40,
-            'endFilePos' => 485,
+            'endFilePos' => 501,
           ),
         ),
         'docComment' => '/**
@@ -98,9 +98,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 25,
             'endLine' => 25,
             'startTokenPos' => 51,
-            'startFilePos' => 600,
+            'startFilePos' => 616,
             'endTokenPos' => 51,
-            'endFilePos' => 653,
+            'endFilePos' => 669,
           ),
         ),
         'docComment' => '/**
@@ -181,7 +181,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
                 'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
                 'data' => 
                 array (
-                  'name' => 'App\\Models\\User',
+                  'name' => 'App\\Domain\\Identity\\Models\\User',
                   'isIdentifier' => false,
                 ),
               ),
@@ -263,7 +263,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
                 'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
                 'data' => 
                 array (
-                  'name' => 'App\\Models\\User',
+                  'name' => 'App\\Domain\\Identity\\Models\\User',
                   'isIdentifier' => false,
                 ),
               ),
@@ -419,7 +419,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
               'data' => 
               array (
-                'name' => 'App\\Models\\User',
+                'name' => 'App\\Domain\\Identity\\Models\\User',
                 'isIdentifier' => false,
               ),
             ),
@@ -510,7 +510,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
               'data' => 
               array (
-                'name' => 'App\\Models\\User',
+                'name' => 'App\\Domain\\Identity\\Models\\User',
                 'isIdentifier' => false,
               ),
             ),

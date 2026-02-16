@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Enregistrement automatique du composant Livewire si besoin
         if (class_exists(Livewire::class)) {
-            Livewire::component('counter', \App\Http\Livewire\Counter::class);
+            Livewire::component('counter', \App\Livewire\Counter::class);
         }
     }
 }
